@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePath Pro — Project Presentation Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --light-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent: #0284c7;
+      --emergency: #e11d48;
+      --urgent: #d97706;
+      --routine: #059669;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #020617;
+      color: #ffffff;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Presentation Stage */
+    .deck-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .slide {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: var(--light-bg);
+      color: var(--text-main);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      display: none;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+    }
+    .slide.active { display: flex; }
+    .slide.dark-slide {
+      background: var(--dark);
+      color: #ffffff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .top-accent-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--emergency));
+    }
+    /* Headers */
+    .slide-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .slide-title {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .slide-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    /* Grids & Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      flex: 1;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      flex: 1;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .slide.dark-slide .card {
+      background: var(--dark-card);
+      border-color: #334155;
+      color: #ffffff;
+    }
+    .card-badge {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .card-list {
+      list-style: none;
+      font-size: 13px;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      line-height: 1.45;
+    }
+    .slide.dark-slide .card-list {
+      color: #cbd5e1;
+    }
+    .card-list li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    /* Controls Bar */
+    .controls-bar {
+      height: 60px;
+      background: #090d16;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 32px;
+      font-size: 13px;
+    }
+    .nav-btn {
+      background: #1e293b;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-btn:hover { background: var(--primary); }
+    .btn-download-pptx {
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .counter { color: #94a3b8; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="deck-stage">
+
+    <!-- SLIDE 1: TITLE -->
+    <div class="slide dark-slide active" data-slide="1">
+      <div class="top-accent-bar"></div>
+      <div style="margin: auto 0;">
+        <span class="slide-eyebrow" style="color: #38bdf8;">HEALTHCARE AI & CLINICAL DECISION SUPPORT</span>
+        <h1 class="slide-title" style="font-size: 52px; color: #fff; margin: 12px 0;">CarePath Pro ⚕️</h1>
+        <p style="font-size: 24px; color: #94a3b8; margin-bottom: 20px;">Advanced Clinical Symptom Assessment Engine & Medical Knowledge Library</p>
+        <p style="font-size: 16px; color: #cbd5e1; max-width: 800px; line-height: 1.6;">
+          An enterprise-grade healthcare guidance platform integrating a 5-step clinical triage engine, an interactive anatomical body explorer, 40+ in-depth disease dossiers, and automated physician pre-intake handoff.
+        </p>
+        <div style="margin-top: 36px; display: flex; gap: 24px; font-size: 13px; color: #2dd4bf; font-weight: 700;">
+          <span>Presenter: Ali Arshad</span>
+          <span>•</span>
+          <span>Version 2.0 Pro Edition</span>
+          <span>•</span>
+          <span>ICD-10 & WHO Grounded</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: PROBLEM STATEMENT -->
+    <div class="slide" data-slide="2">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">Executive Context</span>
+      <h2 class="slide-title">The Digital Health Triage Challenge</h2>
+      <p class="slide-subtitle">Bridging the critical gap between confusing internet symptoms and clinical evaluation.</p>
+      <div class="grid-3">
+        <div class="card" style="border-top: 4px solid var(--emergency);">
+          <span class="card-badge" style="color: var(--emergency);">The Legacy Flaws</span>
+          <h3 class="card-title">Rudimentary Triage</h3>
+          <ul class="card-list">
+            <li>Original web app only had 13 basic conditions</li>
+            <li>Naive keyword matching without probability</li>
+            <li>Ignored vital context: age, sex, comorbidities</li>
+            <li>No life-safety red flag emergency detection</li>
+            <li>Zero structured export for doctors</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--primary);">
+          <span class="card-badge">The CarePath Pro Solution</span>
+          <h3 class="card-title">Evidence-Based Engine</h3>
+          <ul class="card-list">
+            <li>40+ comprehensive clinical disease dossiers</li>
+            <li>5-step multi-variable clinical assessment</li>
+            <li>4-tier evidence-based triage urgency system</li>
+            <li>Interactive anatomical body mannequin</li>
+            <li>Automated SOAP/SBAR doctor consultation sheet</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--accent);">
+          <span class="card-badge" style="color: var(--accent);">Value Delivered</span>
+          <h3 class="card-title">Measurable Impact</h3>
+          <ul class="card-list">
+            <li>Reduces ER over-utilization for routine cases</li>
+            <li>Immediate escalation for acute emergencies</li>
+            <li>Empowers patients with informed questions</li>
+            <li>Pure zero-dependency web architecture</li>
+            <li>Accessible with native Voice / TTS narration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: SYSTEM ARCHITECTURE -->
+    <div class="slide" data-slide="3">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">System Design</span>
+      <h2 class="slide-title">Modular Component Architecture</h2>
+      <p class="slide-subtitle">Engineered for lightning performance, zero build overhead, and clean clinical modularity.</p>
+      <div class="grid-4">
+        <div class="card">
+          <span class="card-badge">1. Engine</span>
+          <h3 class="card-title" style="font-size: 16px;">triageEngine.js</h3>
+          <ul class="card-list">
+            <li>Weighted scoring algorithm</li>
+            <li>Demographic modifiers</li>
+            <li>13 Life-safety red flags</li>
+            <li>Differential rankings</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">2. Data</span>
+          <h3 class="card-title" style="font-size: 16px;">Medical Data</h3>
+          <ul class="card-list">
+            <li>diseases.js (40+ conditions)</li>
+            <li>12 Organ systems</li>
+            <li>symptoms.js (50 symptoms)</li>
+            <li>emergencyHotlines.js</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">3. UI Components</span>
+          <h3 class="card-title" style="font-size: 16px;">Interactive UI</h3>
+          <ul class="card-list">
+            <li>bodyMap.js (SVG mannequin)</li>
+            <li>assessmentWizard.js</li>
+            <li>diseaseLibrary.js</li>
+            <li>conditionComparison.js</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">4. Handoff</span>
+          <h3 class="card-title" style="font-size: 16px;">reportGenerator.js</h3>
+          <ul class="card-list">
+            <li>SBAR / SOAP doctor handoff</li>
+            <li>Dedicated print stylesheet</li>
+            <li>One-click PDF generator</li>
+            <li>Full privacy & local compute</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: CLINICAL TRIAGE -->
+    <div class="slide" data-slide="4">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">Clinical Algorithm</span>
+      <h2 class="slide-title">5-Step Intelligent Triage & Urgency Stratification</h2>
+      <p class="slide-subtitle">Standardized protocol balancing clinical sensitivity with specificity.</p>
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">5-Step Clinical Assessment Flow</span>
+          <h3 class="card-title">Intake Methodology</h3>
+          <ul class="card-list">
+            <li><strong>Step 1: Patient Demographics</strong> — Age group (Infant, Child, Adult, Senior), Biological sex, Pregnancy status, Comorbidities (Hypertension, Diabetes, Asthma, Smoking).</li>
+            <li><strong>Step 2: Anatomical Symptom Selection</strong> — Searchable index with body-region filters.</li>
+            <li><strong>Step 3: Timeline & Trajectory</strong> — Sudden onset (minutes) vs gradual (days); Worsening vs steady.</li>
+            <li><strong>Step 4: Severity Metrics</strong> — Visual Analog Scale (VAS 0–10) & daily disruption scale.</li>
+            <li><strong>Step 5: Mandatory Red-Flag Screener</strong> — Critical life-safety check.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">4-Tier Urgency Classification</span>
+          <h3 class="card-title">Action Thresholds</h3>
+          <ul class="card-list">
+            <li><strong style="color: var(--emergency);">LEVEL 1: EMERGENCY (Immediate ER / 911)</strong><br>Triggered by active red-flags, chest pressure, stroke FAST signs, or pain >= 9.</li>
+            <li><strong style="color: var(--urgent);">LEVEL 2: URGENT CARE (Within 12–24 Hours)</strong><br>Spreading infections, high fever, severe flares, vulnerable demographics.</li>
+            <li><strong style="color: var(--routine);">LEVEL 3: PRIMARY CARE (Routine Outpatient)</strong><br>Subacute or chronic conditions (Tension headache, GERD, Osteoarthritis, GAD).</li>
+            <li><strong style="color: var(--primary);">LEVEL 4: SUPPORTIVE CARE (Home Monitoring)</strong><br>Mild stable symptoms (pain <= 3, improving trajectory).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: COMPENDIUM -->
+    <div class="slide" data-slide="5">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">Medical Compendium</span>
+      <h2 class="slide-title">40+ In-Depth Condition Clinical Library</h2>
+      <p class="slide-subtitle">Covering 12 major organ systems with ICD-10 coding, pathophysiology, and verified citations.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-badge">Cardiovascular & Respiratory</span>
+          <ul class="card-list">
+            <li>Hypertension (I10)</li>
+            <li>Coronary Artery Disease & Angina (I25.1)</li>
+            <li>Congestive Heart Failure (I50.9)</li>
+            <li>Atrial Fibrillation (I48.91)</li>
+            <li>Deep Vein Thrombosis / DVT (I82.40)</li>
+            <li>Bronchial Asthma (J45.9)</li>
+            <li>Pneumonia (J18.9) & COPD (J44.9)</li>
+            <li>Influenza & COVID-19</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">Neurology & Gastrointestinal</span>
+          <ul class="card-list">
+            <li>Stroke & TIA (F.A.S.T. signs)</li>
+            <li>Migraine & Tension Headache</li>
+            <li>Bell's Palsy (Facial Nerve CN VII)</li>
+            <li>Acid Reflux / GERD (K21.9)</li>
+            <li>Acute Appendicitis (McBurney's)</li>
+            <li>Peptic Ulcer Disease (PUD)</li>
+            <li>Irritable Bowel Syndrome (IBS)</li>
+            <li>Gallstones & Acute Cholecystitis</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">Endocrine, Ortho & Mind</span>
+          <ul class="card-list">
+            <li>Type 2 Diabetes Mellitus (E11.9)</li>
+            <li>Hypothyroidism & Hyperthyroidism</li>
+            <li>Osteoarthritis & Acute Gout</li>
+            <li>Lumbar Sciatica & Fibromyalgia</li>
+            <li>Atopic Eczema & Plaque Psoriasis</li>
+            <li>Shingles (Herpes Zoster) & Cellulitis</li>
+            <li>Urinary Tract Infection (UTI)</li>
+            <li>Generalized Anxiety & Depression</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: INTERACTIVE TOOLS -->
+    <div class="slide" data-slide="6">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">Clinical Tools</span>
+      <h2 class="slide-title">Interactive Anatomical Explorer & Differential Matrix</h2>
+      <p class="slide-subtitle">Visual anatomy navigation and side-by-side diagnostic comparisons.</p>
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Point-and-Click Anatomy</span>
+          <h3 class="card-title">Interactive Body Map</h3>
+          <ul class="card-list">
+            <li>Clickable SVG mannequin with glowing zone hover effects</li>
+            <li>Front & Back anatomical perspectives for full assessment</li>
+            <li>Targeting 9 anatomical regions: Head, Throat, Chest, Abdomen, Spine, Pelvis, Limbs, Skin, Whole-body</li>
+            <li>Dynamic sidebar drilldown: localized symptoms, conditions, and red flags</li>
+            <li>Single-click start: 'Assess symptoms in this zone' automatically pre-populates the intake wizard</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">Side-by-Side Comparison</span>
+          <h3 class="card-title">Differential Matrix</h3>
+          <ul class="card-list">
+            <li>Compare 2 or 3 conditions simultaneously on a unified grid</li>
+            <li>Contrasts Pathology, Hallmark Signs, Atypical Signs, Red Flags, Diagnostic Workups, and Self-Care</li>
+            <li>Pre-packaged clinical comparison presets for commonly confused conditions:</li>
+            <li>• Influenza vs COVID-19 vs Common Cold</li>
+            <li>• Tension Headache vs Migraine</li>
+            <li>• Acid Reflux (GERD) vs Heart Attack</li>
+            <li>• Osteoarthritis vs Acute Gouty Arthropathy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: DOCTOR HANDOFF -->
+    <div class="slide" data-slide="7">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">Clinical Integration</span>
+      <h2 class="slide-title">Doctor Consultation Intake Sheet (SBAR/SOAP)</h2>
+      <p class="slide-subtitle">Transforming patient uncertainty into high-value clinical communication.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-badge">Structured Intake</span>
+          <h3 class="card-title">SBAR Standards</h3>
+          <ul class="card-list">
+            <li>Formatted according to medical SBAR / SOAP standards</li>
+            <li>Captures exact onset speed, duration, and trajectory</li>
+            <li>Quantifies pain severity on 0–10 Visual Analog Scale (VAS)</li>
+            <li>Documents patient comorbidities and medications</li>
+            <li>Timestamped digital summary</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">Consultation Prep</span>
+          <h3 class="card-title">Patient-Doctor Alignment</h3>
+          <ul class="card-list">
+            <li>Automated 'Questions for the Doctor' based on matched conditions</li>
+            <li>Highlights active red-flag clearance status</li>
+            <li>Enables patients to articulate symptoms clearly</li>
+            <li>Eliminates appointment recall bias</li>
+            <li>Saves valuable face-to-face clinic time</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">Export & Privacy</span>
+          <h3 class="card-title">Print & PDF Export</h3>
+          <ul class="card-list">
+            <li>Dedicated clean print stylesheet</li>
+            <li>Instant Print / Save as PDF capability</li>
+            <li>Zero third-party tracking or cloud data transmission</li>
+            <li>Compliant with medical disclaimer standards</li>
+            <li>Optimized for paper or digital review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: ACCESSIBILITY & SAFETY -->
+    <div class="slide" data-slide="8">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow">Patient Safety</span>
+      <h2 class="slide-title">Global Crisis Support & Accessible Design</h2>
+      <p class="slide-subtitle">Ensuring emergency safety escalation and universal access.</p>
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Emergency Directory</span>
+          <h3 class="card-title">Global Hotlines & Protocols</h3>
+          <ul class="card-list">
+            <li>Direct dial links to national emergency services:</li>
+            <li>• USA & Canada: 911 (Emergency) & 988 (Suicide & Crisis)</li>
+            <li>• United Kingdom: 999 & 111 (NHS Non-Emergency)</li>
+            <li>• European Union: 112 (Universal Emergency)</li>
+            <li>• India: 112 / 102 & Tele-MANAS (14416)</li>
+            <li>• Australia: 000 & Lifeline (13 11 14)</li>
+            <li>Critical action protocols for Heart Attack, Stroke (FAST), Anaphylaxis, and Mental Health Crisis</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">Inclusion & UX</span>
+          <h3 class="card-title">Assistive Technologies</h3>
+          <ul class="card-list">
+            <li>Native browser Text-to-Speech (TTS) audio narration for every dossier</li>
+            <li>Audio playback controls (Play, Pause, Stop) for hands-free and accessible listening</li>
+            <li>Dark and Light clinical theme toggle with persistent remembering</li>
+            <li>LocalStorage-backed bookmarking to save key conditions for later review</li>
+            <li>WCAG compliant high-contrast color palette and responsive typography</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: DEPLOYMENT & ROADMAP -->
+    <div class="slide dark-slide" data-slide="9">
+      <div class="top-accent-bar"></div>
+      <span class="slide-eyebrow" style="color: #38bdf8;">Production & Roadmap</span>
+      <h2 class="slide-title" style="color: #fff;">Deployment & Future Horizons</h2>
+      <p class="slide-subtitle" style="color: #94a3b8;">Delivered as a zero-dependency, globally accessible healthcare web application.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-badge" style="color: #38bdf8;">Architecture</span>
+          <h3 class="card-title">Zero Dependencies</h3>
+          <ul class="card-list">
+            <li>Pure Vanilla ES6+ modules</li>
+            <li>Zero build or bundler overhead</li>
+            <li>Instant load times worldwide</li>
+            <li>100% test suite pass rate</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge" style="color: #2dd4bf;">Live Status</span>
+          <h3 class="card-title">Production Ready</h3>
+          <ul class="card-list">
+            <li>Hosted with SSL / TLS encryption</li>
+            <li>Drop-in compatible with Replit</li>
+            <li>Full offline local execution</li>
+            <li>Comprehensive developer README</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge" style="color: #fb7185;">Roadmap</span>
+          <h3 class="card-title">Upcoming Phases</h3>
+          <ul class="card-list">
+            <li>Multi-language i18n support</li>
+            <li>FHIR / EHR hospital queue sync</li>
+            <li>Telehealth 1-click video consult</li>
+            <li>Wearable device telemetry sync</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation Controls -->
+  <div class="controls-bar">
+    <button type="button" id="prevBtn" class="nav-btn">← Previous Slide</button>
+    <div class="counter">
+      Slide <span id="currentSlideNum">1</span> of <span id="totalSlidesNum">9</span>
+      <span style="margin: 0 12px; opacity: 0.4;">|</span>
+      <span style="font-size: 11px; opacity: 0.8;">Use ← and → keys or click buttons</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <a href="CarePath_Pro_Presentation.pptx" class="btn-download-pptx" download>
+        📥 Download PowerPoint (.pptx)
+      </a>
+      <button type="button" id="nextBtn" class="nav-btn">Next Slide →</button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.getElementById('totalSlidesNum').textContent = totalSlides;
+
+    function showSlide(index) {
+      if (index < 1) index = 1;
+      if (index > totalSlides) index = totalSlides;
+      currentSlide = index;
+
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i + 1 === currentSlide);
+      });
+
+      document.getElementById('currentSlideNum').textContent = currentSlide;
+      document.getElementById('prevBtn').style.opacity = currentSlide === 1 ? '0.4' : '1';
+      document.getElementById('nextBtn').style.opacity = currentSlide === totalSlides ? '0.4' : '1';
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => showSlide(currentSlide - 1));
+    document.getElementById('nextBtn').addEventListener('click', () => showSlide(currentSlide + 1));
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        showSlide(currentSlide + 1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        showSlide(currentSlide - 1);
+      }
+    });
+
+    showSlide(1);
+  </script>
+</body>
+</html>

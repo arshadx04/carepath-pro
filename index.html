@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>CarePath Pro · Clinical Symptom Assessment Engine & Medical Knowledge Library</title>
+  <meta name="description" content="CarePath Pro is an evidence-based clinical symptom assessment engine, interactive anatomical body explorer, and comprehensive medical knowledge library." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f766e'><path d='M19 14V10H14V5H10V10H5V14H10V19H14V14H19Z'/></svg>">
+</head>
+<body>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand-container" data-nav="home">
+        <div class="brand-logo-badge">⚕</div>
+        <div class="brand-text-block">
+          <span class="brand-name">
+            CarePath <span class="brand-pro-tag">PRO</span>
+          </span>
+          <span class="brand-tagline">Clinical Triage & Medical Library</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-links-desktop" aria-label="Main Navigation">
+        <a href="#" class="nav-link active" data-nav="home">Home & Body Explorer</a>
+        <a href="#" class="nav-link" data-nav="assessment">Clinical Assessment</a>
+        <a href="#" class="nav-link" data-nav="library">Condition Library</a>
+        <a href="#" class="nav-link" data-nav="compare">Differential Matrix</a>
+        <a href="#" class="nav-link" data-nav="emergency">Emergency Hotlines</a>
+        <a href="#" class="nav-link nav-btn-highlight" data-nav="assessment">Start Check-in</a>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <button type="button" id="btnThemeToggle" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          🌙
+        </button>
+        <button type="button" id="btnToggleMobileNav" class="btn-icon mobile-toggle-btn" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <a href="#" class="nav-link" data-nav="home">🏠 Home & Body Explorer</a>
+      <a href="#" class="nav-link" data-nav="assessment">🩺 Clinical Assessment Wizard</a>
+      <a href="#" class="nav-link" data-nav="library">📚 Medical Condition Library</a>
+      <a href="#" class="nav-link" data-nav="compare">⚖️ Differential Comparison Matrix</a>
+      <a href="#" class="nav-link" data-nav="emergency">🚨 Emergency Directory & Protocols</a>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    
+    <!-- VIEW 1: HOME & BODY EXPLORER -->
+    <section id="view-home" class="page-view">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-left">
+          <div class="hero-badge-row">
+            <span>🛡️ Clinically Grounded Medical Triage</span>
+            <span>·</span>
+            <span>40+ Conditions Indexed</span>
+          </div>
+
+          <h1 class="hero-title">
+            Make sense of your symptoms with <span class="highlight">clinical precision</span>.
+          </h1>
+
+          <p class="hero-desc">
+            CarePath Pro is an advanced symptom assessment engine and evidence-based pathology compendium. Identify potential patterns, prepare tailored questions for your physician, and receive instant triage guidance.
+          </p>
+
+          <div class="hero-cta-group">
+            <button type="button" id="btnHeroStartAssessment" class="btn-cta-primary">
+              <span>🩺 Start Symptom Check-in</span>
+            </button>
+            <button type="button" id="btnHeroExploreLibrary" class="btn-cta-secondary">
+              <span>📚 Browse 40+ Conditions</span>
+            </button>
+            <button type="button" id="btnHeroCompare" class="btn-cta-secondary">
+              <span>⚖️ Differential Matrix</span>
+            </button>
+          </div>
+
+          <div class="hero-trust-indicators">
+            <div class="trust-item">
+              <span class="trust-icon">✓</span>
+              <span>ICD-10 Referenced</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">✓</span>
+              <span>WHO & CDC Grounded</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-icon">✓</span>
+              <span>Printable Doctor Summary</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Right: Quick Triage Teaser -->
+        <div class="hero-triage-card">
+          <div class="hero-triage-header">
+            <span class="section-eyebrow">INTELLIGENT TRIAGE</span>
+            <h3>4-Tier Clinical Urgency Classification</h3>
+            <p>CarePath Pro triages answers against emergency red flags, pain scores, and acute progression vectors.</p>
+          </div>
+
+          <div class="triage-tier-preview">
+            <div class="tier-preview-row tier-emergency">
+              <span>🚨 Level 1: Emergency</span>
+              <span>Immediate ER / 911</span>
+            </div>
+            <div class="tier-preview-row tier-urgent">
+              <span>⚠️ Level 2: Urgent Care</span>
+              <span>Same-Day / 24h Care</span>
+            </div>
+            <div class="tier-preview-row tier-routine">
+              <span>📋 Level 3: Primary Care</span>
+              <span>Routine Consultation</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn-action-primary" style="width: 100%; justify-content: center;" data-nav="assessment">
+            Check Your Symptoms Now →
+          </button>
+        </div>
+      </div>
+
+      <!-- Anatomical Body Explorer Section -->
+      <div class="section-wrapper">
+        <div class="section-head-center">
+          <span class="section-eyebrow">INTERACTIVE ANATOMY</span>
+          <h2 class="section-headline">Explore Symptoms by Anatomical Region</h2>
+          <p class="section-subtext">Click on any anatomical zone on the interactive mannequin to discover localized symptoms, hallmark conditions, and rapid diagnostic insights.</p>
+        </div>
+
+        <div id="bodyMapContainer"></div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: CLINICAL ASSESSMENT WIZARD -->
+    <section id="view-assessment" class="page-view" style="display: none;">
+      <div id="wizardContainer"></div>
+    </section>
+
+    <!-- VIEW 3: COMPREHENSIVE CONDITION LIBRARY -->
+    <section id="view-library" class="page-view" style="display: none;">
+      <div id="libraryContainer"></div>
+    </section>
+
+    <!-- VIEW 4: DIFFERENTIAL COMPARISON MATRIX -->
+    <section id="view-compare" class="page-view" style="display: none;">
+      <div id="compareContainer"></div>
+    </section>
+
+    <!-- VIEW 5: EMERGENCY HOTLINE DIRECTORY -->
+    <section id="view-emergency" class="page-view" style="display: none;">
+      <div id="emergencyDirectoryContainer"></div>
+    </section>
+
+  </main>
+
+  <!-- Dossier Modal Container -->
+  <div id="modalContainer"></div>
+
+  <!-- Professional Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>CarePath Pro</h4>
+          <p>An evidence-based clinical assessment engine and comprehensive pathology compendium built for patients, clinicians, and health educators.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Assessment & Tools</h5>
+          <ul>
+            <li><a href="#" data-nav="assessment">Symptom Checker</a></li>
+            <li><a href="#" data-nav="home">Interactive Body Map</a></li>
+            <li><a href="#" data-nav="compare">Differential Matrix</a></li>
+            <li><a href="#" data-nav="emergency">Emergency Hotlines</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Organ Systems</h5>
+          <ul>
+            <li><a href="#" data-nav="library">Cardiovascular</a></li>
+            <li><a href="#" data-nav="library">Respiratory</a></li>
+            <li><a href="#" data-nav="library">Gastrointestinal</a></li>
+            <li><a href="#" data-nav="library">Neurological & Brain</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Safety & Crisis</h5>
+          <ul>
+            <li><a href="tel:911">Emergency: 911 / 112</a></li>
+            <li><a href="tel:988">Suicide & Crisis: 988</a></li>
+            <li><a href="#" data-nav="emergency">Action Protocols</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer-box">
+        <strong>MEDICAL DISCLAIMER & CLINICAL NOTICE:</strong> CarePath Pro is designed for educational triage and healthcare visit preparation only. It does not provide medical diagnosis, treatment plans, or prescriptions. If you are experiencing crushing chest pain, sudden numbness or weakness on one side of your face or body, severe shortness of breath, or thoughts of self-harm, please contact emergency medical services (911, 112, or local dispatch) immediately.
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 CarePath Pro. Built with rigorous clinical evidence standards.</span>
+        <span>Version 2.0 Pro Edition · ICD-10 Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Bootstrap Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

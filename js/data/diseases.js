@@ -1,0 +1,2400 @@
+/**
+ * CarePath Pro - Comprehensive Clinical Disease & Condition Library
+ * Total conditions: 40
+ * Covers 12 Organ Systems with Evidence-Based Medical Knowledge
+ */
+
+export const diseaseDatabase = [
+  {
+    "id": "hypertension",
+    "name": "Essential Hypertension",
+    "medicalTerm": "High Blood Pressure",
+    "icd10": "I10",
+    "category": "Cardiovascular",
+    "organSystem": "Circulatory & Heart",
+    "bodyPart": "chest",
+    "urgency": "routine",
+    "urgencyText": "Primary Care Consultation",
+    "readTime": "4 min read",
+    "summary": "Consistently elevated arterial blood pressure often called the 'silent killer' because it usually presents without noticeable symptoms until complications arise.",
+    "pathology": "Increased peripheral vascular resistance causes chronic strain on the heart, cerebral arteries, and renal vasculature over time.",
+    "hallmarkSymptoms": [
+      "Often asymptomatic in early stages",
+      "Occasional morning headaches (occipital)",
+      "Mild dizziness or lightheadedness",
+      "Flushed face or warm sensations",
+      "Visual disturbances or blurriness (severe spikes)"
+    ],
+    "atypicalSigns": [
+      "Epistaxis (nosebleeds)",
+      "Exertional dyspnea (shortness of breath)",
+      "Palpitations",
+      "Tinnitus (pulsing ringing in ears)"
+    ],
+    "riskFactors": [
+      "High sodium intake",
+      "Physical inactivity",
+      "Obesity & metabolic syndrome",
+      "Family history & genetics",
+      "Chronic psychological stress",
+      "Age over 45 (men) or 55 (women)"
+    ],
+    "diagnosticTests": [
+      "Ambulatory 24-hour blood pressure monitoring",
+      "Comprehensive metabolic panel (kidney function)",
+      "Lipid panel",
+      "Urinalysis for microalbuminuria",
+      "12-lead Electrocardiogram (ECG)"
+    ],
+    "selfCare": [
+      "Adopt the DASH (Dietary Approaches to Stop Hypertension) diet",
+      "Reduce sodium intake below 2,300 mg/day",
+      "Engage in 150 min/week moderate aerobic exercise",
+      "Limit alcohol intake and quit smoking",
+      "Maintain home blood pressure log with a validated cuff"
+    ],
+    "redFlags": [
+      "Systolic BP > 180 or diastolic > 120 mmHg (Hypertensive crisis)",
+      "Sudden crushing chest pain or radiating arm pain",
+      "Sudden numbness, facial droop, or slurred speech",
+      "Shortness of breath with pulmonary congestion"
+    ],
+    "askDoctor": [
+      "What is my target blood pressure based on my age and health?",
+      "Should I begin at-home daily blood pressure logging?",
+      "Are my kidneys, cholesterol, and heart showing any signs of strain?"
+    ],
+    "source": {
+      "organization": "American Heart Association / CDC",
+      "title": "Understanding High Blood Pressure",
+      "url": "https://www.cdc.gov/bloodpressure/about.htm"
+    }
+  },
+  {
+    "id": "coronary-artery-disease",
+    "name": "Coronary Artery Disease & Angina",
+    "medicalTerm": "Ischemic Heart Disease",
+    "icd10": "I25.1",
+    "category": "Cardiovascular",
+    "organSystem": "Circulatory & Heart",
+    "bodyPart": "chest",
+    "urgency": "emergency",
+    "urgencyText": "Emergency Immediate Evaluation",
+    "readTime": "5 min read",
+    "summary": "Narrowing or blockage of coronary arteries by atherosclerotic plaque, leading to reduced oxygen supply to heart muscle.",
+    "pathology": "Arterial endothelial injury leads to lipid accumulation, fibrous cap formation, and myocardial ischemia during exertional demand.",
+    "hallmarkSymptoms": [
+      "Substernal chest pressure, tightness, squeezing, or aching",
+      "Pain radiating to left shoulder, arm, jaw, neck, or back",
+      "Shortness of breath during mild exertion",
+      "Cold sweat and diaphoresis",
+      "Unexplained extreme fatigue during physical tasks"
+    ],
+    "atypicalSigns": [
+      "Nausea and epigastric discomfort mimicking acid indigestion (especially common in women and diabetics)",
+      "Sudden overwhelming lightheadedness",
+      "Unexplained anxiety or impending sense of doom"
+    ],
+    "riskFactors": [
+      "Tobacco smoking",
+      "High LDL cholesterol & low HDL",
+      "Hypertension",
+      "Diabetes mellitus",
+      "Sedentary lifestyle & family history of premature CAD"
+    ],
+    "diagnosticTests": [
+      "Troponin blood test (cardiac biomarkers)",
+      "12-lead ECG (ST elevation/depression)",
+      "Exercise or pharmacological cardiac stress test",
+      "Coronary CT angiography or cardiac catheterization",
+      "Echocardiogram"
+    ],
+    "selfCare": [
+      "If diagnosed with stable angina, rest immediately and take prescribed sublingual nitroglycerin",
+      "Never ignore new or accelerating chest pressure",
+      "Adopt Mediterranean heart-healthy nutrition",
+      "Supervised cardiac rehabilitation"
+    ],
+    "redFlags": [
+      "Chest pain lasting > 5 minutes not relieved by rest or nitroglycerin",
+      "Pain accompanied by diaphoresis, nausea, or syncope",
+      "Cyanosis (bluish lips or fingernails)",
+      "Sudden gasping for breath"
+    ],
+    "askDoctor": [
+      "Is my chest discomfort cardiac or non-cardiac in origin?",
+      "Do I need a cardiac stress test or angiogram?",
+      "What is my emergency action protocol if symptoms suddenly worsen?"
+    ],
+    "source": {
+      "organization": "World Health Organization / MedlinePlus",
+      "title": "Coronary Artery Disease",
+      "url": "https://medlineplus.gov/coronaryarterydisease.html"
+    }
+  },
+  {
+    "id": "heart-failure",
+    "name": "Congestive Heart Failure",
+    "medicalTerm": "Cardiomyopathy / Heart Failure",
+    "icd10": "I50.9",
+    "category": "Cardiovascular",
+    "organSystem": "Circulatory & Heart",
+    "bodyPart": "chest",
+    "urgency": "urgent",
+    "urgencyText": "Urgent Medical Care",
+    "readTime": "5 min read",
+    "summary": "A progressive clinical syndrome where the heart is unable to pump sufficient blood to meet the metabolic needs of peripheral tissues.",
+    "pathology": "Systolic or diastolic ventricular dysfunction leads to neurohormonal activation, fluid retention, and systemic/pulmonary congestion.",
+    "hallmarkSymptoms": [
+      "Progressive shortness of breath on exertion or lying flat (orthopnea)",
+      "Bilateral swelling in feet, ankles, and lower legs (peripheral edema)",
+      "Waking up at night gasping for breath (paroxysmal nocturnal dyspnea)",
+      "Rapid unexplained weight gain (2-3 lbs overnight from fluid)",
+      "Persistent dry hacking cough with white or pink frothy sputum"
+    ],
+    "atypicalSigns": [
+      "Abdominal bloating and early satiety (liver/gut congestion)",
+      "Confusion or memory impairment from reduced cerebral perfusion",
+      "Extreme muscle weakness"
+    ],
+    "riskFactors": [
+      "Prior myocardial infarction",
+      "Chronic uncontrolled hypertension",
+      "Valvular heart disease",
+      "Diabetes and metabolic syndrome",
+      "Sleep apnea"
+    ],
+    "diagnosticTests": [
+      "B-type Natriuretic Peptide (BNP or NT-proBNP)",
+      "Transthoracic Echocardiogram (Ejection Fraction evaluation)",
+      "Chest X-ray (cardiomegaly, pulmonary vascular congestion)",
+      "Renal & electrolyte panels"
+    ],
+    "selfCare": [
+      "Daily morning weight monitoring after urinating before breakfast",
+      "Strict sodium restriction (usually < 2,000 mg/day)",
+      "Fluid intake tracking as instructed by cardiologist",
+      "Taking prescribed diuretics, ACEi/ARNI, beta-blockers, SGLT2 inhibitors consistently"
+    ],
+    "redFlags": [
+      "Severe sudden breathlessness even while resting",
+      "Pink frothy sputum coughing up",
+      "Weight gain > 3 lbs in 24 hours or 5 lbs in a week",
+      "Fainting or severe confusion"
+    ],
+    "askDoctor": [
+      "What is my latest ejection fraction percentage?",
+      "What daily fluid and sodium limits apply to my stage?",
+      "When should I call the clinic vs go to the nearest emergency department?"
+    ],
+    "source": {
+      "organization": "American Heart Association",
+      "title": "What is Heart Failure?",
+      "url": "https://www.heart.org/en/health-topics/heart-failure"
+    }
+  },
+  {
+    "id": "arrhythmia-atrial-fib",
+    "name": "Atrial Fibrillation & Arrhythmias",
+    "medicalTerm": "Cardiac Dysrhythmia",
+    "icd10": "I48.91",
+    "category": "Cardiovascular",
+    "organSystem": "Circulatory & Heart",
+    "bodyPart": "chest",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Medical Evaluation",
+    "readTime": "4 min read",
+    "summary": "An irregular and often very rapid cardiac rhythm that can lead to blood clots, stroke, and heart failure.",
+    "pathology": "Chaotic electrical signals in the atria trigger rapid, disorganized contractions, preventing effective ventricular filling and blood stagnation in the left atrial appendage.",
+    "hallmarkSymptoms": [
+      "Palpitations (fluttering, flip-flopping, or racing heart sensation)",
+      "Irregular pulse with erratic beats",
+      "Fatigue and generalized weakness",
+      "Dizziness, lightheadedness, or presyncope",
+      "Shortness of breath during mild tasks"
+    ],
+    "atypicalSigns": [
+      "Chest flutter triggered by caffeine, alcohol, or dehydration",
+      "Reduced exercise tolerance without obvious chest pain",
+      "Subtle cognitive fog"
+    ],
+    "riskFactors": [
+      "Age > 65",
+      "Hypertension",
+      "Obstructive sleep apnea",
+      "Binge alcohol consumption ('holiday heart')",
+      "Thyroid disorders (hyperthyroidism)",
+      "Heart valve disease"
+    ],
+    "diagnosticTests": [
+      "Standard 12-lead ECG",
+      "Holter monitor (24-48 hour recording) or event patch",
+      "Echocardiogram to inspect atrial size and valves",
+      "Serum thyroid stimulating hormone (TSH)",
+      "Serum electrolytes (potassium, magnesium)"
+    ],
+    "selfCare": [
+      "Avoid caffeine, energy drinks, and alcohol triggers",
+      "Manage chronic stress through slow paced diaphragmatic breathing",
+      "Never stop anticoagulant or rate-control medications abruptly",
+      "Learn to self-check radial pulse rhythm"
+    ],
+    "redFlags": [
+      "Irregular palpitations accompanied by crushing chest pressure",
+      "Syncope (full loss of consciousness)",
+      "Signs of acute stroke: face drooping, arm weakness, speech difficulty",
+      "Heart rate consistently over 140 bpm at rest with severe dizziness"
+    ],
+    "askDoctor": [
+      "What is my stroke risk score (CHA2DS2-VASc)?",
+      "Do I need anticoagulant therapy to prevent thromboembolism?",
+      "Am I a candidate for cardioversion or catheter ablation?"
+    ],
+    "source": {
+      "organization": "CDC / NIH",
+      "title": "Atrial Fibrillation Information",
+      "url": "https://www.cdc.gov/heartdisease/atrial_fibrillation.htm"
+    }
+  },
+  {
+    "id": "deep-vein-thrombosis",
+    "name": "Deep Vein Thrombosis (DVT)",
+    "medicalTerm": "Venous Thromboembolism",
+    "icd10": "I82.40",
+    "category": "Cardiovascular",
+    "organSystem": "Circulatory & Heart",
+    "bodyPart": "legs",
+    "urgency": "emergency",
+    "urgencyText": "Emergency Immediate Evaluation",
+    "readTime": "4 min read",
+    "summary": "A blood clot that forms in a deep vein, usually in the lower extremity or pelvis, carrying a lethal risk of pulmonary embolism.",
+    "pathology": "Virchow's triad (venous stasis, endothelial injury, hypercoagulability) triggers thrombus formation that obstructs venous outflow and can detach.",
+    "hallmarkSymptoms": [
+      "Unilateral swelling in one calf, thigh, or entire leg",
+      "Deep aching, cramping, or charley horse pain in the calf",
+      "Skin over the calf feels noticeably warmer to touch",
+      "Erythema (redness) or bluish discoloration of the affected leg",
+      "Pain that worsens when dorsiflexing the foot (pulling toes up)"
+    ],
+    "atypicalSigns": [
+      "Subtle heaviness in one leg without visible swelling",
+      "Superficial veins appearing more prominent or distended"
+    ],
+    "riskFactors": [
+      "Recent long flight or road trip (> 4 hours immobile)",
+      "Recent surgery or orthopedic cast/immobilization",
+      "Active malignancy",
+      "Oral contraceptive pill or hormone replacement therapy",
+      "Genetic thrombophilia (Factor V Leiden, Antithrombin deficiency)"
+    ],
+    "diagnosticTests": [
+      "Venous duplex ultrasound of the lower extremities",
+      "D-dimer blood test (high sensitivity rule-out)",
+      "CT pulmonary angiogram if pulmonary embolism is suspected",
+      "Coagulation profile"
+    ],
+    "selfCare": [
+      "Do NOT massage the swollen or painful leg (risk of dislodging clot)",
+      "Avoid prolonged immobility; walk frequently or flex ankles during flights",
+      "Wear graduated compression stockings if previously prescribed",
+      "Seek emergency medical assessment immediately"
+    ],
+    "redFlags": [
+      "Sudden shortness of breath or rapid breathing",
+      "Sharp chest pain that stabs when inhaling deeply",
+      "Coughing up pink or blood-streaked sputum (Hemoptysis)",
+      "Tachycardia, lightheadedness, or collapse"
+    ],
+    "askDoctor": [
+      "Should a lower extremity compression duplex ultrasound be performed today?",
+      "If positive, what is the duration of oral anticoagulation therapy?",
+      "Do I need testing for an underlying hypercoagulable state?"
+    ],
+    "source": {
+      "organization": "CDC",
+      "title": "What is Venous Thromboembolism?",
+      "url": "https://www.cdc.gov/ncbddd/dvt/facts.html"
+    }
+  },
+  {
+    "id": "asthma",
+    "name": "Bronchial Asthma",
+    "medicalTerm": "Reactive Airway Disease",
+    "icd10": "J45.9",
+    "category": "Respiratory",
+    "organSystem": "Lungs & Respiratory",
+    "bodyPart": "chest",
+    "urgency": "urgent",
+    "urgencyText": "Urgent if Worsening",
+    "readTime": "4 min read",
+    "summary": "A chronic inflammatory disorder of the airways characterized by hyperresponsiveness, reversible airflow obstruction, and mucus hypersecretion.",
+    "pathology": "Immune-mediated bronchial inflammation induces smooth muscle bronchospasm, mucosal edema, and airway remodeling over time.",
+    "hallmarkSymptoms": [
+      "High-pitched expiratory wheezing",
+      "Episodes of breathlessness and air hunger",
+      "Chest tightness or feeling like an elastic band around ribs",
+      "Chronic dry or nocturnal cough that disturbs sleep",
+      "Symptoms triggered by cold air, pollen, dust, exercise, or viral colds"
+    ],
+    "atypicalSigns": [
+      "Isolated chronic dry cough without audible wheeze (cough-variant asthma)",
+      "Excessive clearing of throat and chest tightness after intense exercise",
+      "Fatigue from poor nocturnal ventilation"
+    ],
+    "riskFactors": [
+      "Family history of atopy (asthma, eczema, allergic rhinitis)",
+      "Childhood viral respiratory syncytial virus (RSV) infections",
+      "Exposure to tobacco smoke, smog, and occupational dusts",
+      "Obesity"
+    ],
+    "diagnosticTests": [
+      "Spirometry with pre- and post-bronchodilator reversibility testing",
+      "Peak expiratory flow rate (PEFR) diary",
+      "Methacholine bronchoprovocation challenge",
+      "Fractional exhaled nitric oxide (FeNO)"
+    ],
+    "selfCare": [
+      "Always carry a quick-relief rescue inhaler (Albuterol/Salbutamol)",
+      "Adhere daily to prescribed maintenance inhaled corticosteroids (ICS)",
+      "Use a spacer chamber for metered-dose inhalers",
+      "Track peak flow readings and avoid known allergen triggers"
+    ],
+    "redFlags": [
+      "Rescue inhaler gives no relief or wears off in under 2 hours",
+      "Struggling to speak in full sentences without gasping",
+      "Intercostal retractions (ribs or neck pulling in to breathe)",
+      "Bluish tinge to lips or fingernails (Cyanosis)"
+    ],
+    "askDoctor": [
+      "What is my personalized written Asthma Action Plan (Green/Yellow/Red zones)?",
+      "Is my inhaler technique correct with a spacer?",
+      "Would daily inhaled controller prevent my daytime or night flares?"
+    ],
+    "source": {
+      "organization": "National Heart, Lung, and Blood Institute / NIH",
+      "title": "Asthma Guide",
+      "url": "https://www.nhlbi.nih.gov/health/asthma"
+    }
+  },
+  {
+    "id": "pneumonia",
+    "name": "Community-Acquired Pneumonia",
+    "medicalTerm": "Lower Respiratory Infection",
+    "icd10": "J18.9",
+    "category": "Respiratory",
+    "organSystem": "Lungs & Respiratory",
+    "bodyPart": "chest",
+    "urgency": "urgent",
+    "urgencyText": "Urgent Medical Care Required",
+    "readTime": "5 min read",
+    "summary": "An acute infection of the pulmonary parenchyma caused by bacteria, viruses, or fungi, causing the alveoli to fill with inflammatory exudate.",
+    "pathology": "Microbial proliferation in the distal airspaces triggers intense neutrophil recruitment, alveolar consolidation, and impaired gas exchange.",
+    "hallmarkSymptoms": [
+      "High fever with shaking chills (rigors)",
+      "Productive cough with thick yellow, green, or rust-colored sputum",
+      "Pleuritic chest pain (sharp stab when inhaling deeply or coughing)",
+      "Tachypnea (rapid breathing) and shortness of breath",
+      "Significant physical prostration and fatigue"
+    ],
+    "atypicalSigns": [
+      "Elderly patients may show NO fever, but present with sudden confusion, delirium, or falls",
+      "Hypothermia in frail individuals",
+      "Nausea and abdominal discomfort in lower-lobe pneumonia"
+    ],
+    "riskFactors": [
+      "Age < 2 or > 65",
+      "Chronic lung disease (COPD, asthma, bronchiectasis)",
+      "Immunosuppression or corticosteroid use",
+      "Recent viral influenza or COVID-19 infection",
+      "Cigarette smoking and chronic aspiration risk"
+    ],
+    "diagnosticTests": [
+      "Chest X-ray (posteroanterior and lateral views showing consolidation or infiltrate)",
+      "Pulse oximetry (SpO2 oxygen saturation)",
+      "Complete blood count with differential (leukocytosis with left shift)",
+      "Sputum Gram stain and culture",
+      "Influenza and COVID-19 PCR"
+    ],
+    "selfCare": [
+      "Complete full prescribed antibiotic or antiviral regimen without stopping early",
+      "Maintain generous hydration to thin bronchial secretions",
+      "Use an incentive spirometer and take gentle deep breaths",
+      "Rest completely and avoid all tobacco exposure"
+    ],
+    "redFlags": [
+      "Oxygen saturation dropping below 92% on room air",
+      "Confusion, lethargy, or extreme drowsiness",
+      "Severe air hunger or respiratory rate > 28 breaths/min",
+      "Hypotension (systolic BP < 90 mmHg)"
+    ],
+    "askDoctor": [
+      "Do my clinical score (CURB-65) and oxygen levels indicate home or hospital treatment?",
+      "Is this bacterial, viral, or atypical pneumonia?",
+      "When should I schedule a follow-up chest X-ray to confirm clearance?"
+    ],
+    "source": {
+      "organization": "American Lung Association / CDC",
+      "title": "Pneumonia Overview",
+      "url": "https://www.lung.org/lung-health-diseases/lung-disease-lookup/pneumonia"
+    }
+  },
+  {
+    "id": "influenza",
+    "name": "Influenza (The Flu)",
+    "medicalTerm": "Acute Viral Influenza",
+    "icd10": "J11.1",
+    "category": "Respiratory",
+    "organSystem": "Lungs & Respiratory",
+    "bodyPart": "chest",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Self-Care (Urgent if high risk)",
+    "readTime": "4 min read",
+    "summary": "A highly contagious viral infection of the respiratory tract caused by Influenza virus A or B, featuring abrupt systemic toxicity.",
+    "pathology": "Viral hemagglutinin and neuraminidase proteins facilitate attachment and invasion of ciliated columnar epithelial cells, causing widespread cytokine storm.",
+    "hallmarkSymptoms": [
+      "Abrupt onset of high fever (100.4\u00b0F to 104\u00b0F / 38\u00b0C to 40\u00b0C)",
+      "Intense generalized body aches and myalgias",
+      "Severe exhaustion, weakness, and bedbound fatigue",
+      "Dry hacking cough and sore throat",
+      "Chills, headache, and retro-orbital eye discomfort"
+    ],
+    "atypicalSigns": [
+      "Gastrointestinal symptoms (diarrhea, vomiting) predominantly in young children",
+      "Coryza (nasal congestion) typically milder than the common cold",
+      "Post-viral cough lasting 2-3 weeks after fever resolves"
+    ],
+    "riskFactors": [
+      "Unvaccinated status",
+      "Age > 65 or children < 5",
+      "Pregnancy",
+      "Chronic medical conditions (cardiac, pulmonary, renal)",
+      "Immunocompromised status"
+    ],
+    "diagnosticTests": [
+      "Rapid influenza molecular assay (RT-PCR or rapid antigen test)",
+      "Multiplex respiratory viral panel (Flu A/B, RSV, SARS-CoV-2)",
+      "Chest X-ray if secondary bacterial pneumonia is suspected"
+    ],
+    "selfCare": [
+      "Isolation at home and copious fluid intake (water, broths, electrolyte solutions)",
+      "Antipyretics (Acetaminophen/Paracetamol or Ibuprofen for fever/aches)",
+      "Rest in bed during the acute phase",
+      "Tamiflu (Oseltamivir) within 48 hours of symptom onset for high-risk individuals"
+    ],
+    "redFlags": [
+      "Shortness of breath or rapid labored breathing",
+      "Fever improves for 2 days then rebounds violently with worsening productive cough (Secondary bacterial pneumonia)",
+      "Severe dizziness, confusion, or inability to stay awake",
+      "Inability to keep liquids down for > 24 hours"
+    ],
+    "askDoctor": [
+      "Am I within the 48-hour window where antiviral medication (e.g. Oseltamivir) is beneficial?",
+      "Am I at heightened risk of secondary bacterial superinfection?",
+      "When can I safely return to work without being contagious?"
+    ],
+    "source": {
+      "organization": "CDC",
+      "title": "About Influenza (Flu)",
+      "url": "https://www.cdc.gov/flu/about/index.html"
+    }
+  },
+  {
+    "id": "acute-bronchitis",
+    "name": "Acute Bronchitis",
+    "medicalTerm": "Chest Cold / Tracheobronchitis",
+    "icd10": "J20.9",
+    "category": "Respiratory",
+    "organSystem": "Lungs & Respiratory",
+    "bodyPart": "chest",
+    "urgency": "routine",
+    "urgencyText": "Self-Monitoring & Primary Care",
+    "readTime": "3 min read",
+    "summary": "Self-limiting inflammation of the large bronchi, >90% caused by common respiratory viruses rather than bacteria.",
+    "pathology": "Viral infection causes bronchial mucosal hyperesthesia, epithelial cell desquamation, and increased mucociliary clearance effort.",
+    "hallmarkSymptoms": [
+      "Persistent cough that lasts 10 to 21 days",
+      "Clear, white, yellow, or greenish sputum production",
+      "Substernal chest soreness from repetitive coughing",
+      "Mild low-grade fever or feeling chilliness",
+      "Fatigue and mild wheezing"
+    ],
+    "atypicalSigns": [
+      "Paroxysmal coughing spasms triggered by laughing or cold air",
+      "Sore throat and nasal congestion preceding the chest cough by 3 days"
+    ],
+    "riskFactors": [
+      "Cigarette smoking and vaping",
+      "Passive second-hand smoke exposure",
+      "History of gastroesophageal reflux disease (GERD)",
+      "Air pollution exposure"
+    ],
+    "diagnosticTests": [
+      "Clinical exam (auscultation shows rhonchi or scattered wheezes that clear with coughing)",
+      "Chest X-ray only if fever > 100.4\u00b0F, tachycardia, tachypnea, or crackles suggest pneumonia"
+    ],
+    "selfCare": [
+      "Understand that antibiotics do NOT help viral bronchitis and cause unwanted side effects",
+      "Warm tea with natural honey (for individuals over 1 year old)",
+      "Humidifier or steam inhalation to loosen phlegm",
+      "Adequate hydration and rest"
+    ],
+    "redFlags": [
+      "Coughing up frank blood or dark brown clots (Hemoptysis)",
+      "Fever > 101.5\u00b0F (38.6\u00b0C) persisting > 4 days",
+      "Significant shortness of breath or resting stridor",
+      "Cough failing to improve after 3 full weeks"
+    ],
+    "askDoctor": [
+      "Is my chest exam clear of pneumonia crackles?",
+      "Can an inhaled bronchodilator help reduce my coughing spasms?",
+      "When does a prolonged cough require an X-ray or spirometry?"
+    ],
+    "source": {
+      "organization": "MedlinePlus / CDC",
+      "title": "Acute Bronchitis",
+      "url": "https://medlineplus.gov/acutebronchitis.html"
+    }
+  },
+  {
+    "id": "covid-19",
+    "name": "COVID-19 (SARS-CoV-2)",
+    "medicalTerm": "Coronavirus Disease 2019",
+    "icd10": "U07.1",
+    "category": "Respiratory",
+    "organSystem": "Lungs & Respiratory",
+    "bodyPart": "chest",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Assessment if Vulnerable",
+    "readTime": "4 min read",
+    "summary": "A systemic infection caused by the novel coronavirus SARS-CoV-2, affecting the upper/lower respiratory tract, vascular endothelium, and immune response.",
+    "pathology": "Viral binding to ACE2 receptors leads to epithelial injury, microvascular microthrombosis, and hyperinflammatory cytokine cascades.",
+    "hallmarkSymptoms": [
+      "Fever, chills, and rigors",
+      "Dry or productive cough",
+      "Sudden partial or total loss of taste or smell (Ageusia / Anosmia)",
+      "Fatigue, muscle or body aches",
+      "Sore throat, nasal congestion, or rhinorrhea"
+    ],
+    "atypicalSigns": [
+      "Gastrointestinal symptoms (nausea, vomiting, diarrhea)",
+      "'Happy hypoxia' (silent hypoxia where oxygen saturation drops without severe dyspnea)",
+      "Chilblains-like cutaneous lesions ('COVID toes')"
+    ],
+    "riskFactors": [
+      "Age > 65",
+      "Cardiovascular disease, diabetes, obesity (BMI > 30)",
+      "Chronic kidney or liver disease",
+      "Immunosuppressive medications or cancer therapy"
+    ],
+    "diagnosticTests": [
+      "Rapid home antigen test (serial testing recommended 48h apart)",
+      "RT-PCR molecular test for definitive detection",
+      "Pulse oximetry monitoring at home"
+    ],
+    "selfCare": [
+      "Isolate to protect household members and wear an N95/KN95 mask",
+      "Regularly monitor resting oxygen saturation with a pulse oximeter",
+      "Oral antiviral therapy (Paxlovid / Nirmatrelvir-Ritonavir) within 5 days for high-risk patients",
+      "Rest, oral rehydration, and prone positioning (lying on stomach to improve oxygenation)"
+    ],
+    "redFlags": [
+      "Pulse oximeter reading consistently below 94%",
+      "Persistent pain or pressure in the chest",
+      "New confusion, delirium, or difficulty waking up",
+      "Pale, gray, or blue-colored skin, lips, or nail beds"
+    ],
+    "askDoctor": [
+      "Am I eligible for Paxlovid or other oral antivirals within the 5-day window?",
+      "How many times a day should I record my pulse oximeter readings?",
+      "What criteria signal that I need emergency room evaluation?"
+    ],
+    "source": {
+      "organization": "World Health Organization / CDC",
+      "title": "Coronavirus Disease (COVID-19)",
+      "url": "https://www.cdc.gov/coronavirus/2019-ncov/index.html"
+    }
+  },
+  {
+    "id": "copd",
+    "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "medicalTerm": "Emphysema & Chronic Bronchitis",
+    "icd10": "J44.9",
+    "category": "Respiratory",
+    "organSystem": "Lungs & Respiratory",
+    "bodyPart": "chest",
+    "urgency": "urgent",
+    "urgencyText": "Specialist Management (Urgent during flares)",
+    "readTime": "5 min read",
+    "summary": "A progressive, life-threatening lung disease causing long-term breathing difficulty and persistent airflow limitation.",
+    "pathology": "Chronic inhalation of noxious particles damages alveolar elasticity (emphysema) and triggers chronic airway mucus hypersecretion (chronic bronchitis).",
+    "hallmarkSymptoms": [
+      "Chronic and progressive shortness of breath, initially on exertion",
+      "Daily chronic cough producing mucus/phlegm",
+      "Frequent respiratory infections in winter months",
+      "Audible wheezing and chest tightness",
+      "Fatigue and unintentional weight loss"
+    ],
+    "atypicalSigns": [
+      "Barrel chest configuration from chronic air trapping",
+      "Pursed-lip breathing and leaning forward (tripod position)",
+      "Morning headaches from nighttime carbon dioxide retention"
+    ],
+    "riskFactors": [
+      "Long-term cigarette and tobacco smoking (> 85% of cases)",
+      "Occupational exposure to chemical fumes and dusts",
+      "Secondhand smoke exposure",
+      "Alpha-1 antitrypsin genetic deficiency"
+    ],
+    "diagnosticTests": [
+      "Post-bronchodilator Spirometry (FEV1/FVC ratio < 0.70 confirms diagnosis)",
+      "High-resolution CT scan of the thorax",
+      "Arterial blood gas (ABG) analysis",
+      "Alpha-1 antitrypsin serum screening"
+    ],
+    "selfCare": [
+      "Absolute cessation of smoking (the only intervention that slows disease progression)",
+      "Adherence to daily maintenance long-acting bronchodilators (LAMA / LABA)",
+      "Annual influenza, pneumococcal, RSV, and COVID-19 vaccinations",
+      "Pulmonary rehabilitation exercise training"
+    ],
+    "redFlags": [
+      "Acute increase in sputum volume, purulence (green/dark), and severe breathlessness (COPD Exacerbation)",
+      "Confusion, extreme somnolence (hypercapnic respiratory failure)",
+      "Inability to catch breath even while resting in bed"
+    ],
+    "askDoctor": [
+      "What is my spirometry GOLD stage and FEV1 percentage?",
+      "Is my inhaler regimen optimized with triple therapy (ICS/LABA/LAMA)?",
+      "Am I a candidate for home supplemental oxygen therapy?"
+    ],
+    "source": {
+      "organization": "Global Initiative for Chronic Obstructive Lung Disease (GOLD) / WHO",
+      "title": "COPD Facts",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/chronic-obstructive-pulmonary-disease-(copd)"
+    }
+  },
+  {
+    "id": "stroke-tia",
+    "name": "Stroke & Transient Ischemic Attack (TIA)",
+    "medicalTerm": "Cerebrovascular Accident",
+    "icd10": "I63.9",
+    "category": "Neurological",
+    "organSystem": "Brain & Nervous System",
+    "bodyPart": "head",
+    "urgency": "emergency",
+    "urgencyText": "IMMEDIATE EMERGENCY 911 / ER",
+    "readTime": "4 min read",
+    "summary": "A medical emergency caused by disrupted blood flow to the brain, either by arterial occlusion (ischemic) or vessel rupture (hemorrhagic).",
+    "pathology": "Deprivation of oxygen and glucose triggers neuronal depolarization, cytotoxic edema, and rapid penumbral cell death within minutes ('Time is Brain').",
+    "hallmarkSymptoms": [
+      "F.A.S.T. signs: Facial drooping on one side",
+      "Arm weakness or numbness (inability to raise both arms)",
+      "Speech difficulty (slurred words or inability to speak/comprehend)",
+      "Time: Call 911 immediately upon noticing any sign",
+      "Sudden loss of balance, coordination, or unexplained dizziness"
+    ],
+    "atypicalSigns": [
+      "Sudden onset of the 'worst headache of life' (Thunderclap - subarachnoid hemorrhage)",
+      "Sudden complete loss of vision in one eye ('Amaurosis fugax')",
+      "Sudden confusion, spatial neglect, or behavioral changes"
+    ],
+    "riskFactors": [
+      "Uncontrolled hypertension",
+      "Atrial fibrillation and heart disease",
+      "Diabetes mellitus",
+      "Hyperlipidemia and carotid atherosclerosis",
+      "Cigarette smoking and heavy alcohol use"
+    ],
+    "diagnosticTests": [
+      "Immediate non-contrast emergency head CT (differentiates hemorrhage from ischemia)",
+      "CT or MR cerebral and carotid angiogram",
+      "Diffusion-weighted brain MRI",
+      "Blood glucose (to rule out severe hypoglycemia mimic)"
+    ],
+    "selfCare": [
+      "DO NOT give aspirin before a hospital CT scan has ruled out brain hemorrhage",
+      "DO NOT give food, drink, or oral pills (choking risk)",
+      "Note the exact time symptoms began or when the person was last seen normal",
+      "Call emergency medical services immediately"
+    ],
+    "redFlags": [
+      "Any sudden neurological deficit that appears out of nowhere",
+      "Loss of consciousness or seizures",
+      "Sudden vomiting with severe explosive headache",
+      "Total hemiplegia (paralysis of one side of the body)"
+    ],
+    "askDoctor": [
+      "Was the event ischemic or hemorrhagic?",
+      "What was the underlying source (carotid artery, atrial fibrillation, or small vessel disease)?",
+      "What antiplatelet, anticoagulant, or statin protocol will prevent recurrence?"
+    ],
+    "source": {
+      "organization": "American Stroke Association",
+      "title": "Stroke Symptoms and Warning Signs",
+      "url": "https://www.stroke.org/en/about-stroke/stroke-symptoms"
+    }
+  },
+  {
+    "id": "migraine",
+    "name": "Migraine Headache",
+    "medicalTerm": "Neurovascular Cephalea",
+    "icd10": "G43.9",
+    "category": "Neurological",
+    "organSystem": "Brain & Nervous System",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Neurologist",
+    "readTime": "4 min read",
+    "summary": "A complex neurological condition featuring moderate-to-severe throbbing headache attacks, sensory hypersensitivity, and autonomic dysfunction.",
+    "pathology": "Cortical spreading depression and activation of the trigeminovascular system release calcitonin gene-related peptide (CGRP) and induce neurogenic inflammation.",
+    "hallmarkSymptoms": [
+      "Unilateral (one-sided) pulsating, throbbing head pain",
+      "Photophobia (extreme sensitivity to light) and phonophobia (sensitivity to sound)",
+      "Nausea and vomiting during peak pain",
+      "Moderate to severe pain worsened by routine physical movement or bending",
+      "Attacks typically lasting 4 to 72 hours if untreated"
+    ],
+    "atypicalSigns": [
+      "Visual aura: shimmering zigzag lights (fortification spectra), blind spots (scotoma) 20-60 min before headache",
+      "Sensory aura: numbness or tingling moving slowly across fingers or lips",
+      "Prodrome symptoms: excessive yawning, neck stiffness, food cravings 24h prior"
+    ],
+    "riskFactors": [
+      "Female sex (3x higher incidence due to estrogen fluctuations)",
+      "Family history of migraine",
+      "Irregular sleep patterns and skipped meals",
+      "Stress let-down (weekend headaches)",
+      "Sensory overstimulation (flickering screens, strong perfumes)"
+    ],
+    "diagnosticTests": [
+      "Clinical diagnosis based on International Headache Society (ICHD-3) criteria",
+      "Brain MRI or CT only if red flags are present (abnormal neurological exam, onset after age 50, systemic symptoms)"
+    ],
+    "selfCare": [
+      "Rest in a dark, quiet, cool room at the earliest sign of an attack",
+      "Apply cold compresses or ice packs to the forehead or base of skull",
+      "Stay hydrated and avoid known dietary triggers (aged cheeses, nitrates, alcohol)",
+      "Take abortive prescription triptans (Sumatriptan) or Gepants as soon as pain begins"
+    ],
+    "redFlags": [
+      "Headache reaching maximum explosive intensity within 60 seconds ('Thunderclap')",
+      "Headache accompanied by fever, stiff neck, and confusion (Meningitis sign)",
+      "Headache following head trauma or with new onset weakness/numbness",
+      "Progressive worsening daily headache in someone over age 50"
+    ],
+    "askDoctor": [
+      "Am I taking acute pain relievers too often (> 10 days/month), risking medication overuse headache?",
+      "Am I a candidate for daily preventive therapy (CGRP antagonists, beta-blockers, Topiramate)?",
+      "Should I keep a migraine headache trigger diary?"
+    ],
+    "source": {
+      "organization": "National Institute of Neurological Disorders and Stroke (NINDS)",
+      "title": "Migraine Information",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/migraine"
+    }
+  },
+  {
+    "id": "tension-headache",
+    "name": "Tension-Type Headache",
+    "medicalTerm": "Tension Cephalea",
+    "icd10": "G44.2",
+    "category": "Neurological",
+    "organSystem": "Brain & Nervous System",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Self-Care & Primary Care",
+    "readTime": "3 min read",
+    "summary": "The most common primary headache disorder, presenting as a non-pulsatile, dull band of pressure around the forehead and temples.",
+    "pathology": "Myofascial nociceptor sensitization in pericranial muscles, neck strain, and altered central pain processing without autonomic features.",
+    "hallmarkSymptoms": [
+      "Dull, aching, non-throbbing bilateral pressure or tightness ('vise-like band')",
+      "Discomfort extending from forehead to occiput and cervical spine",
+      "Tenderness in scalp, neck, and shoulder trapezius muscles",
+      "Mild to moderate intensity that does not worsen with routine walking or stairs",
+      "Absence of nausea or vomiting"
+    ],
+    "atypicalSigns": [
+      "Difficulty concentrating due to persistent dull pressure",
+      "Mild light or sound sensitivity (never both simultaneously)"
+    ],
+    "riskFactors": [
+      "Chronic emotional or psychological stress",
+      "Prolonged screen time and poor ergonomics",
+      "Sleep deprivation or insomnia",
+      "Dehydration and skipped meals",
+      "Bruxism (teeth grinding or clenching)"
+    ],
+    "diagnosticTests": [
+      "Clinical evaluation and physical palpation of pericranial muscles",
+      "Rule out cervical spine pathology and refractory vision refraction errors"
+    ],
+    "selfCare": [
+      "Take ergonomic breaks every 30 minutes during desk work",
+      "Gentle neck and shoulder stretching and warm moist heat packs",
+      "Maintain consistent sleep and meal schedules",
+      "Judicious use of over-the-counter NSAIDs (Ibuprofen, Naproxen) no more than 2 days per week"
+    ],
+    "redFlags": [
+      "Headache suddenly changes in quality, becoming sharp, unilateral, or throbbing",
+      "Accompanied by focal neurological symptoms (vision loss, weakness, speech slurring)",
+      "Awakens the patient from sleep in the middle of the night",
+      "Accompanied by unexplained weight loss, scalp tenderness on combing, or jaw claudication in older adults (Temporal Arteritis)"
+    ],
+    "askDoctor": [
+      "Could my headaches be linked to teeth clenching (TMJ) or cervical neck posture?",
+      "How can I avoid medication overuse (rebound) headaches?",
+      "Would physical therapy or stress management techniques help?"
+    ],
+    "source": {
+      "organization": "MedlinePlus / Mayo Clinic",
+      "title": "Tension Headache",
+      "url": "https://medlineplus.gov/ency/article/000797.htm"
+    }
+  },
+  {
+    "id": "bells-palsy",
+    "name": "Bell's Palsy",
+    "medicalTerm": "Idiopathic Facial Nerve Paralysis",
+    "icd10": "G51.0",
+    "category": "Neurological",
+    "organSystem": "Brain & Nervous System",
+    "bodyPart": "head",
+    "urgency": "urgent",
+    "urgencyText": "Urgent Medical Care (Within 24-48 Hours)",
+    "readTime": "4 min read",
+    "summary": "Sudden, temporary weakness or paralysis of facial muscles on one side, resulting from acute dysfunction of Cranial Nerve VII (Facial Nerve).",
+    "pathology": "Viral-mediated inflammation and edema compress the facial nerve as it traverses the narrow fallopian canal of the temporal bone.",
+    "hallmarkSymptoms": [
+      "Rapid onset (over 24-72 hours) of total or partial paralysis on ONE side of the face",
+      "Inability to close the eye on the affected side or blink",
+      "Drooping mouth corner, drooling, and difficulty smiling or chewing",
+      "Flattening of the nasolabial fold and forehead creases on affected side",
+      "Hyperacusis (unusually loud sound perception in the ipsilateral ear)"
+    ],
+    "atypicalSigns": [
+      "Loss of taste sensation on the anterior two-thirds of the tongue",
+      "Pain around the jaw or behind the ear preceding the paralysis by 1-2 days",
+      "Dry eye or excessive tearing (crocodile tears) due to lack of eyelid closure"
+    ],
+    "riskFactors": [
+      "Pregnancy (especially third trimester)",
+      "Diabetes mellitus",
+      "Recent upper respiratory viral infection",
+      "Herpes simplex virus (HSV-1) reactivation"
+    ],
+    "diagnosticTests": [
+      "Clinical neurological examination (distinguishing peripheral CN VII palsy from central stroke: Bell's palsy affects the FOREHEAD, whereas stroke usually spares the forehead)",
+      "Hearing evaluation",
+      "Lyme disease serology in endemic areas"
+    ],
+    "selfCare": [
+      "CRITICAL: Protect the cornea with artificial tears by day, lubricating ophthalmic ointment and eye patch taped shut at night",
+      "Start oral corticosteroid therapy (Prednisone) within 72 hours as prescribed by physician",
+      "Gentle facial massage and warm compresses to alleviate discomfort",
+      "Most patients (approx. 85%) show spontaneous recovery within 3 weeks to 6 months"
+    ],
+    "redFlags": [
+      "Arm or leg weakness on either side of the body (indicates STROKE, not Bell's palsy)",
+      "Bilateral facial weakness",
+      "Vesicular rash in the ear canal or palate (Ramsay Hunt syndrome / Herpes Zoster Oticus)",
+      "No improvement in facial tone after 3 months"
+    ],
+    "askDoctor": [
+      "Can you verify that this is a peripheral nerve issue and not a central stroke?",
+      "Should I start oral corticosteroids (e.g. Prednisone) immediately today?",
+      "What specific eye drops and nighttime taping should I use to protect my cornea?"
+    ],
+    "source": {
+      "organization": "NINDS / NIH",
+      "title": "Bell's Palsy Fact Sheet",
+      "url": "https://www.ninds.nih.gov/health-information/disorders/bells-palsy"
+    }
+  },
+  {
+    "id": "gerd-acid-reflux",
+    "name": "Gastroesophageal Reflux Disease (GERD)",
+    "medicalTerm": "Acid Reflux / Reflux Esophagitis",
+    "icd10": "K21.9",
+    "category": "Gastrointestinal",
+    "organSystem": "Digestive & Gut",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Gastroenterologist",
+    "readTime": "4 min read",
+    "summary": "A chronic digestive disease that occurs when stomach acid or bile flows back into the food pipe (esophagus), irritating the lining.",
+    "pathology": "Transient or permanent lower esophageal sphincter (LES) incompetence permits caustic gastric contents to contact non-keratinized esophageal squamous epithelium.",
+    "hallmarkSymptoms": [
+      "Pyrosis: burning chest pain (heartburn) behind breastbone, usually after meals",
+      "Acid regurgitation of sour or bitter fluid into mouth or throat",
+      "Worsening symptoms when lying flat, reclining, or bending over",
+      "Dysphagia: sensation of a lump in the throat (globus sensation)",
+      "Water brash: sudden excess salivation"
+    ],
+    "atypicalSigns": [
+      "Chronic nocturnal dry cough",
+      "Morning hoarseness or laryngitis",
+      "Adult-onset or worsening asthma",
+      "Dental enamel erosion from regurgitated stomach acid"
+    ],
+    "riskFactors": [
+      "Hiatal hernia",
+      "Obesity and abdominal adiposity",
+      "Pregnancy",
+      "Delayed gastric emptying (gastroparesis)",
+      "Trigger foods: chocolate, peppermint, fatty foods, caffeine, tomato sauce, alcohol"
+    ],
+    "diagnosticTests": [
+      "Clinical trial of proton pump inhibitors (PPIs)",
+      "Upper endoscopy (Esophagogastroduodenoscopy - EGD) to assess for Barrett's esophagus",
+      "24-hour ambulatory esophageal pH impedance monitoring",
+      "Esophageal manometry"
+    ],
+    "selfCare": [
+      "Elevate the head of your bed 6 inches using bed risers (not just pillows)",
+      "Avoid eating within 3 hours of going to sleep",
+      "Eat smaller, more frequent meals rather than large heavy dinners",
+      "Avoid tight belts and restrictive waistbands",
+      "Stop smoking (nicotine relaxes the LES sphincter)"
+    ],
+    "redFlags": [
+      "Difficulty or pain when swallowing food (Dysphagia/Odynophagia)",
+      "Unexplained weight loss or loss of appetite",
+      "Vomiting blood (coffee-ground emesis) or black tarry stools (Melena)",
+      "Chest pain radiating into left arm or jaw (always rule out cardiac ischemia first!)"
+    ],
+    "askDoctor": [
+      "Do I need an upper endoscopy to check for esophageal inflammation or Barrett's esophagus?",
+      "Are my medications (PPIs or H2 blockers) appropriate for long-term use?",
+      "Could lifestyle changes alone resolve my symptoms?"
+    ],
+    "source": {
+      "organization": "NIDDK / NIH",
+      "title": "Acid Reflux (GER & GERD) in Adults",
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults"
+    }
+  },
+  {
+    "id": "appendicitis",
+    "name": "Acute Appendicitis",
+    "medicalTerm": "Inflammation of Vermiform Appendix",
+    "icd10": "K35.80",
+    "category": "Gastrointestinal",
+    "organSystem": "Digestive & Gut",
+    "bodyPart": "abdomen",
+    "urgency": "emergency",
+    "urgencyText": "SURGICAL EMERGENCY 911 / ER",
+    "readTime": "4 min read",
+    "summary": "An acute, rapidly progressive inflammation and bacterial infection of the appendix that requires emergency surgical removal to prevent rupture.",
+    "pathology": "Luminal obstruction by a fecalith, lymphoid hyperplasia, or foreign body leads to mucosal ischemia, bacterial invasion, gangrene, and perforation.",
+    "hallmarkSymptoms": [
+      "Pain starting vaguely around the navel (periumbilical) then migrating to the LOWER RIGHT abdomen (McBurney's point)",
+      "Sharp, localized pain that intensifies rapidly over 12 to 24 hours",
+      "Pain dramatically worse with walking, jumping, coughing, or bumps during driving",
+      "Low-grade fever rising progressively",
+      "Complete loss of appetite (anorexia) followed by nausea and vomiting"
+    ],
+    "atypicalSigns": [
+      "Pelvic appendix: pain during urination or rectal tenderness",
+      "Retrocecal appendix: pain located in the right flank or back rather than anterior abdomen",
+      "Diarrhea or tenesmus rather than constipation"
+    ],
+    "riskFactors": [
+      "Ages 10 to 30 (peak incidence)",
+      "Male slightly higher than female",
+      "Low dietary fiber intake"
+    ],
+    "diagnosticTests": [
+      "Abdominal contrast-enhanced CT scan (highest diagnostic accuracy)",
+      "Abdominal ultrasound (first choice in children and pregnant women)",
+      "Complete blood count (marked leukocytosis with elevated neutrophils)",
+      "C-reactive protein (CRP) and urinalysis"
+    ],
+    "selfCare": [
+      "DO NOT take laxatives, enemas, or heating pads (these can cause the appendix to RUPTURE!)",
+      "DO NOT eat or drink anything (keep stomach empty for potential emergency surgery)",
+      "Go immediately to the nearest Emergency Department"
+    ],
+    "redFlags": [
+      "Sudden temporary relief of pain followed by widespread, rigid, agonizing abdominal pain (sign of APPENDIX RUPTURE & PERITONITIS)",
+      "Involuntary abdominal wall guarding (board-like abdomen)",
+      "High spiking fever with shaking chills",
+      "Tachycardia and hypotension"
+    ],
+    "askDoctor": [
+      "Is my abdominal CT scan conclusive for acute appendicitis?",
+      "Is laparoscopic appendectomy indicated today?",
+      "Are there any signs of perforation or peritonitis?"
+    ],
+    "source": {
+      "organization": "MedlinePlus / NIDDK",
+      "title": "Appendicitis Overview",
+      "url": "https://medlineplus.gov/ency/article/000202.htm"
+    }
+  },
+  {
+    "id": "peptic-ulcer-disease",
+    "name": "Peptic Ulcer Disease (PUD)",
+    "medicalTerm": "Gastric & Duodenal Ulceration",
+    "icd10": "K27.9",
+    "category": "Gastrointestinal",
+    "organSystem": "Digestive & Gut",
+    "bodyPart": "abdomen",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Medical Evaluation",
+    "readTime": "4 min read",
+    "summary": "Open sores that develop on the inside mucosal lining of the stomach (gastric) or the upper portion of the small intestine (duodenal).",
+    "pathology": "Imbalance between mucosal defensive factors (mucus, bicarbonate, prostaglandins) and aggressive luminal factors (gastric acid, pepsin, H. pylori, NSAIDs).",
+    "hallmarkSymptoms": [
+      "Burning epigastric stomach pain between the breastbone and belly button",
+      "Pain often worse when the stomach is empty (duodenal ulcers improve with food, gastric worsen)",
+      "Pain that awakens patient during the middle of the night",
+      "Feeling of fullness, bloating, or belching after small meals",
+      "Mild nausea and heartburn"
+    ],
+    "atypicalSigns": [
+      "Unexplained iron deficiency anemia from chronic occult bleeding",
+      "Intolerance to fatty foods",
+      "Loss of appetite and gradual weight loss"
+    ],
+    "riskFactors": [
+      "Helicobacter pylori (H. pylori) bacterial infection",
+      "Regular use of NSAIDs (Aspirin, Ibuprofen, Naproxen)",
+      "Concomitant use of corticosteroids, anticoagulants, or SSRIs",
+      "Tobacco smoking and heavy alcohol consumption"
+    ],
+    "diagnosticTests": [
+      "Upper GI endoscopy with mucosal biopsy",
+      "Urea breath test or stool antigen test for H. pylori",
+      "Complete blood count to screen for chronic anemia",
+      "Fecal occult blood test (FOBT)"
+    ],
+    "selfCare": [
+      "Discontinue all non-steroidal anti-inflammatory drugs (NSAIDs) immediately",
+      "Avoid cigarette smoking and alcohol which degrade mucosal barrier",
+      "Adhere to the full 14-day quadruple eradication therapy if H. pylori is detected",
+      "Take prescribed proton pump inhibitors before meals"
+    ],
+    "redFlags": [
+      "Vomiting bright red blood or dark coffee-ground material (Upper GI Bleed)",
+      "Stools that are jet black, sticky, and foul-smelling (Melena)",
+      "Sudden, severe, knife-like abdominal pain with rigid abdomen (ULCER PERFORATION)",
+      "Persistent vomiting and inability to keep fluids down"
+    ],
+    "askDoctor": [
+      "Should I be tested for H. pylori infection today via breath or stool test?",
+      "Do I need an upper endoscopy to confirm the ulcer is healing?",
+      "What safe alternative pain reliever can I take instead of ibuprofen?"
+    ],
+    "source": {
+      "organization": "NIDDK / NIH",
+      "title": "Peptic Ulcers (Stomach Ulcers)",
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/peptic-ulcers-stomach-ulcers"
+    }
+  },
+  {
+    "id": "irritable-bowel-syndrome",
+    "name": "Irritable Bowel Syndrome (IBS)",
+    "medicalTerm": "Functional Gastrointestinal Disorder",
+    "icd10": "K58.0",
+    "category": "Gastrointestinal",
+    "organSystem": "Digestive & Gut",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Gastroenterologist",
+    "readTime": "4 min read",
+    "summary": "A common disorder of brain-gut interaction characterized by recurrent abdominal pain linked to changes in bowel frequency or stool form.",
+    "pathology": "Visceral hypersensitivity, altered gut motility, intestinal microbiome dysbiosis, and dysregulated brain-gut axis communication.",
+    "hallmarkSymptoms": [
+      "Recurrent abdominal cramping or pain related to defecation",
+      "Altered stool frequency (diarrhea in IBS-D, constipation in IBS-C, or mixed in IBS-M)",
+      "Changes in stool appearance (lumpy/hard or loose/watery)",
+      "Abdominal bloating and visible distension that worsens through the day",
+      "Feeling of incomplete bowel evacuation (tenesmus)"
+    ],
+    "atypicalSigns": [
+      "Mucus in the stool",
+      "Lethargy and poor sleep quality",
+      "Co-occurrence of fibromyalgia, chronic pelvic pain, or anxiety"
+    ],
+    "riskFactors": [
+      "Female sex (2x more prevalent)",
+      "Age under 50",
+      "Severe prior gastroenteritis ('post-infectious IBS')",
+      "Chronic psychological stress and history of adverse childhood events"
+    ],
+    "diagnosticTests": [
+      "Rome IV Diagnostic Criteria assessment",
+      "Celiac disease serology (IgA tissue transglutaminase) to rule out celiac",
+      "Fecal calprotectin to rule out Inflammatory Bowel Disease (Crohn's/Colitis)",
+      "Complete blood count and thyroid panel"
+    ],
+    "selfCare": [
+      "Trial of a structured low-FODMAP diet under dietary supervision",
+      "Soluble fiber supplementation (e.g. Psyllium husk)",
+      "Regular moderate aerobic exercise and gut-directed hypnotherapy or CBT",
+      "Identify personal food triggers using a 2-week symptom diary"
+    ],
+    "redFlags": [
+      "Onset of symptoms after age 50",
+      "Unintentional unexplained weight loss",
+      "Nocturnal diarrhea that wakes you from sleep",
+      "Rectal bleeding or dark blood in stool",
+      "Family history of colorectal cancer or inflammatory bowel disease"
+    ],
+    "askDoctor": [
+      "Does my clinical presentation meet the Rome IV criteria for IBS?",
+      "Have organic causes like Celiac disease and IBD been ruled out with blood and stool tests?",
+      "Would a low-FODMAP diet or gut-directed behavioral therapy be suitable for me?"
+    ],
+    "source": {
+      "organization": "American College of Gastroenterology / NIDDK",
+      "title": "Irritable Bowel Syndrome",
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome"
+    }
+  },
+  {
+    "id": "gallstones-cholecystitis",
+    "name": "Gallstones & Acute Cholecystitis",
+    "medicalTerm": "Biliary Colic & Cholecystitis",
+    "icd10": "K80.00",
+    "category": "Gastrointestinal",
+    "organSystem": "Digestive & Gut",
+    "bodyPart": "abdomen",
+    "urgency": "urgent",
+    "urgencyText": "Urgent Care / Emergency Evaluation",
+    "readTime": "4 min read",
+    "summary": "Hardened deposits of digestive fluid (cholesterol or bilirubin) in the gallbladder that can block the cystic duct, causing severe pain and inflammation.",
+    "pathology": "Supersaturated bile forms calculi; ductal impaction induces chemical irritation, mucosal ischemia, bacterial infection, and wall thickening.",
+    "hallmarkSymptoms": [
+      "Severe, steady, gripping pain in the RIGHT UPPER quadrant of the abdomen",
+      "Pain radiating to the right shoulder blade or interscapular back",
+      "Pain triggered 30 to 60 minutes after eating a fatty or greasy meal",
+      "Nausea and vomiting during attack episodes",
+      "Pain that lasts from 1 to several hours without easing"
+    ],
+    "atypicalSigns": [
+      "Epigastric pain mimicking severe heart attack or acid reflux",
+      "Murphy's sign: sharp catch in breath when doctor presses right upper ribs during deep inhale",
+      "Fever and chills when infection develops (Acute Cholecystitis)"
+    ],
+    "riskFactors": [
+      "The '5 Fs': Female, Forty, Fertile (multiparity), Fat (obesity), Fair",
+      "Rapid weight loss or bariatric surgery",
+      "Family history of gallbladder disease",
+      "Sedentary lifestyle and high-cholesterol diet"
+    ],
+    "diagnosticTests": [
+      "Abdominal ultrasound (gold standard for detecting gallstones and gallbladder wall thickening)",
+      "HIDA scan (cholescintigraphy) to evaluate cystic duct patency",
+      "Liver function panel (elevated bilirubin, alkaline phosphatase, ALT/AST)",
+      "Complete blood count (elevated WBC count in cholecystitis)"
+    ],
+    "selfCare": [
+      "Avoid all high-fat, greasy, deep-fried meals",
+      "Do NOT consume gallbladder flushes or cleanses (danger of driving stones into common bile duct)",
+      "Maintain steady, gradual weight management",
+      "Seek immediate medical care for attacks lasting > 2 hours accompanied by fever"
+    ],
+    "redFlags": [
+      "Jaundice: yellowing of the whites of eyes (sclera) or skin (Choledocholithiasis)",
+      "Clay-colored pale stools and dark tea-colored urine",
+      "High fever with shaking chills (danger of ascending cholangitis)",
+      "Persistent intractable vomiting with severe dehydration"
+    ],
+    "askDoctor": [
+      "Did the ultrasound show gallstones with or without acute gallbladder wall inflammation?",
+      "Are my bile ducts clear, or is there a risk of pancreatitis?",
+      "Is an elective laparoscopic cholecystectomy recommended to prevent recurrences?"
+    ],
+    "source": {
+      "organization": "MedlinePlus / NIDDK",
+      "title": "Gallstones",
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones"
+    }
+  },
+  {
+    "id": "type-2-diabetes",
+    "name": "Type 2 Diabetes Mellitus",
+    "medicalTerm": "Non-Insulin Dependent Diabetes",
+    "icd10": "E11.9",
+    "category": "Endocrine & Metabolic",
+    "organSystem": "Hormones & Metabolism",
+    "bodyPart": "whole-body",
+    "urgency": "routine",
+    "urgencyText": "Primary Care Consultation",
+    "readTime": "5 min read",
+    "summary": "A chronic metabolic disorder characterized by persistent hyperglycemia resulting from insulin resistance combined with relative insulin secretory deficiency.",
+    "pathology": "Adipose tissue inflammation and receptor defects impair peripheral glucose uptake in muscle and liver, while pancreatic beta-cells progressively undergo exhaustion.",
+    "hallmarkSymptoms": [
+      "Polydipsia: unquenchable thirst despite drinking water",
+      "Polyuria: frequent urination, especially waking multiple times at night (nocturia)",
+      "Polyphagia: persistent hunger even after eating",
+      "Chronic generalized fatigue and daytime sluggishness",
+      "Blurred vision due to lens swelling from hyperosmolar fluids"
+    ],
+    "atypicalSigns": [
+      "Frequent recurrent infections (yeast infections, UTIs, skin boils)",
+      "Slow-healing cuts, sores, and abrasions",
+      "Acanthosis nigricans: darkened, velvety skin patches in neck and armpit folds",
+      "Peripheral neuropathy: tingling, numbness, or burning sensations in toes"
+    ],
+    "riskFactors": [
+      "Overweight/obesity (especially central abdominal visceral fat)",
+      "Physical inactivity (< 150 minutes of weekly activity)",
+      "Age 45 or older",
+      "Family history of type 2 diabetes in parent or sibling",
+      "History of gestational diabetes or polycystic ovary syndrome (PCOS)"
+    ],
+    "diagnosticTests": [
+      "Hemoglobin A1c (HbA1c >= 6.5% confirms diabetes; 5.7%-6.4% prediabetes)",
+      "Fasting plasma glucose (FPG >= 126 mg/dL on two separate occasions)",
+      "Oral glucose tolerance test (2-hour PG >= 200 mg/dL)",
+      "Random plasma glucose >= 200 mg/dL with classic hyperglycemia symptoms"
+    ],
+    "selfCare": [
+      "Nutritional management: focus on whole fibers, lean proteins, vegetables; eliminate sugar-sweetened beverages",
+      "Engage in 150 min/week moderate aerobic activity plus 2 resistance training sessions",
+      "Daily inspection of feet for blisters, cuts, or redness",
+      "Self-monitoring of blood glucose as prescribed",
+      "Adherence to prescribed Metformin, GLP-1 receptor agonists, or SGLT2 inhibitors"
+    ],
+    "redFlags": [
+      "Hyperosmolar Hyperglycemic State (HHS): Blood sugar > 600 mg/dL, severe dry mouth, high fever, confusion, hallucinations",
+      "Deep rapid breathing with fruity-smelling breath (Ketoacidosis)",
+      "Severe hypoglycemia (< 55 mg/dL) causing shakiness, sweating, confusion, seizure",
+      "Non-healing diabetic foot ulcer showing blackened necrotic tissue"
+    ],
+    "askDoctor": [
+      "What is my baseline HbA1c, and what is my target level?",
+      "Would a continuous glucose monitor (CGM) or fingerstick testing be better for me?",
+      "Do I need annual diabetic eye exams (dilated retinal exam) and kidney microalbumin urine checks?"
+    ],
+    "source": {
+      "organization": "American Diabetes Association / CDC",
+      "title": "About Type 2 Diabetes",
+      "url": "https://www.cdc.gov/diabetes/about/about-type-2-diabetes.html"
+    }
+  },
+  {
+    "id": "hypothyroidism",
+    "name": "Hypothyroidism (Underactive Thyroid)",
+    "medicalTerm": "Hashimoto's Thyroiditis / Thyroid Failure",
+    "icd10": "E03.9",
+    "category": "Endocrine & Metabolic",
+    "organSystem": "Hormones & Metabolism",
+    "bodyPart": "whole-body",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Endocrinologist",
+    "readTime": "4 min read",
+    "summary": "A clinical state where the thyroid gland does not produce sufficient thyroid hormones (T3 and T4), slowing down the body's entire metabolic rate.",
+    "pathology": "Most frequently caused by autoimmune destruction of thyroid follicles (Hashimoto's thyroiditis), leading to reduced mitochondrial respiration and basal cellular metabolism.",
+    "hallmarkSymptoms": [
+      "Persistent, debilitating fatigue and extreme sluggishness",
+      "Cold intolerance (feeling freezing when others are comfortable)",
+      "Unexplained modest weight gain (5-10 lbs, mostly fluid and salt)",
+      "Chronic constipation and sluggish digestion",
+      "Dry, coarse, pale skin and brittle fingernails"
+    ],
+    "atypicalSigns": [
+      "Thinning hair and loss of the outer third of the eyebrows (Queen Anne's sign)",
+      "Puffy face, especially periorbital edema around the eyes",
+      "Slow heart rate (bradycardia)",
+      "Depressed mood, impaired memory, and brain fog",
+      "Menorrhagia (heavy, irregular menstrual cycles)"
+    ],
+    "riskFactors": [
+      "Female sex (5-8x more common than men)",
+      "Age over 60",
+      "Personal or family history of autoimmune disorders (Type 1 diabetes, Celiac, Vitiligo)",
+      "Prior radioactive iodine treatment or thyroidectomy surgery",
+      "Postpartum state"
+    ],
+    "diagnosticTests": [
+      "Serum Thyroid Stimulating Hormone (TSH - primary sensitive screening test; elevated in primary hypothyroidism)",
+      "Free Thyroxine (Free T4 - low in overt hypothyroidism)",
+      "Thyroid Peroxidase Antibodies (Anti-TPO - positive confirms Hashimoto's thyroiditis)",
+      "Thyroid ultrasound if goiter or nodules are present"
+    ],
+    "selfCare": [
+      "Take prescribed synthetic Levothyroxine (T4) on an empty stomach with a full glass of water, at least 30-60 minutes before breakfast",
+      "Never take calcium, iron supplements, or antacids within 4 hours of thyroid medication (they bind and block absorption)",
+      "Maintain regular balanced nutrition with adequate dietary iodine (iodized salt)",
+      "Follow up for blood tests every 6 to 12 weeks during dose titration"
+    ],
+    "redFlags": [
+      "Myxedema Coma: Hypothermia, severe bradycardia, profound confusion, hypoventilation, lethargy progressing to coma (RARE LIFE THREATENING EMERGENCY)",
+      "Heart palpitations or chest pain after starting thyroid medication"
+    ],
+    "askDoctor": [
+      "What is my TSH and Free T4 level, and what is the optimal target for my symptoms?",
+      "Were thyroid peroxidase (TPO) antibodies tested to confirm Hashimoto's?",
+      "How frequently should my hormone levels be re-evaluated to adjust my dosage?"
+    ],
+    "source": {
+      "organization": "American Thyroid Association / MedlinePlus",
+      "title": "Hypothyroidism (Underactive Thyroid)",
+      "url": "https://medlineplus.gov/hypothyroidism.html"
+    }
+  },
+  {
+    "id": "hyperthyroidism",
+    "name": "Hyperthyroidism & Graves' Disease",
+    "medicalTerm": "Thyrotoxicosis",
+    "icd10": "E05.0",
+    "category": "Endocrine & Metabolic",
+    "organSystem": "Hormones & Metabolism",
+    "bodyPart": "whole-body",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Endocrine Care",
+    "readTime": "4 min read",
+    "summary": "An overactive thyroid gland that produces and secretes excessive amounts of thyroid hormones, placing the body into a hypermetabolic state.",
+    "pathology": "Autoantibodies bind to and stimulate the TSH receptor (Graves' disease) or autonomous toxic thyroid nodules produce unchecked T3/T4 secretion.",
+    "hallmarkSymptoms": [
+      "Rapid heart rate (resting tachycardia > 100 bpm) or palpitations",
+      "Unintentional weight loss despite normal or increased appetite",
+      "Heat intolerance and excessive perspiration",
+      "Fine tremor in outstretched fingers and hands",
+      "Nervousness, anxiety, irritability, and restlessness"
+    ],
+    "atypicalSigns": [
+      "Graves' ophthalmopathy: bulging eyes (proptosis), gritty eye irritation, double vision",
+      "Frequent loose bowel movements",
+      "Oligomenorrhea: very light or absent menstrual periods",
+      "Enlarged thyroid gland (visible smooth goiter in the neck)"
+    ],
+    "riskFactors": [
+      "Female sex",
+      "Family history of Graves' disease or thyroid disorders",
+      "Smoking (greatly worsens Graves' eye disease)",
+      "High dietary or medication iodine exposure"
+    ],
+    "diagnosticTests": [
+      "Serum TSH (suppressed / undetectable < 0.01 mIU/L)",
+      "Free T3 and Free T4 (significantly elevated)",
+      "Thyroid-stimulating immunoglobulin (TSI) antibodies",
+      "Radioactive iodine uptake and thyroid scan"
+    ],
+    "selfCare": [
+      "Take prescribed antithyroid medications (Methimazole / PTU) or beta-blockers (Propranolol) as directed",
+      "Avoid stimulants: stop caffeine, energy drinks, decongestants",
+      "Wear sunglasses and use lubricating eye drops for eye dryness and sensitivity",
+      "Ensure adequate caloric and calcium intake to prevent bone density loss"
+    ],
+    "redFlags": [
+      "Thyroid Storm: High fever (> 103\u00b0F / 39.4\u00b0C), heart rate > 140 bpm, delirium, agitation, diarrhea, yellowing skin (MEDICAL EMERGENCY)",
+      "New onset of irregular heart rhythm (Atrial Fibrillation)"
+    ],
+    "askDoctor": [
+      "Is my hyperthyroidism caused by Graves' disease, a toxic nodule, or thyroiditis?",
+      "What are the pros and cons of antithyroid medication vs radioactive iodine vs surgery for my case?",
+      "Can a beta-blocker be prescribed to immediately calm my racing pulse and tremor?"
+    ],
+    "source": {
+      "organization": "NIDDK / NIH",
+      "title": "Hyperthyroidism (Overactive Thyroid)",
+      "url": "https://www.niddk.nih.gov/health-information/endocrine-diseases/hyperthyroidism"
+    }
+  },
+  {
+    "id": "osteoarthritis",
+    "name": "Osteoarthritis",
+    "medicalTerm": "Degenerative Joint Disease",
+    "icd10": "M19.90",
+    "category": "Musculoskeletal",
+    "organSystem": "Bones, Joints & Muscles",
+    "bodyPart": "legs",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Physical Therapy",
+    "readTime": "4 min read",
+    "summary": "The most common form of arthritis, involving progressive biomechanical breakdown of articular cartilage, subchondral bone remodeling, and secondary synovitis.",
+    "pathology": "Chondrocyte failure leads to cartilage fibrillation, joint space narrowing, subchondral sclerosis, and osteophyte (bone spur) formation.",
+    "hallmarkSymptoms": [
+      "Deep, aching joint pain that worsens after joint use and improves with rest",
+      "Morning joint stiffness lasting LESS than 30 minutes",
+      "Joint crepitus (grating, crunching, or cracking sensation on movement)",
+      "Enlargement of joints with reduced range of motion",
+      "Commonly affects weight-bearing joints (knees, hips) and distal hands"
+    ],
+    "atypicalSigns": [
+      "Bony nodes on fingers: Heberden's nodes (distal joints) and Bouchard's nodes (middle joints)",
+      "Joint giving way or feeling unstable during stair climbing",
+      "Pain flare-ups during cold or damp weather changes"
+    ],
+    "riskFactors": [
+      "Age over 50",
+      "Female sex (especially postmenopausal)",
+      "Obesity (exponentially increases mechanical load on knees/hips)",
+      "Previous joint injury or ligament tear (ACL, meniscus)",
+      "Occupational repetitive kneeling, squatting, or heavy lifting"
+    ],
+    "diagnosticTests": [
+      "Weight-bearing plain radiography (X-rays showing joint space narrowing, osteophytes, subchondral sclerosis)",
+      "Physical exam evaluating joint stability, effusion, and range of motion",
+      "Synovial fluid analysis to exclude crystal arthropathy or infection if effusion is present"
+    ],
+    "selfCare": [
+      "Low-impact aerobic exercise: swimming, water aerobics, stationary cycling, walking",
+      "Quadriceps and core muscle strengthening under physical therapy guidance",
+      "Weight loss (every 1 lb lost relieves 4 lbs of pressure from the knees)",
+      "Topical NSAID gel (Diclofenac) applied to affected joint before systemic pills",
+      "Supportive footwear with shock-absorbing insoles"
+    ],
+    "redFlags": [
+      "Joint suddenly becomes hot, brightly red, exquisitely swollen, and cannot bear any weight (must exclude SEPTIC ARTHRITIS)",
+      "Associated high fever or shaking chills",
+      "Sudden 'locking' of the knee joint where it cannot be straightened at all"
+    ],
+    "askDoctor": [
+      "Would physical therapy or a structured joint exercise program help reduce my pain?",
+      "Am I a candidate for topical NSAIDs or intra-articular corticosteroid/viscosupplementation injections?",
+      "At what stage should I consult an orthopedic surgeon regarding joint replacement?"
+    ],
+    "source": {
+      "organization": "CDC / National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIAMS)",
+      "title": "Osteoarthritis",
+      "url": "https://www.niams.nih.gov/health-topics/osteoarthritis"
+    }
+  },
+  {
+    "id": "lumbar-sciatica",
+    "name": "Lumbar Radiculopathy (Sciatica)",
+    "medicalTerm": "Sciatic Nerve Compression",
+    "icd10": "M54.30",
+    "category": "Musculoskeletal",
+    "organSystem": "Bones, Joints & Muscles",
+    "bodyPart": "spine",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Physical Therapy",
+    "readTime": "4 min read",
+    "summary": "Pain radiating along the path of the sciatic nerve, typically branching from the lower back through the hip and buttock down one leg.",
+    "pathology": "Herniation of a lumbar intervertebral disc (L4-L5 or L5-S1) or spinal canal stenosis causes mechanical compression and chemical irritation of the nerve root.",
+    "hallmarkSymptoms": [
+      "Sharp, burning, or electric-shock pain radiating down the buttock, posterior thigh, and calf",
+      "Pain typically felt in ONE leg (unilateral)",
+      "Pain aggravated by prolonged sitting, coughing, sneezing, or straining",
+      "Numbness, pins-and-needles (paresthesia), or weakness in the affected foot or toes",
+      "Positive straight-leg raise test (pain shooting below knee when leg is elevated straight)"
+    ],
+    "atypicalSigns": [
+      "Difficulty standing on tiptoes (S1 nerve root) or lifting foot/toes (L5 nerve root)",
+      "Diminished Achilles or patellar tendon reflex on neurological exam"
+    ],
+    "riskFactors": [
+      "Age 30 to 50",
+      "Sedentary occupations with prolonged static sitting",
+      "Heavy lifting with spinal rotation and poor mechanics",
+      "Diabetes (increases susceptibility to peripheral nerve damage)",
+      "Obesity and pregnancy"
+    ],
+    "diagnosticTests": [
+      "Comprehensive lower extremity neurological exam (motor strength, sensory dermatomes, deep tendon reflexes)",
+      "Lumbar spine MRI (indicated if pain persists > 6 weeks, red flags exist, or surgery is contemplated)",
+      "Electromyography (EMG) and nerve conduction studies"
+    ],
+    "selfCare": [
+      "Avoid prolonged bed rest (remaining gently active promotes faster recovery than staying in bed)",
+      "Apply cold packs for the first 48 hours, then switch to gentle heat therapy",
+      "Perform gentle McKenzie extension exercises and hamstring stretches as tolerated",
+      "Use ergonomic lumbar back support while sitting"
+    ],
+    "redFlags": [
+      "CAUDA EQUINA SYNDROME (SURGICAL EMERGENCY): Loss of bowel or bladder control (incontinence or urinary retention)",
+      "Saddle anesthesia: progressive numbness in groin, buttocks, and perineal area",
+      "Sudden profound motor weakness ('Foot Drop' - unable to lift toes while walking)"
+    ],
+    "askDoctor": [
+      "Does my neurological exam show any motor deficit or reflex changes?",
+      "Would physical therapy focusing on core stabilization and nerve glides benefit me?",
+      "What red flag symptoms require an immediate trip to the emergency room?"
+    ],
+    "source": {
+      "organization": "NIAMS / MedlinePlus",
+      "title": "Sciatica",
+      "url": "https://medlineplus.gov/sciatica.html"
+    }
+  },
+  {
+    "id": "gout-arthritis",
+    "name": "Gout & Hyperuricemia",
+    "medicalTerm": "Crystal-Induced Arthropathy",
+    "icd10": "M10.9",
+    "category": "Musculoskeletal",
+    "organSystem": "Bones, Joints & Muscles",
+    "bodyPart": "legs",
+    "urgency": "urgent",
+    "urgencyText": "Urgent Care / Primary Care",
+    "readTime": "4 min read",
+    "summary": "A painful form of inflammatory arthritis caused by the deposition of monosodium urate monohydrate crystals in synovial fluid and joint tissues.",
+    "pathology": "Chronic hyperuricemia (serum uric acid > 6.8 mg/dL) exceeds solubility limits, precipitating needle-like urate crystals that trigger intense neutrophil activation.",
+    "hallmarkSymptoms": [
+      "Sudden, excruciating, explosive joint pain that awakens the patient in the middle of the night",
+      "Podagra: predominantly affects the first metatarsophalangeal (MTP) joint of the BIG TOE (> 50% of first flares)",
+      "Affected joint is intensely swollen, shiny red or purplish, and hot to touch",
+      "Extreme hyperalgesia: even the weight of a bedsheet on the toe causes agonizing pain",
+      "Flares peak within 12-24 hours and gradually subside over 7-14 days"
+    ],
+    "atypicalSigns": [
+      "Flares in knees, ankles, wrists, or elbows instead of the big toe",
+      "Tophi: hard, chalky white deposits of urate crystals under skin around ears, elbows, or fingers in chronic cases",
+      "Low-grade fever mimicking cellulitis"
+    ],
+    "riskFactors": [
+      "High purine diet (red meat, organ meats, shellfish)",
+      "Alcohol consumption (especially beer and spirits)",
+      "High-fructose corn syrup sweetened beverages",
+      "Male sex (postmenopausal women catch up)",
+      "Use of thiazide or loop diuretics",
+      "Chronic kidney disease and metabolic syndrome"
+    ],
+    "diagnosticTests": [
+      "Arthrocentesis (joint aspiration): polarized light microscopy reveals needle-shaped, negatively birefringent monosodium urate crystals (DEFINITIVE)",
+      "Serum uric acid level (may paradoxically be normal during an acute attack!)",
+      "Dual-energy CT (DECT) to visualize urate crystal deposits",
+      "Joint ultrasound"
+    ],
+    "selfCare": [
+      "Elevate and rest the affected joint; apply ice packs wrapped in towels for 20 minutes at a time",
+      "Start acute anti-inflammatory treatment (Colchicine, high-dose NSAID, or oral Prednisone) at the earliest sign of a flare",
+      "Drink at least 2-3 liters of water daily to promote renal uric acid excretion",
+      "Long-term: take prescribed urate-lowering therapy (Allopurinol or Febuxostat) consistently, aiming for target uric acid < 6.0 mg/dL"
+    ],
+    "redFlags": [
+      "Suspected Septic Arthritis: Unable to distinguish from an infected joint; high fever, chills, open skin breakdown over joint",
+      "Spreading warmth, redness, and red streaks up the leg",
+      "Inability to bear any weight for several days"
+    ],
+    "askDoctor": [
+      "Should joint fluid aspiration be performed to confirm urate crystals and rule out infection?",
+      "What is my serum uric acid level, and what is my goal target (< 6.0 mg/dL)?",
+      "When should I begin long-term preventive urate-lowering therapy (e.g. Allopurinol)?"
+    ],
+    "source": {
+      "organization": "CDC / MedlinePlus",
+      "title": "Gout",
+      "url": "https://www.cdc.gov/arthritis/types/gout.html"
+    }
+  },
+  {
+    "id": "fibromyalgia",
+    "name": "Fibromyalgia",
+    "medicalTerm": "Central Sensitivity Syndrome",
+    "icd10": "M79.7",
+    "category": "Musculoskeletal",
+    "organSystem": "Bones, Joints & Muscles",
+    "bodyPart": "whole-body",
+    "urgency": "routine",
+    "urgencyText": "Rheumatologist / Primary Care",
+    "readTime": "4 min read",
+    "summary": "A chronic non-articular disorder characterized by widespread musculoskeletal pain, central pain amplification, debilitating fatigue, and sleep disturbances.",
+    "pathology": "Dysregulated central pain processing (nociplastic pain) characterized by elevated excitatory neurotransmitters (substance P, glutamate) and deficient descending pain-inhibitory pathways.",
+    "hallmarkSymptoms": [
+      "Widespread body pain present for at least 3 months, affecting both sides of the body, above and below the waist",
+      "Unrefreshing sleep: waking up feeling exhausted even after 8-10 hours in bed",
+      "Profound, relentless physical and mental fatigue",
+      "Fibro fog: difficulties with working memory, attention, multitasking, and verbal fluency",
+      "Diffuse muscle stiffness and tenderness in soft tissues"
+    ],
+    "atypicalSigns": [
+      "Hyperalgesia (amplified pain to painful stimuli) and Allodynia (pain from normally painless touch)",
+      "Restless legs syndrome during sleep",
+      "Coexisting conditions: Irritable bowel syndrome, tension headaches, temporomandibular joint (TMJ) dysfunction, interstitial cystitis"
+    ],
+    "riskFactors": [
+      "Female sex (significantly higher diagnosed ratio)",
+      "Middle age (though can present across lifespan)",
+      "Pre-existing rheumatoid arthritis, lupus, or ankylosing spondylitis",
+      "Physical trauma, severe viral infection, or major psychological stressor triggering onset"
+    ],
+    "diagnosticTests": [
+      "American College of Rheumatology (ACR) Widespread Pain Index (WPI) and Symptom Severity (SS) scale",
+      "Extensive exclusionary laboratory testing (ESR, CRP, TSH, Vitamin D, Ferritin, CBC, ANA) to rule out thyroid failure, lupus, or polymyalgia rheumatica"
+    ],
+    "selfCare": [
+      "Gentle, graded aerobic exercise (aquatic therapy, tai chi, walking, stationary cycling) - start slow and build incrementally",
+      "Strict sleep hygiene protocol (consistent schedule, dark cool bedroom, no screens before bed)",
+      "Cognitive Behavioral Therapy (CBT) for chronic pain coping strategies",
+      "FDA-approved neuromodulating medications (Duloxetine, Milnacipran, Pregabalin) as prescribed"
+    ],
+    "redFlags": [
+      "Rapidly progressive muscle weakness (e.g. unable to lift arms or get up from a chair - suggests polymyositis)",
+      "Joints showing true inflammatory swelling, redness, and heat (suggests autoimmune inflammatory arthritis)",
+      "New temporal headache with visual disturbance in patients over 50 (Temporal arteritis)"
+    ],
+    "askDoctor": [
+      "Have other mimickers like hypothyroidism, rheumatoid arthritis, and polymyalgia rheumatica been excluded?",
+      "Would a referral to physical therapy or pain-focused cognitive behavioral therapy be helpful?",
+      "What medications can improve both my non-restorative sleep and pain sensitivity?"
+    ],
+    "source": {
+      "organization": "NIAMS / NIH",
+      "title": "Fibromyalgia",
+      "url": "https://www.niams.nih.gov/health-topics/fibromyalgia"
+    }
+  },
+  {
+    "id": "eczema-atopic-dermatitis",
+    "name": "Atopic Dermatitis (Eczema)",
+    "medicalTerm": "Atopic Eczema",
+    "icd10": "L20.9",
+    "category": "Dermatology",
+    "organSystem": "Skin & Cutaneous",
+    "bodyPart": "skin",
+    "urgency": "routine",
+    "urgencyText": "Dermatology / Primary Care",
+    "readTime": "4 min read",
+    "summary": "A chronic, relapsing, pruritic inflammatory skin disease characterized by epidermal barrier dysfunction and immune hyperreactivity.",
+    "pathology": "Genetic mutations in the epidermal structural protein filaggrin (FLG) lead to increased transepidermal water loss, antigen penetration, and Th2 cytokine immune response.",
+    "hallmarkSymptoms": [
+      "Intense, persistent pruritus (itching) - often described as 'an itch that rashes'",
+      "Dry, erythematous (red), scaly patches of skin",
+      "Classic distribution in flexural creases (antecubital elbow creases, popliteal back-of-knee folds, neck, wrists)",
+      "Excoriations, weeping, and serous crusting during acute flares",
+      "Lichenification: thickened, leathery skin with exaggerated markings from chronic scratching"
+    ],
+    "atypicalSigns": [
+      "Dennie-Morgan infraorbital skin folds beneath lower eyelids",
+      "Pityriasis alba (faint hypopigmented dry patches on face/arms)",
+      "Keratosis pilaris ('chicken skin' bumps on outer arms)"
+    ],
+    "riskFactors": [
+      "Personal or family history of the 'Atopic Triad' (eczema, allergic rhinitis, asthma)",
+      "Living in dry, cold climates or urban environments",
+      "Frequent hot showers with harsh alkaline bar soaps",
+      "Contact with wool, synthetic fabrics, chemical detergents, and household dust mites"
+    ],
+    "diagnosticTests": [
+      "Clinical dermatological examination and Hanifin & Rajka diagnostic criteria",
+      "Patch testing if secondary allergic contact dermatitis is suspected",
+      "Skin swab bacterial culture if weeping lesions suggest secondary Staph infection"
+    ],
+    "selfCare": [
+      "The 'Soak and Seal' method: bathe in lukewarm water for 10 minutes, pat skin gently, and apply thick ceramide ointment within 3 minutes",
+      "Switch strictly to fragrance-free, soap-free gentle liquid cleansers",
+      "Keep fingernails trimmed short to minimize mechanical skin excoriation during sleep",
+      "Apply prescribed topical corticosteroids or topical calcineurin inhibitors during active flares"
+    ],
+    "redFlags": [
+      "Eczema Herpeticum: Rapid emergence of punched-out, painful, fluid-filled blisters or open sores with high fever (DERMATOLOGICAL EMERGENCY requiring oral/IV acyclovir)",
+      "Spreading golden-yellow honey-colored crusts (Secondary Impetigo)",
+      "Rapidly spreading heat, redness, swelling, and systemic fever (Cellulitis)"
+    ],
+    "askDoctor": [
+      "Are my topical corticosteroids appropriately matched to body location (avoid high-potency steroids on face/groin)?",
+      "Would non-steroidal topical agents (PDE4 inhibitors or calcineurin inhibitors) be appropriate for maintenance?",
+      "Am I a candidate for targeted biologic therapy (Dupilumab) if topical care fails?"
+    ],
+    "source": {
+      "organization": "National Eczema Association / MedlinePlus",
+      "title": "Eczema",
+      "url": "https://medlineplus.gov/eczema.html"
+    }
+  },
+  {
+    "id": "psoriasis",
+    "name": "Plaque Psoriasis",
+    "medicalTerm": "Psoriasis Vulgaris",
+    "icd10": "L40.0",
+    "category": "Dermatology",
+    "organSystem": "Skin & Cutaneous",
+    "bodyPart": "skin",
+    "urgency": "routine",
+    "urgencyText": "Dermatologist Consultation",
+    "readTime": "4 min read",
+    "summary": "A chronic systemic immune-mediated inflammatory skin condition characterized by sharply demarcated erythematous plaques covered with silvery micaceous scales.",
+    "pathology": "Dysregulated IL-23/IL-17 immune axis accelerates epidermal keratinocyte turnover from the usual 28-30 days to just 3-5 days, causing immature cell accumulation.",
+    "hallmarkSymptoms": [
+      "Well-demarcated raised red plaques covered with coarse, flaky, silvery-white scales",
+      "Classic extensor surface distribution: outer elbows, front of knees, scalp, and lumbosacral back",
+      "Auspitz sign: pinpoint droplet bleeding when scales are gently lifted or scraped off",
+      "Koebner phenomenon: new psoriatic plaques developing at sites of skin trauma or friction",
+      "Scalp psoriasis causing thick scaling and severe dandruff-like flaking"
+    ],
+    "atypicalSigns": [
+      "Psoriatic nail changes: nail pitting (ice-pick depressions), oil drop discoloration, subungual hyperkeratosis, or onycholysis",
+      "Joint stiffness and swelling (Psoriatic Arthritis) in up to 30% of patients"
+    ],
+    "riskFactors": [
+      "Genetic predisposition (HLA-Cw6 association)",
+      "Emotional stress and physical trauma",
+      "Streptococcal pharyngeal infection (classic trigger for guttate psoriasis)",
+      "Certain medications (beta-blockers, lithium, antimalarials, systemic steroid withdrawal)",
+      "Tobacco smoking and heavy alcohol consumption"
+    ],
+    "diagnosticTests": [
+      "Clinical visual inspection and dermoscopy by a dermatologist",
+      "Skin punch biopsy in equivocal cases",
+      "Screening questionnaires (PEST) for psoriatic arthritis",
+      "Cardiovascular risk factor screening"
+    ],
+    "selfCare": [
+      "Daily application of rich moisturizing ointments containing salicylic acid or urea to soften thick scales",
+      "Topical prescription combinations: Vitamin D analogues (Calcipotriene) plus potent topical corticosteroids",
+      "Controlled narrowband UVB phototherapy under medical supervision",
+      "Avoid skin injuries, cuts, sunburns, and harsh scrubbing"
+    ],
+    "redFlags": [
+      "Erythrodermic Psoriasis: Fiery red peeling rash covering > 90% of total body surface area with severe shivering and electrolyte imbalance (HOSPITAL EMERGENCY)",
+      "Generalized Pustular Psoriasis: Sheets of sterile yellow pustules across the body with high spiking fever"
+    ],
+    "askDoctor": [
+      "Does my nail pitting or morning stiffness indicate early psoriatic arthritis?",
+      "What is my Body Surface Area (BSA) score, and would biologic therapy (IL-17, IL-23, TNF inhibitors) be appropriate?",
+      "How can I rotate topical treatments to prevent corticosteroid skin atrophy?"
+    ],
+    "source": {
+      "organization": "National Psoriasis Foundation / NIAMS",
+      "title": "Psoriasis",
+      "url": "https://www.niams.nih.gov/health-topics/psoriasis"
+    }
+  },
+  {
+    "id": "shingles-herpes-zoster",
+    "name": "Shingles (Herpes Zoster)",
+    "medicalTerm": "Varicella-Zoster Virus Reactivation",
+    "icd10": "B02.9",
+    "category": "Dermatology",
+    "organSystem": "Skin & Cutaneous",
+    "bodyPart": "skin",
+    "urgency": "urgent",
+    "urgencyText": "Urgent Medical Care (Within 72 Hours)",
+    "readTime": "4 min read",
+    "summary": "A painful, blistering viral skin eruption caused by the reactivation of dormant varicella-zoster virus (VZV) in cranial or dorsal root sensory ganglia.",
+    "pathology": "Waning cellular immunity allows latent virus in sensory nerve root ganglia to replicate, travel anterograde along the peripheral nerve, and erupt in a single cutaneous dermatome.",
+    "hallmarkSymptoms": [
+      "Prodrome: burning, tingling, stinging, or hyperesthesia in a localized skin band 2-4 days BEFORE any rash appears",
+      "Unilateral eruption of clustered erythematous papules that rapidly evolve into clear fluid-filled vesicles",
+      "Strict dermatomal distribution: stops sharply at the anatomical midline of the body (e.g. half-belt around torso)",
+      "Intense, deep neuralgic pain described as burning, stabbing, or electric shocks",
+      "Blisters crust over within 7 to 10 days and usually clear in 2 to 4 weeks"
+    ],
+    "atypicalSigns": [
+      "Hutchinson's sign: vesicles on the tip or side of the nose (indicates ophthalmic trigeminal nerve involvement risking vision loss!)",
+      "Postherpetic Neuralgia (PHN): severe nerve pain persisting months or years after rash resolves"
+    ],
+    "riskFactors": [
+      "Age > 50 (risk increases steeply with advancing decades)",
+      "Prior childhood chickenpox infection",
+      "Immunocompromised status (cancer therapy, HIV, organ transplant, immunosuppressants)",
+      "Significant psychological or physical stress"
+    ],
+    "diagnosticTests": [
+      "Clinical diagnosis based on distinctive unilateral dermatomal distribution",
+      "VZV PCR from viral swab of vesicular fluid in atypical or immunocompromised presentations",
+      "Slit-lamp ophthalmic examination if ophthalmic nerve is involved"
+    ],
+    "selfCare": [
+      "CRITICAL: Begin prescription antiviral therapy (Valacyclovir, Acyclovir, or Famciclovir) within 72 hours of rash onset to shorten course and reduce PHN risk",
+      "Keep the rash clean, dry, and loosely covered with non-stick sterile dressings to prevent transmission",
+      "Avoid contact with pregnant women, newborns, and anyone who has never had chickenpox or the vaccine",
+      "Apply cool calamine lotion or cool damp washcloths to soothe blister discomfort"
+    ],
+    "redFlags": [
+      "Blisters near or affecting the EYE or forehead (Herpes Zoster Ophthalmicus - EMERGENCY RISK OF PERMANENT CORNEAL BLINDNESS)",
+      "Facial paralysis with blisters inside the ear canal (Ramsay Hunt Syndrome)",
+      "Disseminated shingles: rash spreading across multiple non-contiguous dermatomes (suggests severe immunosuppression)"
+    ],
+    "askDoctor": [
+      "Can I start oral antiviral therapy (e.g. Valacyclovir) today within the 72-hour window?",
+      "Is there any risk to my vision based on the rash location?",
+      "What medications can be prescribed to manage acute neuropathic nerve pain (Gabapentin/Pregabalin)?"
+    ],
+    "source": {
+      "organization": "CDC",
+      "title": "About Shingles (Herpes Zoster)",
+      "url": "https://www.cdc.gov/shingles/about/index.html"
+    }
+  },
+  {
+    "id": "cellulitis",
+    "name": "Cellulitis",
+    "medicalTerm": "Acute Bacterial Dermis & Subcutaneous Infection",
+    "icd10": "L03.90",
+    "category": "Dermatology",
+    "organSystem": "Skin & Cutaneous",
+    "bodyPart": "skin",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Medical / ER Evaluation",
+    "readTime": "4 min read",
+    "summary": "An acute, spreading bacterial infection of the deep dermis and subcutaneous tissue, most commonly affecting the lower legs.",
+    "pathology": "Bacterial entry (most commonly Streptococcus pyogenes or Staphylococcus aureus) through a disrupted epidermal barrier triggers intense neutrophil infiltration, edema, and tissue inflammation.",
+    "hallmarkSymptoms": [
+      "Rapidly spreading area of warm, bright red, swollen skin with ill-defined borders",
+      "Skin feels hot and exquisitely tender to light pressure",
+      "Noticeable swelling and stretched, tight appearance of the affected limb",
+      "Peau d'orange: skin takes on a pitted dimpled texture resembling an orange peel due to edema",
+      "Unilateral presentation (overwhelmingly affects ONE lower leg)"
+    ],
+    "atypicalSigns": [
+      "Systemic symptoms: fever, chills, tachycardia, and malaise may precede skin changes",
+      "Regional lymphadenopathy: swollen, tender lymph nodes in the groin or armpit",
+      "Lymphangitis: red streaks traveling up the leg along lymphatic drainage pathways"
+    ],
+    "riskFactors": [
+      "Breaks in the skin (cuts, athlete's foot tinea pedis, eczema, insect bites, ulcers)",
+      "Chronic lymphedema or venous insufficiency with leg swelling",
+      "Obesity",
+      "Prior history of cellulitis (30% recurrence rate)",
+      "Diabetes mellitus and peripheral vascular disease"
+    ],
+    "diagnosticTests": [
+      "Clinical physical examination (drawing a surgical pen line around the red border to track spreading vs regression)",
+      "Complete blood count and inflammatory markers (WBC, CRP)",
+      "Blood cultures if high fever, rigors, or immunocompromised status exists",
+      "Lower extremity venous ultrasound to exclude deep vein thrombosis (DVT) mimic"
+    ],
+    "selfCare": [
+      "DO NOT delay medical assessment; systemic oral or IV antibiotics are mandatory",
+      "Elevate the affected limb above the level of the heart to facilitate venous and lymphatic drainage",
+      "Keep the area clean, protected, and dry",
+      "Complete the full antibiotic course (typically 5 to 10 days) even if redness begins to recede"
+    ],
+    "redFlags": [
+      "Rapidly advancing redness (> 1 inch per hour) despite starting antibiotics",
+      "Severe pain out of proportion to physical exam, skin bullae, purple necrosis, or crackling air under skin ('Crepitus' - NECROTIZING FASCIITIS EMERGENCY)",
+      "High fever, altered mental status, confusion, or systolic BP < 90 mmHg (Sepsis)"
+    ],
+    "askDoctor": [
+      "What oral antibiotic covers Streptococcus and community-acquired MRSA for my infection?",
+      "Should a pen line be marked on my leg to objectively monitor infection spread over the next 24 hours?",
+      "How can I treat my underlying athlete's foot (tinea pedis) to prevent bacteria from entering again?"
+    ],
+    "source": {
+      "organization": "CDC / MedlinePlus",
+      "title": "Cellulitis",
+      "url": "https://www.cdc.gov/groupastrep/diseases-public/cellulitis.html"
+    }
+  },
+  {
+    "id": "urinary-tract-infection",
+    "name": "Urinary Tract Infection (UTI / Cystitis)",
+    "medicalTerm": "Acute Bacterial Cystitis",
+    "icd10": "N39.0",
+    "category": "Urology",
+    "organSystem": "Urinary & Renal",
+    "bodyPart": "pelvis",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Medical Evaluation",
+    "readTime": "4 min read",
+    "summary": "An infection in any part of the urinary system, most frequently the lower urinary tract (bladder and urethra) caused by ascending bacteria.",
+    "pathology": "Uropathogenic Escherichia coli (UPEC) colonize the periurethral area, ascend the urethra, and adhere to uroepithelial umbrella cells via type 1 fimbriae, triggering inflammation.",
+    "hallmarkSymptoms": [
+      "Dysuria: sharp, burning or stinging sensation while urinating",
+      "Urinary urgency: sudden, compelling urge to void that cannot be postponed",
+      "Urinary frequency: passing frequent, abnormally small volumes of urine",
+      "Suprapubic discomfort: pressure or dull aching pain in the lower midline abdomen",
+      "Cloudy, murky, or strong foul-smelling urine"
+    ],
+    "atypicalSigns": [
+      "Hematuria: pink, red, or cola-colored blood in the urine",
+      "Frail elderly individuals may present WITHOUT urinary symptoms, instead developing acute confusion, delirium, or sudden unsteadiness and falls",
+      "Mild low-grade fever"
+    ],
+    "riskFactors": [
+      "Female anatomy (shorter urethra closer to anal canal)",
+      "Sexual intercourse (increases bacterial introduction into urethra)",
+      "Use of spermicides or diaphragms",
+      "Postmenopausal estrogen depletion (atrophic urethritis)",
+      "Urinary catheterization, urinary retention, or benign prostatic hyperplasia in men"
+    ],
+    "diagnosticTests": [
+      "Urinalysis dipstick (positive for leukocyte esterase and nitrites)",
+      "Urine microscopic examination (pyuria > 10 WBCs/hpf and bacteriuria)",
+      "Urine culture and antimicrobial susceptibility testing (identifies organism and optimal antibiotic)"
+    ],
+    "selfCare": [
+      "Seek medical assessment to obtain appropriate targeted antibacterial therapy",
+      "Drink plenty of water to mechanically flush bacteria out of the urinary tract",
+      "Urinate immediately following sexual intercourse",
+      "Wipe strictly from front to back after bowel movements",
+      "Over-the-counter Phenazopyridine (Azo) can provide temporary numbing relief of bladder burning (turns urine bright orange!)"
+    ],
+    "redFlags": [
+      "Flank pain: dull or sharp aching in the lower back or side over the kidneys",
+      "High fever (> 101\u00b0F / 38.3\u00b0C) with shaking chills (PYELONEPHRITIS - Kidney Infection)",
+      "Nausea, vomiting, and inability to tolerate oral liquids or medications",
+      "Symptoms in men, pregnant women, or immunocompromised individuals (complicated UTI)"
+    ],
+    "askDoctor": [
+      "Will a clean-catch urine culture be sent to verify the antibiotic choice?",
+      "How many days should I take my prescribed antibiotic (e.g. Nitrofurantoin, TMP-SMX, or Fosfomycin)?",
+      "What warning signs indicate the infection has spread up toward my kidneys?"
+    ],
+    "source": {
+      "organization": "NIDDK / CDC",
+      "title": "Urinary Tract Infection",
+      "url": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-infection-uti-in-adults"
+    }
+  },
+  {
+    "id": "kidney-stones",
+    "name": "Kidney Stones (Nephrolithiasis)",
+    "medicalTerm": "Renal Calculi & Ureteral Colic",
+    "icd10": "N20.0",
+    "category": "Urology",
+    "organSystem": "Urinary & Renal",
+    "bodyPart": "pelvis",
+    "urgency": "emergency",
+    "urgencyText": "Emergency Evaluation for Severe Colic",
+    "readTime": "4 min read",
+    "summary": "Hard mineral and salt deposits that form inside the renal calyces and cause excruciating pain when passing through the narrow ureter.",
+    "pathology": "Urine supersaturation with calcium oxalate, calcium phosphate, or uric acid leads to crystal nucleation, aggregation, and ureteral obstruction, generating acute hydronephrosis and capsular distension.",
+    "hallmarkSymptoms": [
+      "Severe, agonizing, colicky pain in the flank and back, directly below the ribs",
+      "Pain waves that radiate toward the lower abdomen, groin, and testicle/labia",
+      "Inability to find a comfortable position (patients pace, writhe, or constantly shift posture)",
+      "Hematuria: pink, red, or brownish urine",
+      "Nausea, retching, and vomiting triggered by visceral autonomic reflexes"
+    ],
+    "atypicalSigns": [
+      "Urinary frequency, urgency, or burning when the stone lodges near the ureterovesical junction entering the bladder",
+      "Difficulty passing urine (strangury)"
+    ],
+    "riskFactors": [
+      "Chronic dehydration and low daily fluid intake",
+      "High dietary sodium and animal protein consumption",
+      "History of gout, hyperparathyroidism, or gastric bypass surgery",
+      "Personal or family history of nephrolithiasis",
+      "Living in warm, arid climates"
+    ],
+    "diagnosticTests": [
+      "Non-contrast low-dose CT scan of abdomen and pelvis (gold standard - visualizes stone size and exact location)",
+      "Renal ultrasound (safe in pregnancy and evaluates hydronephrosis)",
+      "Urinalysis (RBCs, crystals, pH, rule out infection)",
+      "Serum electrolytes, creatinine, calcium, and uric acid"
+    ],
+    "selfCare": [
+      "Strain all urine through a stone strainer or coffee filter to catch passed stone fragments for laboratory chemical analysis",
+      "Drink 2 to 3 liters of water daily to maintain dilute urine flow (if not contraindicated)",
+      "Prescribed alpha-blockers (Tamsulosin) can help relax ureteral smooth muscle to aid stone passage",
+      "Take prescribed NSAIDs (Ketorolac / Ibuprofen) which reduce renal capsular pressure"
+    ],
+    "redFlags": [
+      "OBSTRUCTED INFECTED KIDNEY: High fever and chills with flank pain (SURGICAL UROLOGICAL EMERGENCY - risk of urosepsis)",
+      "Anuria: total inability to pass urine (bilateral obstruction or solitary kidney)",
+      "Intractable vomiting preventing any fluid intake"
+    ],
+    "askDoctor": [
+      "What is the size and location of the stone on CT scan (stones < 5 mm typically pass spontaneously)?",
+      "Are there signs of hydronephrosis or bacterial infection behind the stone?",
+      "Am I a candidate for lithotripsy (ESWL) or ureteroscopy with laser fragment extraction?"
+    ],
+    "source": {
+      "organization": "NIDDK / NIH",
+      "title": "Kidney Stones",
+      "url": "https://www.niddk.nih.gov/health-information/urologic-diseases/kidney-stones"
+    }
+  },
+  {
+    "id": "strep-throat",
+    "name": "Streptococcal Pharyngitis (Strep Throat)",
+    "medicalTerm": "Group A Streptococcal Tonsillopharyngitis",
+    "icd10": "J02.0",
+    "category": "Infectious",
+    "organSystem": "Immune & Infections",
+    "bodyPart": "head",
+    "urgency": "urgent",
+    "urgencyText": "Same-Day Clinic Evaluation",
+    "readTime": "3 min read",
+    "summary": "A bacterial infection of the throat and tonsils caused by Streptococcus pyogenes (Group A Strep) requiring antibiotics to prevent acute rheumatic fever.",
+    "pathology": "Bacterial pyrogenic exotoxins and streptolysins induce follicular tonsillitis, mucosal erythema, and exudative neutrophilic necrosis.",
+    "hallmarkSymptoms": [
+      "Sudden, severe sore throat that causes agonizing pain when swallowing (odynophagia)",
+      "Fever typically >= 101\u00b0F (38.3\u00b0C)",
+      "Swollen, brightly red tonsils often coated with white or yellow patches of exudate",
+      "Tender, swollen anterior cervical lymph nodes in the front of the neck",
+      "PETECHIAE: tiny red spots on the soft palate roof of the mouth"
+    ],
+    "atypicalSigns": [
+      "ABSENCE of cough, rhinorrhea, or nasal congestion (presence of cough strongly points to a common cold virus instead!)",
+      "Headache, nausea, and abdominal pain (especially in pediatric patients)",
+      "Scarlatiniform rash: fine, sandpaper-like red body rash (Scarlet Fever)"
+    ],
+    "riskFactors": [
+      "School-age children (5 to 15 years old) and their close contacts",
+      "Winter and early spring seasons",
+      "Crowded communal environments (classrooms, daycares, dormitories)"
+    ],
+    "diagnosticTests": [
+      "Rapid Antigen Detection Test (RADT) throat swab (results in 10-15 minutes)",
+      "Throat bacterial culture (gold standard to confirm negative rapid tests in children)",
+      "Centor Clinical Score assessment (Fever, Tonsillar exudate, Tender anterior cervical nodes, Absence of cough)"
+    ],
+    "selfCare": [
+      "Complete the entire 10-day prescribed course of oral Penicillin or Amoxicillin (even if symptoms vanish in 48 hours!)",
+      "Replace your toothbrush 24-48 hours after starting antibiotics to prevent reinfection",
+      "Gargle with warm salt water (1/2 tsp salt in 8 oz warm water) several times daily",
+      "Sip cold liquids, ice chips, or warm broths to soothe swallowing discomfort"
+    ],
+    "redFlags": [
+      "Peritonsillar Abscess (Quinsy): severe one-sided throat pain, 'hot potato' muffled voice, difficulty opening mouth (Trismus), and uvula pushed to one side",
+      "Drooling, stridor, or difficulty breathing (Epiglottitis danger)",
+      "Dark tea-colored urine 2 weeks later (Post-streptococcal glomerulonephritis)"
+    ],
+    "askDoctor": [
+      "Does the rapid strep swab confirm Group A Streptococcus?",
+      "What is the recommended antibiotic regimen (Amoxicillin, Penicillin, or Cephalosporin for penicillin-allergic patients)?",
+      "When is it safe for my child to return to school without being contagious (usually 24 hours on antibiotics and fever-free)?"
+    ],
+    "source": {
+      "organization": "CDC",
+      "title": "Strep Throat Information",
+      "url": "https://www.cdc.gov/groupastrep/diseases-public/strep-throat.html"
+    }
+  },
+  {
+    "id": "generalized-anxiety-disorder",
+    "name": "Generalized Anxiety Disorder (GAD)",
+    "medicalTerm": "Chronic Anxiety Neurosis",
+    "icd10": "F41.1",
+    "category": "Mental Health",
+    "organSystem": "Mind & Mental Health",
+    "bodyPart": "whole-body",
+    "urgency": "routine",
+    "urgencyText": "Mental Health / Primary Care",
+    "readTime": "4 min read",
+    "summary": "Persistent, excessive, and unrealistic worry about everyday life events, work, health, and finances that is difficult to control.",
+    "pathology": "Dysregulation of amygdala-prefrontal cortical circuits, altered GABAergic neurotransmission, and hyperactivity of the sympathetic autonomic nervous system.",
+    "hallmarkSymptoms": [
+      "Excessive, uncontrollable anxiety and worry occurring more days than not for at least 6 months",
+      "Restlessness or feeling keyed up, on edge, or unable to relax",
+      "Muscle tension, particularly in the neck, shoulders, and upper back",
+      "Sleep disturbances: difficulty falling asleep due to racing thoughts, or restless unsatisfying sleep",
+      "Chronic fatigue and exhaustion from hyperarousal"
+    ],
+    "atypicalSigns": [
+      "Irritability and low frustration tolerance",
+      "Difficulty concentrating or mind going blank",
+      "Somatic physical symptoms: stomachaches, irritable bowel, frequent urination, sweating palms"
+    ],
+    "riskFactors": [
+      "Female sex (twice as likely as men)",
+      "Family history of anxiety or mood disorders",
+      "Personality traits of neuroticism or behavioral inhibition",
+      "Chronic physical medical illness",
+      "Exposure to childhood trauma, abuse, or chronic major life stressors"
+    ],
+    "diagnosticTests": [
+      "GAD-7 (Generalized Anxiety Disorder 7-item) standardized clinical scale",
+      "DSM-5 diagnostic clinical evaluation",
+      "Thyroid function test (TSH) to exclude hyperthyroidism",
+      "Toxicology screen to rule out caffeine toxicity, stimulant use, or medication side effects"
+    ],
+    "selfCare": [
+      "Cognitive Behavioral Therapy (CBT): identify and reframe cognitive distortions and catastrophizing",
+      "Daily mindfulness meditation, progressive muscle relaxation, or slow diaphragmatic 4-7-8 breathing",
+      "Gradually reduce or eliminate caffeine, energy drinks, and nicotine stimulants",
+      "Regular moderate cardiovascular exercise (natural endorphin booster)",
+      "Establish structured worry time (15 minutes daily dedicated to problem-solving rather than ruminating)"
+    ],
+    "redFlags": [
+      "Active suicidal ideation or plans to harm oneself (CRITICAL: Call or text 988 Suicide & Crisis Lifeline immediately)",
+      "Severe acute panic attacks causing derealization, chest pain, and hyperventilation",
+      "Inability to care for oneself or carry out basic daily functions"
+    ],
+    "askDoctor": [
+      "Would Cognitive Behavioral Therapy (CBT) with a licensed therapist be a good starting intervention for me?",
+      "Would a first-line medication (SSRI like Sertraline/Escitalopram or SNRI like Duloxetine) help calm my persistent worry?",
+      "How can we address my physical symptoms like muscle tension and insomnia?"
+    ],
+    "source": {
+      "organization": "National Institute of Mental Health (NIMH)",
+      "title": "Anxiety Disorders",
+      "url": "https://www.nimh.nih.gov/health/topics/anxiety-disorders"
+    }
+  },
+  {
+    "id": "major-depressive-disorder",
+    "name": "Major Depressive Disorder (Depression)",
+    "medicalTerm": "Clinical Unipolar Depression",
+    "icd10": "F32.9",
+    "category": "Mental Health",
+    "organSystem": "Mind & Mental Health",
+    "bodyPart": "whole-body",
+    "urgency": "urgent",
+    "urgencyText": "Mental Health / Primary Care (Crisis if suicidal)",
+    "readTime": "5 min read",
+    "summary": "A common and serious mood disorder that negatively affects how you feel, think, and handle daily activities, lasting at least two consecutive weeks.",
+    "pathology": "Multifactorial neurobiological disease involving monoaminergic neurotransmitter deficits (serotonin, norepinephrine, dopamine), hippocampal neuroplasticity reduction, and neuroinflammation.",
+    "hallmarkSymptoms": [
+      "Persistent feeling of sadness, emptiness, hopelessness, or tearfulness",
+      "Anhedonia: markedly diminished interest or pleasure in almost all activities previously enjoyed",
+      "Significant unintentional weight loss/gain or marked changes in appetite",
+      "Insomnia (early morning awakening) or hypersomnia (sleeping 12+ hours)",
+      "Psychomotor agitation or retardation noticeable by others",
+      "Fatigue or loss of energy nearly every day"
+    ],
+    "atypicalSigns": [
+      "Feelings of worthlessness or excessive, inappropriate guilt",
+      "Diminished ability to think, concentrate, or make decisions ('brain fog')",
+      "Unexplained somatic aches, joint pain, or gastrointestinal distress"
+    ],
+    "riskFactors": [
+      "Personal or family history of major depression or bipolar disorder",
+      "Major life transitions, bereavement, job loss, or trauma",
+      "Chronic disabling medical conditions (cancer, stroke, chronic pain)",
+      "Substance use disorders (alcohol, sedatives)"
+    ],
+    "diagnosticTests": [
+      "PHQ-9 (Patient Health Questionnaire 9-item) depression severity scale",
+      "DSM-5 clinical psychiatric evaluation",
+      "Screening for bipolar disorder (MDQ) before prescribing antidepressants",
+      "Complete metabolic panel, TSH, Vitamin B12, and Vitamin D levels"
+    ],
+    "selfCare": [
+      "Break tasks into tiny manageable micro-steps rather than expecting full productivity",
+      "Maintain a daily routine with consistent wake and sleep times",
+      "Engage in gentle daily movement (even a 10-minute walk outdoors in morning daylight)",
+      "Reach out to trusted friends, family, or support groups to combat isolation",
+      "Engage consistently in psychotherapy (CBT, Interpersonal Therapy, or Acceptance and Commitment Therapy)"
+    ],
+    "redFlags": [
+      "SUICIDAL THOUGHTS, INTENT, OR PLANS: Call/text 988 (USA/Canada) or 112/999/local emergency immediately",
+      "Giving away possessions, saying final goodbyes, or purchasing means of self-harm",
+      "Psychotic features: delusions of guilt, auditory hallucinations, or severe psychomotor catatonia"
+    ],
+    "askDoctor": [
+      "What does my PHQ-9 score indicate about the severity of my depression?",
+      "Would a combination of psychotherapy and an antidepressant (SSRI/SNRI/Bupropion) offer the highest recovery rate?",
+      "What emergency resources and safety plan should I have in place if dark thoughts arise?"
+    ],
+    "source": {
+      "organization": "NIMH / WHO",
+      "title": "Depression",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/depression"
+    }
+  },
+  {
+    "id": "panic-disorder",
+    "name": "Panic Disorder & Panic Attacks",
+    "medicalTerm": "Episodic Paroxysmal Anxiety",
+    "icd10": "F41.0",
+    "category": "Mental Health",
+    "organSystem": "Mind & Mental Health",
+    "bodyPart": "whole-body",
+    "urgency": "urgent",
+    "urgencyText": "Medical Evaluation (To Rule Out Cardiac)",
+    "readTime": "4 min read",
+    "summary": "An anxiety disorder characterized by recurrent, unexpected panic attacks and persistent worry about experiencing subsequent attacks.",
+    "pathology": "Hyper-reactive amygdala fear network triggers sudden, massive surges of epinephrine and norepinephrine in the absence of real external danger.",
+    "hallmarkSymptoms": [
+      "Sudden surge of intense fear or intense discomfort that peaks within minutes",
+      "Palpitations, pounding heart, or accelerated heart rate",
+      "Sweating, trembling, or shaking",
+      "Sensations of shortness of breath, smothering, or choking",
+      "Chest pain or discomfort mimicking an acute myocardial infarction",
+      "Fear of losing control, 'going crazy', or dying"
+    ],
+    "atypicalSigns": [
+      "Derealization (feelings of unreality) or depersonalization (being detached from oneself)",
+      "Numbness or tingling sensations (paresthesias) in hands and mouth from hyperventilation",
+      "Chills or sudden hot flushes"
+    ],
+    "riskFactors": [
+      "Family history of panic disorder",
+      "Major life stress or traumatic events",
+      "Smoking or high caffeine consumption",
+      "History of childhood physical or sexual abuse"
+    ],
+    "diagnosticTests": [
+      "12-lead ECG and cardiac enzymes (CRITICAL: First panic attack must always have cardiac causes excluded)",
+      "Thyroid stimulating hormone (TSH)",
+      "Clinical assessment using DSM-5 Panic Disorder criteria"
+    ],
+    "selfCare": [
+      "Practice 'Box Breathing': Inhale for 4 seconds, hold for 4, exhale for 4, hold for 4",
+      "Remind yourself: 'This is a panic attack. It is uncomfortable, but it is not dangerous, and it will peak and pass in 10 minutes'",
+      "Use the 5-4-3-2-1 grounding technique: Name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste",
+      "Avoid caffeine, alcohol, and energy drinks which lower the panic threshold"
+    ],
+    "redFlags": [
+      "Chest pain radiating to the jaw, neck, or left arm with shortness of breath (always treat as potential cardiac emergency until medically cleared)",
+      "Loss of consciousness (syncope)",
+      "Panic symptoms that do not subside after 20-30 minutes"
+    ],
+    "askDoctor": [
+      "Has an ECG confirmed that my heart rhythm and conduction are completely normal?",
+      "What strategies or medications (SSRIs, SNRIs) can prevent recurrent attacks?",
+      "How does Panic-Focused CBT help re-train my body's false alarm response?"
+    ],
+    "source": {
+      "organization": "NIMH / MedlinePlus",
+      "title": "Panic Disorder",
+      "url": "https://www.nimh.nih.gov/health/topics/panic-disorder"
+    }
+  },
+  {
+    "id": "allergic-rhinitis",
+    "name": "Allergic Rhinitis (Hay Fever)",
+    "medicalTerm": "Seasonal & Perennial Allergies",
+    "icd10": "J30.9",
+    "category": "ENT & Eye",
+    "organSystem": "Eyes, Ears, Nose & Throat",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Self-Care & Primary Care",
+    "readTime": "3 min read",
+    "summary": "An IgE-mediated inflammatory condition of the nasal mucosa induced by airborne environmental allergen exposure.",
+    "pathology": "Allergen cross-linking of specific IgE on nasal mast cells triggers immediate degranulation and release of histamine, leukotrienes, and prostaglandins.",
+    "hallmarkSymptoms": [
+      "Paroxysms of repetitive sneezing (often 5-10 times in a row)",
+      "Clear, watery rhinorrhea (runny nose) and nasal congestion",
+      "Intense itching of the nose, roof of the mouth, throat, and ears",
+      "Bilateral itchy, red, watery eyes (allergic conjunctivitis)",
+      "Post-nasal drip causing throat clearing and a dry nighttime cough"
+    ],
+    "atypicalSigns": [
+      "Allergic shiners: dark bluish-purple circles under both eyes from venous pooling",
+      "Allergic salute: transverse nasal crease across the bridge of the nose from upward rubbing",
+      "Mouth breathing and fatigue from poor nasal airflow"
+    ],
+    "riskFactors": [
+      "Family history of atopy (asthma, eczema, allergies)",
+      "Exposure to pollen (trees in spring, grasses in summer, ragweed in autumn)",
+      "Exposure to indoor perennial allergens (dust mites, pet dander, mold spores)",
+      "Secondhand cigarette smoke exposure"
+    ],
+    "diagnosticTests": [
+      "Clinical history correlating symptoms with seasonal or environmental exposures",
+      "Allergy skin prick testing (SPT) to identify specific aeroallergen triggers",
+      "Serum allergen-specific IgE blood test (ImmunoCAP)"
+    ],
+    "selfCare": [
+      "Intranasal corticosteroid spray (Fluticasone / Budesonide) is the most effective first-line medication (use daily)",
+      "Oral non-sedating second-generation antihistamines (Cetirizine, Fexofenadine, Loratadine)",
+      "Nasal saline irrigation (Neti pot using sterile or distilled water only)",
+      "Keep windows closed during high pollen days and run HEPA air purifiers in the bedroom"
+    ],
+    "redFlags": [
+      "Unilateral nasal obstruction with foul discharge or bleeding (must rule out nasal polyps or foreign body)",
+      "Severe facial pain, fever, and purulent green drainage lasting > 10 days (secondary bacterial sinusitis)",
+      "Wheezing, shortness of breath, or asthma flares"
+    ],
+    "askDoctor": [
+      "How should I properly aim my nasal steroid spray (aim toward the ear, not the nasal septum)?",
+      "Am I a candidate for allergen immunotherapy (subcutaneous allergy shots or sublingual tablets)?",
+      "Could my allergies be contributing to recurrent sinus or ear infections?"
+    ],
+    "source": {
+      "organization": "MedlinePlus / ACAAI",
+      "title": "Allergic Rhinitis",
+      "url": "https://medlineplus.gov/allergy.html"
+    }
+  },
+  {
+    "id": "otitis-media",
+    "name": "Acute Otitis Media (Middle Ear Infection)",
+    "medicalTerm": "Tympanic Membrane Infection",
+    "icd10": "H66.90",
+    "category": "ENT & Eye",
+    "organSystem": "Eyes, Ears, Nose & Throat",
+    "bodyPart": "head",
+    "urgency": "urgent",
+    "urgencyText": "Prompt Clinic Evaluation",
+    "readTime": "3 min read",
+    "summary": "An acute infection of the middle ear space behind the eardrum, characterized by rapid onset of pain and middle ear effusion.",
+    "pathology": "Eustachian tube dysfunction following a viral upper respiratory cold traps fluid in the middle ear, allowing Streptococcus pneumoniae, H. influenzae, or viruses to proliferate.",
+    "hallmarkSymptoms": [
+      "Otalgia: sharp, throbbing, or deep aching ear pain",
+      "Temporary conductive hearing loss or muffled sound perception in affected ear",
+      "Feeling of fullness, pressure, or popping in the ear",
+      "Fever (especially common in young children and toddlers)",
+      "Tugging or pulling at the ear, irritability, and sleeplessness in infants"
+    ],
+    "atypicalSigns": [
+      "Otorrhea: sudden drainage of clear, yellow, or bloody fluid from the ear canal (indicates eardrum perforation, which often brings sudden pain relief)",
+      "Mild dizziness or unsteadiness"
+    ],
+    "riskFactors": [
+      "Age 6 months to 2 years (shorter, more horizontal Eustachian tubes)",
+      "Recent viral upper respiratory cold",
+      "Daycare attendance and pacifier use",
+      "Secondhand tobacco smoke exposure",
+      "Lack of breastfeeding in infancy"
+    ],
+    "diagnosticTests": [
+      "Pneumatic otoscopy (reveals bulging, erythematous, opaque tympanic membrane with impaired mobility)",
+      "Tympanometry to objectively assess middle ear effusion"
+    ],
+    "selfCare": [
+      "Adequate pain relief with oral Acetaminophen or Ibuprofen (essential first step!)",
+      "Apply a warm compress or damp washcloth against the outside of the ear",
+      "Many uncomplicated ear infections in older children resolve spontaneously ('watchful waiting' for 48h)",
+      "If antibiotics (Amoxicillin) are prescribed, complete the full duration"
+    ],
+    "redFlags": [
+      "Mastoiditis: Swelling, redness, and extreme tenderness BEHIND the ear over the bone, pushing the ear outward",
+      "High fever with stiff neck, severe headache, or confusion",
+      "Facial nerve weakness or drooping on the side of the ear infection"
+    ],
+    "askDoctor": [
+      "Does the pneumatic otoscope show a bulging eardrum confirming acute bacterial infection?",
+      "Is immediate antibiotic treatment recommended, or is 48-hour watchful observation appropriate?",
+      "What should I do if fluid drains from the ear canal?"
+    ],
+    "source": {
+      "organization": "CDC / MedlinePlus",
+      "title": "Ear Infection (Otitis Media)",
+      "url": "https://www.cdc.gov/antibiotic-use/ear-infection.html"
+    }
+  },
+  {
+    "id": "conjunctivitis-pink-eye",
+    "name": "Conjunctivitis (Pink Eye)",
+    "medicalTerm": "Inflammation of the Conjunctiva",
+    "icd10": "H10.9",
+    "category": "ENT & Eye",
+    "organSystem": "Eyes, Ears, Nose & Throat",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Primary Care / Optometry",
+    "readTime": "3 min read",
+    "summary": "Inflammation or infection of the transparent membrane (conjunctiva) that lines the eyelid and covers the white part of the eyeball.",
+    "pathology": "Viral (adenovirus), bacterial (Staph, Strep), or allergic stimuli cause conjunctival vascular dilation, hyperemia, and exudative discharge.",
+    "hallmarkSymptoms": [
+      "Redness or pink discoloration in the sclera (white part of one or both eyes)",
+      "Discharge: watery clear discharge (viral/allergic) or thick yellow/green pus (bacterial)",
+      "Crusting of eyelids or eyelashes overnight, making it difficult to open eyes in the morning",
+      "Gritty, scratchy, or foreign-body sensation under the eyelid",
+      "Mild swelling of the eyelids and watery tearing"
+    ],
+    "atypicalSigns": [
+      "Preauricular lymphadenopathy: swollen, tender node in front of the ear (classic for viral adenoviral conjunctivitis)",
+      "Severe bilateral itching and ropy mucus discharge (allergic conjunctivitis)"
+    ],
+    "riskFactors": [
+      "Direct contact with an infected person's eye secretions or towels",
+      "Contact lens wear (especially sleeping in lenses or poor lens hygiene)",
+      "Recent viral upper respiratory infection (cold or adenovirus)",
+      "Seasonal allergen exposure"
+    ],
+    "diagnosticTests": [
+      "Slit-lamp examination by an eye care professional",
+      "Visual acuity testing (normal visual acuity must be preserved in simple conjunctivitis)",
+      "Fluorescein dye staining to rule out corneal abrasions, ulcers, or herpes keratitis"
+    ],
+    "selfCare": [
+      "Discontinue wearing contact lenses immediately until eyes are fully healed",
+      "Apply cool compresses (for viral/allergic) or warm moist compresses (for bacterial crusts) using separate clean cloths for each eye",
+      "Use preservative-free artificial tears to soothe dryness and rinse allergens",
+      "Wash hands frequently with soap and water; never share towels or pillowcases"
+    ],
+    "redFlags": [
+      "Moderate to severe deep ocular pain (conjunctivitis causes discomfort/grittiness, NOT deep eyeball pain)",
+      "Significant change or loss in visual acuity or blurred vision that does not clear with blinking",
+      "Extreme photophobia (inability to look at light)",
+      "Contact lens wearer presenting with red eye and corneal opacity (CORNEAL ULCER EMERGENCY)"
+    ],
+    "askDoctor": [
+      "Is my conjunctivitis viral, bacterial, or allergic in nature?",
+      "Are antibiotic drops indicated, or will it resolve on its own with supportive artificial tears?",
+      "When is it safe for me to resume wearing contact lenses?"
+    ],
+    "source": {
+      "organization": "CDC",
+      "title": "Conjunctivitis (Pink Eye)",
+      "url": "https://www.cdc.gov/conjunctivitis/about/index.html"
+    }
+  }
+];
+
+export default diseaseDatabase;
