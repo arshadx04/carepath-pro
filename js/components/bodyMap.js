@@ -19,46 +19,46 @@ export class BodyMap {
 
     const backAnatomy = this.view === 'back' ? `
       <g class="back-anatomy">
-        <!-- Posterior torso silhouette gives the bones and muscle zones a clear human outline. -->
-        <path class="posterior-silhouette" d="M119,105 C111,108 102,115 98,127 L88,168 C84,184 91,195 101,201 L111,193 L119,271 C122,293 132,307 150,311 C168,307 178,293 181,271 L189,193 L199,201 C209,195 216,184 212,168 L202,127 C198,115 189,108 181,105 C171,111 162,115 150,115 C138,115 129,111 119,105 Z" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="2"/>
-        <!-- Upper and lower back are separate selectable areas. -->
-        <path class="anatomical-zone back-zone ${this.selectedRegion === 'back' ? 'selected' : ''}" data-region="back" d="M119,151 C130,140 139,137 150,137 C161,137 170,140 181,151 L176,254 C170,270 162,280 150,283 C138,280 130,270 124,254 Z"/>
-        <!-- Separate left and right shoulder caps. -->
-        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder" d="M137,112 C126,108 115,110 105,119 C96,128 94,141 101,151 C110,158 123,155 136,145 Z"/>
-        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder" d="M163,112 C174,108 185,110 195,119 C204,128 206,141 199,151 C190,158 177,155 164,145 Z"/>
-        <!-- Shoulder blades, drawn like simplified scapula bones. -->
-        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder" d="M116,150 Q127,137 140,145 L143,181 Q131,194 119,181 Z" fill="none" stroke="currentColor" stroke-width="3"/>
-        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder" d="M184,150 Q173,137 160,145 L157,181 Q169,194 181,181 Z" fill="none" stroke="currentColor" stroke-width="3"/>
-        <!-- Rib arcs make the posterior rib cage recognizable. -->
-        <g class="rib-lines" fill="none" stroke="currentColor" stroke-width="1.8" opacity="0.7" pointer-events="none">
-          <path d="M145,158 Q128,151 116,163 Q123,174 143,177"/>
-          <path d="M145,170 Q127,164 117,177 Q126,188 143,190"/>
-          <path d="M145,183 Q128,178 120,191 Q129,201 143,203"/>
-          <path d="M145,196 Q130,192 123,205 Q132,214 143,216"/>
-          <path d="M155,158 Q172,151 184,163 Q177,174 157,177"/>
-          <path d="M155,170 Q173,164 183,177 Q174,188 157,190"/>
-          <path d="M155,183 Q172,178 180,191 Q171,201 157,203"/>
-          <path d="M155,196 Q170,192 177,205 Q168,214 157,216"/>
+        <!-- Neck and trapezius form a recognizable transition into the shoulders -->
+        <path class="posterior-muscle" d="M139,96 Q150,105 161,96 L168,119 Q177,122 190,126 L181,143 Q168,137 160,143 L150,151 L140,143 Q132,137 119,143 L110,126 Q123,122 132,119 Z" />
+        <!-- Shoulder caps -->
+        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
+              d="M132,115 Q113,108 99,121 Q88,132 96,151 Q103,163 117,157 L137,140 Z" />
+        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
+              d="M168,115 Q187,108 201,121 Q212,132 204,151 Q197,163 183,157 L163,140 Z" />
+        <!-- Shoulder blades -->
+        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
+              d="M113,145 Q124,132 140,141 L143,174 Q133,188 119,183 Q108,170 113,145 Z" />
+        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
+              d="M187,145 Q176,132 160,141 L157,174 Q167,188 181,183 Q192,170 187,145 Z" />
+        <!-- Posterior rib cage: paired curved ribs around the spine -->
+        <g class="rib-cage" aria-label="Posterior rib cage">
+          <path d="M145,151 Q129,145 115,154 Q109,160 116,166 Q128,170 145,166" />
+          <path d="M155,151 Q171,145 185,154 Q191,160 184,166 Q172,170 155,166" />
+          <path d="M144,166 Q127,161 114,171 Q108,177 117,184 Q129,188 144,181" />
+          <path d="M156,166 Q173,161 186,171 Q192,177 183,184 Q171,188 156,181" />
+          <path d="M144,183 Q128,178 117,190 Q112,197 122,202 Q133,205 145,198" />
+          <path d="M156,183 Q172,178 183,190 Q188,197 178,202 Q167,205 155,198" />
+          <path d="M145,200 Q132,196 123,207 Q119,214 129,218 Q137,220 145,215" />
+          <path d="M155,200 Q168,196 177,207 Q181,214 171,218 Q163,220 155,215" />
         </g>
-        <!-- Individual vertebrae distinguish the central spine from the back muscles. -->
-        <g class="spine-vertebrae">
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="144" y="137" width="12" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="150" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="163" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="176" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="189" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="202" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="215" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="228" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="241" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="143" y="254" width="14" height="10" rx="3"/>
-          <rect class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="144" y="267" width="12" height="10" rx="3"/>
+        <!-- Separate back region, visually distinct from shoulder blades and spine -->
+        <path class="anatomical-zone back-zone ${this.selectedRegion === 'back' ? 'selected' : ''}" data-region="back"
+              d="M124,190 Q137,184 143,190 L143,266 Q133,273 123,263 Q116,235 124,190 Z
+                 M176,190 Q163,184 157,190 L157,266 Q167,273 177,263 Q184,235 176,190 Z" />
+        <!-- Individual vertebrae make the spinal column recognizable -->
+        <g class="vertebral-column">
+          ${Array.from({ length: 12 }, (_, index) => {
+            const y = 148 + index * 10;
+            const width = index < 4 ? 7 : index < 8 ? 8 : 9;
+            return `<rect class="anatomical-zone vertebra ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="${150 - width / 2}" y="${y}" width="${width}" height="7" rx="2" />`;
+          }).join('')}
         </g>
-        <text x="150" y="127" class="zone-label" text-anchor="middle">Spine</text>
-        <text x="150" y="292" class="zone-label" text-anchor="middle">Lower back</text>
-        <text x="105" y="143" class="zone-label" text-anchor="middle">Shoulder</text>
-        <text x="195" y="143" class="zone-label" text-anchor="middle">Shoulder</text>
+        <path d="M150,145 L150,272" class="spine-center-line" />
+        <text x="150" y="291" class="zone-label" text-anchor="middle">Spine</text>
         <text x="150" y="235" class="zone-label" text-anchor="middle">Back</text>
+        <text x="105" y="173" class="zone-label" text-anchor="middle">L</text>
+        <text x="195" y="173" class="zone-label" text-anchor="middle">R</text>
       </g>
     ` : '';
 
