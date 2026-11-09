@@ -2479,6 +2479,13 @@ body.dark-theme .site-header {
 
 
 /* --- Posterior anatomy map: distinct shoulders, back and vertebral column --- */
+/* --- Posterior anatomy map: distinct shoulders, back and vertebral column --- */
+.back-anatomy .posterior-body {
+  fill: url(#bodyGrad);
+  stroke: var(--primary);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
 .back-anatomy .posterior-muscle {
   fill: rgba(13, 148, 136, 0.12);
   stroke: var(--primary);
