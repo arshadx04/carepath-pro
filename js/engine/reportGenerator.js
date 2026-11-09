@@ -29,7 +29,7 @@ export class ReportGenerator {
     });
 
     const symptomsList = (intake.selectedSymptoms || [])
-      .map(symId => `<li><strong>${symId.replace(/_/g, ' ')}</strong></li>`)
+       .map(symId => `<li><strong>${escapeHTML(symId.replace(/_/g, ' '))}</strong></li>`)
       .join('');
 
     const matchedConditions = (result.topMatches || [])
@@ -143,7 +143,7 @@ export class ReportGenerator {
       <div class="meta-box">
         <div><strong>Assessment Date:</strong> ${escapeHTML(evalDate)}</div>
         <div><strong>Triage Urgency:</strong></div>
-        <div class="triage-badge badge-${result.triageLevel}">${escapeHTML(result.triageTitle)}</div>
+        <div class="triage-badge badge-${escapeHTML(result.triageLevel)}">${escapeHTML(result.triageTitle)}</div>
       </div>
     </div>
 
@@ -160,7 +160,7 @@ export class ReportGenerator {
         <h3>2. Symptom Timing & Severity</h3>
         <p><strong>Onset Speed:</strong> ${escapeHTML((t.onset || 'Recent').replace(/_/g, ' '))}</p>
         <p><strong>Clinical Trajectory:</strong> ${escapeHTML((t.trajectory || 'Steady').toUpperCase())}</p>
-        <p><strong>Pain Severity Score:</strong> <strong>${s.painScore || 0}/10</strong> on Visual Analog Scale (VAS)</p>
+        <p><strong>Pain Severity Score:</strong> <strong>${escapeHTML(s.painScore || 0)}/10</strong> on Visual Analog Scale (VAS)</p>
         <p><strong>Daily Activity Disruption:</strong> ${escapeHTML((s.disruption || 'Moderate').toUpperCase())}</p>
       </div>
     </div>
