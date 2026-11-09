@@ -21,5 +21,27 @@ test('print report escapes untrusted text and avoids hard-coded emergency number
   assert.match(html, /&lt;script&gt;/);
   assert.match(html, /&lt;img src=x/);
   assert.doesNotMatch(html, /911|112/);
-  assert.match(html, /not clinically validated|does not constitute/i);
+  assert.match(html, /does not constitute|does not replace/i);
+});
+
+test('missing report answers remain explicitly unrecorded rather than becoming zero or recent', () => {
+  const html = ReportGenerator.generateReportHTML({}, {});
+  assert.match(html, /Age Group:<\/strong> Not recorded/);
+  assert.match(html, /Reported onset:<\/strong> Not recorded/);
+  assert.match(html, /Reported change:<\/strong> Not recorded/);
+  assert.match(html, /Discomfort self-rating:<\/strong> <strong>Not recorded/);
+  assert.match(html, /Daily activity impact:<\/strong> Not recorded/);
+  assert.match(html, /does not rule out an emergency/i);
+});
+
+test('malformed optional report collections do not crash generation', () => {
+  const html = ReportGenerator.generateReportHTML({
+    profile: { comorbidities: 'unknown' },
+    selectedSymptoms: 'not-an-array'
+  }, {
+    topMatches: 'not-an-array',
+    doctorQuestions: null,
+    activeRedFlags: {}
+  });
+  assert.match(html, /Visit Preparation Summary/);
 });
