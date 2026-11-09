@@ -72,10 +72,10 @@ You can also directly double-click `index.html` or open it in Google Chrome, Mic
 The triage engine tests use Node.js built-in test runner and no third-party packages:
 
 ```bash
-node --experimental-default-type=module --test tests/triageEngine.test.js
+node --experimental-default-type=module --test tests/*.test.js
 ```
 
-These are basic regression checks only. They do not validate clinical safety or medical accuracy.
+These are basic software regression checks only. They do not validate clinical safety, medical accuracy, or suitability for real-world decisions.
 
 ---
 
@@ -86,7 +86,7 @@ This is a static browser application with no package installation or build step 
 ---
 
 ## 📜 Medical Disclaimer
-CarePath Pro is intended solely for educational triage and visit preparation purposes. It does not replace professional clinical judgment, physical examination, diagnosis, or personalized medical care. In an emergency, contact the emergency number officially used in your location immediately.
+CarePath Pro is intended solely as an educational symptom check-in and visit-preparation demonstration. It does not replace professional clinical judgment, physical examination, diagnosis, or personalized medical care. In an emergency, contact the emergency number officially used in your location immediately.
 
 
 ## Safety and privacy notes
