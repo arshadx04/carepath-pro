@@ -390,7 +390,7 @@ export class AssessmentWizard {
                 <div class="rf-check-box">${isChecked ? '✓' : ''}</div>
                 <div class="rf-text-content">
                   <div class="rf-label">${escapeHTML(rf.label)}</div>
-                  <div class="rf-desc">${rf.emergencyDesc || 'Critical indicator'}</div>
+                  <div class="rf-desc">${escapeHTML(rf.emergencyDesc || 'Warning-sign item')}</div>
                 </div>
               </div>
             `;
@@ -419,7 +419,7 @@ export class AssessmentWizard {
         <!-- Triage Urgency Header Banner -->
         <div class="triage-urgency-banner banner-${res.triageLevel}">
           <div class="banner-top-row">
-            <span class="triage-status-pill">${res.triageLevel.toUpperCase()} PRIORITY</span>
+            <span class="triage-status-pill">ILLUSTRATIVE OUTPUT · NOT CLINICALLY VALIDATED</span>
             <span class="time-window-pill">Demo wording (not a care timeframe): <strong>${escapeHTML(res.timeWindow)}</strong></span>
           </div>
           <h1 class="triage-main-title">${escapeHTML(res.triageTitle)}</h1>
@@ -458,9 +458,9 @@ export class AssessmentWizard {
               <div class="diff-card">
                 <div class="diff-card-header">
                   <div>
-                    <span class="diff-category">${m.disease.category} · ${m.disease.icd10 || 'ICD-10'}</span>
+                    <span class="diff-category">${escapeHTML(m.disease.category)} · ${escapeHTML(m.disease.icd10 || 'Reference code unavailable')}</span>
                     <h3 class="diff-title">${escapeHTML(m.disease.name)}</h3>
-                    <span class="diff-med-term">Clinical term: ${m.disease.medicalTerm}</span>
+                    <span class="diff-med-term">Clinical term: ${escapeHTML(m.disease.medicalTerm)}</span>
                   </div>
                   <div class="match-score-badge">
                     <span class="score-num">${escapeHTML(m.relevance)}</span>
@@ -478,10 +478,10 @@ export class AssessmentWizard {
                 </div>
 
                 <div class="diff-action-bar">
-                  <button type="button" class="btn-view-dossier" data-disease-id="${m.disease.id}">
+                  <button type="button" class="btn-view-dossier" data-disease-id="${escapeHTML(m.disease.id)}">
                     📖 Read Educational Condition Summary →
                   </button>
-                  <span class="urgency-tag urgency-${m.disease.urgency}">${m.disease.urgencyText}</span>
+                  <span class="urgency-tag urgency-${escapeHTML(m.disease.urgency)}">${escapeHTML(m.disease.urgencyText)}</span>
                 </div>
               </div>
             `).join('') : '<p>No educational matches were generated from the selected symptoms. This does not rule out a health condition; seek professional advice if concerned.</p>'}
