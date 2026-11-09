@@ -9,12 +9,12 @@ CarePath Pro is an educational web project for exploring symptom associations an
 
 ### 1. 🩺 5-Step Intelligent Clinical Assessment Engine
 - **Step 1: Patient Demographics & Comorbidities**: Incorporates age groups (infant, child, adult, senior), biological sex, pregnancy status, and comorbidities (hypertension, diabetes, asthma, heart disease, smoking).
-- **Step 2: Anatomical Symptom Selection**: Select from over 40 clinically weighted symptoms with instant keyword search and body-region filter pills.
+- **Step 2: Anatomical Symptom Selection**: Select from over 40 symptoms with simple heuristic weights with instant keyword search and body-region filter pills.
 - **Step 3: Timeline & Trajectory**: Analyzes sudden vs insidious onset and clinical trajectory (worsening, steady, episodic, improving).
 - **Step 4: Pain & Severity Metrics**: Standardized Visual Analog Scale (VAS 0–10) with functional activity disruption evaluation.
 - **Step 5: Mandatory Red-Flag Screener**: Life-safety check for critical indicators (e.g. stroke FAST, chest pressure, appendicitis, anaphylaxis, suicidal crisis).
 - **Clinical Triage Output**:
-  - 4-Tier urgency rating (*Level 1: Emergency*, *Level 2: Urgent Care*, *Level 3: Primary Care*, *Level 4: Supportive Home Care*).
+  - Rule-based urgency categories (*Level 1: Emergency*, *Level 2: Urgent Care*, *Level 3: Primary Care*, *Level 4: Supportive Home Care*).
   - Exploratory symptom associations ranked by a simple heuristic signal (not a probability or diagnostic confidence).
   - Tailored questions generated specifically for the patient to ask their physician.
   - Printable **Doctor Consultation Intake Sheet (SBAR/SOAP format)** with single-click print or PDF export.
