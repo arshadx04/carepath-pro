@@ -1,60 +1,91 @@
 /**
- * CarePath Pro - Emergency Hotlines & Action Protocols
+ * CarePath Pro - Emergency Contacts
+ * Reference links checked on 2026-11-09. Users must verify local availability.
+ * Educational directory only; not a substitute for local emergency guidance.
  */
 
 export const emergencyDatabase = {
   "countries": [
     {
-      "country": "United States & Canada",
-      "code": "US/CA",
+      "country": "United States",
+      "code": "US",
       "emergency": "911",
       "dial": "911",
       "crisis": "988 (Call or Text)",
       "crisisDial": "988",
-      "poison": "1-800-222-1222"
+      "poison": "1-800-222-1222 (US only)",
+      "sources": [
+        { "label": "911.gov — emergency calling", "url": "https://www.911.gov/calling-911/" },
+        { "label": "SAMHSA — 988 crisis support", "url": "https://www.samhsa.gov/find-support/in-crisis" },
+        { "label": "Poison Control — contact details", "url": "https://www.poison.org/contact-us" }
+      ]
+    },
+    {
+      "country": "Canada",
+      "code": "CA",
+      "emergency": "911",
+      "dial": "911",
+      "crisis": "988 (Call or Text)",
+      "crisisDial": "988",
+      "sources": [
+        { "label": "Government of Canada — emergency and crisis support", "url": "https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html" },
+        { "label": "9-8-8 Suicide Crisis Helpline", "url": "https://988.ca/" }
+      ]
     },
     {
       "country": "United Kingdom",
       "code": "UK",
       "emergency": "999 / 112",
       "dial": "999",
-      "nonEmergency": "111",
-      "crisis": "NHS 111 (mental health option)",
-      "crisisDial": "111"
+      "nonEmergency": "NHS 111 (England; availability and options vary by nation)",
+      "sources": [
+        { "label": "GOV.UK — 999 and 112", "url": "https://www.gov.uk/guidance/999-and-112-the-uks-national-emergency-numbers" },
+        { "label": "NHS — when to call 999 / NHS 111", "url": "https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-call-999/" }
+      ]
     },
     {
       "country": "European Union",
       "code": "EU",
       "emergency": "112",
       "dial": "112",
-      "crisis": "Varies by state (116 123)",
-      "poison": "Local European Poison Centres"
+      "sources": [
+        { "label": "European Commission — 112", "url": "https://digital-strategy.ec.europa.eu/en/policies/112" },
+        { "label": "Your Europe — emergency number", "url": "https://europa.eu/youreurope/citizens/travel/security-and-emergencies/emergency/indexamp_en.htm" }
+      ]
     },
     {
       "country": "India",
       "code": "IN",
       "emergency": "112",
       "dial": "112",
-      "ambulance": "108",
-      "ambulanceDial": "108",
       "crisis": "Tele-MANAS: 14416",
-      "crisisDial": "14416"
+      "crisisDial": "14416",
+      "sources": [
+        { "label": "Ministry of Home Affairs — ERSS 112", "url": "https://www.mha.gov.in/emergency-response-support-system-erss" },
+        { "label": "Directorate General of Health Services — Tele-MANAS", "url": "https://dghs.mohfw.gov.in/national-mental-health-programme.php" },
+        { "label": "National Portal of India — helpline directory", "url": "https://www.india.gov.in/directory/helpline" }
+      ]
     },
     {
       "country": "Australia",
       "code": "AU",
       "emergency": "000",
       "dial": "000",
-      "crisis": "13 11 14 (Lifeline)",
+      "crisis": "Lifeline: 13 11 14",
       "crisisDial": "131114",
-      "healthdirect": "1800 022 222"
+      "healthdirect": "1800 022 222",
+      "sources": [
+        { "label": "Australian Government — Triple Zero (000)", "url": "https://www.infrastructure.gov.au/media-communications/phone/triple-zero/how-call-triple-zero-000" },
+        { "label": "Lifeline Australia — crisis support", "url": "https://www.lifeline.org.au/get-help/national-services/lifeline-crisis-support" },
+        { "label": "Healthdirect Australia", "url": "https://www.healthdirect.gov.au/" }
+      ]
     },
     {
       "country": "International / Roaming",
       "code": "INTL",
       "emergency": "Use your local emergency number",
       "dial": null,
-      "notes": "Emergency numbers and mobile-network access vary by country. Check local official guidance."
+      "notes": "Emergency numbers and mobile-network access vary by country. Check local official guidance before relying on a number."
     }
   ],
   "emergencyProtocols": [
