@@ -1,6 +1,6 @@
 /**
- * CarePath Pro - Clinical Doctor Visit Summary & Print Report Generator
- * Formatted as a Clinical Pre-Intake / SBAR Summary
+ * CarePath Pro - Educational Visit Preparation Summary & Print Report Generator
+ * Formatted as an educational visit-preparation summary
  */
 
 function escapeHTML(value) {
@@ -58,7 +58,7 @@ export class ReportGenerator {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CarePath Pro - Clinical Consultation Intake Summary</title>
+  <title>CarePath Pro - Educational Visit Preparation Summary</title>
   <style>
     @media print {
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -137,8 +137,8 @@ export class ReportGenerator {
   <div class="container">
     <div class="header">
       <div>
-        <div class="logo-title">CarePath Pro · Clinical Intake Summary</div>
-        <div class="logo-sub">Pre-Consultation Patient Assessment Report</div>
+        <div class="logo-title">CarePath Pro · Visit Preparation Summary</div>
+        <div class="logo-sub">Educational Symptom Check-in Summary</div>
       </div>
       <div class="meta-box">
         <div><strong>Assessment Date:</strong> ${escapeHTML(evalDate)}</div>
@@ -182,7 +182,7 @@ export class ReportGenerator {
     </div>
 
     <div class="disclaimer-box">
-      <strong>CLINICAL NOTICE & DISCLAIMER:</strong> This document was prepared by CarePath Pro as an educational pre-intake synthesis tool. It does not constitute a formal diagnosis, medical order, or physician consultation. Patients experiencing sudden crushing chest pain, slurred speech, acute breathlessness, or signs of severe shock must seek emergency services (911/112) immediately.
+      <strong>EDUCATIONAL NOTICE & DISCLAIMER:</strong> This document was prepared by CarePath Pro as an educational pre-intake synthesis tool. It does not constitute a formal diagnosis, medical order, or physician consultation. If you believe you may be experiencing a medical emergency, contact the emergency services number officially used in your location immediately. Do not rely on this report to assess or delay urgent care.
     </div>
   </div>
 </body>
@@ -201,7 +201,7 @@ export class ReportGenerator {
       printWindow.document.close();
       printWindow.focus();
     } else {
-      alert('Please allow pop-ups for this site to view and print your clinical consultation summary.');
+      alert('Please allow pop-ups for this site to view and print your educational visit-preparation summary.');
     }
   }
 }
