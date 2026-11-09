@@ -15,17 +15,17 @@ test('README documents every age group offered by the check-in wizard', () => {
 
 test('home urgency preview does not imply a fixed care timeframe', () => {
   const html = read('../index.html');
-  assert.doesNotMatch(html, /Same-Day\\s*\\/\\s*24h Care/i);
-  assert.match(html, /no care-timing advice/i);
+  assert.ok(!html.includes('Same-Day / 24h Care'));
+  assert.ok(html.includes('no care-timing advice'));
 });
 
 test('mobile navigation exposes and updates its expanded state', () => {
   const html = read('../index.html');
   const app = read('../js/app.js');
-  assert.match(html, /aria-controls="mobileNavMenu"/);
-  assert.match(html, /aria-expanded="false"/);
-  assert.match(html, /id="mobileNavMenu" aria-hidden="true"/);
-  assert.match(app, /setAttribute\\('aria-expanded', String\\(isOpen\\)\\)/);
-  assert.match(app, /setAttribute\\('aria-hidden', String\\(!isOpen\\)\\)/);
-  assert.match(app, /setAttribute\\('aria-expanded', 'false'\\)/);
+  assert.ok(html.includes('aria-controls="mobileNavMenu"'));
+  assert.ok(html.includes('aria-expanded="false"'));
+  assert.ok(html.includes('id="mobileNavMenu" aria-hidden="true"'));
+  assert.ok(app.includes("setAttribute('aria-expanded', String(isOpen))"));
+  assert.ok(app.includes("setAttribute('aria-hidden', String(!isOpen))"));
+  assert.ok(app.includes("setAttribute('aria-expanded', 'false')"));
 });
