@@ -11,9 +11,9 @@ function escapeHTML(value) {
 
 export class ReportGenerator {
   /**
-   * Generates clean HTML for printable Doctor Consultation Handoff Sheet
-   * @param {Object} intake Patient assessment input
-   * @param {Object} result Triage evaluation output
+   * Generates clean HTML for an educational visit-preparation summary
+   * @param {Object} intake User-provided check-in answers
+   * @param {Object} result Illustrative rule output
    * @returns {string} Clean HTML
    */
   static generateReportHTML(intake, result) {
@@ -51,7 +51,7 @@ export class ReportGenerator {
 
     const redFlagsList = (result.activeRedFlags || []).length > 0
       ? result.activeRedFlags.map(rf => `<li class="red-text"><strong>${escapeHTML(rf.label)}</strong>: ${escapeHTML(rf.emergencyDesc || 'Critical indicator')}</li>`).join('')
-      : '<li class="green-text">No immediate acute red flags reported at time of digital check-in.</li>';
+      : '<li class="green-text">No warning signs were selected in this educational check-in. This does not rule out an emergency.</li>';
 
     return `
 <!DOCTYPE html>
@@ -142,7 +142,7 @@ export class ReportGenerator {
       </div>
       <div class="meta-box">
         <div><strong>Assessment Date:</strong> ${escapeHTML(evalDate)}</div>
-        <div><strong>Triage Urgency:</strong></div>
+        <div><strong>Illustrative rule category:</strong></div>
         <div class="triage-badge badge-${escapeHTML(result.triageLevel)}">${escapeHTML(result.triageTitle)}</div>
       </div>
     </div>
@@ -150,18 +150,18 @@ export class ReportGenerator {
     <div class="section-grid">
       <div class="card">
         <h3>1. Patient Demographics & Profile</h3>
-        <p><strong>Age Group:</strong> ${escapeHTML((p.ageGroup || 'Adult').toUpperCase())}</p>
+        <p><strong>Age Group:</strong> ${escapeHTML(p.ageGroup ? p.ageGroup.toUpperCase() : 'Not recorded')}</p>
         <p><strong>Biological Sex:</strong> ${escapeHTML(p.biologicalSex || 'Not specified')}</p>
-        <p><strong>Pregnancy Status:</strong> ${p.pregnant ? 'Pregnant' : 'Not pregnant / N/A'}</p>
+        <p><strong>Pregnancy Status:</strong> ${p.pregnant === true ? 'Reported pregnant / postpartum' : p.pregnant === false ? 'Not reported' : 'Not specified'}</p>
         <p><strong>Comorbidities / Background:</strong> ${escapeHTML((p.comorbidities && p.comorbidities.length > 0) ? p.comorbidities.join(', ') : 'None reported')}</p>
       </div>
 
       <div class="card">
         <h3>2. Symptom Timing & Severity</h3>
-        <p><strong>Onset Speed:</strong> ${escapeHTML((t.onset || 'Recent').replace(/_/g, ' '))}</p>
-        <p><strong>Clinical Trajectory:</strong> ${escapeHTML((t.trajectory || 'Steady').toUpperCase())}</p>
-        <p><strong>Pain Severity Score:</strong> <strong>${escapeHTML(s.painScore || 0)}/10</strong> on Visual Analog Scale (VAS)</p>
-        <p><strong>Daily Activity Disruption:</strong> ${escapeHTML((s.disruption || 'Moderate').toUpperCase())}</p>
+        <p><strong>Reported onset:</strong> ${escapeHTML(t.onset ? t.onset.replace(/_/g, ' ') : 'Not recorded')}</p>
+        <p><strong>Reported change:</strong> ${escapeHTML(t.trajectory ? t.trajectory.toUpperCase() : 'Not recorded')}</p>
+        <p><strong>Discomfort self-rating:</strong> <strong>${s.painScore == null ? 'Not recorded' : `${escapeHTML(s.painScore)}/10`}</strong></p>
+        <p><strong>Daily activity impact:</strong> ${escapeHTML(s.disruption ? s.disruption.toUpperCase() : 'Not recorded')}</p>
       </div>
     </div>
 

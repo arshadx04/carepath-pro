@@ -85,7 +85,7 @@ export class AssessmentWizard {
             : `<button type="button" class="btn-wizard-cancel">Cancel & Exit</button>`
           }
           <button type="button" class="btn-wizard-next ${!this.isCurrentStepValid() ? 'disabled' : ''}">
-            ${this.currentStep === this.totalSteps ? 'Generate Assessment Report →' : 'Continue Next →'}
+            ${this.currentStep === this.totalSteps ? 'Generate Educational Summary →' : 'Continue Next →'}
           </button>
         </div>
       </div>
@@ -96,11 +96,11 @@ export class AssessmentWizard {
 
   getStepTitle(step) {
     switch(step) {
-      case 1: return "Patient Profile & Background";
+      case 1: return "User Profile & Background";
       case 2: return "Anatomical Symptoms Check";
       case 3: return "Onset & Duration Timeline";
-      case 4: return "Severity & Pain Scale (VAS)";
-      case 5: return "Critical Red-Flag Safety Screener";
+      case 4: return "Discomfort Self-Rating";
+      case 5: return "Warning-Sign Review";
       default: return "";
     }
   }
@@ -121,8 +121,8 @@ export class AssessmentWizard {
     const p = this.intake.profile;
     return `
       <div class="step-pane">
-        <h2 class="step-heading">Who is this clinical assessment for?</h2>
-        <p class="step-subheading">Age, biological sex, and background conditions significantly shape symptom likelihood and clinical risk triage.</p>
+        <h2 class="step-heading">Who is this check-in for?</h2>
+        <p class="step-subheading">Optional background details help organize the educational summary; they do not establish medical risk.</p>
 
         <div class="form-group-block">
           <label class="group-label">Age Group</label>
@@ -130,6 +130,7 @@ export class AssessmentWizard {
             ${[
               {id: 'infant', label: 'Infant (< 2 yrs)'},
               {id: 'child', label: 'Child (2–12 yrs)'},
+              {id: 'adolescent', label: 'Teen (13–17 yrs)'},
               {id: 'adult', label: 'Adult (18–64 yrs)'},
               {id: 'senior', label: 'Senior (65+ yrs)'}
             ].map(opt => `
@@ -269,13 +270,13 @@ export class AssessmentWizard {
     return `
       <div class="step-pane">
         <h2 class="step-heading">How did these symptoms begin and evolve?</h2>
-        <p class="step-subheading">Timing reveals acute vs insidious progression, differentiating viral, ischemic, or inflammatory causes.</p>
+        <p class="step-subheading">Choose the options that best describe the timing and changes you have noticed.</p>
 
         <div class="form-group-block">
           <label class="group-label">Onset Speed</label>
           <div class="timing-cards-grid">
             ${[
-              {id: 'sudden_minutes', title: 'Sudden & Abrupt', desc: 'Started in seconds or minutes (high clinical urgency indicator)'},
+              {id: 'sudden_minutes', title: 'Sudden & Abrupt', desc: 'Started in seconds or minutes'},
               {id: 'hours_today', title: 'Earlier Today', desc: 'Developed over the past few hours today'},
               {id: 'days_recent', title: 'Last Few Days', desc: 'Gradually built over 2 to 4 days'},
               {id: 'weeks_chronic', title: 'Weeks or Months', desc: 'Persistent, intermittent, or recurring over a longer period'}
@@ -313,10 +314,12 @@ export class AssessmentWizard {
   // --- STEP 4: SEVERITY & VAS SCALE ---
   getStep4HTML() {
     const s = this.intake.severity;
-    const painVal = Number.isInteger(s.painScore) ? s.painScore : 0;
+    const hasPainScore = Number.isInteger(s.painScore) && s.painScore >= 0 && s.painScore <= 10;
+    const painVal = hasPainScore ? s.painScore : 0;
+    const painDisplay = hasPainScore ? painVal : '—';
 
-    let painColor = '#10b981';
-    let painLabel = 'Mild Discomfort';
+    let painColor = hasPainScore ? '#10b981' : '#64748b';
+    let painLabel = hasPainScore ? 'Mild Discomfort' : 'Not recorded';
     if (painVal >= 8) { painColor = '#e11d48'; painLabel = 'Severe / Agonizing Pain'; }
     else if (painVal >= 6) { painColor = '#f59e0b'; painLabel = 'Moderate to Severe Pain'; }
     else if (painVal >= 4) { painColor = '#0d9488'; painLabel = 'Moderate Noticeable Pain'; }
@@ -324,16 +327,17 @@ export class AssessmentWizard {
     return `
       <div class="step-pane">
         <h2 class="step-heading">How intense is your discomfort right now?</h2>
-        <p class="step-subheading">Standardized Visual Analog Scale (0–10) and functional activity impact measurement.</p>
+        <p class="step-subheading">Use the slider to record a personal discomfort score from 0 to 10, then select the effect on daily activities.</p>
 
         <div class="pain-slider-container">
           <div class="pain-score-display" style="color: ${painColor}">
-            <span class="score-number">${painVal}</span>
+            <span class="score-number">${painDisplay}</span>
             <span class="score-denom">/10</span>
             <span class="score-text-label">${painLabel}</span>
           </div>
 
-          <input type="range" id="painRangeInput" min="0" max="10" step="1" value="${painVal}" class="pain-range-slider">
+          <label class="group-label" for="painRangeInput">${hasPainScore ? "Recorded score" : "Move the slider to record a score (0 means no pain)"}</label>
+          <input type="range" id="painRangeInput" min="0" max="10" step="1" value="${painVal}" aria-label="Discomfort self-rating from 0 to 10" class="pain-range-slider">
           
           <div class="pain-scale-labels">
             <span>0: No Pain</span>
@@ -373,7 +377,7 @@ export class AssessmentWizard {
         <div class="emergency-screener-banner">
           <span class="screener-icon">🛡️</span>
           <div>
-            <strong>Mandatory Emergency Safety Check</strong>
+            <strong>Important Warning-Sign Review</strong>
             <p>Please review these high-priority warning signs. Check any that apply, or select "None of these".</p>
           </div>
         </div>
@@ -385,7 +389,7 @@ export class AssessmentWizard {
               <div class="rf-checkbox-item ${isChecked ? 'checked' : ''}" data-rf-id="${rf.id}">
                 <div class="rf-check-box">${isChecked ? '✓' : ''}</div>
                 <div class="rf-text-content">
-                  <div class="rf-label">${rf.label}</div>
+                  <div class="rf-label">${escapeHTML(rf.label)}</div>
                   <div class="rf-desc">${rf.emergencyDesc || 'Critical indicator'}</div>
                 </div>
               </div>
@@ -416,10 +420,10 @@ export class AssessmentWizard {
         <div class="triage-urgency-banner banner-${res.triageLevel}">
           <div class="banner-top-row">
             <span class="triage-status-pill">${res.triageLevel.toUpperCase()} PRIORITY</span>
-            <span class="time-window-pill">Recommended Timeframe: <strong>${res.timeWindow}</strong></span>
+            <span class="time-window-pill">Recommended Timeframe: <strong>${escapeHTML(res.timeWindow)}</strong></span>
           </div>
-          <h1 class="triage-main-title">${res.triageTitle}</h1>
-          <p class="triage-main-desc">${res.triageDescription}</p>
+          <h1 class="triage-main-title">${escapeHTML(res.triageTitle)}</h1>
+          <p class="triage-main-desc">${escapeHTML(res.triageDescription)}</p>
 
           ${res.triageLevel === 'emergency' ? `
             <div class="emergency-quick-dial-box">
@@ -455,27 +459,27 @@ export class AssessmentWizard {
                 <div class="diff-card-header">
                   <div>
                     <span class="diff-category">${m.disease.category} · ${m.disease.icd10 || 'ICD-10'}</span>
-                    <h3 class="diff-title">${m.disease.name}</h3>
+                    <h3 class="diff-title">${escapeHTML(m.disease.name)}</h3>
                     <span class="diff-med-term">Clinical term: ${m.disease.medicalTerm}</span>
                   </div>
                   <div class="match-score-badge">
-                    <span class="score-num">${m.relevance}</span>
+                    <span class="score-num">${escapeHTML(m.relevance)}</span>
                     <span class="score-lbl">Heuristic signal</span>
                   </div>
                 </div>
 
-                <p class="diff-summary">${m.disease.summary}</p>
+                <p class="diff-summary">${escapeHTML(m.disease.summary)}</p>
 
                 <div class="diff-symptoms-row">
                   <strong>Matched with:</strong>
                   <div class="matched-pills">
-                    ${m.matchedSymptoms.map(ms => `<span class="matched-pill">✓ ${ms}</span>`).join('')}
+                    ${m.matchedSymptoms.map(ms => `<span class="matched-pill">✓ ${escapeHTML(ms)}</span>`).join('')}
                   </div>
                 </div>
 
                 <div class="diff-action-bar">
                   <button type="button" class="btn-view-dossier" data-disease-id="${m.disease.id}">
-                    📖 Read Full Clinical Dossier →
+                    📖 Read Educational Condition Summary →
                   </button>
                   <span class="urgency-tag urgency-${m.disease.urgency}">${m.disease.urgencyText}</span>
                 </div>
@@ -497,7 +501,7 @@ export class AssessmentWizard {
               ${res.doctorQuestions.map(q => `
                 <li>
                   <span class="bullet-check">❓</span>
-                  <span>${q}</span>
+                  <span>${escapeHTML(q)}</span>
                 </li>
               `).join('')}
             </ul>
@@ -507,7 +511,7 @@ export class AssessmentWizard {
         <!-- Action Bar: Print & Retake -->
         <div class="results-action-footer">
           <button type="button" id="btnPrintDoctorReport" class="btn-action-primary">
-            🖨️ Print / Save Doctor Consultation Sheet (PDF)
+            🖨️ Print / Save Visit Preparation Summary (PDF)
           </button>
           <button type="button" id="btnRestartAssessment" class="btn-action-secondary">
             🔄 Start New Check-in

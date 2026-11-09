@@ -176,7 +176,7 @@ class App {
         <div class="emergency-hero-banner">
           <span class="emergency-badge-pulse">🚨 EMERGENCY DIRECTORY</span>
           <h1 class="em-title">Global Crisis Lines & Emergency Protocols</h1>
-          <p class="em-sub">If you or someone nearby is experiencing acute, life-threatening symptoms, do not hesitate. Contact emergency medical services immediately.</p>
+          <p class="em-sub">If you or someone nearby may be in immediate danger, contact local emergency services. This directory is educational; confirm the correct number and service coverage for your location.</p>
         </div>
 
         <!-- Hotlines Grid -->
@@ -196,12 +196,31 @@ class App {
                     ${c.crisisDial ? `<a href="tel:${getDialNumber(c.crisisDial)}" class="num-link">🧠 ${c.crisis}</a>` : `<span class="num-text">🧠 ${c.crisis}</span>`}
                   </div>
                 ` : ''}
+                ${c.nonEmergency ? `
+                  <div class="num-row">
+                    <span class="num-label">Non-emergency health advice:</span>
+                    <span class="num-text">${c.nonEmergency}</span>
+                  </div>
+                ` : ''}
                 ${c.ambulance ? `
                   <div class="num-row">
                     <span class="num-label">Ambulance:</span>
                     <a href="tel:${getDialNumber(c.ambulanceDial || c.ambulance)}" class="num-link">🚑 ${c.ambulance}</a>
                   </div>
                 ` : ''}
+                ${c.poison ? `
+                  <div class="num-row">
+                    <span class="num-label">Poison Control:</span>
+                    <span class="num-text">🧪 ${c.poison}</span>
+                  </div>
+                ` : ''}
+                ${c.sources ? `
+                  <div class="num-row hotline-sources">
+                    <span class="num-label">Official information:</span>
+                    <span class="num-text">${c.sources.map(source => `<a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label}</a>`).join(' · ')}</span>
+                  </div>
+                ` : ''}
+                <p class="hotline-verified-note">Reference links checked 9 Nov 2026. Numbers and service coverage can change; verify locally.</p>
                 ${c.poison ? `
                   <div class="num-row">
                     <span class="num-label">Poison Control:</span>

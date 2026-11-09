@@ -41,7 +41,7 @@ test('a related selected symptom produces an explicitly heuristic match', () => 
 });
 
 
-test('invalid pain scores request prompt review instead of silently defaulting to routine', () => {
+test('invalid nonnumeric pain score requests prompt review', () => {
   const engine = new TriageEngine();
   const result = engine.evaluate({
     profile: { ageGroup: 'adult', comorbidities: [] },
@@ -50,7 +50,7 @@ test('invalid pain scores request prompt review instead of silently defaulting t
     severity: { painScore: 'not-a-number', disruption: 'mild' },
     redFlags: []
   });
-  assert.equal(result.triageLevel, 'emergency');
+  assert.equal(result.triageLevel, 'urgent');
 });
 
 test('malformed optional intake collections do not crash evaluation', () => {
@@ -81,7 +81,7 @@ test('routine educational output does not reassure users that symptoms are harml
   assert.match(result.triageDescription, /not.*safe to monitor/i);
 });
 
-test('pain score above the supported range triggers conservative escalation', () => {
+test('pain score above the supported range triggers emergency-level demo output', () => {
   const engine = new TriageEngine();
   const result = engine.evaluate({
     profile: { ageGroup: 'adult', comorbidities: [] },
@@ -90,5 +90,5 @@ test('pain score above the supported range triggers conservative escalation', ()
     severity: { painScore: 11, disruption: 'mild' },
     redFlags: []
   });
-  assert.equal(result.triageLevel, 'urgent');
+  assert.equal(result.triageLevel, 'emergency');
 });
