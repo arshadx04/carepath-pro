@@ -10,7 +10,7 @@ import { ArticleModal } from './components/articleModal.js';
 import { emergencyDatabase } from './data/emergencyHotlines.js';
 
 function getDialNumber(value) {
-  const match = String(value || '').match(/\\d[\\d -]*\\d|\\d/);
+  const match = String(value || '').match(/\d[\d -]*\d|\d/);
   return match ? match[0].replace(/[ -]/g, '') : '';
 }
 
@@ -185,7 +185,7 @@ class App {
                 ${c.crisis ? `
                   <div class="num-row">
                     <span class="num-label">Mental Health Crisis / Suicide Lifeline:</span>
-                    ${getDialNumber(c.crisis) ? `<a href="tel:${getDialNumber(c.crisis)}" class="num-link">🧠 ${c.crisis}</a>` : `<span class="num-text">🧠 ${c.crisis}</span>`}
+                    ${c.crisisDial ? `<a href="tel:${getDialNumber(c.crisisDial)}" class="num-link">🧠 ${c.crisis}</a>` : `<span class="num-text">🧠 ${c.crisis}</span>`}
                   </div>
                 ` : ''}
                 ${c.ambulance ? `
