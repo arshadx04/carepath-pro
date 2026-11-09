@@ -66,3 +66,29 @@ test('malformed optional intake collections do not crash evaluation', () => {
   assert.deepEqual(result.topMatches, []);
   assert.equal(result.intakeSummary.totalSymptomsReported, 0);
 });
+
+
+test('routine educational output does not reassure users that symptoms are harmless', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: [] },
+    selectedSymptoms: [],
+    timing: { onset: 'days_recent', trajectory: 'steady' },
+    severity: { painScore: 2, disruption: 'mild' },
+    redFlags: ['none']
+  });
+  assert.match(result.triageDescription, /not reassurance/i);
+  assert.match(result.triageDescription, /not.*safe to monitor/i);
+});
+
+test('pain score above the supported range is not treated as a valid low score', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: [] },
+    selectedSymptoms: [],
+    timing: { onset: 'days_recent', trajectory: 'steady' },
+    severity: { painScore: 11, disruption: 'mild' },
+    redFlags: []
+  });
+  assert.equal(result.triageLevel, 'urgent');
+});
