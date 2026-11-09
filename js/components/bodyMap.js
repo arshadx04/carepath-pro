@@ -19,15 +19,28 @@ export class BodyMap {
 
     const backAnatomy = this.view === 'back' ? `
       <g class="back-anatomy">
+        <!-- Posterior shoulder caps and trapezius: broad, visible shoulder anatomy -->
+        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M137,112 C126,111 116,113 106,119 C96,123 91,132 94,143 L108,151 C116,143 126,137 140,134 Z" />
+        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M163,112 C174,111 184,113 194,119 C204,123 209,132 206,143 L192,151 C184,143 174,137 160,134 Z" />
         <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
-              d="M112,122 Q125,112 145,126 L145,178 Q128,190 112,170 Z M188,122 Q175,112 155,126 L155,178 Q172,190 188,170 Z" />
-        <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
-              d="M143,122 L157,122 L157,280 L143,280 Z" opacity="0.8" />
-        <path d="M150,130 L150,276" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" opacity="0.55" />
-        <circle cx="150" cy="155" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
-        <circle cx="150" cy="260" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
-        <text x="150" y="195" class="zone-label" text-anchor="middle">Upper back</text>
+              d="M139,113 Q150,119 161,113 L174,132 Q163,145 150,149 Q137,145 126,132 Z" />
+        <!-- Left and right shoulder blades -->
+        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M112,145 Q124,134 140,142 L143,177 Q130,190 116,177 Z" />
+        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M188,145 Q176,134 160,142 L157,177 Q170,190 184,177 Z" />
+        <!-- Thoracic and lumbar spine -->
+        <path class="anatomical-zone spine-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M143,145 Q150,140 157,145 L157,280 Q150,287 143,280 Z" />
+        <path d="M150,145 L150,280" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" opacity="0.65" />
+        <circle cx="150" cy="160" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+        <circle cx="150" cy="255" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+        <text x="150" y="199" class="zone-label" text-anchor="middle">Upper back</text>
         <text x="150" y="245" class="zone-label" text-anchor="middle">Lower back</text>
+        <text x="106" y="163" class="zone-label" text-anchor="middle">Shoulder</text>
+        <text x="194" y="163" class="zone-label" text-anchor="middle">Shoulder</text>
       </g>
     ` : '';
 
