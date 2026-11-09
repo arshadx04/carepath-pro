@@ -221,12 +221,6 @@ class App {
                   </div>
                 ` : ''}
                 <p class="hotline-verified-note">Reference links checked 9 Nov 2026. Numbers and service coverage can change; verify locally.</p>
-                ${c.poison ? `
-                  <div class="num-row">
-                    <span class="num-label">Poison Control:</span>
-                    <span class="num-text">🧪 ${c.poison}</span>
-                  </div>
-                ` : ''}
               </div>
             </div>
           `).join('')}
