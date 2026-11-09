@@ -7,9 +7,9 @@ globalThis.document = { getElementById: () => null };
 test('age options include adolescents without a gap between child and adult ranges', () => {
   const wizard = new AssessmentWizard('missing-container');
   const html = wizard.getStep1HTML();
-  assert.match(html, /Child \\(2–12 yrs\\)/);
-  assert.match(html, /Teen \\(13–17 yrs\\)/);
-  assert.match(html, /Adult \\(18–64 yrs\\)/);
+  assert.ok(html.includes('Child (2–12 yrs)'));
+  assert.ok(html.includes('Teen (13–17 yrs)'));
+  assert.ok(html.includes('Adult (18–64 yrs)'));
 });
 
 test('unanswered pain slider is visibly not recorded and cannot pass step validation', () => {
