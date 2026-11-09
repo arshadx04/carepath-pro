@@ -18,6 +18,7 @@ test('unanswered pain slider is visibly not recorded and cannot pass step valida
   const html = wizard.getStep4HTML();
   assert.match(html, /Not recorded/);
   assert.match(html, /Move the slider to record a score/);
+  assert.match(html, /Record 0 — no pain/);
   assert.equal(wizard.isCurrentStepValid(), false);
   wizard.intake.severity.painScore = 0;
   wizard.intake.severity.disruption = 'mild';
