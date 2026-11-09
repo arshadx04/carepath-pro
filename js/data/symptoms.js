@@ -25,9 +25,19 @@ export const symptomDatabase = {
       "description": "Stomach pain, acid reflux, nausea, vomiting, cramping, diarrhea"
     },
     {
+      "id": "shoulder",
+      "name": "Shoulders",
+      "description": "Shoulder blade discomfort, upper shoulder pain, stiffness and limited movement"
+    },
+    {
+      "id": "back",
+      "name": "Back",
+      "description": "Upper and lower back discomfort, muscle tightness and back stiffness"
+    },
+    {
       "id": "spine",
-      "name": "Spine & Back",
-      "description": "Lower back pain, sciatica shooting to leg, stiffness, neck spasms"
+      "name": "Spine",
+      "description": "Pain along the spinal column, lower back pain, sciatica and stiffness"
     },
     {
       "id": "back",
