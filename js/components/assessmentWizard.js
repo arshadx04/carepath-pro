@@ -7,6 +7,12 @@ import { symptomDatabase } from '../data/symptoms.js';
 import { triageEngine } from '../engine/triageEngine.js';
 import { ReportGenerator } from '../engine/reportGenerator.js';
 
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[char]);
+}
+
 export class AssessmentWizard {
   constructor(containerId, options = {}) {
     this.container = document.getElementById(containerId);
@@ -207,7 +213,7 @@ export class AssessmentWizard {
           <span class="search-icon">🔍</span>
           <input type="text" id="symptomSearchInput" class="symptom-search-input" 
                  placeholder="Search symptoms (e.g. headache, fever, cough, chest pressure)..." 
-                 value="${this.symptomFilterQuery}">
+                 value="${escapeHTML(this.symptomFilterQuery)}">
           ${this.symptomFilterQuery ? `<button type="button" id="clearSearchBtn" class="clear-search-btn">✕</button>` : ''}
         </div>
 
@@ -249,7 +255,7 @@ export class AssessmentWizard {
             `;
           }).join('') : `
             <div class="empty-search-state">
-              <p>No symptoms matched "<strong>${this.symptomFilterQuery}</strong>". Try clearing your search query or selecting "All Regions".</p>
+              <p>No symptoms matched "<strong>${escapeHTML(this.symptomFilterQuery)}</strong>". Try clearing your search query or selecting "All Regions".</p>
             </div>
           `}
         </div>
@@ -417,8 +423,7 @@ export class AssessmentWizard {
 
           ${res.triageLevel === 'emergency' ? `
             <div class="emergency-quick-dial-box">
-              <a href="tel:911" class="btn-emergency-dial">🚨 Call Emergency Services (911 / 112)</a>
-              <p class="dial-sub">If outside the US/Canada, dial 112 or your local ambulance dispatch immediately.</p>
+              <p class="dial-sub">Call your local emergency number or ambulance service now. Do not rely on this educational tool to identify your local number.</p>
             </div>
           ` : ''}
         </div>
@@ -441,11 +446,11 @@ export class AssessmentWizard {
               <span class="section-eyebrow">DIFFERENTIAL ANALYSIS</span>
               <h2 class="section-title">Educational Condition Matches</h2>
             </div>
-            <p class="section-sub">Ranked correlation based on your symptoms, anatomical location, and clinical profile.</p>
+            <p class="section-sub">Exploratory matches based on simple keyword and symptom associations; these are not probabilities or diagnoses.</p>
           </div>
 
           <div class="differential-cards-list">
-            ${res.topMatches.map(m => `
+            ${res.topMatches.length ? res.topMatches.map(m => `
               <div class="diff-card">
                 <div class="diff-card-header">
                   <div>
@@ -454,8 +459,8 @@ export class AssessmentWizard {
                     <span class="diff-med-term">Clinical term: ${m.disease.medicalTerm}</span>
                   </div>
                   <div class="match-score-badge">
-                    <span class="score-num">${m.matchPercentage}%</span>
-                    <span class="score-lbl">Match</span>
+                    <span class="score-num">${m.relevance}</span>
+                    <span class="score-lbl">Heuristic signal</span>
                   </div>
                 </div>
 
@@ -475,7 +480,7 @@ export class AssessmentWizard {
                   <span class="urgency-tag urgency-${m.disease.urgency}">${m.disease.urgencyText}</span>
                 </div>
               </div>
-            `).join('')}
+            `).join('') : '<p>No educational matches were generated from the selected symptoms. This does not rule out a health condition; seek professional advice if concerned.</p>'}
           </div>
         </div>
 
@@ -554,7 +559,7 @@ export class AssessmentWizard {
       return this.intake.selectedSymptoms.length > 0;
     }
     if (this.currentStep === 5) {
-      return this.intake.redFlags.length > 0;
+      return this.intake.redFlags.includes('none') || this.intake.redFlags.some(flag => flag !== 'none');
     }
     return true;
   }
@@ -727,7 +732,7 @@ export class AssessmentWizard {
       item.addEventListener('click', () => {
         const rfId = item.getAttribute('data-rf-id');
         if (rfId === 'none') {
-          this.intake.redFlags = ['none'];
+          this.intake.redFlags = this.intake.redFlags.includes('none') ? [] : ['none'];
         } else {
           let flags = this.intake.redFlags.filter(f => f !== 'none');
           if (flags.includes(rfId)) {

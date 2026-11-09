@@ -3,6 +3,12 @@
  * Formatted as a Clinical Pre-Intake / SBAR Summary
  */
 
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[char]);
+}
+
 export class ReportGenerator {
   /**
    * Generates clean HTML for printable Doctor Consultation Handoff Sheet
@@ -23,28 +29,28 @@ export class ReportGenerator {
     });
 
     const symptomsList = (intake.selectedSymptoms || [])
-      .map(symId => `<li><strong>${symId.replace(/_/g, ' ')}</strong></li>`)
+       .map(symId => `<li><strong>${escapeHTML(symId.replace(/_/g, ' '))}</strong></li>`)
       .join('');
 
     const matchedConditions = (result.topMatches || [])
       .map(m => `
         <div class="report-condition-row">
           <div class="condition-name">
-            <strong>${m.disease.name}</strong> 
-            <span class="icd">(${m.disease.icd10 || 'ICD-10'})</span>
+            <strong>${escapeHTML(m.disease.name)}</strong> 
+            <span class="icd">(${escapeHTML(m.disease.icd10 || 'ICD-10')})</span>
           </div>
           <div class="match-bar-container">
-            <span class="pct">${m.matchPercentage}% symptom correlation</span>
+            <span class="pct">Exploratory heuristic signal: ${escapeHTML(m.relevance)} (not a probability)</span>
           </div>
         </div>
       `).join('');
 
     const questionsList = (result.doctorQuestions || [])
-      .map(q => `<li>${q}</li>`)
+       .map(q => `<li>${escapeHTML(q)}</li>`)
       .join('');
 
     const redFlagsList = (result.activeRedFlags || []).length > 0
-      ? result.activeRedFlags.map(rf => `<li class="red-text"><strong>${rf.label}</strong>: ${rf.emergencyDesc || 'Critical indicator'}</li>`).join('')
+      ? result.activeRedFlags.map(rf => `<li class="red-text"><strong>${escapeHTML(rf.label)}</strong>: ${escapeHTML(rf.emergencyDesc || 'Critical indicator')}</li>`).join('')
       : '<li class="green-text">No immediate acute red flags reported at time of digital check-in.</li>';
 
     return `
@@ -135,27 +141,27 @@ export class ReportGenerator {
         <div class="logo-sub">Pre-Consultation Patient Assessment Report</div>
       </div>
       <div class="meta-box">
-        <div><strong>Assessment Date:</strong> ${evalDate}</div>
+        <div><strong>Assessment Date:</strong> ${escapeHTML(evalDate)}</div>
         <div><strong>Triage Urgency:</strong></div>
-        <div class="triage-badge badge-${result.triageLevel}">${result.triageTitle}</div>
+        <div class="triage-badge badge-${escapeHTML(result.triageLevel)}">${escapeHTML(result.triageTitle)}</div>
       </div>
     </div>
 
     <div class="section-grid">
       <div class="card">
         <h3>1. Patient Demographics & Profile</h3>
-        <p><strong>Age Group:</strong> ${(p.ageGroup || 'Adult').toUpperCase()}</p>
-        <p><strong>Biological Sex:</strong> ${p.biologicalSex || 'Not specified'}</p>
+        <p><strong>Age Group:</strong> ${escapeHTML((p.ageGroup || 'Adult').toUpperCase())}</p>
+        <p><strong>Biological Sex:</strong> ${escapeHTML(p.biologicalSex || 'Not specified')}</p>
         <p><strong>Pregnancy Status:</strong> ${p.pregnant ? 'Pregnant' : 'Not pregnant / N/A'}</p>
-        <p><strong>Comorbidities / Background:</strong> ${(p.comorbidities && p.comorbidities.length > 0) ? p.comorbidities.join(', ') : 'None reported'}</p>
+        <p><strong>Comorbidities / Background:</strong> ${escapeHTML((p.comorbidities && p.comorbidities.length > 0) ? p.comorbidities.join(', ') : 'None reported')}</p>
       </div>
 
       <div class="card">
         <h3>2. Symptom Timing & Severity</h3>
-        <p><strong>Onset Speed:</strong> ${(t.onset || 'Recent').replace(/_/g, ' ')}</p>
-        <p><strong>Clinical Trajectory:</strong> ${(t.trajectory || 'Steady').toUpperCase()}</p>
-        <p><strong>Pain Severity Score:</strong> <strong>${s.painScore || 0}/10</strong> on Visual Analog Scale (VAS)</p>
-        <p><strong>Daily Activity Disruption:</strong> ${(s.disruption || 'Moderate').toUpperCase()}</p>
+        <p><strong>Onset Speed:</strong> ${escapeHTML((t.onset || 'Recent').replace(/_/g, ' '))}</p>
+        <p><strong>Clinical Trajectory:</strong> ${escapeHTML((t.trajectory || 'Steady').toUpperCase())}</p>
+        <p><strong>Pain Severity Score:</strong> <strong>${escapeHTML(s.painScore || 0)}/10</strong> on Visual Analog Scale (VAS)</p>
+        <p><strong>Daily Activity Disruption:</strong> ${escapeHTML((s.disruption || 'Moderate').toUpperCase())}</p>
       </div>
     </div>
 
@@ -166,7 +172,7 @@ export class ReportGenerator {
 
     <div class="card" style="margin-bottom: 16px;">
       <h3>4. Educational Differential Considerations</h3>
-      <p style="font-size: 11px; color: #64748b; margin-top: 0;">Statistical correlation of reported symptoms against clinical knowledgebase:</p>
+      <p style="font-size: 11px; color: #64748b; margin-top: 0;">Exploratory associations from a simple educational heuristic; not validated diagnostic probabilities.</p>
       <div>${matchedConditions}</div>
     </div>
 

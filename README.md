@@ -1,7 +1,7 @@
 # CarePath Pro ⚕️
-### Advanced Clinical Symptom Assessment Engine & Medical Knowledge Library
+### Educational Symptom Check-in & Medical Knowledge Library
 
-CarePath Pro is a modernized, enterprise-grade clinical guidance platform engineered to transform patient-doctor communication, provide evidence-based symptom triage, and offer an expansive 40+ disease knowledge compendium across 12 organ systems.
+CarePath Pro is an educational web project for exploring symptom associations and preparing questions for a healthcare visit. Its rules are heuristic, not clinically validated, and must not be used for diagnosis, treatment, or emergency decision-making.
 
 ---
 
@@ -15,7 +15,7 @@ CarePath Pro is a modernized, enterprise-grade clinical guidance platform engine
 - **Step 5: Mandatory Red-Flag Screener**: Life-safety check for critical indicators (e.g. stroke FAST, chest pressure, appendicitis, anaphylaxis, suicidal crisis).
 - **Clinical Triage Output**:
   - 4-Tier urgency rating (*Level 1: Emergency*, *Level 2: Urgent Care*, *Level 3: Primary Care*, *Level 4: Supportive Home Care*).
-  - Statistically ranked differential condition matches with percentage correlation.
+  - Exploratory symptom associations ranked by a simple heuristic signal (not a probability or diagnostic confidence).
   - Tailored questions generated specifically for the patient to ask their physician.
   - Printable **Doctor Consultation Intake Sheet (SBAR/SOAP format)** with single-click print or PDF export.
 
@@ -32,7 +32,7 @@ CarePath Pro is a modernized, enterprise-grade clinical guidance platform engine
   - **Urology & Renal**: Urinary Tract Infection (UTI), Kidney Stones (Nephrolithiasis).
   - **Mental & Behavioral Health**: Generalized Anxiety Disorder, Major Depressive Disorder, Panic Disorder.
   - **ENT & Ophthalmology**: Allergic Rhinitis, Acute Otitis Media, Conjunctivitis (Pink Eye).
-- Each dossier includes: ICD-10 reference, overview, pathophysiology, hallmark symptoms, atypical signs, emergency red flags, diagnostic tests, supportive care, and official citations (WHO, CDC, Mayo Clinic, NIH).
+- Condition articles are educational summaries. References and clinical content require independent verification by qualified healthcare professionals.
 
 ### 3. 🧍 Interactive Anatomical Body Map
 - Point-and-click SVG body mannequin supporting front/back views and targeting 9 anatomical zones.
@@ -46,7 +46,7 @@ CarePath Pro is a modernized, enterprise-grade clinical guidance platform engine
 - Native browser **Text-to-Speech (TTS)** voice narration for all medical articles.
 - Dark & Light clinical themes with persistent theme remembering.
 - Bookmarking / Saved condition lists persisted via LocalStorage.
-- Global Emergency Hotline Directory covering US/CA, UK, EU, India, Australia, and international GSM roaming standards.
+- Emergency contact directory with country-specific dial links where supplied; always verify the correct local number through official sources.
 
 ---
 
@@ -67,9 +67,21 @@ You can also directly double-click `index.html` or open it in Google Chrome, Mic
 
 ---
 
-## 🌐 Deploying to Replit
+## 🧪 Automated tests
 
-To update your Replit app (`https://care-path-symptom-guide--aliarshad77291.replit.app`):
+The triage engine tests use Node.js built-in test runner and no third-party packages:
+
+```bash
+node --experimental-default-type=module --test tests/triageEngine.test.js
+```
+
+These are basic regression checks only. They do not validate clinical safety or medical accuracy.
+
+---
+
+## 🌐 Deployment
+
+To update your deployed app: open your hosting project and deploy the reviewed branch after testing.
 1. Open your Replit project dashboard.
 2. Replace the project root files with the files from `carepath-pro`:
    - `index.html`
@@ -90,4 +102,11 @@ To update your Replit app (`https://care-path-symptom-guide--aliarshad77291.repl
 ---
 
 ## 📜 Medical Disclaimer
-CarePath Pro is intended solely for educational triage and visit preparation purposes. It does not replace professional clinical judgment, physical examination, diagnosis, or personalized medical care. In an emergency, contact local emergency services immediately (911, 112, 999).
+CarePath Pro is intended solely for educational triage and visit preparation purposes. It does not replace professional clinical judgment, physical examination, diagnosis, or personalized medical care. In an emergency, contact the emergency number officially used in your location immediately.
+
+
+## Safety and privacy notes
+- Do not enter real patient identifiers or sensitive medical records into this demo.
+- No triage result should delay emergency care or replace a clinician's assessment.
+- Emergency numbers and protocols vary by jurisdiction; verify them with official local sources.
+- Have a qualified clinician review all symptom definitions, red flags, scoring rules, and emergency content before any real-world use.

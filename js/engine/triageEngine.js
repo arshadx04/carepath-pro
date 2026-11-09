@@ -124,41 +124,42 @@ export class TriageEngine {
       });
 
       // C. Profile & Comorbidity Modifiers
+      // These modifiers are ranking hints, not calibrated clinical probabilities.
       if (profile.comorbidities) {
         if (disease.id === 'coronary-artery-disease' && (profile.comorbidities.includes('hypertension') || profile.comorbidities.includes('diabetes') || profile.comorbidities.includes('smoking'))) {
           score += 2;
+          maxScore += 2;
         }
         if (disease.id === 'type-2-diabetes' && (profile.comorbidities.includes('obesity') || profile.comorbidities.includes('hypertension'))) {
           score += 2;
+          maxScore += 2;
         }
         if (disease.id === 'asthma' && profile.comorbidities.includes('allergies')) {
           score += 2;
+          maxScore += 2;
         }
         if (disease.id === 'copd' && profile.comorbidities.includes('smoking')) {
           score += 3;
+          maxScore += 3;
         }
       }
 
       // Age modifiers
       if (profile.ageGroup === 'senior' && ['osteoarthritis', 'coronary-artery-disease', 'heart-failure', 'stroke-tia', 'copd', 'shingles-herpes-zoster'].includes(disease.id)) {
         score += 1.5;
+        maxScore += 1.5;
       }
       if (profile.ageGroup === 'child' && ['otitis-media', 'strep-throat', 'asthma'].includes(disease.id)) {
         score += 2;
+        maxScore += 2;
       }
 
-      // Calculate percentage
-      let matchPercentage = 0;
-      if (maxScore > 0) {
-        matchPercentage = Math.min(96, Math.round((score / Math.max(maxScore, 4)) * 100));
-      } else if (matchedSymptomsList.length > 0) {
-        matchPercentage = Math.min(75, matchedSymptomsList.length * 25);
-      }
-
-      if (matchPercentage > 15 || matchedSymptomsList.length > 0) {
+      // Calculate a transparent heuristic score only. It is not a probability,
+      // diagnostic confidence, or clinically validated percentage.
+      if (score > 0 && matchedSymptomsList.length > 0) {
         conditionScores.push({
           disease,
-          matchPercentage,
+          matchPercentage: 0,
           matchedSymptoms: matchedSymptomsList,
           missedSymptoms: missedSymptomsList.slice(0, 3),
           relevance: score
@@ -166,16 +167,10 @@ export class TriageEngine {
       }
     });
 
-    // Sort by match percentage descending
-    conditionScores.sort((a, b) => b.matchPercentage - a.matchPercentage || b.relevance - a.relevance);
-
-    // If no conditions matched, provide top general educational matches
-    const topMatches = conditionScores.length > 0 
-      ? conditionScores.slice(0, 4) 
-      : [
-          { disease: this.diseases.find(d => d.id === 'tension-headache') || this.diseases[0], matchPercentage: 35, matchedSymptoms: ['General body tension'], missedSymptoms: [] },
-          { disease: this.diseases.find(d => d.id === 'acute-bronchitis') || this.diseases[1], matchPercentage: 30, matchedSymptoms: ['Respiratory changes'], missedSymptoms: [] }
-        ];
+    // Sort by the heuristic signal score. Never invent matches when there is
+    // no symptom evidence; an empty list is more honest and safer.
+    conditionScores.sort((a, b) => b.relevance - a.relevance);
+    const topMatches = conditionScores.slice(0, 4);
 
     // 4. Generate Personalized Questions to Bring to the Doctor
     const doctorQuestions = [];

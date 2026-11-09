@@ -9,6 +9,11 @@ import { ConditionComparison } from './components/conditionComparison.js';
 import { ArticleModal } from './components/articleModal.js';
 import { emergencyDatabase } from './data/emergencyHotlines.js';
 
+function getDialNumber(value) {
+  const match = String(value || '').match(/\d[\d -]*\d|\d/);
+  return match ? match[0].replace(/[ -]/g, '') : '';
+}
+
 class App {
   constructor() {
     this.currentView = 'home';
@@ -175,12 +180,18 @@ class App {
               <div class="hotline-numbers">
                 <div class="num-row">
                   <span class="num-label">Primary Emergency (Ambulance/Police/Fire):</span>
-                  <a href="tel:${c.emergency.split(' ')[0]}" class="num-link highlight-red">📞 ${c.emergency}</a>
+                  ${c.dial ? `<a href="tel:${getDialNumber(c.dial)}" class="num-link highlight-red">📞 ${c.emergency}</a>` : `<span class="num-text">📞 ${c.emergency}</span>`}
                 </div>
                 ${c.crisis ? `
                   <div class="num-row">
                     <span class="num-label">Mental Health Crisis / Suicide Lifeline:</span>
-                    <a href="tel:${c.crisis.split(' ')[0]}" class="num-link">🧠 ${c.crisis}</a>
+                    ${c.crisisDial ? `<a href="tel:${getDialNumber(c.crisisDial)}" class="num-link">🧠 ${c.crisis}</a>` : `<span class="num-text">🧠 ${c.crisis}</span>`}
+                  </div>
+                ` : ''}
+                ${c.ambulance ? `
+                  <div class="num-row">
+                    <span class="num-label">Ambulance:</span>
+                    <a href="tel:${getDialNumber(c.ambulanceDial || c.ambulance)}" class="num-link">🚑 ${c.ambulance}</a>
                   </div>
                 ` : ''}
                 ${c.poison ? `
