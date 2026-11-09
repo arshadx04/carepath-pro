@@ -72,7 +72,7 @@ You can also directly double-click `index.html` or open it in Google Chrome, Mic
 The triage engine tests use Node.js built-in test runner and no third-party packages:
 
 ```bash
-node --experimental-default-type=module --test tests/*.test.js
+npm test
 ```
 
 These are basic software regression checks only. They do not validate clinical safety, medical accuracy, or suitability for real-world decisions.
