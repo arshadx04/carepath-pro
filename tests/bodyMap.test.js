@@ -46,7 +46,9 @@ test('front view renders anterior regions and exposes the selected toggle state'
 
 test('back view renders posterior spine regions without anterior torso hotspots', () => {
   const markup = renderBodyMap('back');
-  const svg = markup.match(/<svg[\\s\\S]*?<\\/svg>/)?.[0] || '';
+  const svgStart = markup.indexOf('<svg');
+  const svgEnd = markup.indexOf('</svg>', svgStart);
+  const svg = svgStart >= 0 && svgEnd >= 0 ? markup.slice(svgStart, svgEnd + 6) : '';
 
   assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Front View/);
   assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Back View/);
