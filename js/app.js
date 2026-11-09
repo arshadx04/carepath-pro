@@ -87,13 +87,21 @@ class App {
         document.body.classList.toggle('dark-theme');
         const isDark = document.body.classList.contains('dark-theme');
         themeBtn.innerHTML = isDark ? '☀️' : '🌙';
-        localStorage.setItem('carepath_theme', isDark ? 'dark' : 'light');
+        try {
+          localStorage.setItem('carepath_theme', isDark ? 'dark' : 'light');
+        } catch (error) {
+          // Theme still works for this session when browser storage is unavailable.
+        }
       });
 
       // Check saved theme
-      if (localStorage.getItem('carepath_theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        themeBtn.innerHTML = '☀️';
+      try {
+        if (localStorage.getItem('carepath_theme') === 'dark') {
+          document.body.classList.add('dark-theme');
+          themeBtn.innerHTML = '☀️';
+        }
+      } catch (error) {
+        // Use the default light theme when browser storage is unavailable.
       }
     }
 
