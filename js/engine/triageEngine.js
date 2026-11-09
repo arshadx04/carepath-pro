@@ -1,6 +1,6 @@
 /**
- * CarePath Pro - Clinical Triage & Differential Assessment Algorithm
- * Evidence-based clinical weighting engine
+ * CarePath Pro - Educational Symptom Association & Urgency Rules
+ * Heuristic demonstration logic; not clinically validated
  */
 
 import { diseaseDatabase } from '../data/diseases.js';
@@ -62,7 +62,7 @@ export class TriageEngine {
     if (activeRedFlags.length > 0 || painScore >= 9 || (isSudden && isSevereImpact && painScore >= 7)) {
       triageLevel = 'emergency';
       triageTitle = 'Immediate Emergency Evaluation Required';
-      triageDescription = 'One or more high-risk clinical red flags were detected. Do not wait for a routine appointment; contact local emergency services (e.g. 911 / 112) or proceed to the nearest emergency department.';
+      triageDescription = 'One or more high-risk clinical red flags were detected. Do not wait for a routine appointment; contact the emergency number officially used in your location or proceed to the nearest emergency department.';
       triageColor = 'rose';
       timeWindow = 'Immediately / Right now';
     } else if (painScore >= 6 || isWorsening || severity.disruption === 'severe' || 
