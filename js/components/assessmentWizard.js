@@ -559,7 +559,7 @@ export class AssessmentWizard {
       return this.intake.selectedSymptoms.length > 0;
     }
     if (this.currentStep === 5) {
-      return this.intake.redFlags.length > 0;
+      return this.intake.redFlags.length > 0 && !(this.intake.redFlags.length === 1 && this.intake.redFlags[0] === 'none') || this.intake.redFlags.includes('none');
     }
     return true;
   }
