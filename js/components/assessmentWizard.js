@@ -338,6 +338,7 @@ export class AssessmentWizard {
 
           <label class="group-label" for="painRangeInput">${hasPainScore ? "Recorded score" : "Move the slider to record a score (0 means no pain)"}</label>
           <input type="range" id="painRangeInput" min="0" max="10" step="1" value="${painVal}" aria-label="Discomfort self-rating from 0 to 10" class="pain-range-slider">
+          <button type="button" id="btnPainZero" class="btn-text-clear">Record 0 — no pain</button>
           
           <div class="pain-scale-labels">
             <span>0: No Pain</span>
@@ -400,8 +401,8 @@ export class AssessmentWizard {
           <div class="rf-checkbox-item none-option ${isNoneSelected ? 'checked' : ''}" data-rf-id="none">
             <div class="rf-check-box">${isNoneSelected ? '✓' : ''}</div>
             <div class="rf-text-content">
-              <div class="rf-label">None of these emergency signs are present</div>
-              <div class="rf-desc">I confirm that none of the above acute red flags apply to me.</div>
+              <div class="rf-label">I have not selected any of these warning signs</div>
+              <div class="rf-desc">If unsure whether a warning sign applies, seek advice from a qualified professional.</div>
             </div>
           </div>
         </div>
@@ -460,7 +461,7 @@ export class AssessmentWizard {
                   <div>
                     <span class="diff-category">${escapeHTML(m.disease.category)} · ${escapeHTML(m.disease.icd10 || 'Reference code unavailable')}</span>
                     <h3 class="diff-title">${escapeHTML(m.disease.name)}</h3>
-                    <span class="diff-med-term">Clinical term: ${escapeHTML(m.disease.medicalTerm)}</span>
+                    <span class="diff-med-term">Reference term: ${escapeHTML(m.disease.medicalTerm)}</span>
                   </div>
                   <div class="match-score-badge">
                     <span class="score-num">${escapeHTML(m.relevance)}</span>
@@ -727,6 +728,14 @@ export class AssessmentWizard {
     });
 
     // Step 4 events: Severity & Pain Slider
+    const painZeroBtn = this.container.querySelector('#btnPainZero');
+    if (painZeroBtn) {
+      painZeroBtn.addEventListener('click', () => {
+        this.intake.severity.painScore = 0;
+        this.render();
+      });
+    }
+
     const painSlider = this.container.querySelector('#painRangeInput');
     if (painSlider) {
       painSlider.addEventListener('input', (e) => {
