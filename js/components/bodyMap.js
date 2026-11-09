@@ -208,6 +208,12 @@ export class BodyMap {
     this.container.querySelectorAll('.btn-toggle-view').forEach(btn => {
       btn.addEventListener('click', () => {
         this.view = btn.getAttribute('data-view');
+        // Keep the selected detail panel aligned with the anatomy visible in this view.
+        if (this.view === 'back' && ['chest', 'abdomen', 'pelvis', 'throat'].includes(this.selectedRegion)) {
+          this.selectedRegion = 'spine';
+        } else if (this.view === 'front' && this.selectedRegion === 'spine') {
+          this.selectedRegion = 'chest';
+        }
         this.render();
       });
     });
