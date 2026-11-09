@@ -18,13 +18,16 @@ export class TriageEngine {
    * @returns {Object} Comprehensive clinical assessment result
    */
   evaluate(intake) {
-    const {
-      profile = {},
-      selectedSymptoms = [],
-      timing = {},
-      severity = {},
-      redFlags = []
-    } = intake;
+    const safeIntake = intake && typeof intake === 'object' ? intake : {};
+    const profile = safeIntake.profile && typeof safeIntake.profile === 'object' ? safeIntake.profile : {};
+    const timing = safeIntake.timing && typeof safeIntake.timing === 'object' ? safeIntake.timing : {};
+    const severity = safeIntake.severity && typeof safeIntake.severity === 'object' ? safeIntake.severity : {};
+    const selectedSymptoms = Array.isArray(safeIntake.selectedSymptoms) ? safeIntake.selectedSymptoms : [];
+    const redFlags = Array.isArray(safeIntake.redFlags) ? safeIntake.redFlags : [];
+    const comorbidities = Array.isArray(comorbidities) ? comorbidities : [];
+    const rawPainScore = severity.painScore === '' || severity.painScore == null ? 0 : Number(severity.painScore);
+    const hasInvalidPainScore = !Number.isFinite(rawPainScore) || rawPainScore < 0 || rawPainScore > 10;
+    const painScore = Number.isFinite(rawPainScore) ? Math.min(10, Math.max(0, rawPainScore)) : 0;
 
     // 1. Identify active red flags
     const activeRedFlags = [];
@@ -54,7 +57,6 @@ export class TriageEngine {
     let triageColor = 'emerald';
     let timeWindow = 'Within 3–7 business days';
 
-    const painScore = parseInt(severity.painScore || 0, 10);
     const isSudden = timing.onset === 'sudden_minutes' || timing.onset === 'hours_today';
     const isWorsening = timing.trajectory === 'worsening';
     const isSevereImpact = severity.disruption === 'severe';
@@ -65,9 +67,9 @@ export class TriageEngine {
       triageDescription = 'One or more high-risk clinical red flags were detected. Do not wait for a routine appointment; contact the emergency number officially used in your location or proceed to the nearest emergency department.';
       triageColor = 'rose';
       timeWindow = 'Immediately / Right now';
-    } else if (painScore >= 6 || isWorsening || severity.disruption === 'severe' || 
+    } else if (hasInvalidPainScore || painScore >= 6 || isWorsening || severity.disruption === 'severe' || 
                profile.ageGroup === 'infant' || profile.ageGroup === 'senior' || 
-               profile.pregnant || (profile.comorbidities && profile.comorbidities.length > 1)) {
+               profile.pregnant || comorbidities.length > 1) {
       triageLevel = 'urgent';
       triageTitle = 'Prompt Medical Assessment Needed';
       triageDescription = 'Your symptoms require timely clinical evaluation. We recommend visiting an urgent care center or same-day clinic today.';
@@ -125,20 +127,20 @@ export class TriageEngine {
 
       // C. Profile & Comorbidity Modifiers
       // These modifiers are ranking hints, not calibrated clinical probabilities.
-      if (profile.comorbidities) {
-        if (disease.id === 'coronary-artery-disease' && (profile.comorbidities.includes('hypertension') || profile.comorbidities.includes('diabetes') || profile.comorbidities.includes('smoking'))) {
+      if (comorbidities.length > 0) {
+        if (disease.id === 'coronary-artery-disease' && (comorbidities.includes('hypertension') || comorbidities.includes('diabetes') || comorbidities.includes('smoking'))) {
           score += 2;
           maxScore += 2;
         }
-        if (disease.id === 'type-2-diabetes' && (profile.comorbidities.includes('obesity') || profile.comorbidities.includes('hypertension'))) {
+        if (disease.id === 'type-2-diabetes' && (comorbidities.includes('obesity') || comorbidities.includes('hypertension'))) {
           score += 2;
           maxScore += 2;
         }
-        if (disease.id === 'asthma' && profile.comorbidities.includes('allergies')) {
+        if (disease.id === 'asthma' && comorbidities.includes('allergies')) {
           score += 2;
           maxScore += 2;
         }
-        if (disease.id === 'copd' && profile.comorbidities.includes('smoking')) {
+        if (disease.id === 'copd' && comorbidities.includes('smoking')) {
           score += 3;
           maxScore += 3;
         }
@@ -190,8 +192,8 @@ export class TriageEngine {
     if (isSudden) {
       doctorQuestions.push("Given the acute sudden onset of these symptoms, are urgent diagnostic imaging or labs indicated today?");
     }
-    if (profile.comorbidities && profile.comorbidities.length > 0) {
-      doctorQuestions.push(`Could my existing background health history (${profile.comorbidities.join(', ')}) be interacting with these new symptoms?`);
+    if (comorbidities.length > 0) {
+      doctorQuestions.push(`Could my existing background health history (${comorbidities.join(', ')}) be interacting with these new symptoms?`);
     }
     doctorQuestions.push("What specific warning signs would signify that I should seek emergency care before our next follow-up?");
 
