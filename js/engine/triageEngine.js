@@ -53,7 +53,7 @@ export class TriageEngine {
     // 2. Determine Overall Triage Level
     let triageLevel = 'routine';
     let triageTitle = 'Routine Consultation Recommended';
-    let triageDescription = 'The demo's simple rules did not trigger a higher-priority flag. This is not reassurance that symptoms are harmless or safe to monitor; seek professional advice if concerned.';
+    let triageDescription = 'The demo\'s simple rules did not trigger a higher-priority flag. This is not reassurance that symptoms are harmless or safe to monitor; seek professional advice if concerned.';
     let triageColor = 'emerald';
     let timeWindow = 'Within 3–7 business days';
 
@@ -72,13 +72,13 @@ export class TriageEngine {
                profile.pregnant || comorbidities.length > 1) {
       triageLevel = 'urgent';
       triageTitle = 'Prompt Medical Assessment Needed';
-      triageDescription = 'The demo's illustrative rules flagged answers for prompt attention. This output is not a validated urgency assessment; contact a qualified healthcare professional for advice.';
+      triageDescription = 'The demo\'s illustrative rules flagged answers for prompt attention. This output is not a validated urgency assessment; contact a qualified healthcare professional for advice.';
       triageColor = 'amber';
       timeWindow = 'Within 12–24 hours';
     } else if (painScore <= 3 && timing.trajectory === 'improving' && !isSevereImpact) {
       triageLevel = 'selfCare';
       triageTitle = 'Self-Monitoring & Supportive Home Care';
-      triageDescription = 'The demo's illustrative rules did not identify a higher-priority pattern. This does not establish that self-care is appropriate or that delaying care is safe.';
+      triageDescription = 'The demo\'s illustrative rules did not identify a higher-priority pattern. This does not establish that self-care is appropriate or that delaying care is safe.';
       triageColor = 'teal';
       timeWindow = 'Monitor closely for 48–72 hours';
     }
