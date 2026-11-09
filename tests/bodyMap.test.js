@@ -49,7 +49,11 @@ test('back view renders posterior spine regions without anterior torso hotspots'
 
   assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Front View/);
   assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Back View/);
-  assert.match(markup, /class="back-anatomy"/);
+  assert.match(markup, /class="back-anatomy"/);  assert.match(markup, /class="anatomical-zone shoulder-zone/);
+  assert.equal((markup.match(/class="anatomical-zone shoulder-zone/g) || []).length, 2, "both shoulder caps should render");
+  assert.equal((markup.match(/class="anatomical-zone scapula-zone/g) || []).length, 2, "both shoulder blades should render");
+  assert.match(markup, />Shoulder</);
+  assert.match(markup, /class="anatomical-zone spine-zone/);
   assert.match(markup, /data-region="spine"/);
   assert.match(markup, /Upper back/);
   assert.match(markup, /Lower back/);
