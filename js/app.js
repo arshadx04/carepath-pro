@@ -54,7 +54,9 @@ class App {
     const mobileMenu = document.getElementById('mobileNavMenu');
     if (toggleBtn && mobileMenu) {
       toggleBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
+        const isOpen = mobileMenu.classList.toggle('open');
+        toggleBtn.setAttribute('aria-expanded', String(isOpen));
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
       });
     }
 
@@ -135,7 +137,12 @@ class App {
 
     // Close mobile menu if open
     const mobileMenu = document.getElementById('mobileNavMenu');
-    if (mobileMenu) mobileMenu.classList.remove('open');
+    if (mobileMenu) {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      const toggleBtn = document.getElementById('btnToggleMobileNav');
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+    }
 
     // Update active state on nav links
     document.querySelectorAll('[data-nav]').forEach(link => {

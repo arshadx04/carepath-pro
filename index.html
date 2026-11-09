@@ -41,14 +41,14 @@
         <button type="button" id="btnThemeToggle" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
           🌙
         </button>
-        <button type="button" id="btnToggleMobileNav" class="btn-icon mobile-toggle-btn" aria-label="Toggle Navigation Menu">
+        <button type="button" id="btnToggleMobileNav" class="btn-icon mobile-toggle-btn" aria-label="Toggle Navigation Menu" aria-controls="mobileNavMenu" aria-expanded="false">
           ☰
         </button>
       </div>
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-nav-menu" id="mobileNavMenu">
+    <div class="mobile-nav-menu" id="mobileNavMenu" aria-hidden="true">
       <a href="#" class="nav-link" data-nav="home">🏠 Home & Body Explorer</a>
       <a href="#" class="nav-link" data-nav="assessment">🩺 Symptom Check-in</a>
       <a href="#" class="nav-link" data-nav="library">📚 Medical Condition Library</a>
@@ -122,7 +122,7 @@
             </div>
             <div class="tier-preview-row tier-urgent">
               <span>⚠️ Level 2: Urgent Care</span>
-              <span>Same-Day / 24h Care</span>
+              <span>Illustrative category only — no care-timing advice</span>
             </div>
             <div class="tier-preview-row tier-routine">
               <span>📋 Level 3: Primary Care</span>

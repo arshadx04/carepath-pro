@@ -8,7 +8,7 @@ CarePath Pro is an educational web project for exploring symptom associations an
 ## 🌟 Key Features
 
 ### 1. 🩺 5-Step Educational Symptom Check-in
-- **Step 1: User Profile & Background**: Incorporates age groups (infant, child, adult, senior), biological sex, pregnancy status, and comorbidities (hypertension, diabetes, asthma, heart disease, smoking).
+- **Step 1: User Profile & Background**: Optional age groups (infant under 2, child 2–12, teen 13–17, adult 18–64, senior 65+), biological sex, pregnancy status, and selected health background details.
 - **Step 2: Anatomical Symptom Selection**: Select from over 40 symptoms with simple heuristic weights with instant keyword search and body-region filter pills.
 - **Step 3: Timeline & Trajectory**: Analyzes sudden vs insidious onset and reported symptom trajectory (worsening, steady, episodic, improving).
 - **Step 4: Pain & Severity Metrics**: Standardized Visual Analog Scale (VAS 0–10) with functional activity disruption evaluation.
@@ -72,7 +72,7 @@ You can also directly double-click `index.html` or open it in Google Chrome, Mic
 The triage engine tests use Node.js built-in test runner and no third-party packages:
 
 ```bash
-node --experimental-default-type=module --test tests/*.test.js
+npm test
 ```
 
 These are basic software regression checks only. They do not validate clinical safety, medical accuracy, or suitability for real-world decisions.
