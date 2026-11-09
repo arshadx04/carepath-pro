@@ -17,9 +17,11 @@ export class ReportGenerator {
    * @returns {string} Clean HTML
    */
   static generateReportHTML(intake, result) {
-    const p = intake.profile || {};
-    const t = intake.timing || {};
-    const s = intake.severity || {};
+    const safeIntake = intake && typeof intake === 'object' ? intake : {};
+    const safeResult = result && typeof result === 'object' ? result : {};
+    const p = safeIntake.profile && typeof safeIntake.profile === 'object' ? safeIntake.profile : {};
+    const t = safeIntake.timing && typeof safeIntake.timing === 'object' ? safeIntake.timing : {};
+    const s = safeIntake.severity && typeof safeIntake.severity === 'object' ? safeIntake.severity : {};
     const evalDate = new Date().toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -28,11 +30,11 @@ export class ReportGenerator {
       minute: '2-digit'
     });
 
-    const symptomsList = (intake.selectedSymptoms || [])
+    const symptomsList = (Array.isArray(safeIntake.selectedSymptoms) ? safeIntake.selectedSymptoms : [])
        .map(symId => `<li><strong>${escapeHTML(symId.replace(/_/g, ' '))}</strong></li>`)
       .join('');
 
-    const matchedConditions = (result.topMatches || [])
+    const matchedConditions = (Array.isArray(safeResult.topMatches) ? safeResult.topMatches : [])
       .map(m => `
         <div class="report-condition-row">
           <div class="condition-name">
@@ -45,11 +47,11 @@ export class ReportGenerator {
         </div>
       `).join('');
 
-    const questionsList = (result.doctorQuestions || [])
+    const questionsList = (Array.isArray(safeResult.doctorQuestions) ? safeResult.doctorQuestions : [])
        .map(q => `<li>${escapeHTML(q)}</li>`)
       .join('');
 
-    const redFlagsList = (result.activeRedFlags || []).length > 0
+    const redFlagsList = (Array.isArray(safeResult.activeRedFlags) ? safeResult.activeRedFlags : []).length > 0
       ? result.activeRedFlags.map(rf => `<li class="red-text"><strong>${escapeHTML(rf.label)}</strong>: ${escapeHTML(rf.emergencyDesc || 'Critical indicator')}</li>`).join('')
       : '<li class="green-text">No warning signs were selected in this educational check-in. This does not rule out an emergency.</li>';
 
@@ -143,7 +145,7 @@ export class ReportGenerator {
       <div class="meta-box">
         <div><strong>Assessment Date:</strong> ${escapeHTML(evalDate)}</div>
         <div><strong>Illustrative rule category:</strong></div>
-        <div class="triage-badge badge-${escapeHTML(result.triageLevel)}">${escapeHTML(result.triageTitle)}</div>
+        <div class="triage-badge badge-${escapeHTML(safeResult.triageLevel)}">${escapeHTML(safeResult.triageTitle)}</div>
       </div>
     </div>
 
@@ -153,7 +155,7 @@ export class ReportGenerator {
         <p><strong>Age Group:</strong> ${escapeHTML(p.ageGroup ? p.ageGroup.toUpperCase() : 'Not recorded')}</p>
         <p><strong>Biological Sex:</strong> ${escapeHTML(p.biologicalSex || 'Not specified')}</p>
         <p><strong>Pregnancy Status:</strong> ${p.pregnant === true ? 'Reported pregnant / postpartum' : p.pregnant === false ? 'Not reported' : 'Not specified'}</p>
-        <p><strong>Comorbidities / Background:</strong> ${escapeHTML((p.comorbidities && p.comorbidities.length > 0) ? p.comorbidities.join(', ') : 'None reported')}</p>
+        <p><strong>Comorbidities / Background:</strong> ${escapeHTML((Array.isArray(p.comorbidities) && p.comorbidities.length > 0) ? p.comorbidities.join(', ') : 'None reported')}</p>
       </div>
 
       <div class="card">
