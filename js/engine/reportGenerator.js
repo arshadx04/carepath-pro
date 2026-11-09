@@ -38,8 +38,8 @@ export class ReportGenerator {
       .map(m => `
         <div class="report-condition-row">
           <div class="condition-name">
-            <strong>${escapeHTML(m.disease.name)}</strong> 
-            <span class="icd">(${escapeHTML(m.disease.icd10 || 'ICD-10')})</span>
+            <strong>${escapeHTML(m.disease?.name)}</strong> 
+            <span class="icd">(${escapeHTML(m.disease?.icd10 || 'ICD-10')})</span>
           </div>
           <div class="match-bar-container">
             <span class="pct">Exploratory heuristic signal: ${escapeHTML(m.relevance)} (not a probability)</span>
@@ -52,7 +52,7 @@ export class ReportGenerator {
       .join('');
 
     const redFlagsList = (Array.isArray(safeResult.activeRedFlags) ? safeResult.activeRedFlags : []).length > 0
-      ? result.activeRedFlags.map(rf => `<li class="red-text"><strong>${escapeHTML(rf.label)}</strong>: ${escapeHTML(rf.emergencyDesc || 'Critical indicator')}</li>`).join('')
+      ? safeResult.activeRedFlags.map(rf => `<li class="red-text"><strong>${escapeHTML(rf.label)}</strong>: ${escapeHTML(rf.emergencyDesc || 'Critical indicator')}</li>`).join('')
       : '<li class="green-text">No warning signs were selected in this educational check-in. This does not rule out an emergency.</li>';
 
     return `
