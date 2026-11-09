@@ -2476,3 +2476,60 @@ body.dark-theme .site-header {
     text-align: center;
   }
 }
+
+
+/* --- Posterior anatomy map: distinct shoulders, back and vertebral column --- */
+.back-anatomy .posterior-muscle {
+  fill: rgba(13, 148, 136, 0.12);
+  stroke: var(--primary);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.back-anatomy .shoulder-zone,
+.back-anatomy .scapula-zone,
+.back-anatomy .back-zone,
+.back-anatomy .vertebra {
+  fill: rgba(13, 148, 136, 0.16);
+  stroke: var(--primary);
+  stroke-width: 1.8;
+  cursor: pointer;
+}
+.back-anatomy .shoulder-zone:hover,
+.back-anatomy .scapula-zone:hover,
+.back-anatomy .back-zone:hover,
+.back-anatomy .vertebra:hover {
+  fill: rgba(13, 148, 136, 0.34);
+}
+.back-anatomy .rib-cage path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  opacity: 0.78;
+}
+.back-anatomy .spine-center-line {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.2;
+  stroke-dasharray: 2 3;
+  opacity: 0.5;
+}
+.back-anatomy .vertebra {
+  fill: var(--primary-light);
+  stroke-width: 1.4;
+}
+.back-anatomy .selected {
+  fill: var(--primary);
+  stroke: var(--primary);
+  filter: url(#glowEffect);
+}
+.back-anatomy .zone-label {
+  fill: var(--text-main);
+  font-size: 8px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--bg-card);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
