@@ -19,6 +19,20 @@ export class BodyMap {
 
     const backAnatomy = this.view === 'back' ? `
       <g class="back-anatomy">
+        <!-- Full posterior torso silhouette anchors the anatomy in a recognizable human form -->
+        <path class="posterior-body" aria-hidden="true"
+              d="M111,121
+                 C120,113 132,112 141,119
+                 L150,128 L159,119
+                 C168,112 180,113 189,121
+                 C197,133 200,148 195,165
+                 C191,181 187,196 188,214
+                 C190,239 187,263 174,282
+                 L166,293 L134,293 L126,282
+                 C113,263 110,239 112,214
+                 C113,196 109,181 105,165
+                 C100,148 103,133 111,121 Z" />
+        <!-- Neck and trapezius form a recognizable transition into the shoulders -->
         <!-- Neck and trapezius form a recognizable transition into the shoulders -->
         <path class="posterior-muscle" d="M139,96 Q150,105 161,96 L168,119 Q177,122 190,126 L181,143 Q168,137 160,143 L150,151 L140,143 Q132,137 119,143 L110,126 Q123,122 132,119 Z" />
         <!-- Shoulder caps -->
