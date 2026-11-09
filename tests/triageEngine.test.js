@@ -50,7 +50,7 @@ test('invalid pain scores request prompt review instead of silently defaulting t
     severity: { painScore: 'not-a-number', disruption: 'mild' },
     redFlags: []
   });
-  assert.equal(result.triageLevel, 'urgent');
+  assert.equal(result.triageLevel, 'emergency');
 });
 
 test('malformed optional intake collections do not crash evaluation', () => {
@@ -81,7 +81,7 @@ test('routine educational output does not reassure users that symptoms are harml
   assert.match(result.triageDescription, /not.*safe to monitor/i);
 });
 
-test('pain score above the supported range is not treated as a valid low score', () => {
+test('pain score above the supported range triggers conservative escalation', () => {
   const engine = new TriageEngine();
   const result = engine.evaluate({
     profile: { ageGroup: 'adult', comorbidities: [] },
