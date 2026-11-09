@@ -23,8 +23,8 @@ export class AssessmentWizard {
     this.intake = {
       profile: {
         ageGroup: null,
-        biologicalSex: 'not_specified',
-        pregnant: false,
+        biologicalSex: null,
+        pregnant: null,
         comorbidities: []
       },
       selectedSymptoms: [],
@@ -156,17 +156,14 @@ export class AssessmentWizard {
           </div>
         </div>
 
-        ${p.biologicalSex === 'female' ? `
-          <div class="form-group-block">
-            <label class="group-label">Pregnancy Status</label>
-            <div class="checkbox-row">
-              <label class="custom-checkbox-label">
-                <input type="checkbox" id="chkPregnancy" ${p.pregnant ? 'checked' : ''}>
-                <span>Currently pregnant or postpartum (< 6 weeks)</span>
-              </label>
-            </div>
+        <div class="form-group-block">
+          <label class="group-label">Pregnancy status (optional)</label>
+          <div class="toggle-pill-grid">
+            <button type="button" class="toggle-pill ${p.pregnant === true ? 'active' : ''}" data-pregnancy="true">Pregnant / postpartum</button>
+            <button type="button" class="toggle-pill ${p.pregnant === false ? 'active' : ''}" data-pregnancy="false">Not pregnant / not applicable</button>
           </div>
-        ` : ''}
+          <p class="step-subheading">Leave unselected if you prefer not to answer.</p>
+        </div>
 
         <div class="form-group-block">
           <label class="group-label">Pre-existing Health Conditions (Select all that apply)</label>
@@ -643,12 +640,12 @@ export class AssessmentWizard {
       });
     });
 
-    const chkPreg = this.container.querySelector('#chkPregnancy');
-    if (chkPreg) {
-      chkPreg.addEventListener('change', (e) => {
-        this.intake.profile.pregnant = e.target.checked;
+    this.container.querySelectorAll('[data-pregnancy]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.intake.profile.pregnant = btn.getAttribute('data-pregnancy') === 'true';
+        this.render();
       });
-    }
+    });
 
     this.container.querySelectorAll('.comorbidity-chip').forEach(chip => {
       chip.addEventListener('click', () => {
