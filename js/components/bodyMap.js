@@ -17,6 +17,20 @@ export class BodyMap {
   render() {
     if (!this.container) return;
 
+    const backAnatomy = this.view === 'back' ? `
+      <g class="back-anatomy">
+        <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M112,122 Q125,112 145,126 L145,178 Q128,190 112,170 Z M188,122 Q175,112 155,126 L155,178 Q172,190 188,170 Z" />
+        <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+              d="M143,122 L157,122 L157,280 L143,280 Z" opacity="0.8" />
+        <path d="M150,130 L150,276" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" opacity="0.55" />
+        <circle cx="150" cy="155" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+        <circle cx="150" cy="260" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+        <text x="150" y="195" class="zone-label" text-anchor="middle">Upper back</text>
+        <text x="150" y="245" class="zone-label" text-anchor="middle">Lower back</text>
+      </g>
+    ` : '';
+
     this.container.innerHTML = `
       <div class="body-explorer-wrapper">
         <div class="body-view-controls">
@@ -85,19 +99,7 @@ export class BodyMap {
               ${this.view === 'front' ? '</g>' : ''}
 
               <!-- Posterior anatomy: upper back, shoulder blades and spine -->
-              ${this.view === 'back' ? `
-                <g class="back-anatomy">
-                  <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
-                        d="M112,122 Q125,112 145,126 L145,178 Q128,190 112,170 Z M188,122 Q175,112 155,126 L155,178 Q172,190 188,170 Z" />
-                  <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
-                        d="M143,122 L157,122 L157,280 L143,280 Z" opacity="0.8" />
-                  <path d="M150,130 L150,276" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" opacity="0.55" />
-                  <circle cx="150" cy="155" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
-                  <circle cx="150" cy="260" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
-                  <text x="150" y="195" class="zone-label" text-anchor="middle">Upper back</text>
-                  <text x="150" y="245" class="zone-label" text-anchor="middle">Lower back</text>
-                </g>
-              ` : ''}
+              ${backAnatomy}
               ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
 
               <!-- Pelvis & Bladder -->
