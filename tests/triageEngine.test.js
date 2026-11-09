@@ -92,3 +92,18 @@ test('pain score above the supported range triggers emergency-level demo output'
   });
   assert.equal(result.triageLevel, 'emergency');
 });
+
+
+test('demo output avoids unsupported medical timeframes', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: [] },
+    selectedSymptoms: [],
+    timing: { onset: 'days_recent', trajectory: 'steady' },
+    severity: { painScore: 2, disruption: 'mild' },
+    redFlags: ['none']
+  });
+  assert.match(result.triageTitle, /demo/i);
+  assert.match(result.triageDescription, /not reassurance/i);
+  assert.match(result.timeWindow, /cannot determine/i);
+});
