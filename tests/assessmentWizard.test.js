@@ -45,3 +45,12 @@ test('wizard requires explicit timing, symptom, age, and warning-sign selections
   wizard.intake.redFlags = ['none'];
   assert.equal(wizard.isCurrentStepValid(), true);
 });
+
+test('sensitive profile fields are not preselected as negative answers', () => {
+  const wizard = new AssessmentWizard('missing-container');
+  assert.equal(wizard.intake.profile.biologicalSex, null);
+  assert.equal(wizard.intake.profile.pregnant, null);
+  const html = wizard.getStep1HTML();
+  assert.match(html, /Pregnancy status \(optional\)/);
+  assert.match(html, /Leave unselected if you prefer not to answer/);
+});
