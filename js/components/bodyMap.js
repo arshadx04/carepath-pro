@@ -110,8 +110,6 @@ export class BodyMap {
               <text x="150" y="290" class="zone-label" text-anchor="middle">Pelvis</text>
               ${this.view === 'front' ? '</g>' : ''}
 
-              ${this.view === 'front' ? '</g>' : ''}
-
               <!-- Legs & Lower Limbs (visible from both views) -->
               <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
                     data-region="limbs" 
