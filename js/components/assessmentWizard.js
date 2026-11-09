@@ -420,7 +420,7 @@ export class AssessmentWizard {
         <div class="triage-urgency-banner banner-${res.triageLevel}">
           <div class="banner-top-row">
             <span class="triage-status-pill">${res.triageLevel.toUpperCase()} PRIORITY</span>
-            <span class="time-window-pill">Recommended Timeframe: <strong>${escapeHTML(res.timeWindow)}</strong></span>
+            <span class="time-window-pill">Demo wording (not a care timeframe): <strong>${escapeHTML(res.timeWindow)}</strong></span>
           </div>
           <h1 class="triage-main-title">${escapeHTML(res.triageTitle)}</h1>
           <p class="triage-main-desc">${escapeHTML(res.triageDescription)}</p>
@@ -434,7 +434,7 @@ export class AssessmentWizard {
 
         ${res.activeRedFlags.length > 0 ? `
           <div class="alert-box-critical">
-            <h3>⚠️ Detected Red-Flag Warning Signs:</h3>
+            <h3>⚠️ Selected Warning-Sign Items:</h3>
             <ul>
               ${res.activeRedFlags.map(rf => `
                 <li><strong>${rf.label}</strong> — ${rf.emergencyDesc || 'Urgent consideration'}</li>
@@ -447,7 +447,7 @@ export class AssessmentWizard {
         <div class="results-section">
           <div class="section-title-row">
             <div>
-              <span class="section-eyebrow">DIFFERENTIAL ANALYSIS</span>
+              <span class="section-eyebrow">EXPLORATORY ASSOCIATIONS</span>
               <h2 class="section-title">Educational Condition Matches</h2>
             </div>
             <p class="section-sub">Exploratory matches based on simple keyword and symptom associations; these are not probabilities or diagnoses.</p>
