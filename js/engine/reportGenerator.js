@@ -154,7 +154,7 @@ export class ReportGenerator {
         <h3>1. Patient Demographics & Profile</h3>
         <p><strong>Age Group:</strong> ${escapeHTML(p.ageGroup ? p.ageGroup.toUpperCase() : 'Not recorded')}</p>
         <p><strong>Biological Sex:</strong> ${escapeHTML(p.biologicalSex || 'Not specified')}</p>
-        <p><strong>Pregnancy Status:</strong> ${p.pregnant === true ? 'Reported pregnant / postpartum' : p.pregnant === false ? 'Not reported' : 'Not specified'}</p>
+        <p><strong>Pregnancy Status:</strong> ${p.pregnant === true ? 'Reported pregnant / postpartum' : p.pregnant === false ? 'Not pregnant / not applicable' : 'Not specified'}</p>
         <p><strong>Comorbidities / Background:</strong> ${escapeHTML((Array.isArray(p.comorbidities) && p.comorbidities.length > 0) ? p.comorbidities.join(', ') : 'None reported')}</p>
       </div>
 
