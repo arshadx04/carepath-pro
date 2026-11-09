@@ -450,7 +450,7 @@ export class AssessmentWizard {
           </div>
 
           <div class="differential-cards-list">
-            ${res.topMatches.map(m => `
+            ${res.topMatches.length ? res.topMatches.map(m => `
               <div class="diff-card">
                 <div class="diff-card-header">
                   <div>
@@ -480,7 +480,7 @@ export class AssessmentWizard {
                   <span class="urgency-tag urgency-${m.disease.urgency}">${m.disease.urgencyText}</span>
                 </div>
               </div>
-            `).join('')}
+            `).join('') : '<p>No educational matches were generated from the selected symptoms. This does not rule out a health condition; seek professional advice if concerned.</p>'}
           </div>
         </div>
 
@@ -559,7 +559,7 @@ export class AssessmentWizard {
       return this.intake.selectedSymptoms.length > 0;
     }
     if (this.currentStep === 5) {
-      return this.intake.redFlags.length > 0 && !(this.intake.redFlags.length === 1 && this.intake.redFlags[0] === 'none') || this.intake.redFlags.includes('none');
+      return this.intake.redFlags.includes('none') || this.intake.redFlags.some(flag => flag !== 'none');
     }
     return true;
   }
