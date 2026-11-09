@@ -5,6 +5,12 @@
 
 import { diseaseDatabase } from '../data/diseases.js';
 
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[char]);
+}
+
 export class DiseaseLibrary {
   constructor(containerId, options = {}) {
     this.container = document.getElementById(containerId);
@@ -109,7 +115,7 @@ export class DiseaseLibrary {
             <span class="search-ico">🔍</span>
             <input type="text" id="libSearchInput" class="lib-search-input" 
                    placeholder="Search conditions by name, symptom, clinical term, or ICD-10 (e.g. Asthma, Chest pain, Eczema, I10)..."
-                   value="${this.searchQuery}">
+                   value="${escapeHTML(this.searchQuery)}">
             ${this.searchQuery ? `<button type="button" id="libClearSearch" class="lib-clear-btn">✕</button>` : ''}
           </div>
 

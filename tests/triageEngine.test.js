@@ -39,3 +39,30 @@ test('a related selected symptom produces an explicitly heuristic match', () => 
   assert.ok(result.topMatches.some(match => match.disease.id === 'tension-headache'));
   assert.ok(result.topMatches.every(match => Number.isFinite(match.relevance)));
 });
+
+
+test('invalid pain scores request prompt review instead of silently defaulting to routine', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: [] },
+    selectedSymptoms: [],
+    timing: { onset: 'days_recent', trajectory: 'steady' },
+    severity: { painScore: 'not-a-number', disruption: 'mild' },
+    redFlags: []
+  });
+  assert.equal(result.triageLevel, 'urgent');
+});
+
+test('malformed optional intake collections do not crash evaluation', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: 'unknown' },
+    selectedSymptoms: null,
+    timing: null,
+    severity: null,
+    redFlags: null
+  });
+  assert.equal(result.triageLevel, 'routine');
+  assert.deepEqual(result.topMatches, []);
+  assert.equal(result.intakeSummary.totalSymptomsReported, 0);
+});
