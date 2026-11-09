@@ -63,8 +63,8 @@ test('back view renders posterior spine regions without anterior torso hotspots'
   assert.match(markup, /data-region="shoulder"/);
   assert.match(markup, /data-region="back"/);
   assert.match(markup, /data-region="spine"/);
-  assert.match(markup, /Upper back/);
-  assert.match(markup, /Lower back/);
+  assert.match(markup, />Back</);
+  assert.match(markup, />Spine</);
   assert.doesNotMatch(svg, /data-region="chest"/);
   assert.doesNotMatch(svg, /data-region="abdomen"/);
   assert.doesNotMatch(svg, /data-region="pelvis"/);
