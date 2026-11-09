@@ -116,7 +116,6 @@ export class TriageEngine {
             const matches = keywords.some(kw => hallmarkLower.includes(kw));
             if (matches && !matchedSymptomsList.includes(symObj.label)) {
               score += 1.5;
-        maxScore += 1.5;
               maxScore += 1.5;
               matchedSymptomsList.push(symObj.label);
             }
@@ -129,15 +128,15 @@ export class TriageEngine {
       if (profile.comorbidities) {
         if (disease.id === 'coronary-artery-disease' && (profile.comorbidities.includes('hypertension') || profile.comorbidities.includes('diabetes') || profile.comorbidities.includes('smoking'))) {
           score += 2;
-        maxScore += 2;
-          maxScore += 2;
           maxScore += 2;
         }
         if (disease.id === 'type-2-diabetes' && (profile.comorbidities.includes('obesity') || profile.comorbidities.includes('hypertension'))) {
           score += 2;
+          maxScore += 2;
         }
         if (disease.id === 'asthma' && profile.comorbidities.includes('allergies')) {
           score += 2;
+          maxScore += 2;
         }
         if (disease.id === 'copd' && profile.comorbidities.includes('smoking')) {
           score += 3;
@@ -148,9 +147,11 @@ export class TriageEngine {
       // Age modifiers
       if (profile.ageGroup === 'senior' && ['osteoarthritis', 'coronary-artery-disease', 'heart-failure', 'stroke-tia', 'copd', 'shingles-herpes-zoster'].includes(disease.id)) {
         score += 1.5;
+        maxScore += 1.5;
       }
       if (profile.ageGroup === 'child' && ['otitis-media', 'strep-throat', 'asthma'].includes(disease.id)) {
         score += 2;
+        maxScore += 2;
       }
 
       // Calculate a transparent heuristic score only. It is not a probability,
