@@ -24,7 +24,7 @@ export class TriageEngine {
     const severity = safeIntake.severity && typeof safeIntake.severity === 'object' ? safeIntake.severity : {};
     const selectedSymptoms = Array.isArray(safeIntake.selectedSymptoms) ? safeIntake.selectedSymptoms : [];
     const redFlags = Array.isArray(safeIntake.redFlags) ? safeIntake.redFlags : [];
-    const comorbidities = Array.isArray(comorbidities) ? comorbidities : [];
+    const comorbidities = Array.isArray(profile.comorbidities) ? profile.comorbidities : [];
     const rawPainScore = severity.painScore === '' || severity.painScore == null ? 0 : Number(severity.painScore);
     const hasInvalidPainScore = !Number.isFinite(rawPainScore) || rawPainScore < 0 || rawPainScore > 10;
     const painScore = Number.isFinite(rawPainScore) ? Math.min(10, Math.max(0, rawPainScore)) : 0;
