@@ -10,6 +10,7 @@ export const emergencyDatabase = {
       "emergency": "911",
       "dial": "911",
       "crisis": "988 (Call or Text)",
+      "crisisDial": "988",
       "poison": "1-800-222-1222"
     },
     {
@@ -18,7 +19,8 @@ export const emergencyDatabase = {
       "emergency": "999 / 112",
       "dial": "999",
       "nonEmergency": "111",
-      "crisis": "111 (Mental Health Option)"
+      "crisis": "NHS 111 (mental health option)",
+      "crisisDial": "111"
     },
     {
       "country": "European Union",
@@ -35,7 +37,8 @@ export const emergencyDatabase = {
       "dial": "112",
       "ambulance": "108",
       "ambulanceDial": "108",
-      "crisis": "Tele-MANAS: 14416 / 1800 891 4416"
+      "crisis": "Tele-MANAS: 14416",
+      "crisisDial": "14416"
     },
     {
       "country": "Australia",
@@ -43,6 +46,7 @@ export const emergencyDatabase = {
       "emergency": "000",
       "dial": "000",
       "crisis": "13 11 14 (Lifeline)",
+      "crisisDial": "131114",
       "healthdirect": "1800 022 222"
     },
     {
@@ -64,11 +68,11 @@ export const emergencyDatabase = {
     },
     {
       "condition": "Severe Anaphylaxis / Allergic Reaction",
-      "action": "Administer an Epinephrine auto-injector (EpiPen) into the outer thigh immediately. Call emergency dispatch right away. Lie flat with legs elevated unless vomiting or struggling to breathe."
+      "action": "Call emergency services immediately. If the person has a prescribed epinephrine auto-injector and their emergency action plan, follow that plan while help is on the way. Follow the dispatcher’s instructions."
     },
     {
       "condition": "Acute Mental Health Crisis",
-      "action": "Call or text 988 (US/Canada) or your national crisis lifeline. Do not stay alone. Remove any immediate means of self-harm and connect with a trusted support person."
+      "action": "Contact the crisis service available in your country or call local emergency services if there is immediate danger. Stay with the person if it is safe to do so and follow the crisis responder’s instructions."
     }
   ]
 };
