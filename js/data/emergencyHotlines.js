@@ -8,6 +8,7 @@ export const emergencyDatabase = {
       "country": "United States & Canada",
       "code": "US/CA",
       "emergency": "911",
+      "dial": "911",
       "crisis": "988 (Call or Text)",
       "poison": "1-800-222-1222"
     },
@@ -15,6 +16,7 @@ export const emergencyDatabase = {
       "country": "United Kingdom",
       "code": "UK",
       "emergency": "999 / 112",
+      "dial": "999",
       "nonEmergency": "111",
       "crisis": "111 (Mental Health Option)"
     },
@@ -22,38 +24,43 @@ export const emergencyDatabase = {
       "country": "European Union",
       "code": "EU",
       "emergency": "112",
+      "dial": "112",
       "crisis": "Varies by state (116 123)",
       "poison": "Local European Poison Centres"
     },
     {
       "country": "India",
       "code": "IN",
-      "emergency": "112 / 102",
+      "emergency": "112",
+      "dial": "112",
       "ambulance": "108",
+      "ambulanceDial": "108",
       "crisis": "Tele-MANAS: 14416 / 1800 891 4416"
     },
     {
       "country": "Australia",
       "code": "AU",
       "emergency": "000",
+      "dial": "000",
       "crisis": "13 11 14 (Lifeline)",
       "healthdirect": "1800 022 222"
     },
     {
       "country": "International / Roaming",
       "code": "INTL",
-      "emergency": "112 (Universal GSM standard)",
-      "notes": "Works from almost any mobile phone globally without a SIM card"
+      "emergency": "Use your local emergency number",
+      "dial": null,
+      "notes": "Emergency numbers and mobile-network access vary by country. Check local official guidance."
     }
   ],
   "emergencyProtocols": [
     {
       "condition": "Suspected Heart Attack",
-      "action": "Call emergency services immediately. Sit down in a comfortable position with back supported. If not allergic and advised by emergency dispatch, chew one adult 325mg aspirin. Do NOT drive yourself to the hospital."
+      "action": "Call emergency services immediately. Sit down in a comfortable position with back supported. Do not take medication unless an emergency dispatcher or qualified clinician instructs you. Do NOT drive yourself to the hospital."
     },
     {
       "condition": "Suspected Stroke (F.A.S.T.)",
-      "action": "Face drooping, Arm weakness, Speech difficulty, Time to call 911 immediately. Note the exact time symptoms started. Do NOT give aspirin, food, or drink."
+      "action": "Face drooping, Arm weakness, Speech difficulty, Time to call your local emergency number immediately. Note the exact time symptoms started. Do NOT give aspirin, food, or drink."
     },
     {
       "condition": "Severe Anaphylaxis / Allergic Reaction",
