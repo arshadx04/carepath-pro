@@ -228,7 +228,8 @@ class App {
 
         <!-- Action Protocols -->
         <div class="emergency-protocols-section">
-          <h2>Critical Emergency Action Protocols</h2>
+          <h2>General Emergency Information</h2>
+          <p class="em-sub">These educational reminders are not a first-aid manual and have not been clinically validated in this project. Follow local emergency dispatcher instructions; qualified clinical review is required.</p>
           <div class="protocol-cards-grid">
             ${emergencyDatabase.emergencyProtocols.map(p => `
               <div class="protocol-card">
