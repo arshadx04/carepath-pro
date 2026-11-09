@@ -20,10 +20,10 @@ export class BodyMap {
     this.container.innerHTML = `
       <div class="body-explorer-wrapper">
         <div class="body-view-controls">
-          <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front">
+          <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">
             <span>Front View</span>
           </button>
-          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back">
+          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">
             <span>Back View</span>
           </button>
         </div>
@@ -31,7 +31,7 @@ export class BodyMap {
         <div class="body-interactive-stage">
           <!-- Anatomical SVG Diagram -->
           <div class="svg-mannequin-container">
-            <svg viewBox="0 0 300 520" class="mannequin-svg" aria-label="Interactive Human Body Anatomy">
+            <svg viewBox="0 0 300 520" class="mannequin-svg" role="group" aria-label="Interactive Human Body Anatomy - ${this.view} view">
               <defs>
                 <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#0d9488" stop-opacity="0.15" />
@@ -51,6 +51,7 @@ export class BodyMap {
               <circle cx="150" cy="62" r="5" class="zone-pin ${this.selectedRegion === 'head' ? 'active' : ''}" data-region="head" />
               <text x="150" y="45" class="zone-label" text-anchor="middle">Head</text>
 
+              ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
               <!-- Neck & Throat -->
               <path class="anatomical-zone ${this.selectedRegion === 'throat' ? 'selected' : ''}" 
                     data-region="throat" 
@@ -64,13 +65,16 @@ export class BodyMap {
               <circle cx="150" cy="155" r="6" class="zone-pin ${this.selectedRegion === 'chest' ? 'active' : ''}" data-region="chest" />
               <text x="150" y="160" class="zone-label" text-anchor="middle">Chest / Lungs</text>
 
-              <!-- Arms / Upper Limbs -->
+              ${this.view === 'front' ? '</g>' : ''}
+
+              <!-- Arms / Upper Limbs (visible from both views) -->
               <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
                     data-region="limbs" 
                     d="M102,122 L80,185 L72,255 L82,255 L96,192 L106,140 Z M198,122 L220,185 L228,255 L218,255 L204,192 L194,140 Z" />
               <circle cx="78" cy="200" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
               <circle cx="222" cy="200" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
 
+              ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
               <!-- Abdomen & Digestive -->
               <path class="anatomical-zone ${this.selectedRegion === 'abdomen' ? 'selected' : ''}" 
                     data-region="abdomen" 
@@ -78,11 +82,23 @@ export class BodyMap {
               <circle cx="150" cy="225" r="6" class="zone-pin ${this.selectedRegion === 'abdomen' ? 'active' : ''}" data-region="abdomen" />
               <text x="150" y="230" class="zone-label" text-anchor="middle">Abdomen</text>
 
-              <!-- Spine (shown highlighted on back view or central band) -->
-              <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" 
-                    data-region="spine" 
-                    d="M142,122 L158,122 L156,280 L144,280 Z" opacity="0.7" />
-              <circle cx="150" cy="268" r="4" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+              ${this.view === 'front' ? '</g>' : ''}
+
+              <!-- Posterior anatomy: upper back, shoulder blades and spine -->
+              ${this.view === 'back' ? `
+                <g class="back-anatomy">
+                  <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+                        d="M112,122 Q125,112 145,126 L145,178 Q128,190 112,170 Z M188,122 Q175,112 155,126 L155,178 Q172,190 188,170 Z" />
+                  <path class="anatomical-zone ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine"
+                        d="M143,122 L157,122 L157,280 L143,280 Z" opacity="0.8" />
+                  <path d="M150,130 L150,276" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" opacity="0.55" />
+                  <circle cx="150" cy="155" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+                  <circle cx="150" cy="260" r="5" class="zone-pin ${this.selectedRegion === 'spine' ? 'active' : ''}" data-region="spine" />
+                  <text x="150" y="195" class="zone-label" text-anchor="middle">Upper back</text>
+                  <text x="150" y="245" class="zone-label" text-anchor="middle">Lower back</text>
+                </g>
+              ` : ''}
+              ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
 
               <!-- Pelvis & Bladder -->
               <path class="anatomical-zone ${this.selectedRegion === 'pelvis' ? 'selected' : ''}" 
@@ -90,8 +106,11 @@ export class BodyMap {
                     d="M116,262 L184,262 L172,305 L128,305 Z" />
               <circle cx="150" cy="285" r="5" class="zone-pin ${this.selectedRegion === 'pelvis' ? 'active' : ''}" data-region="pelvis" />
               <text x="150" y="290" class="zone-label" text-anchor="middle">Pelvis</text>
+              ${this.view === 'front' ? '</g>' : ''}
 
-              <!-- Legs & Lower Limbs -->
+              ${this.view === 'front' ? '</g>' : ''}
+
+              <!-- Legs & Lower Limbs (visible from both views) -->
               <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
                     data-region="limbs" 
                     d="M125,308 L148,308 L145,410 L140,490 L125,490 L118,410 L116,350 Z M152,308 L175,308 L182,350 L180,410 L175,490 L160,490 L155,410 Z" />
