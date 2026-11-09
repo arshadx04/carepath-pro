@@ -30,6 +30,16 @@ export const symptomDatabase = {
       "description": "Lower back pain, sciatica shooting to leg, stiffness, neck spasms"
     },
     {
+      "id": "back",
+      "name": "Upper & Lower Back",
+      "description": "Pain or stiffness across the upper back, between the shoulder blades, or lower back muscles"
+    },
+    {
+      "id": "shoulder",
+      "name": "Shoulders & Shoulder Blades",
+      "description": "Shoulder pain, stiffness, limited movement, or discomfort around the shoulder blades"
+    },
+    {
       "id": "pelvis",
       "name": "Pelvis & Urinary",
       "description": "Painful urination, urgency, flank pain, kidney discomfort"
