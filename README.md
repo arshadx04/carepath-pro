@@ -7,20 +7,20 @@ CarePath Pro is an educational web project for exploring symptom associations an
 
 ## 🌟 Key Features
 
-### 1. 🩺 5-Step Intelligent Clinical Assessment Engine
-- **Step 1: Patient Demographics & Comorbidities**: Incorporates age groups (infant, child, adult, senior), biological sex, pregnancy status, and comorbidities (hypertension, diabetes, asthma, heart disease, smoking).
+### 1. 🩺 5-Step Educational Symptom Check-in
+- **Step 1: User Profile & Background**: Incorporates age groups (infant, child, adult, senior), biological sex, pregnancy status, and comorbidities (hypertension, diabetes, asthma, heart disease, smoking).
 - **Step 2: Anatomical Symptom Selection**: Select from over 40 symptoms with simple heuristic weights with instant keyword search and body-region filter pills.
-- **Step 3: Timeline & Trajectory**: Analyzes sudden vs insidious onset and clinical trajectory (worsening, steady, episodic, improving).
+- **Step 3: Timeline & Trajectory**: Analyzes sudden vs insidious onset and reported symptom trajectory (worsening, steady, episodic, improving).
 - **Step 4: Pain & Severity Metrics**: Standardized Visual Analog Scale (VAS 0–10) with functional activity disruption evaluation.
-- **Step 5: Mandatory Red-Flag Screener**: Life-safety check for critical indicators (e.g. stroke FAST, chest pressure, appendicitis, anaphylaxis, suicidal crisis).
-- **Clinical Triage Output**:
-  - Rule-based urgency categories (*Level 1: Emergency*, *Level 2: Urgent Care*, *Level 3: Primary Care*, *Level 4: Supportive Home Care*).
+- **Step 5: Warning-Sign Review**: Life-safety check for critical indicators (e.g. stroke FAST, chest pressure, appendicitis, anaphylaxis, suicidal crisis).
+- **Illustrative Rule Output**:
+  - Illustrative rule categories (*Level 1: Emergency*, *Level 2: Urgent Care*, *Level 3: Primary Care*, *Level 4: Supportive Home Care*).
   - Exploratory symptom associations ranked by a simple heuristic signal (not a probability or diagnostic confidence).
   - Tailored questions generated specifically for the patient to ask their physician.
   - Printable **Doctor Consultation Intake Sheet (SBAR/SOAP format)** with single-click print or PDF export.
 
 ### 2. 📚 Comprehensive Medical Knowledge Library
-- **40+ In-Depth Clinical Condition Dossiers** covering 12 organ systems:
+- **40+ Educational Condition Summaries** covering 12 organ systems:
   - **Cardiovascular**: Hypertension, Coronary Artery Disease, Congestive Heart Failure, Atrial Fibrillation, Deep Vein Thrombosis (DVT).
   - **Respiratory**: Asthma, COPD, Pneumonia, Influenza, Acute Bronchitis, COVID-19.
   - **Neurological**: Stroke & TIA, Migraine, Tension Headache, Bell's Palsy.
@@ -44,7 +44,7 @@ CarePath Pro is an educational web project for exploring symptom associations an
 
 ### 5. 🔊 Accessibility & Assistive Features
 - Native browser **Text-to-Speech (TTS)** voice narration for all medical articles.
-- Dark & Light clinical themes with persistent theme remembering.
+- Dark & Light themes with persistent theme remembering.
 - Bookmarking / Saved condition lists persisted via LocalStorage.
 - Emergency contact directory with country-specific dial links where supplied; always verify the correct local number through official sources.
 
@@ -81,23 +81,7 @@ These are basic regression checks only. They do not validate clinical safety or 
 
 ## 🌐 Deployment
 
-To update your deployed app: open your hosting project and deploy the reviewed branch after testing.
-1. Open your Replit project dashboard.
-2. Replace the project root files with the files from `carepath-pro`:
-   - `index.html`
-   - `css/styles.css`
-   - `js/data/diseases.js`
-   - `js/data/symptoms.js`
-   - `js/data/emergencyHotlines.js`
-   - `js/engine/triageEngine.js`
-   - `js/engine/reportGenerator.js`
-   - `js/components/bodyMap.js`
-   - `js/components/assessmentWizard.js`
-   - `js/components/diseaseLibrary.js`
-   - `js/components/conditionComparison.js`
-   - `js/components/articleModal.js`
-   - `js/app.js`
-3. If your Replit is configured for static web hosting or Vite, simply run or reload the repl. It has zero external package build dependencies!
+This is a static browser application with no package installation or build step required. For GitHub Pages, configure the repository under **Settings → Pages** to deploy from the `main` branch and the root (`/`) folder. Confirm the published URL and deployment status in GitHub Pages before sharing it. Test changes on a reviewed branch before merging them into `main`.
 
 ---
 
