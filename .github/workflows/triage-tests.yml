@@ -16,4 +16,4 @@ jobs:
           node-version: 24
           package-manager-cache: false
       - name: Run automated regression tests
-        run: node --experimental-default-type=module --test tests/*.test.js
+        run: npm test
