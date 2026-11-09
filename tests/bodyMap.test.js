@@ -26,16 +26,16 @@ function renderBodyMap(view) {
 }
 
 function assertSvgGroupsAreBalanced(markup) {
-  const openingGroups = (markup.match(/<g(?:\\s|>)/g) || []).length;
-  const closingGroups = (markup.match(/<\\/g>/g) || []).length;
+  const openingGroups = (markup.match(/<g(?:\s|>)/g) || []).length;
+  const closingGroups = (markup.match(/<\/g>/g) || []).length;
   assert.equal(openingGroups, closingGroups, 'SVG group elements should be balanced');
 }
 
 test('front view renders anterior regions and exposes the selected toggle state', () => {
   const markup = renderBodyMap('front');
 
-  assert.match(markup, /aria-pressed="true"[^>]*>[\\s\\S]*?Front View/);
-  assert.match(markup, /aria-pressed="false"[^>]*>[\\s\\S]*?Back View/);
+  assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Front View/);
+  assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Back View/);
   assert.match(markup, /data-region="chest"/);
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
@@ -47,8 +47,8 @@ test('front view renders anterior regions and exposes the selected toggle state'
 test('back view renders posterior spine regions without anterior torso hotspots', () => {
   const markup = renderBodyMap('back');
 
-  assert.match(markup, /aria-pressed="false"[^>]*>[\\s\\S]*?Front View/);
-  assert.match(markup, /aria-pressed="true"[^>]*>[\\s\\S]*?Back View/);
+  assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Front View/);
+  assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Back View/);
   assert.match(markup, /class="back-anatomy"/);
   assert.match(markup, /data-region="spine"/);
   assert.match(markup, /Upper back/);
