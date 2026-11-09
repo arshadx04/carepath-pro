@@ -44,6 +44,40 @@ export class BodyMap {
       </g>
     ` : '';
 
+    const frontNeckChest = this.view === 'front' ? `
+              <!-- Neck & Throat -->
+              <path class="anatomical-zone ${this.selectedRegion === 'throat' ? 'selected' : ''}" 
+                    data-region="throat" 
+                    d="M140,100 L160,100 L163,118 L137,118 Z" />
+              <circle cx="150" cy="110" r="4" class="zone-pin ${this.selectedRegion === 'throat' ? 'active' : ''}" data-region="throat" />
+
+              <!-- Chest & Respiratory -->
+              <path class="anatomical-zone ${this.selectedRegion === 'chest' ? 'selected' : ''}" 
+                    data-region="chest" 
+                    d="M115,120 L185,120 L195,190 L105,190 Z" />
+              <circle cx="150" cy="155" r="6" class="zone-pin ${this.selectedRegion === 'chest' ? 'active' : ''}" data-region="chest" />
+              <text x="150" y="160" class="zone-label" text-anchor="middle">Chest / Lungs</text>
+
+` : '';
+    const frontAbdomen = this.view === 'front' ? `
+              <!-- Abdomen & Digestive -->
+              <path class="anatomical-zone ${this.selectedRegion === 'abdomen' ? 'selected' : ''}" 
+                    data-region="abdomen" 
+                    d="M110,192 L190,192 L185,260 L115,260 Z" />
+              <circle cx="150" cy="225" r="6" class="zone-pin ${this.selectedRegion === 'abdomen' ? 'active' : ''}" data-region="abdomen" />
+              <text x="150" y="230" class="zone-label" text-anchor="middle">Abdomen</text>
+
+` : '';
+    const frontPelvis = this.view === 'front' ? `
+
+              <!-- Pelvis & Bladder -->
+              <path class="anatomical-zone ${this.selectedRegion === 'pelvis' ? 'selected' : ''}" 
+                    data-region="pelvis" 
+                    d="M116,262 L184,262 L172,305 L128,305 Z" />
+              <circle cx="150" cy="285" r="5" class="zone-pin ${this.selectedRegion === 'pelvis' ? 'active' : ''}" data-region="pelvis" />
+              <text x="150" y="290" class="zone-label" text-anchor="middle">Pelvis</text>
+` : '';
+
     this.container.innerHTML = `
       <div class="body-explorer-wrapper">
         <div class="body-view-controls">
@@ -78,21 +112,7 @@ export class BodyMap {
               <circle cx="150" cy="62" r="5" class="zone-pin ${this.selectedRegion === 'head' ? 'active' : ''}" data-region="head" />
               <text x="150" y="45" class="zone-label" text-anchor="middle">Head</text>
 
-              ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
-              <!-- Neck & Throat -->
-              <path class="anatomical-zone ${this.selectedRegion === 'throat' ? 'selected' : ''}" 
-                    data-region="throat" 
-                    d="M140,100 L160,100 L163,118 L137,118 Z" />
-              <circle cx="150" cy="110" r="4" class="zone-pin ${this.selectedRegion === 'throat' ? 'active' : ''}" data-region="throat" />
-
-              <!-- Chest & Respiratory -->
-              <path class="anatomical-zone ${this.selectedRegion === 'chest' ? 'selected' : ''}" 
-                    data-region="chest" 
-                    d="M115,120 L185,120 L195,190 L105,190 Z" />
-              <circle cx="150" cy="155" r="6" class="zone-pin ${this.selectedRegion === 'chest' ? 'active' : ''}" data-region="chest" />
-              <text x="150" y="160" class="zone-label" text-anchor="middle">Chest / Lungs</text>
-
-              ${this.view === 'front' ? '</g>' : ''}
+${frontNeckChest}
 
               <!-- Arms / Upper Limbs (visible from both views) -->
               <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
@@ -101,27 +121,11 @@ export class BodyMap {
               <circle cx="78" cy="200" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
               <circle cx="222" cy="200" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
 
-              ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
-              <!-- Abdomen & Digestive -->
-              <path class="anatomical-zone ${this.selectedRegion === 'abdomen' ? 'selected' : ''}" 
-                    data-region="abdomen" 
-                    d="M110,192 L190,192 L185,260 L115,260 Z" />
-              <circle cx="150" cy="225" r="6" class="zone-pin ${this.selectedRegion === 'abdomen' ? 'active' : ''}" data-region="abdomen" />
-              <text x="150" y="230" class="zone-label" text-anchor="middle">Abdomen</text>
-
-              ${this.view === 'front' ? '</g>' : ''}
+${frontAbdomen}
 
               <!-- Posterior anatomy: upper back, shoulder blades and spine -->
               ${backAnatomy}
-              ${this.view === 'front' ? '<g class="front-anatomy">' : ''}
-
-              <!-- Pelvis & Bladder -->
-              <path class="anatomical-zone ${this.selectedRegion === 'pelvis' ? 'selected' : ''}" 
-                    data-region="pelvis" 
-                    d="M116,262 L184,262 L172,305 L128,305 Z" />
-              <circle cx="150" cy="285" r="5" class="zone-pin ${this.selectedRegion === 'pelvis' ? 'active' : ''}" data-region="pelvis" />
-              <text x="150" y="290" class="zone-label" text-anchor="middle">Pelvis</text>
-              ${this.view === 'front' ? '</g>' : ''}
+${frontPelvis}
 
               <!-- Legs & Lower Limbs (visible from both views) -->
               <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
