@@ -1,6 +1,6 @@
 /**
- * CarePath Pro - Clinical Assessment & Triage Wizard Component
- * Guides the user through a 5-step structured clinical check-in
+ * CarePath Pro - Educational Symptom Check-in Wizard Component
+ * Guides the user through a 5-step educational symptom check-in
  */
 
 import { symptomDatabase } from '../data/symptoms.js';
@@ -22,19 +22,19 @@ export class AssessmentWizard {
 
     this.intake = {
       profile: {
-        ageGroup: 'adult',
+        ageGroup: null,
         biologicalSex: 'not_specified',
         pregnant: false,
         comorbidities: []
       },
       selectedSymptoms: [],
       timing: {
-        onset: 'hours_today',
-        trajectory: 'steady'
+        onset: null,
+        trajectory: null
       },
       severity: {
-        painScore: 4,
-        disruption: 'moderate'
+        painScore: null,
+        disruption: null
       },
       redFlags: []
     };
@@ -130,7 +130,7 @@ export class AssessmentWizard {
             ${[
               {id: 'infant', label: 'Infant (< 2 yrs)'},
               {id: 'child', label: 'Child (2–12 yrs)'},
-              {id: 'adult', label: 'Adult (13–64 yrs)'},
+              {id: 'adult', label: 'Adult (18–64 yrs)'},
               {id: 'senior', label: 'Senior (65+ yrs)'}
             ].map(opt => `
               <button type="button" class="toggle-pill ${p.ageGroup === opt.id ? 'active' : ''}" data-prop="ageGroup" data-val="${opt.id}">
@@ -313,7 +313,7 @@ export class AssessmentWizard {
   // --- STEP 4: SEVERITY & VAS SCALE ---
   getStep4HTML() {
     const s = this.intake.severity;
-    const painVal = parseInt(s.painScore || 4, 10);
+    const painVal = Number.isInteger(s.painScore) ? s.painScore : 0;
 
     let painColor = '#10b981';
     let painLabel = 'Mild Discomfort';
@@ -555,8 +555,17 @@ export class AssessmentWizard {
 
   // --- VALIDATION & EVENT BINDING ---
   isCurrentStepValid() {
+    if (this.currentStep === 1) {
+      return Boolean(this.intake.profile.ageGroup);
+    }
     if (this.currentStep === 2) {
       return this.intake.selectedSymptoms.length > 0;
+    }
+    if (this.currentStep === 3) {
+      return Boolean(this.intake.timing.onset && this.intake.timing.trajectory);
+    }
+    if (this.currentStep === 4) {
+      return Number.isInteger(this.intake.severity.painScore) && this.intake.severity.painScore >= 0 && this.intake.severity.painScore <= 10 && Boolean(this.intake.severity.disruption);
     }
     if (this.currentStep === 5) {
       return this.intake.redFlags.includes('none') || this.intake.redFlags.some(flag => flag !== 'none');
@@ -570,8 +579,14 @@ export class AssessmentWizard {
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         if (!this.isCurrentStepValid()) {
-          if (this.currentStep === 2) {
+          if (this.currentStep === 1) {
+            alert('Please select an age group to continue.');
+          } else if (this.currentStep === 2) {
             alert('Please select at least one symptom to continue.');
+          } else if (this.currentStep === 3) {
+            alert('Please select both symptom onset and current trajectory to continue.');
+          } else if (this.currentStep === 4) {
+            alert('Please set the pain score and select the daily impact level to continue.');
           } else if (this.currentStep === 5) {
             alert('Please check any applicable warning signs or select "None of these".');
           }

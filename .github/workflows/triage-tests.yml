@@ -2,7 +2,7 @@ name: CarePath regression tests
 
 on:
   push:
-    branches: [main, 'fix/**']
+    branches: [main, 'fix/**', 'quality/**']
   pull_request:
     branches: [main]
 
@@ -14,5 +14,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Run triage regression tests
-        run: node --experimental-default-type=module --test tests/triageEngine.test.js
+      - name: Run automated regression tests
+        run: node --experimental-default-type=module --test tests/*.test.js

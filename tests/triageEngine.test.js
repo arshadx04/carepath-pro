@@ -50,7 +50,7 @@ test('invalid pain scores request prompt review instead of silently defaulting t
     severity: { painScore: 'not-a-number', disruption: 'mild' },
     redFlags: []
   });
-  assert.equal(result.triageLevel, 'urgent');
+  assert.equal(result.triageLevel, 'emergency');
 });
 
 test('malformed optional intake collections do not crash evaluation', () => {
@@ -65,4 +65,30 @@ test('malformed optional intake collections do not crash evaluation', () => {
   assert.equal(result.triageLevel, 'routine');
   assert.deepEqual(result.topMatches, []);
   assert.equal(result.intakeSummary.totalSymptomsReported, 0);
+});
+
+
+test('routine educational output does not reassure users that symptoms are harmless', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: [] },
+    selectedSymptoms: [],
+    timing: { onset: 'days_recent', trajectory: 'steady' },
+    severity: { painScore: 2, disruption: 'mild' },
+    redFlags: ['none']
+  });
+  assert.match(result.triageDescription, /not reassurance/i);
+  assert.match(result.triageDescription, /not.*safe to monitor/i);
+});
+
+test('pain score above the supported range triggers conservative escalation', () => {
+  const engine = new TriageEngine();
+  const result = engine.evaluate({
+    profile: { ageGroup: 'adult', comorbidities: [] },
+    selectedSymptoms: [],
+    timing: { onset: 'days_recent', trajectory: 'steady' },
+    severity: { painScore: 11, disruption: 'mild' },
+    redFlags: []
+  });
+  assert.equal(result.triageLevel, 'urgent');
 });
