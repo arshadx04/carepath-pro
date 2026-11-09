@@ -221,12 +221,6 @@ class App {
                   </div>
                 ` : ''}
                 <p class="hotline-verified-note">Reference links checked 9 Nov 2026. Numbers and service coverage can change; verify locally.</p>
-                ${c.poison ? `
-                  <div class="num-row">
-                    <span class="num-label">Poison Control:</span>
-                    <span class="num-text">🧪 ${c.poison}</span>
-                  </div>
-                ` : ''}
               </div>
             </div>
           `).join('')}
@@ -234,7 +228,8 @@ class App {
 
         <!-- Action Protocols -->
         <div class="emergency-protocols-section">
-          <h2>Critical Emergency Action Protocols</h2>
+          <h2>General Emergency Information</h2>
+          <p class="em-sub">These educational reminders are not a first-aid manual and have not been clinically validated in this project. Follow local emergency dispatcher instructions; qualified clinical review is required.</p>
           <div class="protocol-cards-grid">
             ${emergencyDatabase.emergencyProtocols.map(p => `
               <div class="protocol-card">

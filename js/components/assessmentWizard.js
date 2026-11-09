@@ -23,8 +23,8 @@ export class AssessmentWizard {
     this.intake = {
       profile: {
         ageGroup: null,
-        biologicalSex: 'not_specified',
-        pregnant: false,
+        biologicalSex: null,
+        pregnant: null,
         comorbidities: []
       },
       selectedSymptoms: [],
@@ -156,17 +156,14 @@ export class AssessmentWizard {
           </div>
         </div>
 
-        ${p.biologicalSex === 'female' ? `
-          <div class="form-group-block">
-            <label class="group-label">Pregnancy Status</label>
-            <div class="checkbox-row">
-              <label class="custom-checkbox-label">
-                <input type="checkbox" id="chkPregnancy" ${p.pregnant ? 'checked' : ''}>
-                <span>Currently pregnant or postpartum (< 6 weeks)</span>
-              </label>
-            </div>
+        <div class="form-group-block">
+          <label class="group-label">Pregnancy status (optional)</label>
+          <div class="toggle-pill-grid">
+            <button type="button" class="toggle-pill ${p.pregnant === true ? 'active' : ''}" data-pregnancy="true">Pregnant / postpartum</button>
+            <button type="button" class="toggle-pill ${p.pregnant === false ? 'active' : ''}" data-pregnancy="false">Not pregnant / not applicable</button>
           </div>
-        ` : ''}
+          <p class="step-subheading">Leave unselected if you prefer not to answer.</p>
+        </div>
 
         <div class="form-group-block">
           <label class="group-label">Pre-existing Health Conditions (Select all that apply)</label>
@@ -338,6 +335,7 @@ export class AssessmentWizard {
 
           <label class="group-label" for="painRangeInput">${hasPainScore ? "Recorded score" : "Move the slider to record a score (0 means no pain)"}</label>
           <input type="range" id="painRangeInput" min="0" max="10" step="1" value="${painVal}" aria-label="Discomfort self-rating from 0 to 10" class="pain-range-slider">
+          <button type="button" id="btnPainZero" class="btn-text-clear">Record 0 — no pain</button>
           
           <div class="pain-scale-labels">
             <span>0: No Pain</span>
@@ -390,7 +388,7 @@ export class AssessmentWizard {
                 <div class="rf-check-box">${isChecked ? '✓' : ''}</div>
                 <div class="rf-text-content">
                   <div class="rf-label">${escapeHTML(rf.label)}</div>
-                  <div class="rf-desc">${rf.emergencyDesc || 'Critical indicator'}</div>
+                  <div class="rf-desc">${escapeHTML(rf.emergencyDesc || 'Warning-sign item')}</div>
                 </div>
               </div>
             `;
@@ -400,8 +398,8 @@ export class AssessmentWizard {
           <div class="rf-checkbox-item none-option ${isNoneSelected ? 'checked' : ''}" data-rf-id="none">
             <div class="rf-check-box">${isNoneSelected ? '✓' : ''}</div>
             <div class="rf-text-content">
-              <div class="rf-label">None of these emergency signs are present</div>
-              <div class="rf-desc">I confirm that none of the above acute red flags apply to me.</div>
+              <div class="rf-label">I have not selected any of these warning signs</div>
+              <div class="rf-desc">If unsure whether a warning sign applies, seek advice from a qualified professional.</div>
             </div>
           </div>
         </div>
@@ -419,8 +417,8 @@ export class AssessmentWizard {
         <!-- Triage Urgency Header Banner -->
         <div class="triage-urgency-banner banner-${res.triageLevel}">
           <div class="banner-top-row">
-            <span class="triage-status-pill">${res.triageLevel.toUpperCase()} PRIORITY</span>
-            <span class="time-window-pill">Recommended Timeframe: <strong>${escapeHTML(res.timeWindow)}</strong></span>
+            <span class="triage-status-pill">ILLUSTRATIVE OUTPUT · NOT CLINICALLY VALIDATED</span>
+            <span class="time-window-pill">Demo wording (not a care timeframe): <strong>${escapeHTML(res.timeWindow)}</strong></span>
           </div>
           <h1 class="triage-main-title">${escapeHTML(res.triageTitle)}</h1>
           <p class="triage-main-desc">${escapeHTML(res.triageDescription)}</p>
@@ -434,7 +432,7 @@ export class AssessmentWizard {
 
         ${res.activeRedFlags.length > 0 ? `
           <div class="alert-box-critical">
-            <h3>⚠️ Detected Red-Flag Warning Signs:</h3>
+            <h3>⚠️ Selected Warning-Sign Items:</h3>
             <ul>
               ${res.activeRedFlags.map(rf => `
                 <li><strong>${rf.label}</strong> — ${rf.emergencyDesc || 'Urgent consideration'}</li>
@@ -447,7 +445,7 @@ export class AssessmentWizard {
         <div class="results-section">
           <div class="section-title-row">
             <div>
-              <span class="section-eyebrow">DIFFERENTIAL ANALYSIS</span>
+              <span class="section-eyebrow">EXPLORATORY ASSOCIATIONS</span>
               <h2 class="section-title">Educational Condition Matches</h2>
             </div>
             <p class="section-sub">Exploratory matches based on simple keyword and symptom associations; these are not probabilities or diagnoses.</p>
@@ -458,9 +456,9 @@ export class AssessmentWizard {
               <div class="diff-card">
                 <div class="diff-card-header">
                   <div>
-                    <span class="diff-category">${m.disease.category} · ${m.disease.icd10 || 'ICD-10'}</span>
+                    <span class="diff-category">${escapeHTML(m.disease.category)} · ${escapeHTML(m.disease.icd10 || 'Reference code unavailable')}</span>
                     <h3 class="diff-title">${escapeHTML(m.disease.name)}</h3>
-                    <span class="diff-med-term">Clinical term: ${m.disease.medicalTerm}</span>
+                    <span class="diff-med-term">Reference term: ${escapeHTML(m.disease.medicalTerm)}</span>
                   </div>
                   <div class="match-score-badge">
                     <span class="score-num">${escapeHTML(m.relevance)}</span>
@@ -478,10 +476,10 @@ export class AssessmentWizard {
                 </div>
 
                 <div class="diff-action-bar">
-                  <button type="button" class="btn-view-dossier" data-disease-id="${m.disease.id}">
+                  <button type="button" class="btn-view-dossier" data-disease-id="${escapeHTML(m.disease.id)}">
                     📖 Read Educational Condition Summary →
                   </button>
-                  <span class="urgency-tag urgency-${m.disease.urgency}">${m.disease.urgencyText}</span>
+                  <span class="urgency-tag urgency-${escapeHTML(m.disease.urgency)}">${escapeHTML(m.disease.urgencyText)}</span>
                 </div>
               </div>
             `).join('') : '<p>No educational matches were generated from the selected symptoms. This does not rule out a health condition; seek professional advice if concerned.</p>'}
@@ -642,12 +640,12 @@ export class AssessmentWizard {
       });
     });
 
-    const chkPreg = this.container.querySelector('#chkPregnancy');
-    if (chkPreg) {
-      chkPreg.addEventListener('change', (e) => {
-        this.intake.profile.pregnant = e.target.checked;
+    this.container.querySelectorAll('[data-pregnancy]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.intake.profile.pregnant = btn.getAttribute('data-pregnancy') === 'true';
+        this.render();
       });
-    }
+    });
 
     this.container.querySelectorAll('.comorbidity-chip').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -727,6 +725,14 @@ export class AssessmentWizard {
     });
 
     // Step 4 events: Severity & Pain Slider
+    const painZeroBtn = this.container.querySelector('#btnPainZero');
+    if (painZeroBtn) {
+      painZeroBtn.addEventListener('click', () => {
+        this.intake.severity.painScore = 0;
+        this.render();
+      });
+    }
+
     const painSlider = this.container.querySelector('#painRangeInput');
     if (painSlider) {
       painSlider.addEventListener('input', (e) => {

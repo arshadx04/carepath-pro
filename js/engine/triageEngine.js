@@ -52,10 +52,10 @@ export class TriageEngine {
 
     // 2. Determine Overall Triage Level
     let triageLevel = 'routine';
-    let triageTitle = 'Routine Consultation Recommended';
+    let triageTitle = 'No higher-priority demo flag';
     let triageDescription = 'The demo\'s simple rules did not trigger a higher-priority flag. This is not reassurance that symptoms are harmless or safe to monitor; seek professional advice if concerned.';
     let triageColor = 'emerald';
-    let timeWindow = 'Within 3–7 business days';
+    let timeWindow = 'This demo cannot determine a safe timeframe';
 
     const isSudden = timing.onset === 'sudden_minutes' || timing.onset === 'hours_today';
     const isWorsening = timing.trajectory === 'worsening';
@@ -63,24 +63,24 @@ export class TriageEngine {
 
     if (activeRedFlags.length > 0 || painScore >= 9 || (isSudden && isSevereImpact && painScore >= 7)) {
       triageLevel = 'emergency';
-      triageTitle = 'Immediate Emergency Evaluation Required';
-      triageDescription = 'One or more high-risk clinical red flags were detected. Do not wait for a routine appointment; contact the emergency number officially used in your location or proceed to the nearest emergency department.';
+      triageTitle = 'A high-priority demo rule was triggered';
+      triageDescription = 'A selected warning-sign item or high-score rule triggered this demonstration output. This is not a validated urgency assessment. If you may be in immediate danger, contact local emergency services.';
       triageColor = 'rose';
-      timeWindow = 'Immediately / Right now';
+      timeWindow = 'If immediate danger is possible, contact local emergency services';
     } else if (hasInvalidPainScore || painScore >= 6 || isWorsening || severity.disruption === 'severe' || 
                profile.ageGroup === 'infant' || profile.ageGroup === 'senior' || 
                profile.pregnant || comorbidities.length > 1) {
       triageLevel = 'urgent';
-      triageTitle = 'Prompt Medical Assessment Needed';
+      triageTitle = 'A prompt-review demo rule was triggered';
       triageDescription = 'The demo\'s illustrative rules flagged answers for prompt attention. This output is not a validated urgency assessment; contact a qualified healthcare professional for advice.';
       triageColor = 'amber';
-      timeWindow = 'Within 12–24 hours';
+      timeWindow = 'This demo cannot set a medical timeframe; contact a qualified professional';
     } else if (painScore <= 3 && timing.trajectory === 'improving' && !isSevereImpact) {
       triageLevel = 'selfCare';
-      triageTitle = 'Self-Monitoring & Supportive Home Care';
+      triageTitle = 'A lower-priority demo pattern was identified';
       triageDescription = 'The demo\'s illustrative rules did not identify a higher-priority pattern. This does not establish that self-care is appropriate or that delaying care is safe.';
       triageColor = 'teal';
-      timeWindow = 'Monitor closely for 48–72 hours';
+      timeWindow = 'This demo cannot determine whether waiting is safe';
     }
 
     // 3. Compute Differential Diagnosis Match Scores
