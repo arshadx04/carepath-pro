@@ -2,7 +2,7 @@ import { createServer as createHttpServer } from 'node:http';
 import { readFile, realpath, stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isPrivateStoragePath, createSession, createUser, deleteBookmark, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, saveBookmark, hashPassword, verifyPassword } from './accountStore.js';
+import { isPrivateStoragePath, createSession, createUser, deleteBookmark, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, revokeUserSessions, saveBookmark, updatePassword, hashPassword, verifyPassword } from './accountStore.js';
 import { diseaseDatabase } from '../js/data/diseases.js';
 import { symptomDatabase } from '../js/data/symptoms.js';
 import { triageEngine } from '../js/engine/triageEngine.js';
@@ -89,6 +89,49 @@ async function handleAccountApi(request, response, pathname) {
     return true;
   }
 
+  if (request.method === 'PUT' && pathname === '/api/auth/password') {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    if (!allowAuthAttempt(request)) {
+      sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
+      return true;
+    }
+    const { user } = getRequestSession(request);
+    if (!user) {
+      sendJson(response, 401, { error: 'Sign in to change your password.' });
+      return true;
+    }
+    let body;
+    try {
+      body = await readJsonBody(request);
+    } catch (error) {
+      sendJson(response, error.statusCode || 400, { error: error.message });
+      return true;
+    }
+    const currentPassword = body?.currentPassword;
+    const newPassword = body?.newPassword;
+    if (typeof currentPassword !== 'string' || currentPassword.length === 0 || Buffer.byteLength(currentPassword, 'utf8') > 1024) {
+      sendJson(response, 400, { error: 'Enter your current password.' });
+      return true;
+    }
+    if (!isValidPassword(newPassword)) {
+      sendJson(response, 400, { error: 'New password must be 12–128 characters.' });
+      return true;
+    }
+    const userRecord = findUserByEmail(user.email);
+    if (!(await verifyPassword(currentPassword, userRecord))) {
+      sendJson(response, 401, { error: 'Current password is incorrect.' });
+      return true;
+    }
+    const credentials = await hashPassword(newPassword);
+    updatePassword(user.id, credentials);
+    revokeUserSessions(user.id);
+    const session = createSession(user.id);
+    sendJson(response, 200, { user }, { 'Set-Cookie': sessionCookie(session.token, session.maxAge) });
+    return true;
+  }
   if (request.method === 'DELETE' && pathname === '/api/auth/account') {
     if (!isSameOrigin(request)) {
       sendJson(response, 403, { error: 'Cross-origin request rejected.' });
