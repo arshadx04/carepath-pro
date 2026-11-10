@@ -71,6 +71,7 @@ The static-only Python server and direct-file options still serve the browser de
 - `POST /api/auth/register` and `POST /api/auth/login` — create an account or start a session with `{ "email": "you@example.com", "password": "at least 12 characters" }`.
 - `GET /api/auth/me` and `POST /api/auth/logout` — inspect or end the current session.
 - `DELETE /api/auth/account` with the current password — permanently delete the signed-in account and its synced bookmarks.
+- `PUT /api/auth/password` with the current and new passwords — update credentials and sign out other sessions.
 - `GET /api/bookmarks`, `POST /api/bookmarks` with `{ "conditionId": "asthma" }`, and `DELETE /api/bookmarks/:conditionId` — list and manage the signed-in account's saved conditions.
 
 Accounts store an email address, a salted scrypt password hash, session-token hashes, and saved condition IDs in SQLite. The password and symptom check-in answers are never stored. Guest bookmarks remain in that browser; they are not automatically uploaded when someone signs in. The default database path is `data/carepath.sqlite`; set `CAREPATH_DB_PATH` to use another persistent file. The file server blocks the configured database and its SQLite journal files from static access. Set `NODE_ENV=production` to enable the Secure cookie flag, and serve the app behind HTTPS. Sessions expire after seven days. Email verification and password reset are not implemented yet.
