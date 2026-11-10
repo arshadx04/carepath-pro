@@ -100,5 +100,5 @@ test('side skull view renders accessible lateral bone hotspots', () => {
   assert.match(svg, /skull-detail/);
   assert.match(svg, /orbital-cavity/);
   assert.match(svg, /nasal-cavity/);
-  assert.match(svg, /mental foramina|mental-foramen|cx="140"/);
+  assert.match(svg, /class="teeth"/, 'lateral view should include visible dental detail');
 });
