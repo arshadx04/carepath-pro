@@ -2,7 +2,7 @@ import { createServer as createHttpServer } from 'node:http';
 import { readFile, realpath, stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isPrivateStoragePath, createSession, createUser, deleteBookmark, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, revokeUserSessions, saveBookmark, updatePassword, hashPassword, verifyPassword } from './accountStore.js';
+import { isPrivateStoragePath, createPasswordResetToken, completePasswordReset, createSession, createUser, deleteBookmark, deleteUser, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, revokeUserSessions, saveBookmark, updatePassword, hashPassword, verifyPassword } from './accountStore.js';
 import { diseaseDatabase } from '../js/data/diseases.js';
 import { symptomDatabase } from '../js/data/symptoms.js';
 import { triageEngine } from '../js/engine/triageEngine.js';
@@ -48,6 +48,40 @@ function sessionCookie(token, maxAge) {
   return `${SESSION_COOKIE}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${maxAge}${secure ? '; Secure' : ''}`;
 }
 
+function passwordResetEmailConfig() {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.CAREPATH_FROM_EMAIL;
+  const publicUrl = process.env.CAREPATH_PUBLIC_URL;
+  if (!apiKey || !from || !publicUrl) return null;
+  try {
+    const parsed = new URL(publicUrl);
+    if (parsed.protocol !== 'https:' && !['localhost', '127.0.0.1'].includes(parsed.hostname)) return null;
+    return { apiKey, from, publicUrl: parsed.href };
+  } catch {
+    return null;
+  }
+}
+
+async function sendPasswordResetEmail(config, email, token) {
+  const resetUrl = new URL(config.publicUrl);
+  resetUrl.hash = new URLSearchParams({ resetToken: token }).toString();
+  const url = resetUrl.toString();
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${config.apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: config.from,
+      to: [email],
+      subject: 'Reset your CarePath Pro password',
+      text: `Use this link to reset your CarePath Pro password: ${url}\n\nThis link expires in 30 minutes. If you did not request a reset, you can ignore this email.`,
+      html: `<p>Use the link below to reset your CarePath Pro password. It expires in 30 minutes.</p><p><a href="${url}">Reset password</a></p><p>If you did not request a reset, you can ignore this email.</p>`,
+    }),
+  });
+  if (!response.ok) throw new Error(`Resend returned status ${response.status}`);
+}
 function isSameOrigin(request) {
   const origin = request.headers.origin;
   if (!origin) return true;
@@ -89,6 +123,75 @@ async function handleAccountApi(request, response, pathname) {
     return true;
   }
 
+  if (request.method === 'POST' && pathname === '/api/auth/password-reset/request') {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    if (!allowAuthAttempt(request)) {
+      sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
+      return true;
+    }
+    const emailConfig = passwordResetEmailConfig();
+    if (!emailConfig) {
+      sendJson(response, 503, { error: 'Password recovery is not configured on this server.' });
+      return true;
+    }
+    let body;
+    try {
+      body = await readJsonBody(request);
+    } catch (error) {
+      sendJson(response, error.statusCode || 400, { error: error.message });
+      return true;
+    }
+    const email = normalizeEmail(body?.email);
+    if (isValidEmail(email)) {
+      const user = findUserByEmail(email);
+      if (user) {
+        const token = createPasswordResetToken(user.id);
+        void sendPasswordResetEmail(emailConfig, email, token).catch(() => {
+          console.error('Password reset email delivery failed.');
+        });
+      }
+    }
+    sendJson(response, 202, { message: 'If an account exists for that email, a reset link will be sent.' });
+    return true;
+  }
+
+  if (request.method === 'POST' && pathname === '/api/auth/password-reset/confirm') {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    if (!allowAuthAttempt(request)) {
+      sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
+      return true;
+    }
+    let body;
+    try {
+      body = await readJsonBody(request);
+    } catch (error) {
+      sendJson(response, error.statusCode || 400, { error: error.message });
+      return true;
+    }
+    const token = body?.token;
+    const newPassword = body?.newPassword;
+    if (typeof token !== 'string' || !/^[A-Za-z0-9_-]{40,64}$/.test(token)) {
+      sendJson(response, 400, { error: 'Reset link is invalid or expired.' });
+      return true;
+    }
+    if (!isValidPassword(newPassword)) {
+      sendJson(response, 400, { error: 'New password must be 12–128 characters.' });
+      return true;
+    }
+    const credentials = await hashPassword(newPassword);
+    if (!completePasswordReset(token, credentials)) {
+      sendJson(response, 400, { error: 'Reset link is invalid or expired.' });
+      return true;
+    }
+    sendJson(response, 200, { message: 'Password updated. Sign in with your new password.' });
+    return true;
+  }
   if (request.method === 'PUT' && pathname === '/api/auth/password') {
     if (!isSameOrigin(request)) {
       sendJson(response, 403, { error: 'Cross-origin request rejected.' });

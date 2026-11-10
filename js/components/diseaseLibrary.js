@@ -27,8 +27,9 @@ export class DiseaseLibrary {
     this.bookmarkedIds = this.loadBookmarks();
     this.compareList = [];
     this.accountUser = null;
-    this.accountMode = 'login';
-    this.accountFormOpen = false;
+    this.passwordResetToken = typeof window !== 'undefined' ? new URLSearchParams(window.location.hash.slice(1)).get('resetToken') || '' : '';
+    this.accountMode = this.passwordResetToken ? 'reset-confirm' : 'login';
+    this.accountFormOpen = Boolean(this.passwordResetToken);
     this.accountDeleteOpen = false;
     this.accountPasswordChangeOpen = false;
     this.accountMessage = '';
@@ -125,6 +126,56 @@ export class DiseaseLibrary {
     }
   }
 
+  async requestPasswordReset(event) {
+    event.preventDefault();
+    const email = event.currentTarget.querySelector('#resetRequestEmail').value;
+    this.accountBusy = true;
+    this.accountMessage = '';
+    this.render();
+    try {
+      await accountClient.requestPasswordReset(email);
+      this.accountMessage = 'If an account exists for that email, a reset link will be sent.';
+    } catch (error) {
+      this.accountMessage = error.message;
+    } finally {
+      this.accountBusy = false;
+      this.render();
+    }
+  }
+
+  clearPasswordResetToken() {
+    this.passwordResetToken = '';
+    if (window.location.hash) {
+      window.history.replaceState(window.history.state, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  async confirmPasswordReset(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const newPassword = form.querySelector('#resetNewPassword').value;
+    const confirmPassword = form.querySelector('#resetConfirmPassword').value;
+    if (newPassword !== confirmPassword) {
+      this.accountMessage = 'The new passwords do not match.';
+      this.render();
+      return;
+    }
+    this.accountBusy = true;
+    this.accountMessage = '';
+    this.render();
+    try {
+      await accountClient.confirmPasswordReset(this.passwordResetToken, newPassword);
+      this.clearPasswordResetToken();
+      this.accountMode = 'login';
+      this.accountFormOpen = true;
+      this.accountMessage = 'Password reset. Sign in with your new password.';
+    } catch (error) {
+      this.accountMessage = error.message;
+    } finally {
+      this.accountBusy = false;
+      this.render();
+    }
+  }
   async signOut() {
     this.accountBusy = true;
     try {
@@ -272,14 +323,33 @@ export class DiseaseLibrary {
               <button type="submit" class="account-delete-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Deleting…' : 'Delete account and bookmarks'}</button>
             </form>
           ` : ''}
-          ${!this.accountUser && this.accountFormOpen ? `
+          ${!this.accountUser && this.accountFormOpen && ['login', 'register'].includes(this.accountMode) ? `
             <form id="accountForm" class="account-form">
               <label>Email <input id="accountEmail" type="email" name="email" autocomplete="email" maxlength="254" required></label>
               <label>Password <input id="accountPassword" type="password" name="password" autocomplete="${this.accountMode === 'register' ? 'new-password' : 'current-password'}" minlength="${this.accountMode === 'register' ? '12' : '1'}" maxlength="128" required></label>
               <button type="submit" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Please wait…' : this.accountMode === 'register' ? 'Create account' : 'Sign in'}</button>
               <button type="button" id="accountModeToggle" class="account-mode-btn">${this.accountMode === 'register' ? 'Already have an account? Sign in' : 'New here? Create an account'}</button>
+              ${this.accountMode === 'login' ? '<button type="button" id="accountForgotPassword" class="account-mode-btn">Forgot password?</button>' : ''}
             </form>
           ` : ''}
+          ${this.accountFormOpen && this.accountMode === 'reset-request' ? `
+            <form id="passwordResetRequestForm" class="account-form">
+              <p>Enter your account email and we’ll send a reset link if it matches an account.</p>
+              <label>Email <input id="resetRequestEmail" type="email" autocomplete="email" maxlength="254" required></label>
+              <button type="submit" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Sending…' : 'Send reset link'}</button>
+              <button type="button" id="accountResetBack" class="account-mode-btn">Back to sign in</button>
+            </form>
+          ` : ''}
+          ${this.accountFormOpen && this.accountMode === 'reset-confirm' ? `
+            <form id="passwordResetConfirmForm" class="account-form">
+              <p>Choose a new password for your account. Reset links expire after 30 minutes.</p>
+              <label>New password <input id="resetNewPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label>
+              <label>Confirm new password <input id="resetConfirmPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label>
+              <button type="submit" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Saving…' : 'Reset password'}</button>
+              <button type="button" id="accountResetBack" class="account-mode-btn">Request a new link</button>
+            </form>
+          ` : ''}
+
         </section>
 
         <!-- Controls Bar: Search, Category, Urgency, Saved -->
@@ -408,6 +478,29 @@ export class DiseaseLibrary {
         this.render();
       });
     }
+    const accountForgotPassword = this.container.querySelector('#accountForgotPassword');
+    if (accountForgotPassword) {
+      accountForgotPassword.addEventListener('click', () => {
+        this.accountMode = 'reset-request';
+        this.accountFormOpen = true;
+        this.accountMessage = '';
+        this.render();
+      });
+    }
+    const accountResetBack = this.container.querySelector('#accountResetBack');
+    if (accountResetBack) {
+      accountResetBack.addEventListener('click', () => {
+        this.clearPasswordResetToken();
+        this.accountMode = 'login';
+        this.accountFormOpen = true;
+        this.accountMessage = '';
+        this.render();
+      });
+    }
+    const passwordResetRequestForm = this.container.querySelector('#passwordResetRequestForm');
+    if (passwordResetRequestForm) passwordResetRequestForm.addEventListener('submit', event => this.requestPasswordReset(event));
+    const passwordResetConfirmForm = this.container.querySelector('#passwordResetConfirmForm');
+    if (passwordResetConfirmForm) passwordResetConfirmForm.addEventListener('submit', event => this.confirmPasswordReset(event));
     const accountSignOut = this.container.querySelector('#accountSignOut');
     if (accountSignOut) accountSignOut.addEventListener('click', () => this.signOut());
     const accountPasswordToggle = this.container.querySelector('#accountPasswordToggle');
