@@ -40,6 +40,9 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.match(markup, /data-region="chest"/);
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
+  assert.match(markup, /class="organ-layer"/);
+  for (const organ of ['organ-lung','organ-heart','organ-liver','organ-stomach','organ-kidney','organ-intestine']) assert.match(markup,new RegExp('class="'+organ+'"'));
+  assert.match(markup,/class="muscle-pectoral"/);
   assert.match(markup, /class="skull-illustration"/, 'front view should render the skull illustration');
   assert.match(markup, /class="skull-bone skull-frontal"/, 'frontal bone hotspot should render');
   assert.match(markup, /class="skull-bone skull-parietal"/, 'parietal bone hotspot should render');
