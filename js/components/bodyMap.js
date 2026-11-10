@@ -4,6 +4,7 @@
  */
 import { symptomDatabase } from '../data/symptoms.js';
 import { diseaseDatabase } from '../data/diseases.js';
+import { renderSkullSVG } from './skullArtwork.js';
 
 const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -25,36 +26,7 @@ export class BodyMap {
 
   renderAnatomy() {
     const back = this.view === 'back';
-    const head = `
-      <g class="skull-illustration" aria-label="Anterior skull anatomy">
-        <path class="anatomical-zone head-zone ${this.selectedRegion === 'head' ? 'selected' : ''}"
-          data-region="head" tabindex="0" role="button" aria-label="Select head"
-          d="M150 20 C133 20 120 33 119 51 C117 69 124 85 135 93
-             Q139 97 140 103 L160 103 Q161 97 165 93
-             C176 85 183 69 181 51 C180 33 167 20 150 20Z"/>
-        <path class="skull-detail cranial-suture" d="M150 24 Q145 37 150 48 Q155 37 150 24"/>
-        <path class="skull-detail orbital-rim" d="M124 57 Q135 45 146 55 Q149 62 144 69
-          Q135 76 126 67 Q123 63 124 57Z M176 57 Q165 45 154 55 Q151 62 156 69
-          Q165 76 174 67 Q177 63 176 57Z"/>
-        <path class="skull-detail orbital-cavity" d="M128 59 Q136 51 143 58 Q147 64 141 69
-          Q134 73 129 66Z M172 59 Q164 51 157 58 Q153 64 159 69
-          Q166 73 171 66Z"/>
-        <path class="skull-detail nasal-bone" d="M147 55 Q150 51 153 55 L155 70
-          Q150 75 145 70Z"/>
-        <path class="skull-detail nasal-cavity" d="M150 70 Q143 72 142 81
-          Q145 85 150 82 Q155 85 158 81 Q157 72 150 70Z"/>
-        <path class="skull-detail zygomatic" d="M124 69 Q130 76 141 75
-          M176 69 Q170 76 159 75"/>
-        <path class="skull-detail maxilla" d="M137 77 Q143 73 150 78 Q157 73 163 77
-          L160 88 Q150 94 140 88Z"/>
-        <path class="skull-detail mandible" d="M136 84 Q134 94 141 101
-          Q150 108 159 101 Q166 94 164 84"/>
-        <path class="skull-detail teeth" d="M141 88 L141 93 M145 89 L145 95
-          M150 89 L150 96 M155 89 L155 95 M159 88 L159 93"/>
-        <path class="skull-detail jaw-joint" d="M130 77 Q132 84 137 86
-          M170 77 Q168 84 163 86"/>
-      </g>
-    `;
+    const head = renderSkullSVG(this.selectedRegion);
     const neck = this.zone('throat', 'M139 103 Q150 109 161 103 L165 127 Q150 135 135 127Z', 'neck-zone');
     const shoulders = back ? `
       ${this.zone('shoulder','M134 119 Q111 108 96 123 Q84 138 96 158 Q108 169 126 154 L143 137Z','shoulder-zone')}
