@@ -2822,3 +2822,22 @@ body.dark-theme .anatomy-figure .anatomical-zone.selected { fill: rgba(20,145,12
 body.dark-theme .anatomy-figure .anatomy-detail,
 body.dark-theme .anatomy-figure .rib-cage path { stroke: #d3ad9c; }
 body.dark-theme .anatomy-figure .zone-label { fill: #f4e8df; stroke: rgba(30,24,24,.9); }
+
+/* Expanded educational anatomy layers: schematic, non-diagnostic illustrations. */
+.anatomy-figure .organ-layer,.anatomy-figure .anatomy-muscle-layer{pointer-events:none}
+.anatomy-figure .organ-layer path{stroke-width:1.05;stroke-linejoin:round}
+.anatomy-figure .organ-lung{fill:#c98283;stroke:#925c68}
+.anatomy-figure .organ-heart{fill:#b94f5b;stroke:#7e3545;stroke-width:1.3}
+.anatomy-figure .organ-liver{fill:#985b45;stroke:#70402f}
+.anatomy-figure .organ-stomach{fill:#e6a18d;stroke:#a86d61}
+.anatomy-figure .organ-kidney{fill:#9b5965;stroke:#713e4a}
+.anatomy-figure .organ-intestine{fill:#e6c4a0;stroke:#a47d5f;stroke-width:1.5}
+.anatomy-figure .organ-detail{fill:none;stroke:#a47d5f;stroke-width:1.1}
+.anatomy-figure .anatomy-muscle-layer path{stroke:rgba(116,65,59,.72);stroke-width:1}
+.anatomy-figure .muscle-pectoral,.anatomy-figure .muscle-abdominal,.anatomy-figure .muscle-oblique,.anatomy-figure .muscle-trapezius,.anatomy-figure .muscle-latissimus,.anatomy-figure .muscle-gluteal,.anatomy-figure .muscle-hamstring,.anatomy-figure .muscle-calf{fill:rgba(157,76,69,.24)}
+body.dark-theme .anatomy-figure .organ-lung{fill:#a96e78;stroke:#e0aab0}
+body.dark-theme .anatomy-figure .organ-heart{fill:#bd6673;stroke:#f0b3bc}
+body.dark-theme .anatomy-figure .organ-liver{fill:#a66c58;stroke:#dfad98}
+body.dark-theme .anatomy-figure .organ-stomach{fill:#c98f83;stroke:#edc1b4}
+body.dark-theme .anatomy-figure .organ-kidney{fill:#a96c79;stroke:#e2aeb8}
+body.dark-theme .anatomy-figure .organ-intestine{fill:#c7a98b;stroke:#ead0b4}
