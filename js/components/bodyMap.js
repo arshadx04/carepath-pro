@@ -96,7 +96,7 @@ export class BodyMap {
     `;
     return `
       <svg viewBox="0 0 300 520" class="mannequin-svg anatomy-illustration" role="group"
-        aria-label="Interactive human body anatomy - ${this.view} view">
+        aria-label="Interactive Human Body Anatomy - ${this.view} view">
         <defs>
           <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#d8eee9"/><stop offset="100%" stop-color="#9fcac2"/>
