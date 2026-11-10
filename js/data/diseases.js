@@ -452,7 +452,7 @@ export const diseaseDatabase = [
     "summary": "A highly contagious viral infection of the respiratory tract caused by Influenza virus A or B, featuring abrupt systemic toxicity.",
     "pathology": "Viral hemagglutinin and neuraminidase proteins facilitate attachment and invasion of ciliated columnar epithelial cells, causing widespread cytokine storm.",
     "hallmarkSymptoms": [
-      "Abrupt onset of high fever (100.4\u00b0F to 104\u00b0F / 38\u00b0C to 40\u00b0C)",
+      "Abrupt onset of high fever (100.4°F to 104°F / 38°C to 40°C)",
       "Intense generalized body aches and myalgias",
       "Severe exhaustion, weakness, and bedbound fatigue",
       "Dry hacking cough and sore throat",
@@ -530,7 +530,7 @@ export const diseaseDatabase = [
     ],
     "diagnosticTests": [
       "Clinical exam (auscultation shows rhonchi or scattered wheezes that clear with coughing)",
-      "Chest X-ray only if fever > 100.4\u00b0F, tachycardia, tachypnea, or crackles suggest pneumonia"
+      "Chest X-ray only if fever > 100.4°F, tachycardia, tachypnea, or crackles suggest pneumonia"
     ],
     "selfCare": [
       "Understand that antibiotics do NOT help viral bronchitis and cause unwanted side effects",
@@ -540,7 +540,7 @@ export const diseaseDatabase = [
     ],
     "redFlags": [
       "Coughing up frank blood or dark brown clots (Hemoptysis)",
-      "Fever > 101.5\u00b0F (38.6\u00b0C) persisting > 4 days",
+      "Fever > 101.5°F (38.6°C) persisting > 4 days",
       "Significant shortness of breath or resting stridor",
       "Cough failing to improve after 3 full weeks"
     ],
@@ -1381,7 +1381,7 @@ export const diseaseDatabase = [
       "Ensure adequate caloric and calcium intake to prevent bone density loss"
     ],
     "redFlags": [
-      "Thyroid Storm: High fever (> 103\u00b0F / 39.4\u00b0C), heart rate > 140 bpm, delirium, agitation, diarrhea, yellowing skin (MEDICAL EMERGENCY)",
+      "Thyroid Storm: High fever (> 103°F / 39.4°C), heart rate > 140 bpm, delirium, agitation, diarrhea, yellowing skin (MEDICAL EMERGENCY)",
       "New onset of irregular heart rhythm (Atrial Fibrillation)"
     ],
     "askDoctor": [
@@ -1910,7 +1910,7 @@ export const diseaseDatabase = [
     ],
     "redFlags": [
       "Flank pain: dull or sharp aching in the lower back or side over the kidneys",
-      "High fever (> 101\u00b0F / 38.3\u00b0C) with shaking chills (PYELONEPHRITIS - Kidney Infection)",
+      "High fever (> 101°F / 38.3°C) with shaking chills (PYELONEPHRITIS - Kidney Infection)",
       "Nausea, vomiting, and inability to tolerate oral liquids or medications",
       "Symptoms in men, pregnant women, or immunocompromised individuals (complicated UTI)"
     ],
@@ -1999,7 +1999,7 @@ export const diseaseDatabase = [
     "pathology": "Bacterial pyrogenic exotoxins and streptolysins induce follicular tonsillitis, mucosal erythema, and exudative neutrophilic necrosis.",
     "hallmarkSymptoms": [
       "Sudden, severe sore throat that causes agonizing pain when swallowing (odynophagia)",
-      "Fever typically >= 101\u00b0F (38.3\u00b0C)",
+      "Fever typically >= 101°F (38.3°C)",
       "Swollen, brightly red tonsils often coated with white or yellow patches of exudate",
       "Tender, swollen anterior cervical lymph nodes in the front of the neck",
       "PETECHIAE: tiny red spots on the soft palate roof of the mouth"
@@ -2393,6 +2393,9687 @@ export const diseaseDatabase = [
       "organization": "CDC",
       "title": "Conjunctivitis (Pink Eye)",
       "url": "https://www.cdc.gov/conjunctivitis/about/index.html"
+    }
+  },
+  {
+    "id": "iron-deficiency-anemia",
+    "name": "Iron-deficiency anemia",
+    "medicalTerm": "Iron-deficiency anemia",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of iron-deficiency anemia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "pale skin",
+      "exertional breathlessness",
+      "dizziness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out iron-deficiency anemia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "vitamin-b12-deficiency",
+    "name": "Vitamin B12 deficiency",
+    "medicalTerm": "Vitamin B12 deficiency",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood and nerves",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of vitamin b12 deficiency. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood and nerves system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "sore tongue",
+      "tingling hands or feet",
+      "balance difficulty"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out vitamin b12 deficiency?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "thalassemia",
+    "name": "Thalassemia",
+    "medicalTerm": "Thalassemia",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of thalassemia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "pallor",
+      "jaundice",
+      "slow growth"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out thalassemia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "sickle-cell-disease",
+    "name": "Sickle cell disease",
+    "medicalTerm": "Sickle cell disease",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of sickle cell disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Pain crises",
+      "fatigue",
+      "swollen hands and feet",
+      "frequent infections"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out sickle cell disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hemophilia",
+    "name": "Hemophilia",
+    "medicalTerm": "Hemophilia",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hemophilia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Prolonged bleeding",
+      "large bruises",
+      "painful swollen joints",
+      "nosebleeds"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hemophilia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "von-willebrand-disease",
+    "name": "Von Willebrand disease",
+    "medicalTerm": "Von Willebrand disease",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of von willebrand disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Frequent nosebleeds",
+      "easy bruising",
+      "heavy periods",
+      "prolonged bleeding after dental work"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out von willebrand disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "aplastic-anemia",
+    "name": "Aplastic anemia",
+    "medicalTerm": "Aplastic anemia",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Bone marrow",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of aplastic anemia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bone marrow system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "recurrent infections",
+      "easy bruising",
+      "pallor"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out aplastic anemia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "immune-thrombocytopenia",
+    "name": "Immune thrombocytopenia",
+    "medicalTerm": "Immune thrombocytopenia",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of immune thrombocytopenia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Petechiae",
+      "easy bruising",
+      "nosebleeds",
+      "gum bleeding"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out immune thrombocytopenia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "neutropenia",
+    "name": "Neutropenia",
+    "medicalTerm": "Neutropenia",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of neutropenia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Frequent infections",
+      "mouth ulcers",
+      "fever",
+      "sore throat"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out neutropenia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "polycythemia-vera",
+    "name": "Polycythemia vera",
+    "medicalTerm": "Polycythemia vera",
+    "icd10": "",
+    "category": "Hematology",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of polycythemia vera. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Headache",
+      "dizziness",
+      "itching after warm bath",
+      "burning hands or feet"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out polycythemia vera?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pulmonary-embolism",
+    "name": "Pulmonary embolism",
+    "medicalTerm": "Pulmonary embolism",
+    "icd10": "",
+    "category": "Vascular",
+    "organSystem": "Lungs",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pulmonary embolism. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lungs system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden breathlessness",
+      "sharp chest pain",
+      "fast heartbeat",
+      "lightheadedness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pulmonary embolism?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "peripheral-artery-disease",
+    "name": "Peripheral artery disease",
+    "medicalTerm": "Peripheral artery disease",
+    "icd10": "",
+    "category": "Vascular",
+    "organSystem": "Leg arteries",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of peripheral artery disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the leg arteries system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Calf pain when walking",
+      "cold feet",
+      "leg weakness",
+      "slow-healing sores"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out peripheral artery disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "varicose-veins",
+    "name": "Varicose veins",
+    "medicalTerm": "Varicose veins",
+    "icd10": "",
+    "category": "Vascular",
+    "organSystem": "Leg veins",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of varicose veins. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the leg veins system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Twisted visible veins",
+      "aching legs",
+      "ankle swelling",
+      "itching"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out varicose veins?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chronic-venous-insufficiency",
+    "name": "Chronic venous insufficiency",
+    "medicalTerm": "Chronic venous insufficiency",
+    "icd10": "",
+    "category": "Vascular",
+    "organSystem": "Leg veins",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chronic venous insufficiency. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the leg veins system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Leg heaviness",
+      "ankle swelling",
+      "brown skin changes",
+      "venous ulcers"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chronic venous insufficiency?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "lymphedema",
+    "name": "Lymphedema",
+    "medicalTerm": "Lymphedema",
+    "icd10": "",
+    "category": "Vascular",
+    "organSystem": "Lymphatic system",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of lymphedema. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lymphatic system system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent limb swelling",
+      "heaviness",
+      "tight skin",
+      "reduced range of motion"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out lymphedema?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "raynaud-phenomenon",
+    "name": "Raynaud phenomenon",
+    "medicalTerm": "Raynaud phenomenon",
+    "icd10": "",
+    "category": "Vascular",
+    "organSystem": "Blood vessels",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of raynaud phenomenon. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood vessels system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fingers change color in cold",
+      "numbness",
+      "tingling",
+      "pain on rewarming"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out raynaud phenomenon?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "atrial-fibrillation",
+    "name": "Atrial fibrillation",
+    "medicalTerm": "Atrial fibrillation",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of atrial fibrillation. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Irregular heartbeat",
+      "palpitations",
+      "fatigue",
+      "breathlessness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out atrial fibrillation?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "myocarditis",
+    "name": "Myocarditis",
+    "medicalTerm": "Myocarditis",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of myocarditis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Chest discomfort",
+      "breathlessness",
+      "fatigue",
+      "palpitations"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out myocarditis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pericarditis",
+    "name": "Pericarditis",
+    "medicalTerm": "Pericarditis",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pericarditis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sharp chest pain",
+      "worse lying flat",
+      "relief leaning forward",
+      "low fever"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pericarditis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "aortic-stenosis",
+    "name": "Aortic stenosis",
+    "medicalTerm": "Aortic stenosis",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of aortic stenosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Exertional breathlessness",
+      "chest pain",
+      "fainting",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out aortic stenosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "mitral-valve-prolapse",
+    "name": "Mitral valve prolapse",
+    "medicalTerm": "Mitral valve prolapse",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of mitral valve prolapse. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Palpitations",
+      "chest discomfort",
+      "dizziness",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out mitral valve prolapse?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "cardiomyopathy",
+    "name": "Cardiomyopathy",
+    "medicalTerm": "Cardiomyopathy",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of cardiomyopathy. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Breathlessness",
+      "fatigue",
+      "leg swelling",
+      "palpitations"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out cardiomyopathy?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "supraventricular-tachycardia",
+    "name": "Supraventricular tachycardia",
+    "medicalTerm": "Supraventricular tachycardia",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of supraventricular tachycardia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden racing heartbeat",
+      "palpitations",
+      "dizziness",
+      "chest discomfort"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out supraventricular tachycardia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "bradycardia",
+    "name": "Bradycardia",
+    "medicalTerm": "Bradycardia",
+    "icd10": "",
+    "category": "Cardiovascular",
+    "organSystem": "Heart",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of bradycardia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the heart system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Slow pulse",
+      "fatigue",
+      "dizziness",
+      "fainting"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out bradycardia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "bronchiectasis",
+    "name": "Bronchiectasis",
+    "medicalTerm": "Bronchiectasis",
+    "icd10": "",
+    "category": "Respiratory",
+    "organSystem": "Lungs",
+    "bodyPart": "lungs",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of bronchiectasis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lungs system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Chronic productive cough",
+      "frequent chest infections",
+      "wheezing",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out bronchiectasis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pulmonary-fibrosis",
+    "name": "Pulmonary fibrosis",
+    "medicalTerm": "Pulmonary fibrosis",
+    "icd10": "",
+    "category": "Respiratory",
+    "organSystem": "Lungs",
+    "bodyPart": "lungs",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pulmonary fibrosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lungs system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Progressive breathlessness",
+      "dry cough",
+      "fatigue",
+      "reduced exercise tolerance"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pulmonary fibrosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pneumothorax",
+    "name": "Pneumothorax",
+    "medicalTerm": "Pneumothorax",
+    "icd10": "",
+    "category": "Respiratory",
+    "organSystem": "Lungs",
+    "bodyPart": "lungs",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pneumothorax. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lungs system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden sharp chest pain",
+      "sudden breathlessness",
+      "rapid breathing",
+      "one-sided discomfort"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pneumothorax?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pleural-effusion",
+    "name": "Pleural effusion",
+    "medicalTerm": "Pleural effusion",
+    "icd10": "",
+    "category": "Respiratory",
+    "organSystem": "Pleura",
+    "bodyPart": "lungs",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pleural effusion. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pleura system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Breathlessness",
+      "pain with deep breathing",
+      "dry cough",
+      "reduced exercise tolerance"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pleural effusion?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "sleep-apnea",
+    "name": "Sleep apnea",
+    "medicalTerm": "Sleep apnea",
+    "icd10": "",
+    "category": "Respiratory",
+    "organSystem": "Upper airway",
+    "bodyPart": "lungs",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of sleep apnea. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the upper airway system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Loud snoring",
+      "witnessed breathing pauses",
+      "daytime sleepiness",
+      "morning headache"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out sleep apnea?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "tuberculosis",
+    "name": "Tuberculosis",
+    "medicalTerm": "Tuberculosis",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Lungs",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of tuberculosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lungs system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Cough lasting weeks",
+      "night sweats",
+      "fever",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out tuberculosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "sinusitis",
+    "name": "Sinusitis",
+    "medicalTerm": "Sinusitis",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Sinuses",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of sinusitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the sinuses system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Facial pressure",
+      "blocked nose",
+      "thick discharge",
+      "reduced smell"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out sinusitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "otitis-externa",
+    "name": "Otitis externa",
+    "medicalTerm": "Otitis externa",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Ear canal",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of otitis externa. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the ear canal system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Ear itching",
+      "pain when outer ear is moved",
+      "discharge",
+      "muffled hearing"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out otitis externa?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "me-nie-re-disease",
+    "name": "Ménière disease",
+    "medicalTerm": "Ménière disease",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Inner ear",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of ménière disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the inner ear system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Episodes of vertigo",
+      "fluctuating hearing loss",
+      "tinnitus",
+      "ear fullness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out ménière disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hearing-loss",
+    "name": "Hearing loss",
+    "medicalTerm": "Hearing loss",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Ear",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hearing loss. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the ear system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Difficulty following conversations",
+      "asking for repetition",
+      "increased device volume",
+      "tinnitus"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hearing loss?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "glaucoma",
+    "name": "Glaucoma",
+    "medicalTerm": "Glaucoma",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Eyes",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of glaucoma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the eyes system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Gradual peripheral vision loss",
+      "tunnel vision",
+      "difficulty in dim light",
+      "often no early symptoms"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out glaucoma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "cataract",
+    "name": "Cataract",
+    "medicalTerm": "Cataract",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Lens",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of cataract. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lens system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Cloudy vision",
+      "glare",
+      "faded colors",
+      "frequent prescription changes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out cataract?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "macular-degeneration",
+    "name": "Macular degeneration",
+    "medicalTerm": "Macular degeneration",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Retina",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of macular degeneration. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the retina system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Blurred central vision",
+      "wavy straight lines",
+      "difficulty reading",
+      "need for brighter light"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out macular degeneration?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "conjunctivitis",
+    "name": "Conjunctivitis",
+    "medicalTerm": "Conjunctivitis",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Conjunctiva",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of conjunctivitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the conjunctiva system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Red eyes",
+      "watery or sticky discharge",
+      "itching",
+      "gritty sensation"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out conjunctivitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "uveitis",
+    "name": "Uveitis",
+    "medicalTerm": "Uveitis",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Eye",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of uveitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the eye system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Eye pain",
+      "redness",
+      "light sensitivity",
+      "blurred vision"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out uveitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "retinal-detachment",
+    "name": "Retinal detachment",
+    "medicalTerm": "Retinal detachment",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Retina",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of retinal detachment. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the retina system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Flashes",
+      "new floaters",
+      "curtain-like shadow",
+      "blurred vision"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out retinal detachment?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "diabetic-retinopathy",
+    "name": "Diabetic retinopathy",
+    "medicalTerm": "Diabetic retinopathy",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Retina",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of diabetic retinopathy. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the retina system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often no early symptoms",
+      "blurred vision",
+      "floaters",
+      "dark spots"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out diabetic retinopathy?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "cluster-headache",
+    "name": "Cluster headache",
+    "medicalTerm": "Cluster headache",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of cluster headache. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Severe one-sided eye pain",
+      "tearing",
+      "blocked nostril",
+      "restlessness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out cluster headache?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "epilepsy",
+    "name": "Epilepsy",
+    "medicalTerm": "Epilepsy",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of epilepsy. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Repeated seizures",
+      "staring spells",
+      "jerking movements",
+      "post-seizure confusion"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out epilepsy?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "parkinson-disease",
+    "name": "Parkinson disease",
+    "medicalTerm": "Parkinson disease",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of parkinson disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Resting tremor",
+      "slowness",
+      "muscle stiffness",
+      "balance changes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out parkinson disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "multiple-sclerosis",
+    "name": "Multiple sclerosis",
+    "medicalTerm": "Multiple sclerosis",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain and spinal cord",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of multiple sclerosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain and spinal cord system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Blurred vision",
+      "numbness",
+      "limb weakness",
+      "balance problems"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out multiple sclerosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "alzheimer-disease",
+    "name": "Alzheimer disease",
+    "medicalTerm": "Alzheimer disease",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of alzheimer disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Progressive memory loss",
+      "difficulty planning",
+      "disorientation",
+      "word-finding problems"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out alzheimer disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "stroke",
+    "name": "Stroke",
+    "medicalTerm": "Stroke",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of stroke. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden facial droop",
+      "arm weakness",
+      "speech difficulty",
+      "sudden vision or balance problem"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out stroke?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "bell-palsy",
+    "name": "Bell palsy",
+    "medicalTerm": "Bell palsy",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Facial nerve",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of bell palsy. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the facial nerve system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "One-sided facial weakness",
+      "difficulty closing eye",
+      "drooping mouth",
+      "altered taste"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out bell palsy?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "guillain-barre-syndrome",
+    "name": "Guillain-Barré syndrome",
+    "medicalTerm": "Guillain-Barré syndrome",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Peripheral nerves",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of guillain-barré syndrome. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the peripheral nerves system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Tingling feet",
+      "progressive weakness",
+      "difficulty walking",
+      "reduced reflexes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out guillain-barré syndrome?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "myasthenia-gravis",
+    "name": "Myasthenia gravis",
+    "medicalTerm": "Myasthenia gravis",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Neuromuscular junction",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of myasthenia gravis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the neuromuscular junction system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Drooping eyelids",
+      "double vision",
+      "fatigable weakness",
+      "difficulty swallowing"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out myasthenia gravis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "meningitis",
+    "name": "Meningitis",
+    "medicalTerm": "Meningitis",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Brain coverings",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of meningitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain coverings system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fever",
+      "severe headache",
+      "neck stiffness",
+      "light sensitivity"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out meningitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "encephalitis",
+    "name": "Encephalitis",
+    "medicalTerm": "Encephalitis",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of encephalitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fever",
+      "headache",
+      "confusion",
+      "seizures"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out encephalitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "depression",
+    "name": "Depression",
+    "medicalTerm": "Depression",
+    "icd10": "",
+    "category": "Mental health",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of depression. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent low mood",
+      "loss of interest",
+      "sleep changes",
+      "low energy"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out depression?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "bipolar-disorder",
+    "name": "Bipolar disorder",
+    "medicalTerm": "Bipolar disorder",
+    "icd10": "",
+    "category": "Mental health",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of bipolar disorder. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Depressive episodes",
+      "elevated or irritable mood",
+      "reduced need for sleep",
+      "racing thoughts"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out bipolar disorder?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "obsessive-compulsive-disorder",
+    "name": "Obsessive-compulsive disorder",
+    "medicalTerm": "Obsessive-compulsive disorder",
+    "icd10": "",
+    "category": "Mental health",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of obsessive-compulsive disorder. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Intrusive thoughts",
+      "repetitive checking",
+      "cleaning rituals",
+      "distress when rituals interrupted"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out obsessive-compulsive disorder?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "ptsd",
+    "name": "PTSD",
+    "medicalTerm": "PTSD",
+    "icd10": "",
+    "category": "Mental health",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of ptsd. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Intrusive memories",
+      "nightmares",
+      "avoidance",
+      "hypervigilance"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out ptsd?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "schizophrenia",
+    "name": "Schizophrenia",
+    "medicalTerm": "Schizophrenia",
+    "icd10": "",
+    "category": "Mental health",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of schizophrenia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Hallucinations",
+      "delusions",
+      "disorganized speech",
+      "social withdrawal"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out schizophrenia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "adhd",
+    "name": "ADHD",
+    "medicalTerm": "ADHD",
+    "icd10": "",
+    "category": "Neurodevelopmental",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of adhd. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Inattention",
+      "forgetfulness",
+      "restlessness",
+      "impulsivity"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out adhd?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "insomnia-disorder",
+    "name": "Insomnia disorder",
+    "medicalTerm": "Insomnia disorder",
+    "icd10": "",
+    "category": "Sleep",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of insomnia disorder. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Difficulty falling asleep",
+      "repeated waking",
+      "early waking",
+      "daytime fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out insomnia disorder?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "graves-disease",
+    "name": "Graves disease",
+    "medicalTerm": "Graves disease",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Thyroid",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of graves disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the thyroid system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Palpitations",
+      "weight loss",
+      "sweating",
+      "eye irritation or bulging"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out graves disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "type-1-diabetes",
+    "name": "Type 1 diabetes",
+    "medicalTerm": "Type 1 diabetes",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Pancreas",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of type 1 diabetes. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pancreas system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Increased thirst",
+      "frequent urination",
+      "weight loss",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out type 1 diabetes?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hypoglycemia",
+    "name": "Hypoglycemia",
+    "medicalTerm": "Hypoglycemia",
+    "icd10": "",
+    "category": "Metabolic",
+    "organSystem": "Blood glucose",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hypoglycemia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood glucose system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sweating",
+      "shakiness",
+      "hunger",
+      "confusion"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hypoglycemia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pcos",
+    "name": "PCOS",
+    "medicalTerm": "PCOS",
+    "icd10": "",
+    "category": "Reproductive",
+    "organSystem": "Ovaries",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pcos. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the ovaries system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Irregular periods",
+      "excess facial hair",
+      "acne",
+      "difficulty conceiving"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pcos?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "endometriosis",
+    "name": "Endometriosis",
+    "medicalTerm": "Endometriosis",
+    "icd10": "",
+    "category": "Reproductive",
+    "organSystem": "Pelvis",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of endometriosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pelvis system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Painful periods",
+      "chronic pelvic pain",
+      "pain during sex",
+      "pain with bowel movements"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out endometriosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "uterine-fibroids",
+    "name": "Uterine fibroids",
+    "medicalTerm": "Uterine fibroids",
+    "icd10": "",
+    "category": "Reproductive",
+    "organSystem": "Uterus",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of uterine fibroids. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the uterus system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Heavy periods",
+      "pelvic pressure",
+      "frequent urination",
+      "constipation"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out uterine fibroids?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "ectopic-pregnancy",
+    "name": "Ectopic pregnancy",
+    "medicalTerm": "Ectopic pregnancy",
+    "icd10": "",
+    "category": "Reproductive",
+    "organSystem": "Fallopian tube",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of ectopic pregnancy. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the fallopian tube system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "One-sided pelvic pain",
+      "vaginal spotting",
+      "shoulder-tip pain",
+      "dizziness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out ectopic pregnancy?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "preeclampsia",
+    "name": "Preeclampsia",
+    "medicalTerm": "Preeclampsia",
+    "icd10": "",
+    "category": "Reproductive",
+    "organSystem": "Pregnancy",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of preeclampsia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pregnancy system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "High blood pressure",
+      "persistent headache",
+      "visual changes",
+      "upper abdominal pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out preeclampsia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pelvic-inflammatory-disease",
+    "name": "Pelvic inflammatory disease",
+    "medicalTerm": "Pelvic inflammatory disease",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Reproductive tract",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pelvic inflammatory disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the reproductive tract system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Lower abdominal pain",
+      "unusual discharge",
+      "pain during sex",
+      "fever"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pelvic inflammatory disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "prostate-enlargement",
+    "name": "Prostate enlargement",
+    "medicalTerm": "Prostate enlargement",
+    "icd10": "",
+    "category": "Urology",
+    "organSystem": "Prostate",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of prostate enlargement. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the prostate system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Nighttime urination",
+      "weak stream",
+      "hesitancy",
+      "incomplete emptying"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out prostate enlargement?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "prostatitis",
+    "name": "Prostatitis",
+    "medicalTerm": "Prostatitis",
+    "icd10": "",
+    "category": "Urology",
+    "organSystem": "Prostate",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of prostatitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the prostate system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Pelvic pain",
+      "painful urination",
+      "frequent urination",
+      "pain with ejaculation"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out prostatitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "testicular-torsion",
+    "name": "Testicular torsion",
+    "medicalTerm": "Testicular torsion",
+    "icd10": "",
+    "category": "Urology",
+    "organSystem": "Testicle",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of testicular torsion. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the testicle system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden severe testicular pain",
+      "scrotal swelling",
+      "nausea",
+      "high-riding testicle"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out testicular torsion?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "epididymitis",
+    "name": "Epididymitis",
+    "medicalTerm": "Epididymitis",
+    "icd10": "",
+    "category": "Urology",
+    "organSystem": "Epididymis",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of epididymitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the epididymis system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Gradual testicular pain",
+      "scrotal swelling",
+      "painful urination",
+      "fever"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out epididymitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chronic-kidney-disease",
+    "name": "Chronic kidney disease",
+    "medicalTerm": "Chronic kidney disease",
+    "icd10": "",
+    "category": "Renal",
+    "organSystem": "Kidneys",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chronic kidney disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the kidneys system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often no early symptoms",
+      "fatigue",
+      "ankle swelling",
+      "foamy urine"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chronic kidney disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pyelonephritis",
+    "name": "Pyelonephritis",
+    "medicalTerm": "Pyelonephritis",
+    "icd10": "",
+    "category": "Renal",
+    "organSystem": "Kidneys",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pyelonephritis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the kidneys system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fever",
+      "chills",
+      "flank pain",
+      "painful urination"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pyelonephritis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "urinary-incontinence",
+    "name": "Urinary incontinence",
+    "medicalTerm": "Urinary incontinence",
+    "icd10": "",
+    "category": "Urology",
+    "organSystem": "Bladder",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of urinary incontinence. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bladder system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Leakage with coughing",
+      "sudden urgency",
+      "frequent urination",
+      "nighttime leakage"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out urinary incontinence?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "gerd",
+    "name": "GERD",
+    "medicalTerm": "GERD",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Esophagus",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of gerd. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the esophagus system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Heartburn",
+      "sour regurgitation",
+      "symptoms after meals",
+      "chronic cough"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out gerd?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "gastritis",
+    "name": "Gastritis",
+    "medicalTerm": "Gastritis",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Stomach",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of gastritis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the stomach system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Upper abdominal discomfort",
+      "nausea",
+      "vomiting",
+      "loss of appetite"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out gastritis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "gallstones",
+    "name": "Gallstones",
+    "medicalTerm": "Gallstones",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Gallbladder",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of gallstones. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the gallbladder system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Right upper abdominal pain",
+      "nausea",
+      "pain after fatty meals",
+      "back or shoulder pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out gallstones?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "acute-pancreatitis",
+    "name": "Acute pancreatitis",
+    "medicalTerm": "Acute pancreatitis",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Pancreas",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of acute pancreatitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pancreas system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Severe upper abdominal pain",
+      "pain to back",
+      "vomiting",
+      "abdominal tenderness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out acute pancreatitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "crohn-disease",
+    "name": "Crohn disease",
+    "medicalTerm": "Crohn disease",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Intestine",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of crohn disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the intestine system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Chronic diarrhea",
+      "abdominal cramps",
+      "weight loss",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out crohn disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "ulcerative-colitis",
+    "name": "Ulcerative colitis",
+    "medicalTerm": "Ulcerative colitis",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Colon",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of ulcerative colitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the colon system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bloody diarrhea",
+      "urgency",
+      "abdominal cramps",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out ulcerative colitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "celiac-disease",
+    "name": "Celiac disease",
+    "medicalTerm": "Celiac disease",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Small intestine",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of celiac disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the small intestine system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bloating",
+      "diarrhea or constipation",
+      "abdominal pain",
+      "iron deficiency"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out celiac disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "diverticulitis",
+    "name": "Diverticulitis",
+    "medicalTerm": "Diverticulitis",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Colon",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of diverticulitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the colon system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Left lower abdominal pain",
+      "fever",
+      "constipation or diarrhea",
+      "bloating"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out diverticulitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hemorrhoids",
+    "name": "Hemorrhoids",
+    "medicalTerm": "Hemorrhoids",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Rectum",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hemorrhoids. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the rectum system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bright red blood after stool",
+      "anal itching",
+      "swelling",
+      "lump near anus"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hemorrhoids?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hepatitis-a",
+    "name": "Hepatitis A",
+    "medicalTerm": "Hepatitis A",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Liver",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hepatitis a. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the liver system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "nausea",
+      "abdominal discomfort",
+      "dark urine or jaundice"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hepatitis a?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hepatitis-b",
+    "name": "Hepatitis B",
+    "medicalTerm": "Hepatitis B",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Liver",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hepatitis b. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the liver system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often no symptoms",
+      "fatigue",
+      "joint pain",
+      "dark urine or jaundice"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hepatitis b?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hepatitis-c",
+    "name": "Hepatitis C",
+    "medicalTerm": "Hepatitis C",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Liver",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hepatitis c. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the liver system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often no symptoms",
+      "fatigue",
+      "joint pain",
+      "abdominal discomfort",
+      "jaundice later"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hepatitis c?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "cirrhosis",
+    "name": "Cirrhosis",
+    "medicalTerm": "Cirrhosis",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Liver",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of cirrhosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the liver system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "easy bruising",
+      "abdominal swelling",
+      "jaundice"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out cirrhosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "dengue",
+    "name": "Dengue",
+    "medicalTerm": "Dengue",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of dengue. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "High fever",
+      "severe headache",
+      "pain behind eyes",
+      "muscle and joint pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out dengue?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "malaria",
+    "name": "Malaria",
+    "medicalTerm": "Malaria",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of malaria. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fever with chills",
+      "sweating",
+      "headache",
+      "nausea"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out malaria?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "typhoid-fever",
+    "name": "Typhoid fever",
+    "medicalTerm": "Typhoid fever",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Digestive",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of typhoid fever. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the digestive system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sustained fever",
+      "headache",
+      "abdominal pain",
+      "diarrhea or constipation"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out typhoid fever?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chikungunya",
+    "name": "Chikungunya",
+    "medicalTerm": "Chikungunya",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Joints",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chikungunya. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the joints system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden fever",
+      "severe joint pain",
+      "muscle pain",
+      "rash"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chikungunya?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "rabies",
+    "name": "Rabies",
+    "medicalTerm": "Rabies",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Nervous system",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of rabies. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the nervous system system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fever",
+      "headache",
+      "tingling at bite site",
+      "difficulty swallowing"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out rabies?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "tetanus",
+    "name": "Tetanus",
+    "medicalTerm": "Tetanus",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Nervous system",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of tetanus. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the nervous system system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Jaw stiffness",
+      "muscle spasms",
+      "difficulty swallowing",
+      "neck rigidity"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out tetanus?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "measles",
+    "name": "Measles",
+    "medicalTerm": "Measles",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Respiratory and skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of measles. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the respiratory and skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "High fever",
+      "cough",
+      "runny nose",
+      "red eyes and rash"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out measles?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chickenpox",
+    "name": "Chickenpox",
+    "medicalTerm": "Chickenpox",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chickenpox. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Itchy blisters",
+      "fever",
+      "tiredness",
+      "lesions in different stages"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chickenpox?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "shingles",
+    "name": "Shingles",
+    "medicalTerm": "Shingles",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Skin and nerves",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of shingles. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin and nerves system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "One-sided burning pain",
+      "blistering rash",
+      "tingling",
+      "itching"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out shingles?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "scabies",
+    "name": "Scabies",
+    "medicalTerm": "Scabies",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of scabies. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Intense night itching",
+      "small bumps",
+      "burrow lines",
+      "rash between fingers"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out scabies?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "eczema",
+    "name": "Eczema",
+    "medicalTerm": "Eczema",
+    "icd10": "",
+    "category": "Skin",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of eczema. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Itchy dry patches",
+      "redness",
+      "cracking",
+      "sleep disturbance"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out eczema?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "acne-vulgaris",
+    "name": "Acne vulgaris",
+    "medicalTerm": "Acne vulgaris",
+    "icd10": "",
+    "category": "Skin",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of acne vulgaris. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Blackheads",
+      "whiteheads",
+      "inflamed pimples",
+      "deep nodules"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out acne vulgaris?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "rheumatoid-arthritis",
+    "name": "Rheumatoid arthritis",
+    "medicalTerm": "Rheumatoid arthritis",
+    "icd10": "",
+    "category": "Autoimmune",
+    "organSystem": "Joints",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of rheumatoid arthritis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the joints system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Symmetric swollen joints",
+      "morning stiffness",
+      "fatigue",
+      "reduced grip"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out rheumatoid arthritis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "gout",
+    "name": "Gout",
+    "medicalTerm": "Gout",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Joints",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of gout. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the joints system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden severe joint pain",
+      "redness",
+      "warmth",
+      "swelling"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out gout?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "osteoporosis",
+    "name": "Osteoporosis",
+    "medicalTerm": "Osteoporosis",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Bones",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of osteoporosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bones system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often silent",
+      "loss of height",
+      "stooped posture",
+      "fracture-related back pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out osteoporosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "sciatica",
+    "name": "Sciatica",
+    "medicalTerm": "Sciatica",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Spinal nerves",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of sciatica. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the spinal nerves system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Pain from back to leg",
+      "tingling",
+      "numbness",
+      "pain worse sitting"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out sciatica?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "carpal-tunnel-syndrome",
+    "name": "Carpal tunnel syndrome",
+    "medicalTerm": "Carpal tunnel syndrome",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Wrist and hand",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of carpal tunnel syndrome. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the wrist and hand system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Tingling thumb and fingers",
+      "night numbness",
+      "weak grip",
+      "dropping objects"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out carpal tunnel syndrome?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "scoliosis",
+    "name": "Scoliosis",
+    "medicalTerm": "Scoliosis",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Spine",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of scoliosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the spine system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Uneven shoulders",
+      "prominent shoulder blade",
+      "uneven waist",
+      "back discomfort"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out scoliosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "lupus",
+    "name": "Lupus",
+    "medicalTerm": "Lupus",
+    "icd10": "",
+    "category": "Autoimmune",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of lupus. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Joint pain",
+      "fatigue",
+      "sun-sensitive rash",
+      "mouth ulcers"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out lupus?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "sjogren-syndrome",
+    "name": "Sjogren syndrome",
+    "medicalTerm": "Sjogren syndrome",
+    "icd10": "",
+    "category": "Autoimmune",
+    "organSystem": "Glands",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of sjogren syndrome. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the glands system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Dry eyes",
+      "dry mouth",
+      "difficulty swallowing dry foods",
+      "dental cavities"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out sjogren syndrome?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "systemic-sclerosis",
+    "name": "Systemic sclerosis",
+    "medicalTerm": "Systemic sclerosis",
+    "icd10": "",
+    "category": "Autoimmune",
+    "organSystem": "Connective tissue",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of systemic sclerosis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the connective tissue system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Raynaud symptoms",
+      "tight skin",
+      "reflux",
+      "joint pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out systemic sclerosis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "osteomyelitis",
+    "name": "Osteomyelitis",
+    "medicalTerm": "Osteomyelitis",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Bone",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of osteomyelitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bone system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Localized bone pain",
+      "swelling",
+      "fever",
+      "reduced limb movement"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out osteomyelitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "tendinitis",
+    "name": "Tendinitis",
+    "medicalTerm": "Tendinitis",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Tendons",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of tendinitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the tendons system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Localized tendon pain",
+      "tenderness",
+      "swelling",
+      "pain with movement"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out tendinitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "bursitis",
+    "name": "Bursitis",
+    "medicalTerm": "Bursitis",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Bursa",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of bursitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bursa system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Joint tenderness",
+      "swelling",
+      "pain with movement",
+      "reduced range"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out bursitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "rotator-cuff-tear",
+    "name": "Rotator cuff tear",
+    "medicalTerm": "Rotator cuff tear",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Shoulder",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of rotator cuff tear. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the shoulder system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Shoulder pain",
+      "night pain",
+      "weakness",
+      "difficulty lifting arm"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out rotator cuff tear?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "plantar-fasciitis",
+    "name": "Plantar fasciitis",
+    "medicalTerm": "Plantar fasciitis",
+    "icd10": "",
+    "category": "Musculoskeletal",
+    "organSystem": "Foot",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of plantar fasciitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the foot system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Heel pain on first steps",
+      "tenderness",
+      "pain after rest",
+      "pain with standing"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out plantar fasciitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "anaphylaxis",
+    "name": "Anaphylaxis",
+    "medicalTerm": "Anaphylaxis",
+    "icd10": "",
+    "category": "Allergic",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of anaphylaxis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden hives",
+      "lip or tongue swelling",
+      "wheezing",
+      "dizziness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out anaphylaxis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "urticaria",
+    "name": "Urticaria",
+    "medicalTerm": "Urticaria",
+    "icd10": "",
+    "category": "Allergic",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of urticaria. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Raised itchy welts",
+      "migrating rash",
+      "swelling",
+      "redness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out urticaria?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "food-allergy",
+    "name": "Food allergy",
+    "medicalTerm": "Food allergy",
+    "icd10": "",
+    "category": "Allergic",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of food allergy. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Hives",
+      "lip swelling",
+      "vomiting",
+      "wheezing"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out food allergy?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "vitamin-d-deficiency",
+    "name": "Vitamin D deficiency",
+    "medicalTerm": "Vitamin D deficiency",
+    "icd10": "",
+    "category": "Nutrition",
+    "organSystem": "Bones",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of vitamin d deficiency. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bones system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bone aches",
+      "muscle weakness",
+      "falls",
+      "delayed growth in children"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out vitamin d deficiency?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "folate-deficiency-anemia",
+    "name": "Folate deficiency anemia",
+    "medicalTerm": "Folate deficiency anemia",
+    "icd10": "",
+    "category": "Nutrition",
+    "organSystem": "Blood",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of folate deficiency anemia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "pallor",
+      "sore tongue",
+      "breathlessness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out folate deficiency anemia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "obesity",
+    "name": "Obesity",
+    "medicalTerm": "Obesity",
+    "icd10": "",
+    "category": "Metabolic",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of obesity. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often no specific symptoms",
+      "exertional breathlessness",
+      "joint pain",
+      "snoring"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out obesity?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "metabolic-syndrome",
+    "name": "Metabolic syndrome",
+    "medicalTerm": "Metabolic syndrome",
+    "icd10": "",
+    "category": "Metabolic",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of metabolic syndrome. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often silent",
+      "increased waist",
+      "high blood pressure",
+      "abnormal glucose or lipids"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out metabolic syndrome?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "heat-exhaustion",
+    "name": "Heat exhaustion",
+    "medicalTerm": "Heat exhaustion",
+    "icd10": "",
+    "category": "Environmental",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of heat exhaustion. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Heavy sweating",
+      "weakness",
+      "dizziness",
+      "nausea"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out heat exhaustion?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "heat-stroke",
+    "name": "Heat stroke",
+    "medicalTerm": "Heat stroke",
+    "icd10": "",
+    "category": "Environmental",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of heat stroke. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Very high temperature",
+      "confusion",
+      "hot skin",
+      "rapid pulse"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out heat stroke?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "dehydration",
+    "name": "Dehydration",
+    "medicalTerm": "Dehydration",
+    "icd10": "",
+    "category": "Metabolic",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of dehydration. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Thirst",
+      "dark urine",
+      "dry mouth",
+      "dizziness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out dehydration?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "carbon-monoxide-poisoning",
+    "name": "Carbon monoxide poisoning",
+    "medicalTerm": "Carbon monoxide poisoning",
+    "icd10": "",
+    "category": "Toxicology",
+    "organSystem": "Blood and brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of carbon monoxide poisoning. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood and brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Headache",
+      "dizziness",
+      "nausea",
+      "confusion"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out carbon monoxide poisoning?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "lead-poisoning",
+    "name": "Lead poisoning",
+    "medicalTerm": "Lead poisoning",
+    "icd10": "",
+    "category": "Toxicology",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of lead poisoning. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Abdominal pain",
+      "constipation",
+      "headache",
+      "learning changes in children"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out lead poisoning?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "snakebite-envenomation",
+    "name": "Snakebite envenomation",
+    "medicalTerm": "Snakebite envenomation",
+    "icd10": "",
+    "category": "Toxicology",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of snakebite envenomation. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bite-site pain",
+      "swelling",
+      "bruising",
+      "bleeding or weakness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out snakebite envenomation?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "migraine-with-aura",
+    "name": "Migraine with aura",
+    "medicalTerm": "Migraine with aura",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of migraine with aura. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Flashing lights",
+      "zigzag vision",
+      "tingling",
+      "headache may follow"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out migraine with aura?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "transient-ischemic-attack",
+    "name": "Transient ischemic attack",
+    "medicalTerm": "Transient ischemic attack",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of transient ischemic attack. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Brief facial droop",
+      "temporary limb weakness",
+      "speech difficulty",
+      "temporary vision loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out transient ischemic attack?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "concussion",
+    "name": "Concussion",
+    "medicalTerm": "Concussion",
+    "icd10": "",
+    "category": "Injury",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of concussion. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Headache",
+      "dizziness",
+      "nausea",
+      "memory difficulty"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out concussion?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "spinal-cord-compression",
+    "name": "Spinal cord compression",
+    "medicalTerm": "Spinal cord compression",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Spinal cord",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of spinal cord compression. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the spinal cord system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Back pain",
+      "limb weakness",
+      "numbness",
+      "bladder or bowel changes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out spinal cord compression?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chronic-fatigue-syndrome",
+    "name": "Chronic fatigue syndrome",
+    "medicalTerm": "Chronic fatigue syndrome",
+    "icd10": "",
+    "category": "Neurological",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chronic fatigue syndrome. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent fatigue",
+      "post-exertional worsening",
+      "unrefreshing sleep",
+      "brain fog"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chronic fatigue syndrome?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "long-covid",
+    "name": "Long COVID",
+    "medicalTerm": "Long COVID",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Multiple systems",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of long covid. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the multiple systems system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "breathlessness",
+      "brain fog",
+      "altered smell or taste"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out long covid?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "lactose-intolerance",
+    "name": "Lactose intolerance",
+    "medicalTerm": "Lactose intolerance",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Small intestine",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of lactose intolerance. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the small intestine system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bloating after dairy",
+      "gas",
+      "abdominal cramps",
+      "loose stools"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out lactose intolerance?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chronic-constipation",
+    "name": "Chronic constipation",
+    "medicalTerm": "Chronic constipation",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Colon",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chronic constipation. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the colon system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Hard stools",
+      "straining",
+      "infrequent bowel movements",
+      "incomplete emptying"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chronic constipation?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "chronic-diarrhea",
+    "name": "Chronic diarrhea",
+    "medicalTerm": "Chronic diarrhea",
+    "icd10": "",
+    "category": "Digestive",
+    "organSystem": "Intestine",
+    "bodyPart": "abdomen",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of chronic diarrhea. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the intestine system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Loose stools for weeks",
+      "urgency",
+      "cramps",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out chronic diarrhea?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "oral-thrush",
+    "name": "Oral thrush",
+    "medicalTerm": "Oral thrush",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Mouth",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of oral thrush. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the mouth system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "White patches",
+      "mouth soreness",
+      "cottony feeling",
+      "pain swallowing"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out oral thrush?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "dental-abscess",
+    "name": "Dental abscess",
+    "medicalTerm": "Dental abscess",
+    "icd10": "",
+    "category": "Infectious",
+    "organSystem": "Teeth",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of dental abscess. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the teeth system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Severe toothache",
+      "gum swelling",
+      "pus",
+      "bad taste"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out dental abscess?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "periodontitis",
+    "name": "Periodontitis",
+    "medicalTerm": "Periodontitis",
+    "icd10": "",
+    "category": "Dental",
+    "organSystem": "Gums",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of periodontitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the gums system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bleeding gums",
+      "gum recession",
+      "bad breath",
+      "loose teeth"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out periodontitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "nasal-polyps",
+    "name": "Nasal polyps",
+    "medicalTerm": "Nasal polyps",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Nose",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of nasal polyps. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the nose system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent blockage",
+      "reduced smell",
+      "runny nose",
+      "facial pressure"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out nasal polyps?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "laryngitis",
+    "name": "Laryngitis",
+    "medicalTerm": "Laryngitis",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Voice box",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of laryngitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the voice box system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Hoarse voice",
+      "voice loss",
+      "dry cough",
+      "throat irritation"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out laryngitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "tinnitus",
+    "name": "Tinnitus",
+    "medicalTerm": "Tinnitus",
+    "icd10": "",
+    "category": "ENT",
+    "organSystem": "Ear",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of tinnitus. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the ear system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Ringing",
+      "buzzing",
+      "sleep disruption",
+      "concentration difficulty"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out tinnitus?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "blepharitis",
+    "name": "Blepharitis",
+    "medicalTerm": "Blepharitis",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Eyelids",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of blepharitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the eyelids system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Crusty eyelids",
+      "itching",
+      "burning",
+      "gritty eyes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out blepharitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "dry-eye-disease",
+    "name": "Dry eye disease",
+    "medicalTerm": "Dry eye disease",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Eyes",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of dry eye disease. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the eyes system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Burning",
+      "gritty sensation",
+      "redness",
+      "fluctuating blur"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out dry eye disease?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "keratitis",
+    "name": "Keratitis",
+    "medicalTerm": "Keratitis",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Cornea",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of keratitis. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the cornea system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Eye pain",
+      "redness",
+      "light sensitivity",
+      "blurred vision"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out keratitis?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "retinal-vein-occlusion",
+    "name": "Retinal vein occlusion",
+    "medicalTerm": "Retinal vein occlusion",
+    "icd10": "",
+    "category": "Eye",
+    "organSystem": "Retina",
+    "bodyPart": "head",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of retinal vein occlusion. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the retina system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Sudden painless blur",
+      "floaters",
+      "visual field loss",
+      "one-eye symptoms"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out retinal vein occlusion?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "thyroid-nodule",
+    "name": "Thyroid nodule",
+    "medicalTerm": "Thyroid nodule",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Thyroid",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of thyroid nodule. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the thyroid system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Front-neck lump",
+      "pressure",
+      "hoarseness",
+      "swallowing discomfort"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out thyroid nodule?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "adrenal-insufficiency",
+    "name": "Adrenal insufficiency",
+    "medicalTerm": "Adrenal insufficiency",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Adrenal glands",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of adrenal insufficiency. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the adrenal glands system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "weight loss",
+      "low blood pressure",
+      "salt craving"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out adrenal insufficiency?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "cushing-syndrome",
+    "name": "Cushing syndrome",
+    "medicalTerm": "Cushing syndrome",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Adrenal/pituitary",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of cushing syndrome. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the adrenal/pituitary system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Truncal weight gain",
+      "rounded face",
+      "easy bruising",
+      "muscle weakness"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out cushing syndrome?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "hyperparathyroidism",
+    "name": "Hyperparathyroidism",
+    "medicalTerm": "Hyperparathyroidism",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Parathyroid",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of hyperparathyroidism. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the parathyroid system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Kidney stones",
+      "bone pain",
+      "constipation",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out hyperparathyroidism?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "gestational-diabetes",
+    "name": "Gestational diabetes",
+    "medicalTerm": "Gestational diabetes",
+    "icd10": "",
+    "category": "Endocrine",
+    "organSystem": "Pregnancy",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of gestational diabetes. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pregnancy system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often silent",
+      "thirst",
+      "frequent urination",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out gestational diabetes?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "endometrial-cancer",
+    "name": "Endometrial cancer",
+    "medicalTerm": "Endometrial cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Uterus",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of endometrial cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the uterus system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bleeding after menopause",
+      "irregular bleeding",
+      "watery discharge",
+      "pelvic discomfort"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out endometrial cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "cervical-cancer",
+    "name": "Cervical cancer",
+    "medicalTerm": "Cervical cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Cervix",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of cervical cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the cervix system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bleeding after sex",
+      "intermenstrual bleeding",
+      "unusual discharge",
+      "pelvic pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out cervical cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "breast-cancer",
+    "name": "Breast cancer",
+    "medicalTerm": "Breast cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Breast",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of breast cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the breast system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "New breast lump",
+      "shape change",
+      "skin dimpling",
+      "nipple discharge"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out breast cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "lung-cancer",
+    "name": "Lung cancer",
+    "medicalTerm": "Lung cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Lungs",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of lung cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lungs system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent cough",
+      "coughing blood",
+      "chest pain",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out lung cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "colorectal-cancer",
+    "name": "Colorectal cancer",
+    "medicalTerm": "Colorectal cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Colon and rectum",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of colorectal cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the colon and rectum system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Change in bowel habits",
+      "blood in stool",
+      "abdominal discomfort",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out colorectal cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "stomach-cancer",
+    "name": "Stomach cancer",
+    "medicalTerm": "Stomach cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Stomach",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of stomach cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the stomach system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent indigestion",
+      "early fullness",
+      "upper abdominal pain",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out stomach cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "ovarian-cancer",
+    "name": "Ovarian cancer",
+    "medicalTerm": "Ovarian cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Ovaries",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of ovarian cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the ovaries system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent bloating",
+      "pelvic pain",
+      "early satiety",
+      "urinary urgency"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out ovarian cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "prostate-cancer",
+    "name": "Prostate cancer",
+    "medicalTerm": "Prostate cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Prostate",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of prostate cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the prostate system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Often silent early",
+      "weak stream",
+      "blood in urine",
+      "bone pain later"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out prostate cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "bladder-cancer",
+    "name": "Bladder cancer",
+    "medicalTerm": "Bladder cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Bladder",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of bladder cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bladder system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Blood in urine",
+      "frequent urination",
+      "painful urination",
+      "urgency"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out bladder cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "kidney-cancer",
+    "name": "Kidney cancer",
+    "medicalTerm": "Kidney cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Kidneys",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of kidney cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the kidneys system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Blood in urine",
+      "flank pain",
+      "weight loss",
+      "fatigue"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out kidney cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "brain-tumor",
+    "name": "Brain tumor",
+    "medicalTerm": "Brain tumor",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Brain",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of brain tumor. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the brain system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Progressive headache",
+      "seizures",
+      "weakness",
+      "vision or speech changes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out brain tumor?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "lymphoma",
+    "name": "Lymphoma",
+    "medicalTerm": "Lymphoma",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Lymphatic system",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of lymphoma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lymphatic system system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Painless enlarged nodes",
+      "fever",
+      "night sweats",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out lymphoma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "leukemia",
+    "name": "Leukemia",
+    "medicalTerm": "Leukemia",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Blood and marrow",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of leukemia. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the blood and marrow system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Fatigue",
+      "recurrent infections",
+      "easy bruising",
+      "bone pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out leukemia?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "melanoma",
+    "name": "Melanoma",
+    "medicalTerm": "Melanoma",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of melanoma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Changing mole",
+      "irregular border",
+      "varied colors",
+      "itching or bleeding"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out melanoma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "osteosarcoma",
+    "name": "Osteosarcoma",
+    "medicalTerm": "Osteosarcoma",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Bone",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of osteosarcoma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bone system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Persistent bone pain",
+      "swelling",
+      "limp",
+      "night pain"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out osteosarcoma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "testicular-cancer",
+    "name": "Testicular cancer",
+    "medicalTerm": "Testicular cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Testicle",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of testicular cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the testicle system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Painless lump",
+      "testicle size change",
+      "scrotal heaviness",
+      "dull groin ache"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out testicular cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "pancreatic-cancer",
+    "name": "Pancreatic cancer",
+    "medicalTerm": "Pancreatic cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Pancreas",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of pancreatic cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the pancreas system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Jaundice",
+      "upper abdominal pain",
+      "back pain",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out pancreatic cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "liver-cancer",
+    "name": "Liver cancer",
+    "medicalTerm": "Liver cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Liver",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of liver cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the liver system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Upper abdominal pain",
+      "weight loss",
+      "appetite loss",
+      "jaundice"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out liver cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "esophageal-cancer",
+    "name": "Esophageal cancer",
+    "medicalTerm": "Esophageal cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Esophagus",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of esophageal cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the esophagus system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Progressive swallowing difficulty",
+      "painful swallowing",
+      "weight loss",
+      "chest discomfort"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out esophageal cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "oral-cancer",
+    "name": "Oral cancer",
+    "medicalTerm": "Oral cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Mouth",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of oral cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the mouth system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Non-healing mouth ulcer",
+      "red or white patch",
+      "mouth pain",
+      "swallowing difficulty"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out oral cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "thyroid-cancer",
+    "name": "Thyroid cancer",
+    "medicalTerm": "Thyroid cancer",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Thyroid",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of thyroid cancer. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the thyroid system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Neck lump",
+      "hoarseness",
+      "swallowing difficulty",
+      "swollen neck nodes"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out thyroid cancer?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "non-hodgkin-lymphoma",
+    "name": "Non-Hodgkin lymphoma",
+    "medicalTerm": "Non-Hodgkin lymphoma",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Lymphatic system",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of non-hodgkin lymphoma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the lymphatic system system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Painless nodes",
+      "fever",
+      "night sweats",
+      "weight loss"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out non-hodgkin lymphoma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "multiple-myeloma",
+    "name": "Multiple myeloma",
+    "medicalTerm": "Multiple myeloma",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Bone marrow",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of multiple myeloma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the bone marrow system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Bone pain",
+      "fatigue",
+      "recurrent infections",
+      "thirst or constipation"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out multiple myeloma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "basal-cell-carcinoma",
+    "name": "Basal cell carcinoma",
+    "medicalTerm": "Basal cell carcinoma",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of basal cell carcinoma. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Pearly bump",
+      "non-healing sore",
+      "visible vessels",
+      "bleeding lesion"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out basal cell carcinoma?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
+    }
+  },
+  {
+    "id": "squamous-cell-carcinoma-of-skin",
+    "name": "Squamous cell carcinoma of skin",
+    "medicalTerm": "Squamous cell carcinoma of skin",
+    "icd10": "",
+    "category": "Cancer",
+    "organSystem": "Skin",
+    "bodyPart": "general",
+    "urgency": "routine",
+    "urgencyText": "Discuss with a healthcare professional",
+    "readTime": "3 min read",
+    "summary": "Educational overview of squamous cell carcinoma of skin. Symptoms and severity vary; persistent, worsening, or unexplained symptoms should be assessed by a qualified clinician.",
+    "pathology": "This condition affects the skin system. Diagnosis depends on clinical history, examination, and appropriate investigations.",
+    "hallmarkSymptoms": [
+      "Firm red nodule",
+      "scaly patch",
+      "non-healing sore",
+      "tender growth"
+    ],
+    "atypicalSigns": [
+      "Symptoms may be mild or absent in early disease",
+      "Presentation can vary with age and other health conditions",
+      "Some features overlap with other conditions"
+    ],
+    "riskFactors": [
+      "Personal or family medical history where relevant",
+      "Age and underlying health conditions",
+      "Environmental, infectious, lifestyle, or genetic factors depending on the condition"
+    ],
+    "diagnosticTests": [
+      "Clinical history and physical examination",
+      "Tests selected according to symptoms and suspected cause",
+      "Laboratory tests or imaging when clinically indicated"
+    ],
+    "selfCare": [
+      "Seek professional assessment for persistent or worsening symptoms",
+      "Record symptom onset, duration, and possible triggers",
+      "Do not change prescribed treatment without medical advice"
+    ],
+    "redFlags": [
+      "Sudden severe or rapidly worsening symptoms",
+      "Chest pain, severe breathlessness, fainting, or new confusion",
+      "New weakness, speech difficulty, or loss of consciousness"
+    ],
+    "askDoctor": [
+      "What findings would help confirm or rule out squamous cell carcinoma of skin?",
+      "Which symptoms should prompt urgent medical care?",
+      "What follow-up or monitoring is appropriate?"
+    ],
+    "source": {
+      "organization": "MedlinePlus, U.S. National Library of Medicine",
+      "title": "MedlinePlus health topics",
+      "url": "https://medlineplus.gov/healthtopics.html"
     }
   }
 ];
