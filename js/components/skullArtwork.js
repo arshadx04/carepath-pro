@@ -19,7 +19,7 @@ export function renderSkullSVG(selectedRegion = 'head', view = 'front') {
       <text class="skull-caption" x="158" y="119" text-anchor="middle">SKULL · LATERAL</text>
     </g>`;
   return `
-    <g class="skull-illustration skull-front-view" aria-label="Anime-inspired anterior skull anatomy">
+    <g class="skull-illustration" aria-label="Anime-inspired anterior skull anatomy">
       ${bone('frontal bone','M150 20 C133 20 120 32 119 50 Q117 62 124 70 L132 61 Q137 51 150 52 Q163 51 168 61 L176 70 Q183 62 181 50 C180 32 167 20 150 20Z','skull-frontal')}
       ${bone('parietal bones','M121 39 Q126 23 145 22 L145 48 Q134 48 128 59 L122 62 Q118 51 121 39Z M179 39 Q174 23 155 22 L155 48 Q166 48 172 59 L178 62 Q182 51 179 39Z','skull-parietal')}
       ${bone('temporal bones','M120 51 Q116 64 126 77 L134 72 L132 58 L126 49Z M180 51 Q184 64 174 77 L166 72 L168 58 L174 49Z','skull-temporal')}
