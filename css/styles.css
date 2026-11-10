@@ -91,6 +91,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-main);
 }
 
 a {
@@ -316,6 +319,23 @@ body.dark-theme .site-header {
   flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 40px;
+}
+
+/* Keep the primary homepage actions visibly distinct across browser defaults. */
+.hero-cta-group > .btn-cta-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: 1px solid var(--primary);
+  font-family: var(--font-sans);
+  line-height: 1.25;
+}
+
+.hero-cta-group > .btn-cta-secondary {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-sans);
+  line-height: 1.25;
 }
 
 .btn-cta-primary {
