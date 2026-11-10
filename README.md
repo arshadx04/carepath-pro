@@ -52,18 +52,24 @@ CarePath Pro is an educational web project for exploring symptom associations an
 
 ## 🚀 How to Run Locally
 
-### Option 1: Python Built-in Server (Recommended)
-Open PowerShell or your terminal in this directory and run:
+Use Node.js 22 or newer. No third-party packages are required.
+
 ```bash
-python -m http.server 8080
-```
-Then open your browser at:
-```
-http://localhost:8080
+npm start
 ```
 
-### Option 2: Direct File Execution
-You can also directly double-click `index.html` or open it in Google Chrome, Microsoft Edge, Safari, or Mozilla Firefox.
+Open `http://localhost:8080`. The Node server serves the existing site and API from the same origin. For a custom port, set `PORT`; for a network-facing deployment, set `HOST=0.0.0.0` behind an HTTPS reverse proxy.
+
+The static-only Python server and direct-file options still serve the browser demo, but they do not provide the backend API.
+
+### Backend API
+
+- `GET /api/health` — service health.
+- `GET /api/catalog/symptoms` — symptom and body-region catalog.
+- `GET /api/catalog/conditions` — condition library.
+- `POST /api/check-ins/evaluate` — evaluate an educational check-in using the existing heuristic engine. Send JSON shaped like `{ "selectedSymptoms": ["headache_throbbing"], "redFlags": [], "profile": {}, "timing": {}, "severity": { "painScore": 2 } }`.
+
+The evaluation endpoint is stateless: requests and answers are not saved. Responses omit profile details and include an educational-use disclaimer. Do not send real patient identifiers or sensitive medical records. This API is not a clinical service and must not be used for diagnosis, treatment, or emergency decisions.
 
 ---
 
