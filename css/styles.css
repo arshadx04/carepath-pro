@@ -2700,3 +2700,15 @@ body.dark-theme .zone-label {
   opacity: .42;
   stroke-width: 1;
 }
+
+/* Anime-inspired skull artwork — CarePath Pro clinical teal palette. */
+.skull-illustration { pointer-events: none; }
+.skull-bone { fill:#e8f3ed; stroke:#477c76; stroke-width:1.05; stroke-linejoin:round; stroke-linecap:round; pointer-events:all; cursor:pointer; vector-effect:non-scaling-stroke; transition:fill .18s ease,stroke .18s ease,filter .18s ease; }
+.skull-frontal { fill:#d9eee6; } .skull-parietal { fill:#eaf4ed; } .skull-temporal { fill:#c9e3dc; }
+.skull-zygomatic { fill:#b8d9d0; } .skull-maxilla { fill:#e6eee2; } .skull-nasal { fill:#c3ded5; } .skull-mandible { fill:#d5e9df; }
+.skull-bone:hover,.skull-bone:focus-visible,.skull-bone.selected { fill:#72b9aa; stroke:#0f766e; stroke-width:1.8; outline:none; filter:url(#glowEffect); }
+.skull-cavity { fill:#345d59; stroke:#477c76; stroke-width:.8; pointer-events:none; } .skull-cavity.nasal { fill:#244b48; }
+.skull-line,.skull-highlight,.skull-teeth { fill:none; stroke:#477c76; stroke-width:.8; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
+.skull-highlight { stroke:rgba(255,255,255,.9); stroke-width:1.15; } .skull-teeth { stroke:#78988c; stroke-width:1.15; }
+.skull-caption { fill:#477c76; font-size:3.8px; font-weight:800; letter-spacing:.8px; pointer-events:none; }
+body.dark-theme .skull-bone { stroke:#76aaa0; } body.dark-theme .skull-caption { fill:#b5e5dc; }
