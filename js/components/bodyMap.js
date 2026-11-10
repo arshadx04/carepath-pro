@@ -1,191 +1,133 @@
 /**
- * CarePath Pro - Interactive Anatomical Body Map Component
- * Provides visual anatomical point-and-click exploration
+ * CarePath Pro - Interactive Anatomical Body Map
+ * Educational regional explorer; SVG artwork is illustrative, not diagnostic.
  */
-
 import { symptomDatabase } from '../data/symptoms.js';
 import { diseaseDatabase } from '../data/diseases.js';
+
+const esc = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+}[char]));
 
 export class BodyMap {
   constructor(containerId, options = {}) {
     this.container = document.getElementById(containerId);
     this.onSelectRegion = options.onSelectRegion || (() => {});
     this.selectedRegion = 'chest';
-    this.view = 'front'; // 'front' or 'back'
+    this.view = 'front';
+  }
+
+  zone(region, path, extra = '') {
+    return `<path class="anatomical-zone ${extra} ${this.selectedRegion === region ? 'selected' : ''}"
+      data-region="${region}" tabindex="0" role="button"
+      aria-label="Select ${region}" d="${path}"/>`;
+  }
+
+  renderAnatomy() {
+    const back = this.view === 'back';
+    const head = `
+      <path class="anatomical-zone head-zone ${this.selectedRegion === 'head' ? 'selected' : ''}"
+        data-region="head" tabindex="0" role="button" aria-label="Head"
+        d="M150 22 C130 22 119 39 120 61 C120 82 131 98 145 103 L145 111
+           Q150 115 155 111 L155 103 C169 98 180 82 180 61 C181 39 170 22 150 22Z"/>
+      <path class="anatomy-detail" d="M132 58 Q140 54 145 58 M155 58 Q160 54 168 58
+        M150 62 L147 75 Q150 79 153 75 M140 87 Q150 92 160 87"/>
+      <path class="anatomy-detail" d="M140 99 Q150 105 160 99"/>
+    `;
+    const neck = this.zone('throat', 'M139 103 Q150 109 161 103 L165 127 Q150 135 135 127Z', 'neck-zone');
+    const shoulders = back ? `
+      ${this.zone('shoulder','M134 119 Q111 108 96 123 Q84 138 96 158 Q108 169 126 154 L143 137Z','shoulder-zone')}
+      ${this.zone('shoulder','M166 119 Q189 108 204 123 Q216 138 204 158 Q192 169 174 154 L157 137Z','shoulder-zone')}
+      ${this.zone('shoulder','M116 145 Q128 130 141 143 L143 180 Q130 193 116 181 Q108 166 116 145Z','scapula-zone')}
+      ${this.zone('shoulder','M184 145 Q172 130 159 143 L157 180 Q170 193 184 181 Q192 166 184 145Z','scapula-zone')}
+    ` : `
+      ${this.zone('shoulder','M132 119 Q111 109 96 124 Q85 140 99 159 Q111 168 128 151 L143 135Z','shoulder-zone')}
+      ${this.zone('shoulder','M168 119 Q189 109 204 124 Q215 140 201 159 Q189 168 172 151 L157 135Z','shoulder-zone')}
+    `;
+    const arms = `
+      ${this.zone('limbs','M99 132 Q89 133 84 149 L68 207 Q64 222 70 237 L79 241 Q87 225 91 209 L111 154Z','arm-zone')}
+      ${this.zone('limbs','M201 132 Q211 133 216 149 L232 207 Q236 222 230 237 L221 241 Q213 225 209 209 L189 154Z','arm-zone')}
+      <path class="anatomy-detail" d="M84 238 Q78 250 79 265 Q80 274 87 273 Q93 268 91 256 L91 242
+        M216 238 Q222 250 221 265 Q220 274 213 273 Q207 268 209 256 L209 242"/>
+      ${this.zone('limbs','M77 261 Q68 270 72 283 Q75 292 84 286 L91 272Z','hand-zone')}
+      ${this.zone('limbs','M223 261 Q232 270 228 283 Q225 292 216 286 L209 272Z','hand-zone')}
+    `;
+    const torso = back ? `
+      <path class="posterior-body" aria-hidden="true" d="M125 126 Q110 126 105 148
+        L111 205 Q112 231 119 255 L127 287 Q136 299 150 299 Q164 299 173 287
+        L181 255 Q188 231 189 205 L195 148 Q190 126 175 126
+        Q164 137 150 139 Q136 137 125 126Z"/>
+      <path class="posterior-muscle" d="M136 117 Q150 128 164 117 L177 137
+        Q166 145 150 146 Q134 145 123 137Z"/>
+      ${this.zone('back','M119 174 Q133 160 143 174 L143 257 Q132 267 121 255 Q114 218 119 174Z M181 174 Q167 160 157 174 L157 257 Q168 267 179 255 Q186 218 181 174Z','back-zone')}
+      <g class="rib-cage" aria-label="Posterior rib cage">
+        <path d="M145 151 Q126 142 115 158 Q112 167 128 171 L145 168 M155 151 Q174 142 185 158 Q188 167 172 171 L155 168
+        M145 169 Q125 162 116 179 Q114 188 132 191 L145 186 M155 169 Q175 162 184 179 Q186 188 168 191 L155 186
+        M145 188 Q128 182 120 199 Q120 208 137 210 L145 205 M155 188 Q172 182 180 199 Q180 208 163 210 L155 205
+        M145 207 Q132 202 126 218 Q127 226 141 227 M155 207 Q168 202 174 218 Q173 226 159 227"/>
+      </g>
+      <g class="vertebral-column">
+        ${Array.from({length: 18}, (_,i) => `<rect class="anatomical-zone vertebra ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="${146-(i>12?1:0)}" y="${143+i*7.2}" width="${8+(i>12?2:0)}" height="5.6" rx="2"/>`).join('')}
+      </g>
+      <path class="spine-center-line" d="M150 139 Q148 220 150 280"/><text x="150" y="242" class="zone-label" text-anchor="middle">Back</text><text x="150" y="293" class="zone-label" text-anchor="middle">Spine</text>
+      <text x="150" y="242" class="zone-label" text-anchor="middle">Back</text>
+      <text x="150" y="293" class="zone-label" text-anchor="middle">Spine</text>
+    ` : `
+      <path class="anterior-body" aria-hidden="true" d="M125 126 Q110 126 105 148
+        L111 205 Q112 231 119 255 L127 287 Q136 299 150 299 Q164 299 173 287
+        L181 255 Q188 231 189 205 L195 148 Q190 126 175 126
+        Q164 137 150 139 Q136 137 125 126Z"/>
+      ${this.zone('chest','M119 139 Q134 130 150 140 Q166 130 181 139 L185 196 Q169 205 150 198 Q131 205 115 196Z','chest-zone')}
+      <path class="anatomy-detail" d="M150 143 L150 194 M120 159 Q137 150 148 160 M152 160 Q163 150 180 159
+        M120 176 Q137 168 148 178 M152 178 Q163 168 180 176"/>
+      ${this.zone('abdomen','M116 199 Q150 207 184 199 L179 258 Q150 268 121 258Z','abdomen-zone')}
+      <path class="anatomy-detail" d="M150 205 L150 257 M128 224 Q150 231 172 224 M130 245 Q150 251 170 245"/>
+      ${this.zone('pelvis','M121 260 Q150 269 179 260 L171 299 Q150 309 129 299Z','pelvis-zone')}
+      <path class="anatomy-detail" d="M150 269 L150 299 M129 277 Q139 286 150 287 Q161 286 171 277"/>
+    `;
+    const legs = `
+      ${this.zone('limbs','M128 292 Q139 300 148 299 L146 365 L140 422 L135 475 Q131 487 120 484 L117 474 L122 420 L119 363Z','leg-zone')}
+      ${this.zone('limbs','M152 299 Q161 300 172 292 L181 363 L178 420 L183 474 L180 484 Q169 487 165 475 L160 422 L154 365Z','leg-zone')}
+      <path class="anatomy-detail" d="M124 359 Q135 366 146 361 M154 361 Q165 366 176 359
+        M122 416 Q133 423 141 416 M159 416 Q167 423 178 416
+        M121 474 Q130 478 136 474 M164 474 Q174 478 181 474"/>
+      ${this.zone('limbs','M120 480 Q132 477 138 483 L137 499 Q126 505 112 500 Q107 495 120 480Z','foot-zone')}
+      ${this.zone('limbs','M162 483 Q168 477 180 480 Q193 495 188 500 Q174 505 163 499Z','foot-zone')}
+    `;
+    return `
+      <svg viewBox="0 0 300 520" class="mannequin-svg anatomy-illustration" role="group"
+        aria-label="Interactive Human Body Anatomy - ${this.view} view">
+        <defs>
+          <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d8eee9"/><stop offset="100%" stop-color="#9fcac2"/>
+          </linearGradient>
+          <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+        <g class="anatomy-figure ${back ? "back-anatomy" : "front-anatomy"}">
+          ${head}${neck}${shoulders}${torso}${arms}${legs}
+        </g>
+      </svg>`;
   }
 
   render() {
     if (!this.container) return;
-
-    const backAnatomy = this.view === 'back' ? `
-      <g class="back-anatomy">
-        <!-- Full posterior torso silhouette anchors the anatomy in a recognizable human form -->
-        <path class="posterior-body" aria-hidden="true"
-              d="M111,121
-                 C120,113 132,112 141,119
-                 L150,128 L159,119
-                 C168,112 180,113 189,121
-                 C197,133 200,148 195,165
-                 C191,181 187,196 188,214
-                 C190,239 187,263 174,282
-                 L166,293 L134,293 L126,282
-                 C113,263 110,239 112,214
-                 C113,196 109,181 105,165
-                 C100,148 103,133 111,121 Z" />
-        <!-- Neck and trapezius form a recognizable transition into the shoulders -->
-        <!-- Neck and trapezius form a recognizable transition into the shoulders -->
-        <path class="posterior-muscle" d="M139,96 Q150,105 161,96 L168,119 Q177,122 190,126 L181,143 Q168,137 160,143 L150,151 L140,143 Q132,137 119,143 L110,126 Q123,122 132,119 Z" />
-        <!-- Shoulder caps -->
-        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
-              d="M132,115 Q113,108 99,121 Q88,132 96,151 Q103,163 117,157 L137,140 Z" />
-        <path class="anatomical-zone shoulder-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
-              d="M168,115 Q187,108 201,121 Q212,132 204,151 Q197,163 183,157 L163,140 Z" />
-        <!-- Shoulder blades -->
-        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
-              d="M113,145 Q124,132 140,141 L143,174 Q133,188 119,183 Q108,170 113,145 Z" />
-        <path class="anatomical-zone scapula-zone ${this.selectedRegion === 'shoulder' ? 'selected' : ''}" data-region="shoulder"
-              d="M187,145 Q176,132 160,141 L157,174 Q167,188 181,183 Q192,170 187,145 Z" />
-        <!-- Posterior rib cage: paired curved ribs around the spine -->
-        <g class="rib-cage" aria-label="Posterior rib cage">
-          <path d="M145,151 Q129,145 115,154 Q109,160 116,166 Q128,170 145,166" />
-          <path d="M155,151 Q171,145 185,154 Q191,160 184,166 Q172,170 155,166" />
-          <path d="M144,166 Q127,161 114,171 Q108,177 117,184 Q129,188 144,181" />
-          <path d="M156,166 Q173,161 186,171 Q192,177 183,184 Q171,188 156,181" />
-          <path d="M144,183 Q128,178 117,190 Q112,197 122,202 Q133,205 145,198" />
-          <path d="M156,183 Q172,178 183,190 Q188,197 178,202 Q167,205 155,198" />
-          <path d="M145,200 Q132,196 123,207 Q119,214 129,218 Q137,220 145,215" />
-          <path d="M155,200 Q168,196 177,207 Q181,214 171,218 Q163,220 155,215" />
-        </g>
-        <!-- Separate back region, visually distinct from shoulder blades and spine -->
-        <path class="anatomical-zone back-zone ${this.selectedRegion === 'back' ? 'selected' : ''}" data-region="back"
-              d="M124,190 Q137,184 143,190 L143,266 Q133,273 123,263 Q116,235 124,190 Z
-                 M176,190 Q163,184 157,190 L157,266 Q167,273 177,263 Q184,235 176,190 Z" />
-        <!-- Individual vertebrae make the spinal column recognizable -->
-        <g class="vertebral-column">
-          ${Array.from({ length: 12 }, (_, index) => {
-            const y = 148 + index * 10;
-            const width = index < 4 ? 7 : index < 8 ? 8 : 9;
-            return `<rect class="anatomical-zone vertebra ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="${150 - width / 2}" y="${y}" width="${width}" height="7" rx="2" />`;
-          }).join('')}
-        </g>
-        <path d="M150,145 L150,272" class="spine-center-line" />
-        <text x="150" y="291" class="zone-label" text-anchor="middle">Spine</text>
-        <text x="150" y="235" class="zone-label" text-anchor="middle">Back</text>
-        <text x="105" y="173" class="zone-label" text-anchor="middle">L</text>
-        <text x="195" y="173" class="zone-label" text-anchor="middle">R</text>
-      </g>
-    ` : '';
-
-    const frontNeckChest = this.view === 'front' ? `
-              <!-- Neck & Throat -->
-              <path class="anatomical-zone ${this.selectedRegion === 'throat' ? 'selected' : ''}" 
-                    data-region="throat" 
-                    d="M140,100 L160,100 L163,118 L137,118 Z" />
-              <circle cx="150" cy="110" r="4" class="zone-pin ${this.selectedRegion === 'throat' ? 'active' : ''}" data-region="throat" />
-
-              <!-- Chest & Respiratory -->
-              <path class="anatomical-zone ${this.selectedRegion === 'chest' ? 'selected' : ''}" 
-                    data-region="chest" 
-                    d="M115,120 L185,120 L195,190 L105,190 Z" />
-              <circle cx="150" cy="155" r="6" class="zone-pin ${this.selectedRegion === 'chest' ? 'active' : ''}" data-region="chest" />
-              <text x="150" y="160" class="zone-label" text-anchor="middle">Chest / Lungs</text>
-
-` : '';
-    const frontAbdomen = this.view === 'front' ? `
-              <!-- Abdomen & Digestive -->
-              <path class="anatomical-zone ${this.selectedRegion === 'abdomen' ? 'selected' : ''}" 
-                    data-region="abdomen" 
-                    d="M110,192 L190,192 L185,260 L115,260 Z" />
-              <circle cx="150" cy="225" r="6" class="zone-pin ${this.selectedRegion === 'abdomen' ? 'active' : ''}" data-region="abdomen" />
-              <text x="150" y="230" class="zone-label" text-anchor="middle">Abdomen</text>
-
-` : '';
-    const frontPelvis = this.view === 'front' ? `
-
-              <!-- Pelvis & Bladder -->
-              <path class="anatomical-zone ${this.selectedRegion === 'pelvis' ? 'selected' : ''}" 
-                    data-region="pelvis" 
-                    d="M116,262 L184,262 L172,305 L128,305 Z" />
-              <circle cx="150" cy="285" r="5" class="zone-pin ${this.selectedRegion === 'pelvis' ? 'active' : ''}" data-region="pelvis" />
-              <text x="150" y="290" class="zone-label" text-anchor="middle">Pelvis</text>
-` : '';
-
+    const regions = [...new Map(symptomDatabase.bodyRegions.map(region => [region.id, region])).values()];
     this.container.innerHTML = `
       <div class="body-explorer-wrapper">
-        <div class="body-view-controls">
-          <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">
-            <span>Front View</span>
-          </button>
-          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">
-            <span>Back View</span>
-          </button>
+        <div class="body-view-controls" role="group" aria-label="Anatomy view">
+          <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">Front View</button>
+          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Back View</button>
         </div>
-
         <div class="body-interactive-stage">
-          <!-- Anatomical SVG Diagram -->
-          <div class="svg-mannequin-container">
-            <svg viewBox="0 0 300 520" class="mannequin-svg" role="group" aria-label="Interactive Human Body Anatomy - ${this.view} view">
-              <defs>
-                <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#0d9488" stop-opacity="0.15" />
-                  <stop offset="100%" stop-color="#0f766e" stop-opacity="0.35" />
-                </linearGradient>
-                <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-
-              <!-- Base Body Silhouette -->
-              <!-- Head -->
-              <path class="anatomical-zone ${this.selectedRegion === 'head' ? 'selected' : ''}" 
-                    data-region="head" 
-                    d="M150,25 C132,25 120,40 120,62 C120,84 133,100 150,100 C167,100 180,84 180,62 C180,40 168,25 150,25 Z" />
-              <circle cx="150" cy="62" r="5" class="zone-pin ${this.selectedRegion === 'head' ? 'active' : ''}" data-region="head" />
-              <text x="150" y="45" class="zone-label" text-anchor="middle">Head</text>
-
-${frontNeckChest}
-
-              <!-- Arms / Upper Limbs (visible from both views) -->
-              <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
-                    data-region="limbs" 
-                    d="M102,122 L80,185 L72,255 L82,255 L96,192 L106,140 Z M198,122 L220,185 L228,255 L218,255 L204,192 L194,140 Z" />
-              <circle cx="78" cy="200" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
-              <circle cx="222" cy="200" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
-
-${frontAbdomen}
-
-              <!-- Posterior anatomy: upper back, shoulder blades and spine -->
-              ${backAnatomy}
-${frontPelvis}
-
-              <!-- Legs & Lower Limbs (visible from both views) -->
-              <path class="anatomical-zone ${this.selectedRegion === 'limbs' ? 'selected' : ''}" 
-                    data-region="limbs" 
-                    d="M125,308 L148,308 L145,410 L140,490 L125,490 L118,410 L116,350 Z M152,308 L175,308 L182,350 L180,410 L175,490 L160,490 L155,410 Z" />
-              <circle cx="132" cy="420" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
-              <circle cx="168" cy="420" r="5" class="zone-pin ${this.selectedRegion === 'limbs' ? 'active' : ''}" data-region="limbs" />
-              <text x="150" y="450" class="zone-label" text-anchor="middle">Legs / Joints</text>
-            </svg>
-          </div>
-
-          <!-- Region Quick Details Sidebar -->
-          <div class="body-region-sidebar" id="bodyRegionDetail">
-            ${this.getRegionDetailHTML(this.selectedRegion)}
-          </div>
+          <div class="svg-mannequin-container">${this.renderAnatomy()}</div>
+          <div class="body-region-sidebar" id="bodyRegionDetail">${this.getRegionDetailHTML(this.selectedRegion)}</div>
         </div>
-
-        <!-- Quick Region Selector Chips -->
         <div class="region-chips-grid">
-          ${symptomDatabase.bodyRegions.map(reg => `
-            <button type="button" class="region-chip ${this.selectedRegion === reg.id ? 'active' : ''}" data-region="${reg.id}">
-              <span class="chip-name">${reg.name}</span>
-            </button>
-          `).join('')}
+          ${regions.map(reg => `<button type="button" class="region-chip ${this.selectedRegion === reg.id ? 'active' : ''}" data-region="${esc(reg.id)}"><span class="chip-name">${esc(reg.name)}</span></button>`).join('')}
         </div>
-      </div>
-    `;
-
+      </div>`;
     this.bindEvents();
   }
 
@@ -193,90 +135,36 @@ ${frontPelvis}
     const regObj = symptomDatabase.bodyRegions.find(r => r.id === regionId) || symptomDatabase.bodyRegions[0];
     const regionSymptoms = symptomDatabase.symptoms.filter(s => s.region === regionId);
     const regionDiseases = diseaseDatabase.filter(d => d.bodyPart === regionId || d.category.toLowerCase().includes(regionId));
-
     return `
       <div class="region-detail-card">
-        <div class="detail-header">
-          <span class="detail-tag">ANATOMICAL ZONE</span>
-          <h3 class="detail-title">${regObj.name}</h3>
-          <p class="detail-desc">${regObj.description}</p>
-        </div>
-
-        <div class="detail-section">
-          <h4>Common Symptoms to Notice (${regionSymptoms.length}):</h4>
-          <div class="symptom-mini-list">
-            ${regionSymptoms.slice(0, 5).map(s => `
-              <div class="symptom-mini-badge ${s.isRedFlag ? 'red-flag' : ''}">
-                ${s.isRedFlag ? '<span class="rf-icon">⚠️</span>' : ''} ${s.label}
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <div class="detail-section">
-          <h4>Clinical Conditions in this Region (${regionDiseases.length}):</h4>
-          <div class="disease-mini-pills">
-            ${regionDiseases.slice(0, 4).map(d => `
-              <button type="button" class="disease-pill-btn" data-disease="${d.id}">
-                ${d.name} <span class="arr">→</span>
-              </button>
-            `).join('')}
-          </div>
-        </div>
-
-        <button type="button" class="btn-start-region-assessment" data-region="${regionId}">
-          <span>Assess symptoms in ${regObj.name}</span>
-        </button>
-      </div>
-    `;
+        <div class="detail-header"><span class="detail-tag">ANATOMICAL ZONE</span>
+          <h3 class="detail-title">${esc(regObj.name)}</h3><p class="detail-desc">${esc(regObj.description)}</p></div>
+        <div class="detail-section"><h4>Common Symptoms to Notice (${regionSymptoms.length}):</h4>
+          <div class="symptom-mini-list">${regionSymptoms.slice(0,5).map(s => `<div class="symptom-mini-badge ${s.isRedFlag ? 'red-flag' : ''}">${s.isRedFlag ? '⚠️ ' : ''}${esc(s.label)}</div>`).join('')}</div></div>
+        <div class="detail-section"><h4>Clinical Conditions in this Region (${regionDiseases.length}):</h4>
+          <div class="disease-mini-pills">${regionDiseases.slice(0,4).map(d => `<button type="button" class="disease-pill-btn" data-disease="${esc(d.id)}">${esc(d.name)} <span class="arr">→</span></button>`).join('')}</div></div>
+        <button type="button" class="btn-start-region-assessment" data-region="${esc(regionId)}">Assess symptoms in ${esc(regObj.name)}</button>
+      </div>`;
   }
 
   bindEvents() {
-    // Click on SVG zones and pins
     this.container.querySelectorAll('.anatomical-zone, .zone-pin').forEach(elem => {
-      elem.addEventListener('click', (e) => {
-        const reg = elem.getAttribute('data-region');
-        if (reg) this.selectRegion(reg);
-      });
+      const activate = () => { const region = elem.getAttribute('data-region'); if (region) this.selectRegion(region); };
+      elem.addEventListener('click', activate);
+      elem.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); } });
     });
-
-    // Toggle view buttons (front vs back)
-    this.container.querySelectorAll('.btn-toggle-view').forEach(btn => {
-      btn.addEventListener('click', () => {
-        this.view = btn.getAttribute('data-view');
-        // Keep the selected detail panel aligned with the anatomy visible in this view.
-        if (this.view === 'back' && ['chest', 'abdomen', 'pelvis', 'throat'].includes(this.selectedRegion)) {
-          this.selectedRegion = 'spine';
-        } else if (this.view === 'front' && this.selectedRegion === 'spine') {
-          this.selectedRegion = 'chest';
-        }
-        this.render();
-      });
-    });
-
-    // Click on chips
-    this.container.querySelectorAll('.region-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const reg = chip.getAttribute('data-region');
-        if (reg) this.selectRegion(reg);
-      });
-    });
-
-    // Click on disease mini pill inside sidebar
-    this.container.querySelectorAll('.disease-pill-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const diseaseId = btn.getAttribute('data-disease');
-        window.dispatchEvent(new CustomEvent('carepath:open-disease', { detail: { diseaseId } }));
-      });
-    });
-
-    // Start assessment with pre-filtered region
+    this.container.querySelectorAll('.btn-toggle-view').forEach(btn => btn.addEventListener('click', () => {
+      this.view = btn.getAttribute('data-view');
+      if (this.view === 'back' && ['chest','abdomen','pelvis','throat'].includes(this.selectedRegion)) this.selectedRegion = 'spine';
+      else if (this.view === 'front' && ['spine','back','shoulder'].includes(this.selectedRegion)) this.selectedRegion = 'chest';
+      this.render();
+    }));
+    this.container.querySelectorAll('.region-chip').forEach(chip => chip.addEventListener('click', () => this.selectRegion(chip.getAttribute('data-region'))));
+    this.container.querySelectorAll('.disease-pill-btn').forEach(btn => btn.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('carepath:open-disease', { detail: { diseaseId: btn.getAttribute('data-disease') } }));
+    }));
     const assessBtn = this.container.querySelector('.btn-start-region-assessment');
-    if (assessBtn) {
-      assessBtn.addEventListener('click', () => {
-        window.dispatchEvent(new CustomEvent('carepath:start-assessment', { detail: { region: this.selectedRegion } }));
-      });
-    }
+    if (assessBtn) assessBtn.addEventListener('click', () => window.dispatchEvent(new CustomEvent('carepath:start-assessment', { detail: { region: this.selectedRegion } })));
   }
 
   selectRegion(regionId) {
@@ -285,5 +173,4 @@ ${frontPelvis}
     this.onSelectRegion(regionId);
   }
 }
-
 export default BodyMap;

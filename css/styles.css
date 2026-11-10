@@ -2582,3 +2582,84 @@ body.dark-theme .site-header {
   stroke-linejoin: round;
   pointer-events: none;
 }
+
+
+/* Anatomical illustration refresh: clearer silhouette, landmarks and interaction */
+.anatomy-illustration {
+  width: min(100%, 360px);
+  max-height: 620px;
+  overflow: visible;
+}
+.anatomy-figure .anatomical-zone {
+  fill: url(#bodyGrad);
+  stroke: #397f78;
+  stroke-width: 1.35;
+  stroke-linejoin: round;
+  cursor: pointer;
+  vector-effect: non-scaling-stroke;
+  transition: fill .18s ease, stroke .18s ease, filter .18s ease;
+}
+.anatomy-figure .anatomical-zone:hover,
+.anatomy-figure .anatomical-zone:focus-visible,
+.anatomy-figure .anatomical-zone.selected {
+  fill: rgba(13, 148, 136, .52);
+  stroke: #0f766e;
+  stroke-width: 2.5;
+  outline: none;
+  filter: url(#glowEffect);
+}
+.anatomy-detail,
+.spine-center-line {
+  fill: none;
+  stroke: #477c76;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .82;
+  pointer-events: none;
+}
+.posterior-body,
+.anterior-body {
+  fill: rgba(180, 215, 207, .24);
+  stroke: #6b9d95;
+  stroke-width: 1.2;
+  pointer-events: none;
+}
+.posterior-muscle {
+  fill: rgba(15, 118, 110, .12);
+  stroke: #6b9d95;
+  stroke-width: 1;
+  pointer-events: none;
+}
+.rib-cage {
+  fill: none;
+  stroke: #568b83;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: .8;
+  pointer-events: none;
+}
+.vertebral-column .vertebra {
+  fill: #e5f2ef;
+  stroke: #397f78;
+  stroke-width: 1;
+}
+.zone-label {
+  fill: #245f59;
+  font-size: 9px;
+  font-weight: 800;
+  paint-order: stroke;
+  stroke: rgba(255,255,255,.82);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+body.dark-theme .zone-label {
+  fill: #b5e5dc;
+  stroke: rgba(19,27,46,.78);
+}
+@media (max-width: 720px) {
+  .body-explorer-wrapper { padding: 18px; }
+  .body-interactive-stage { grid-template-columns: 1fr; gap: 18px; }
+  .anatomy-illustration { width: min(100%, 310px); max-height: 540px; }
+}
