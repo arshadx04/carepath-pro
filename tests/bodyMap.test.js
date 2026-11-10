@@ -88,3 +88,13 @@ test('back view renders posterior spine regions without anterior torso hotspots'
 });
 
 test('skull bone hotspots map to the shared head assessment region', () => { const svg=renderSkullSVG('head'); assert.equal((svg.match(/data-region="head"/g)||[]).length,7); assert.match(svg,/aria-label="Select head: frontal bone"/); assert.match(svg,/aria-label="Select head: mandible"/); assert.match(svg,/class="skull-bone skull-mandible selected"/); assert.doesNotMatch(renderSkullSVG('chest'),/skull-bone skull-frontal selected/); });
+
+test('side skull view renders accessible lateral bone hotspots', () => {
+  const svg = renderSkullSVG('head', 'side');
+  assert.match(svg, /skull-side-view/);
+  assert.match(svg, /aria-label="Anime-inspired lateral skull anatomy"/);
+  assert.match(svg, /SKULL · LATERAL/);
+  assert.equal((svg.match(/data-region="head"/g) || []).length, 7);
+  assert.match(svg, /aria-label="Select head: temporal bones"/);
+  assert.match(svg, /aria-label="Select head: mandible"/);
+});
