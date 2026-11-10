@@ -52,7 +52,7 @@ CarePath Pro is an educational web project for exploring symptom associations an
 
 ## 🚀 How to Run Locally
 
-Use Node.js 22 or newer. No third-party packages are required.
+Use Node.js 22.13 or newer. No third-party packages are required. The backend uses Node's built-in SQLite module, which Node currently marks experimental.
 
 ```bash
 npm start
@@ -68,8 +68,13 @@ The static-only Python server and direct-file options still serve the browser de
 - `GET /api/catalog/symptoms` — symptom and body-region catalog.
 - `GET /api/catalog/conditions` — condition library.
 - `POST /api/check-ins/evaluate` — evaluate an educational check-in using the existing heuristic engine. Send JSON shaped like `{ "selectedSymptoms": ["headache_throbbing"], "redFlags": [], "profile": {}, "timing": {}, "severity": { "painScore": 2 } }`.
+- `POST /api/auth/register` and `POST /api/auth/login` — create an account or start a session with `{ "email": "you@example.com", "password": "at least 12 characters" }`.
+- `GET /api/auth/me` and `POST /api/auth/logout` — inspect or end the current session.
+- `GET /api/bookmarks`, `POST /api/bookmarks` with `{ "conditionId": "asthma" }`, and `DELETE /api/bookmarks/:conditionId` — list and manage the signed-in account's saved conditions.
 
-The evaluation endpoint is stateless: requests and answers are not saved. Responses omit profile details and include an educational-use disclaimer. Do not send real patient identifiers or sensitive medical records. This API is not a clinical service and must not be used for diagnosis, treatment, or emergency decisions.
+Accounts store an email address, a salted scrypt password hash, session-token hashes, and saved condition IDs in SQLite. The password and symptom check-in answers are never stored. Guest bookmarks remain in that browser; they are not automatically uploaded when someone signs in. The default database path is `data/carepath.sqlite`; set `CAREPATH_DB_PATH` to use another persistent file. Set `NODE_ENV=production` to enable the Secure cookie flag, and serve the app behind HTTPS. Sessions expire after seven days. Email verification and password reset are not implemented yet.
+
+This account feature is an MVP for the educational demo, not a production clinical service. Node marks its built-in SQLite API experimental, and deployments need persistent disk storage. Do not store patient records or rely on this app for diagnosis, treatment, or emergency decisions.
 
 ---
 
@@ -87,7 +92,7 @@ These are basic software regression checks only. They do not validate clinical s
 
 ## 🌐 Deployment
 
-This is a static browser application with no package installation or build step required. For GitHub Pages, configure the repository under **Settings → Pages** to deploy from the `main` branch and the root (`/`) folder. Confirm the published URL and deployment status in GitHub Pages before sharing it. Test changes on a reviewed branch before merging them into `main`.
+The frontend can still be hosted statically, but account sync requires the Node server. GitHub Pages only serves the static demo. For account sync, deploy the app to a Node-capable host with persistent disk for SQLite, HTTPS, and `NODE_ENV=production`; otherwise account bookmarks may be lost when the host restarts. Confirm the published URL and deployment status before sharing it. Test changes on a reviewed branch before merging them into `main`.
 
 ---
 
@@ -100,3 +105,4 @@ CarePath Pro is intended solely as an educational symptom check-in and visit-pre
 - No triage result should delay emergency care or replace a clinician's assessment.
 - Emergency numbers and protocols vary by jurisdiction; verify them with official local sources.
 - Have a qualified clinician review all symptom definitions, red flags, scoring rules, and emergency content before any real-world use.
+
