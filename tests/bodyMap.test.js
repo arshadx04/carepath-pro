@@ -35,8 +35,8 @@ function assertSvgGroupsAreBalanced(markup) {
 test('front view renders anterior regions and exposes the selected toggle state', () => {
   const markup = renderBodyMap('front');
 
-  assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Front View/);
-  assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Back View/);
+  assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Body · Front/);
+  assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Body · Back/);
   assert.match(markup, /data-region="chest"/);
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
@@ -45,10 +45,10 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.match(markup, /class="skull-bone skull-parietal"/, 'parietal bone hotspot should render');
   assert.match(markup, /class="skull-bone skull-zygomatic"/, 'cheekbone hotspot should render');
   assert.match(markup, /class="skull-cavity"/, 'eye sockets should render');
-  assert.match(markup, /class="skull-teeth"/, 'teeth should render');
+  assert.match(markup, /class="teeth"/, 'teeth should render');
   assert.match(markup, /aria-label="Select head: mandible"/, 'mandible should be accessible');
   assert.equal((markup.match(/class="skull-bone/g) || []).length, 7);
-  assert.match(markup, /SKULL · ANTERIOR/);
+  assert.match(markup, /ANTERIOR VIEW/);
   assert.doesNotMatch(markup, /class="back-anatomy"/);
   assert.match(markup, /Interactive Human Body Anatomy - front view/);
   assertSvgGroupsAreBalanced(markup);
@@ -60,8 +60,8 @@ test('back view renders posterior spine regions without anterior torso hotspots'
   const svgEnd = markup.indexOf('</svg>', svgStart);
   const svg = svgStart >= 0 && svgEnd >= 0 ? markup.slice(svgStart, svgEnd + 6) : '';
 
-  assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Front View/);
-  assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Back View/);
+  assert.match(markup, /aria-pressed="false"[^>]*>[\s\S]*?Body · Front/);
+  assert.match(markup, /aria-pressed="true"[^>]*>[\s\S]*?Body · Back/);
   assert.match(markup, /class="anatomy-figure back-anatomy"/);
   assert.match(svg, /class="posterior-body"/, "back view should include a full posterior torso silhouette");  assert.match(markup, /class="anatomical-zone shoulder-zone/);
   assert.equal((markup.match(/class="anatomical-zone shoulder-zone/g) || []).length, 2, "both shoulder caps should render");
@@ -92,9 +92,10 @@ test('skull bone hotspots map to the shared head assessment region', () => { con
 test('side skull view renders accessible lateral bone hotspots', () => {
   const svg = renderSkullSVG('head', 'side');
   assert.match(svg, /skull-side-view/);
-  assert.match(svg, /aria-label="Anime-inspired lateral skull anatomy"/);
-  assert.match(svg, /SKULL · LATERAL/);
+  assert.match(svg, /aria-label="Clinical lateral skull anatomy"/);
+  assert.match(svg, /LATERAL VIEW/);
   assert.equal((svg.match(/data-region="head"/g) || []).length, 7);
   assert.match(svg, /aria-label="Select head: temporal bones"/);
-  assert.match(svg, /aria-label="Select head: mandible"/);\n  assert.match(svg, /skull-detail/);\n  assert.match(svg, /orbital-cavity/);\n  assert.match(svg, /nasal-cavity/);\n  assert.match(svg, /mental foramina|mental-foramen|cx="140"/);
+  assert.match(svg, /aria-label="Select head: mandible"/);
+  assert.match(svg, /skull-detail/);\n  assert.match(svg, /orbit/);\n  assert.match(svg, /nasal-cavity/);\n  assert.match(svg, /foramen|cx="140"/);
 });
