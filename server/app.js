@@ -1,8 +1,8 @@
 import { createServer as createHttpServer } from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, realpath, stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createSession, createUser, deleteBookmark, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, saveBookmark, hashPassword, verifyPassword } from './accountStore.js';
+import { isPrivateStoragePath, createSession, createUser, deleteBookmark, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, saveBookmark, hashPassword, verifyPassword } from './accountStore.js';
 import { diseaseDatabase } from '../js/data/diseases.js';
 import { symptomDatabase } from '../js/data/symptoms.js';
 import { triageEngine } from '../js/engine/triageEngine.js';
@@ -291,11 +291,20 @@ async function serveStatic(pathname, response) {
   try {
     const info = await stat(filePath);
     const target = info.isDirectory() ? resolve(filePath, 'index.html') : filePath;
-    const body = await readFile(target);
+    const [realRoot, realTarget] = await Promise.all([realpath(projectRoot), realpath(target)]);
+    if (realTarget !== realRoot && !realTarget.startsWith(realRoot + sep)) {
+      sendJson(response, 403, { error: 'Forbidden.' });
+      return;
+    }
+    if (isPrivateStoragePath(realTarget)) {
+      sendJson(response, 404, { error: 'Not found.' });
+      return;
+    }
+    const body = await readFile(realTarget);
     response.writeHead(200, {
-      'Content-Type': MIME_TYPES[extname(target).toLowerCase()] || 'application/octet-stream',
+      'Content-Type': MIME_TYPES[extname(realTarget).toLowerCase()] || 'application/octet-stream',
       'X-Content-Type-Options': 'nosniff',
-      'Cache-Control': target.endsWith('.html') ? 'no-cache' : 'public, max-age=300',
+      'Cache-Control': realTarget.endsWith('.html') ? 'no-cache' : 'public, max-age=300',
     });
     response.end(body);
   } catch {
