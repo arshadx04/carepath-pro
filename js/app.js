@@ -40,7 +40,9 @@ class App {
 
     this.renderEmergencyDirectory();
     this.bindGlobalEvents();
-    this.renderView('home');
+    const resetToken = new URLSearchParams(window.location.hash.slice(1)).get('resetToken');
+    if (resetToken) this.navigate('library');
+    else this.renderView('home');
   }
 
   bindGlobalEvents() {
