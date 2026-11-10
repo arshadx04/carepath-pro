@@ -2790,3 +2790,12 @@ body.dark-theme .anatomy-figure .organ-intestine{fill:#c7a98b;stroke:#ead0b4}
 body.dark-theme .account-bookmarks-panel{background:#17212a;border-color:#334155}
 body.dark-theme .account-bookmarks-copy,body.dark-theme .account-bookmarks-copy strong{color:#e2e8f0}
 
+
+.account-actions{display:flex;flex-wrap:wrap;gap:.55rem}
+.account-delete-btn{border:1px solid #b91c1c;border-radius:9px;padding:.65rem .9rem;background:#fff;color:#991b1b;font:inherit;font-weight:600;cursor:pointer}
+.account-delete-btn:disabled{opacity:.6;cursor:wait}
+.account-delete-form{display:flex;flex:1 1 100%;align-items:end;flex-wrap:wrap;gap:.75rem;padding-top:.75rem;border-top:1px solid var(--border-light)}
+.account-delete-form p{flex:1 1 100%;color:#991b1b;font-size:.92rem}
+.account-delete-form label{display:flex;min-width:190px;flex:1 1 220px;flex-direction:column;gap:.35rem;font-size:.9rem}
+.account-delete-form input{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:.65rem;font:inherit}
+body.dark-theme .account-delete-form p{color:#fca5a5}
