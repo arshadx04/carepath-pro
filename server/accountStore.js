@@ -157,3 +157,7 @@ export function deleteBookmark(userId, conditionId) {
   return getBookmarks(userId);
 }
 
+
+export function closeAccountStore() {
+  database.close();
+}
