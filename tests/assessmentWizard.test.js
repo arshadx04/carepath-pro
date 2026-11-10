@@ -8,6 +8,7 @@ globalThis.document = { getElementById: () => null };
 test('age options include adolescents without a gap between child and adult ranges', () => {
   const wizard = new AssessmentWizard('missing-container');
   const html = wizard.getStep1HTML();
+  assert.ok(html.includes('Age Group (optional)'));
   assert.ok(html.includes('Child (2–12 yrs)'));
   assert.ok(html.includes('Teen (13–17 yrs)'));
   assert.ok(html.includes('Adult (18–64 yrs)'));
@@ -26,10 +27,10 @@ test('unanswered pain slider is visibly not recorded and cannot pass step valida
   assert.equal(wizard.isCurrentStepValid(), true);
 });
 
-test('wizard requires explicit timing, symptom, age, and warning-sign selections', () => {
+test('wizard keeps background details optional but requires explicit symptom, timing, severity, and warning-sign selections', () => {
   const wizard = new AssessmentWizard('missing-container');
   wizard.currentStep = 1;
-  assert.equal(wizard.isCurrentStepValid(), false);
+  assert.equal(wizard.isCurrentStepValid(), true);
   wizard.intake.profile.ageGroup = 'adolescent';
   assert.equal(wizard.isCurrentStepValid(), true);
   wizard.currentStep = 2;
@@ -51,6 +52,8 @@ test('sensitive profile fields are not preselected as negative answers', () => {
   const wizard = new AssessmentWizard('missing-container');
   assert.equal(wizard.intake.profile.biologicalSex, null);
   assert.equal(wizard.intake.profile.pregnant, null);
+  wizard.currentStep = 1;
+  assert.equal(wizard.isCurrentStepValid(), true);
   const html = wizard.getStep1HTML();
   assert.match(html, /Pregnancy status \(optional\)/);
   assert.match(html, /Leave unselected if you prefer not to answer/);
