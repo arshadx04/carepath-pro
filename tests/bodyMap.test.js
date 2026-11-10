@@ -39,6 +39,11 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.match(markup, /data-region="chest"/);
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
+  assert.match(markup, /class="skull-illustration"/, 'front view should render the skull illustration');
+  assert.match(markup, /class="skull-detail orbital-cavity"/, 'skull should show eye sockets');
+  assert.match(markup, /class="skull-detail nasal-cavity"/, 'skull should show the nasal opening');
+  assert.match(markup, /class="skull-detail mandible"/, 'skull should show the lower jaw');
+  assert.match(markup, /class="skull-detail teeth"/, 'skull should show tooth landmarks');
   assert.doesNotMatch(markup, /class="back-anatomy"/);
   assert.match(markup, /Interactive Human Body Anatomy - front view/);
   assertSvgGroupsAreBalanced(markup);
