@@ -14,13 +14,27 @@ function escapeHTML(value) {
 export class DiseaseLibrary {
   constructor(containerId, options = {}) {
     this.container = document.getElementById(containerId);
-    this.diseases = diseaseDatabase;
+    this.diseases = this.loadDiseaseOverrides();
+    window.addEventListener('carepath:diseases-updated', () => {
+      this.diseases = this.loadDiseaseOverrides();
+      this.render();
+    });
     this.searchQuery = '';
     this.selectedCategory = 'All';
     this.selectedUrgency = 'All';
     this.showOnlyBookmarked = false;
     this.bookmarkedIds = this.loadBookmarks();
     this.compareList = [];
+  }
+
+  loadDiseaseOverrides() {
+    try {
+      const saved = localStorage.getItem('carepath_disease_overrides_v1');
+      const parsed = saved ? JSON.parse(saved) : null;
+      return Array.isArray(parsed) ? parsed : diseaseDatabase;
+    } catch {
+      return diseaseDatabase;
+    }
   }
 
   loadBookmarks() {
