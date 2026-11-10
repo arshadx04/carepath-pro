@@ -74,6 +74,7 @@ const queries = {
   listBookmarks: database.prepare('SELECT condition_id FROM bookmarks WHERE user_id = ? ORDER BY created_at DESC'),
   addBookmark: database.prepare('INSERT OR IGNORE INTO bookmarks (user_id, condition_id, created_at) VALUES (?, ?, ?)'),
   removeBookmark: database.prepare('DELETE FROM bookmarks WHERE user_id = ? AND condition_id = ?'),
+  deleteUser: database.prepare('DELETE FROM users WHERE id = ?'),
 };
 
 export function normalizeEmail(value) {
@@ -113,6 +114,10 @@ export function findUserByEmail(email) {
 
 export function getUserById(id) {
   return queries.userById.get(id) || null;
+}
+
+export function deleteUser(id) {
+  queries.deleteUser.run(id);
 }
 
 function tokenDigest(token) {
