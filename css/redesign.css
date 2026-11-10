@@ -222,3 +222,230 @@ body{background:#f4f7f5;color:#182b2a;font-family:Manrope,Inter,system-ui,sans-s
     min-height: 340px;
   }
 }
+
+
+/* Advanced anatomy atlas presentation */
+#bodyMapContainer .body-explorer-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(20px, 3.4vw, 38px);
+  border: 1px solid rgba(80, 130, 119, .22);
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 18% 18%, rgba(108, 177, 160, .12), transparent 42%),
+    linear-gradient(145deg, #fbfdfb 0%, #f0f7f3 100%);
+  box-shadow: 0 22px 60px rgba(30, 72, 63, .09);
+}
+#bodyMapContainer .body-view-controls {
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid rgba(90, 137, 125, .20);
+  border-radius: 16px;
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 5px 18px rgba(37, 77, 67, .06);
+}
+#bodyMapContainer .btn-toggle-view {
+  min-height: 42px;
+  padding: 9px 17px;
+  color: #52716a;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 750;
+  transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+#bodyMapContainer .btn-toggle-view:hover { transform: translateY(-1px); }
+#bodyMapContainer .btn-toggle-view.active {
+  color: #fff;
+  background: linear-gradient(135deg, #176f66, #279889);
+  box-shadow: 0 5px 13px rgba(23, 111, 102, .22);
+}
+#bodyMapContainer .anatomy-explorer-heading {
+  margin: 3px 0 20px;
+  color: #315e55;
+  font-size: 11px;
+  letter-spacing: .14em;
+}
+#bodyMapContainer .anatomy-heading-note {
+  color: #718b83;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+#bodyMapContainer .svg-mannequin-container {
+  position: relative;
+  flex-direction: column;
+  min-height: 600px;
+  padding: 28px 18px 18px;
+  border: 1px solid rgba(87, 139, 126, .17);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(255,255,255,.98), rgba(245,250,247,.82) 60%, rgba(231,243,237,.68));
+}
+#bodyMapContainer .atlas-view-caption {
+  align-self: flex-start;
+  margin: 0 0 8px 8px;
+  color: #66877e;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .15em;
+}
+#bodyMapContainer .atlas-view-caption span { padding: 0 5px; color: #a2b9b0; }
+#bodyMapContainer svg.anatomy-illustration {
+  width: min(100%, 410px);
+  max-height: 660px;
+  min-height: 470px;
+  overflow: visible;
+}
+#bodyMapContainer .anatomy-figure {
+  filter: drop-shadow(0 9px 12px rgba(58, 84, 74, .12));
+}
+#bodyMapContainer .anatomy-figure .anatomical-zone {
+  fill: rgba(21, 145, 128, .035);
+  stroke: rgba(24, 111, 99, .58);
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+  cursor: pointer;
+  pointer-events: all;
+  transition: fill .18s ease, stroke .18s ease, stroke-width .18s ease, filter .18s ease;
+}
+#bodyMapContainer .anatomy-figure .anatomical-zone:hover,
+#bodyMapContainer .anatomy-figure .anatomical-zone:focus-visible {
+  fill: rgba(31, 166, 146, .30);
+  stroke: #08796e;
+  stroke-width: 2.1;
+  outline: none;
+  filter: drop-shadow(0 0 4px rgba(13, 148, 136, .28));
+}
+#bodyMapContainer .anatomy-figure .anatomical-zone.selected {
+  fill: rgba(17, 155, 137, .32);
+  stroke: #08786e;
+  stroke-width: 2.15;
+  filter: drop-shadow(0 0 5px rgba(13, 148, 136, .22));
+}
+#bodyMapContainer .anatomy-figure .anatomy-detail {
+  stroke: #936f65;
+  stroke-width: 1.05;
+  opacity: .72;
+  pointer-events: none;
+}
+#bodyMapContainer .atlas-legend {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 7px;
+  color: #658078;
+  font-size: 10px;
+  font-weight: 650;
+}
+#bodyMapContainer .atlas-legend-dot {
+  width: 8px;
+  height: 8px;
+  border: 2px solid #168779;
+  border-radius: 50%;
+  background: rgba(22, 135, 121, .16);
+}
+#bodyMapContainer .atlas-legend-divider {
+  width: 1px;
+  height: 12px;
+  margin: 0 3px;
+  background: #c8d9d1;
+}
+#bodyMapContainer .atlas-legend-note { color: #8ba098; font-weight: 500; }
+#bodyMapContainer .region-detail-card {
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid rgba(82, 133, 120, .18);
+  border-radius: 22px;
+  background: linear-gradient(160deg, #fff, #f8fbf9);
+  box-shadow: 0 15px 36px rgba(34, 74, 64, .07);
+}
+#bodyMapContainer .detail-tag {
+  color: #16786d;
+  background: #e8f5ef;
+  border-color: #cce8dc;
+}
+#bodyMapContainer .detail-title { color: #183f39; }
+#bodyMapContainer .detail-desc { color: #637b73; line-height: 1.75; }
+#bodyMapContainer .symptom-mini-badge {
+  border: 1px solid #e2eee8;
+  border-left: 3px solid #3c9b88;
+  background: #f4f9f6;
+  color: #34574e;
+}
+#bodyMapContainer .symptom-mini-badge.red-flag {
+  border-color: #f4d8d4;
+  border-left-color: #d65d52;
+  background: #fff3f1;
+  color: #9b3f38;
+}
+#bodyMapContainer .disease-pill-btn {
+  border: 1px solid #dcebe4;
+  background: #f5faf7;
+  color: #28675d;
+}
+#bodyMapContainer .disease-pill-btn:hover {
+  border-color: #178779;
+  background: #e6f4ee;
+  color: #125d54;
+}
+#bodyMapContainer .btn-start-region-assessment {
+  min-height: 48px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #176f66, #249787);
+  box-shadow: 0 8px 19px rgba(23, 111, 102, .18);
+}
+#bodyMapContainer .region-chips-grid {
+  padding-top: 22px;
+  border-top-color: #dceae3;
+}
+#bodyMapContainer .region-chip {
+  padding: 9px 15px;
+  border: 1px solid #dceae3;
+  background: rgba(255,255,255,.8);
+  color: #5a776e;
+}
+#bodyMapContainer .region-chip.active,
+#bodyMapContainer .region-chip:hover {
+  border-color: #168779;
+  background: #e5f4ed;
+  color: #126b60;
+}
+body.dark-theme #bodyMapContainer .body-explorer-wrapper {
+  background: linear-gradient(145deg, #172b2a, #1b3430);
+  border-color: #34534b;
+}
+body.dark-theme #bodyMapContainer .svg-mannequin-container {
+  background: radial-gradient(ellipse at 50% 42%, #263f3a, #1b302d 70%);
+  border-color: #38584f;
+}
+body.dark-theme #bodyMapContainer .body-view-controls,
+body.dark-theme #bodyMapContainer .region-detail-card {
+  background: linear-gradient(160deg, #203a35, #1a302c);
+  border-color: #3a5a50;
+}
+body.dark-theme #bodyMapContainer .detail-title { color: #e2f2eb; }
+body.dark-theme #bodyMapContainer .detail-desc,
+body.dark-theme #bodyMapContainer .anatomy-explorer-heading { color: #b0c9bf; }
+body.dark-theme #bodyMapContainer .symptom-mini-badge,
+body.dark-theme #bodyMapContainer .region-chip,
+body.dark-theme #bodyMapContainer .disease-pill-btn {
+  background: #29443d;
+  border-color: #45685c;
+  color: #d2e8de;
+}
+@media (max-width: 1024px) {
+  #bodyMapContainer .svg-mannequin-container { min-height: 540px; }
+  #bodyMapContainer svg.anatomy-illustration { min-height: 440px; }
+}
+@media (max-width: 560px) {
+  #bodyMapContainer .body-explorer-wrapper { padding: 14px; border-radius: 20px; }
+  #bodyMapContainer .body-view-controls { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  #bodyMapContainer .btn-toggle-view { min-height: 40px; padding: 8px 5px; }
+  #bodyMapContainer .svg-mannequin-container { min-height: 440px; padding: 18px 8px 14px; }
+  #bodyMapContainer svg.anatomy-illustration { min-height: 380px; }
+  #bodyMapContainer .anatomy-explorer-heading { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #bodyMapContainer *, #bodyMapContainer *::before, #bodyMapContainer *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
