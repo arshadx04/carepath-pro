@@ -896,6 +896,11 @@ body.dark-theme .site-header {
 }
 
 .symptom-check-card {
+  appearance: none;
+  width: 100%;
+  font: inherit;
+  color: var(--text-main);
+  text-align: left;
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -937,7 +942,13 @@ body.dark-theme .site-header {
   border-color: var(--primary);
 }
 
+.card-content {
+  display: block;
+  flex: 1;
+}
+
 .card-title {
+  display: block;
   font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
@@ -969,6 +980,12 @@ body.dark-theme .site-header {
 }
 
 .timing-choice-card {
+  appearance: none;
+  width: 100%;
+  font: inherit;
+  color: var(--text-main);
+  text-align: left;
+  background: var(--bg-card);
   display: flex;
   gap: 12px;
   padding: 16px;
@@ -993,7 +1010,12 @@ body.dark-theme .site-header {
   margin-bottom: 4px;
 }
 
-.timing-info p {
+.timing-info {
+  display: block;
+}
+
+.timing-info .timing-desc {
+  display: block;
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.4;
@@ -1095,6 +1117,11 @@ body.dark-theme .site-header {
 }
 
 .rf-checkbox-item {
+  appearance: none;
+  width: 100%;
+  font: inherit;
+  color: var(--text-main);
+  text-align: left;
   display: flex;
   align-items: flex-start;
   gap: 14px;
@@ -1118,6 +1145,13 @@ body.dark-theme .site-header {
 .rf-checkbox-item.none-option.checked {
   border-color: var(--routine);
   background: var(--routine-bg);
+}
+
+.symptom-check-card:focus-visible,
+.timing-choice-card:focus-visible,
+.rf-checkbox-item:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .rf-check-box {
@@ -1145,7 +1179,13 @@ body.dark-theme .site-header {
   border-color: var(--routine);
 }
 
+.rf-text-content {
+  display: block;
+  flex: 1;
+}
+
 .rf-label {
+  display: block;
   font-size: 14px;
   font-weight: 700;
   color: var(--text-main);
