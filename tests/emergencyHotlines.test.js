@@ -9,6 +9,7 @@ test('United States and Canada are listed separately for jurisdiction-specific c
   assert.equal(us.emergency, '911');
   assert.equal(canada.emergency, '911');
   assert.equal(us.poison, '1-800-222-1222 (US only)');
+  assert.ok(us.sources.some(source => source.url === 'https://poisonhelp.hrsa.gov/contact-us'));
   assert.equal(canada.poison, undefined);
   assert.equal(us.crisisDial, '988');
   assert.equal(canada.crisisDial, '988');
