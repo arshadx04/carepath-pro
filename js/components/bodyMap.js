@@ -97,6 +97,12 @@ export class BodyMap {
           <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#d8eee9"/><stop offset="100%" stop-color="#9fcac2"/>
           </linearGradient>
+          <linearGradient id="skinAtlas" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f1d8c9"/>
+            <stop offset="38%" stop-color="#dfb8a5"/>
+            <stop offset="72%" stop-color="#c99582"/>
+            <stop offset="100%" stop-color="#b77f70"/>
+          </linearGradient>
           <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/>
           </filter>
