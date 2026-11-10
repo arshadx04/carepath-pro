@@ -113,9 +113,12 @@ export class BodyMap {
     this.container.innerHTML = `
       <div class="body-explorer-wrapper">
         <div class="body-view-controls" role="group" aria-label="Anatomy view">
-          <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">Front View</button>
-          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Back View</button><button type="button" class="btn-toggle-view" data-skull-view="front">Skull Front</button><button type="button" class="btn-toggle-view" data-skull-view="side">Skull Side</button>
+          <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">Body · Front</button>
+          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Body · Back</button>
+          <button type="button" class="btn-toggle-view ${this.skullView === 'front' ? 'active' : ''}" data-skull-view="front" aria-pressed="${this.skullView === 'front'}">Skull · Front</button>
+          <button type="button" class="btn-toggle-view ${this.skullView === 'side' ? 'active' : ''}" data-skull-view="side" aria-pressed="${this.skullView === 'side'}">Skull · Side</button>
         </div>
+        <div class="anatomy-explorer-heading"><span class="anatomy-live-indicator"></span><span>SELECT AN ANATOMICAL REGION</span><span class="anatomy-heading-note">Illustrative learning view</span></div>
         <div class="body-interactive-stage">
           <div class="svg-mannequin-container">${this.renderAnatomy()}</div>
           <div class="body-region-sidebar" id="bodyRegionDetail">${this.getRegionDetailHTML(this.selectedRegion)}</div>
