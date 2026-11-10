@@ -57,7 +57,7 @@ function validateIntake(value) {
     return 'selectedSymptoms must contain at most 50 known symptom IDs.';
   }
   if (!Array.isArray(flags) || flags.length > MAX_FLAGS ||
-      !flags.every(id => typeof id === 'string' && symptomDatabase.symptoms.some(s => s.id === id))) {
+      !flags.every(id => id === 'none' || (typeof id === 'string' && symptomDatabase.symptoms.some(s => s.id === id)))) {
     return 'redFlags must contain at most 30 known symptom IDs.';
   }
   const pain = value.severity?.painScore;
@@ -77,7 +77,7 @@ function publicEvaluation(result) {
     timeWindow: result.timeWindow,
     activeRedFlags: result.activeRedFlags.map(({ id, label, emergencyDesc }) => ({ id, label, emergencyDesc })),
     topMatches: result.topMatches.map(({ disease, matchedSymptoms, missedSymptoms, relevance }) => ({
-      condition: { id: disease.id, name: disease.name, medicalTerm: disease.medicalTerm },
+      disease: { id: disease.id, name: disease.name, medicalTerm: disease.medicalTerm, category: disease.category, icd10: disease.icd10, summary: disease.summary, urgency: disease.urgency, urgencyText: disease.urgencyText },
       matchedSymptoms,
       missedSymptoms,
       relevance,
