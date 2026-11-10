@@ -8,6 +8,7 @@ import { DiseaseLibrary } from './components/diseaseLibrary.js';
 import { ConditionComparison } from './components/conditionComparison.js';
 import { ArticleModal } from './components/articleModal.js';
 import { emergencyDatabase } from './data/emergencyHotlines.js';
+import { hydrateCatalogFromBackend } from './data/catalogClient.js';
 
 function getDialNumber(value) {
   const match = String(value || '').match(/\d[\d -]*\d|\d/);
@@ -26,7 +27,10 @@ class App {
     this.init();
   }
 
-  init() {
+  async init() {
+    // Prefer the backend catalogs; static-only deployments keep using bundled data.
+    await hydrateCatalogFromBackend();
+
     // Instantiate components
     this.bodyMap = new BodyMap('bodyMapContainer');
     this.wizard = new AssessmentWizard('wizardContainer');
