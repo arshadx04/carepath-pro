@@ -69,5 +69,5 @@ test('report generation tolerates malformed entries inside optional collections'
   assert.match(html, /No symptoms recorded|&lt;script&gt;/);
   assert.doesNotMatch(html, /<script>alert\(1\)<\/script>/);
   assert.doesNotMatch(html, /<img src=x onerror=alert\(1\)>/);
-  assert.match(html, /Educational Notice & Disclaimer/);
+  assert.match(html, /EDUCATIONAL NOTICE & DISCLAIMER/i);
 });
