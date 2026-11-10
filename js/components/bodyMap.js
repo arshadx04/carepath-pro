@@ -54,6 +54,13 @@ export class BodyMap {
         Q164 137 150 139 Q136 137 125 126Z"/>
       <path class="posterior-muscle" d="M136 117 Q150 128 164 117 L177 137
         Q166 145 150 146 Q134 145 123 137Z"/>
+      <g class="anatomy-muscle-layer" aria-label="Simplified posterior muscle groups">
+        <path class="muscle-trapezius" d="M137 128 Q150 139 163 128 L171 160 Q160 171 150 173 Q140 171 129 160Z"/>
+        <path class="muscle-latissimus" d="M128 164 Q138 157 145 173 L143 222 Q132 237 123 218 L119 181Z M172 164 Q162 157 155 173 L157 222 Q168 237 177 218 L181 181Z"/>
+        <path class="muscle-gluteal" d="M124 252 Q137 246 149 257 L149 289 Q135 296 126 282Z M176 252 Q163 246 151 257 L151 289 Q165 296 174 282Z"/>
+        <path class="muscle-hamstring" d="M126 302 Q138 298 146 307 L142 373 L132 414 Q124 417 122 406 L124 360Z M174 302 Q162 298 154 307 L158 373 L168 414 Q176 417 178 406 L176 360Z"/>
+        <path class="muscle-calf" d="M127 418 Q137 413 143 423 L138 466 Q132 477 126 466Z M173 418 Q163 413 157 423 L162 466 Q168 477 174 466Z"/>
+      </g>
       ${this.zone('back','M119 174 Q133 160 143 174 L143 257 Q132 267 121 255 Q114 218 119 174Z M181 174 Q167 160 157 174 L157 257 Q168 267 179 255 Q186 218 181 174Z','back-zone')}
       <g class="rib-cage" aria-label="Posterior rib cage">
         <path d="M145 151 Q126 142 115 158 Q112 167 128 171 L145 168 M155 151 Q174 142 185 158 Q188 167 172 171 L155 168
@@ -72,6 +79,22 @@ export class BodyMap {
         L111 205 Q112 231 119 255 L127 287 Q136 299 150 299 Q164 299 173 287
         L181 255 Q188 231 189 205 L195 148 Q190 126 175 126
         Q164 137 150 139 Q136 137 125 126Z"/>
+      <g class="organ-layer" aria-label="Simplified internal organs">
+        <path class="organ-lung" d="M145 151 Q133 143 125 153 Q118 166 123 185 Q127 196 141 192 Q147 181 147 163Z"/>
+        <path class="organ-lung" d="M155 151 Q167 143 175 153 Q182 166 177 185 Q173 196 159 192 Q153 181 153 163Z"/>
+        <path class="organ-heart" d="M150 160 C145 151 135 157 140 168 L150 180 L160 168 C165 157 155 151 150 160Z"/>
+        <path class="organ-liver" d="M121 204 Q137 195 151 204 Q155 214 146 222 Q132 225 119 216Z"/>
+        <path class="organ-stomach" d="M158 204 Q171 198 176 211 Q179 225 166 231 Q155 228 157 216Z"/>
+        <path class="organ-kidney" d="M126 232 Q117 229 117 240 Q119 250 128 247 Q134 239 126 232Z"/>
+        <path class="organ-kidney" d="M174 232 Q183 229 183 240 Q181 250 172 247 Q166 239 174 232Z"/>
+        <path class="organ-intestine" d="M135 237 Q150 230 165 237 L165 255 Q150 263 135 255Z"/>
+        <path class="organ-detail" d="M139 241 Q145 246 140 251 M148 239 Q154 245 149 252 M157 240 Q163 246 158 252"/>
+      </g>
+      <g class="anatomy-muscle-layer" aria-label="Simplified anterior muscle groups">
+        <path class="muscle-pectoral" d="M122 145 Q135 135 148 147 L147 169 Q133 175 122 162Z M178 145 Q165 135 152 147 L153 169 Q167 175 178 162Z"/>
+        <path class="muscle-abdominal" d="M143 207 Q150 204 157 207 L157 253 Q150 258 143 253Z"/>
+        <path class="muscle-oblique" d="M121 211 Q130 215 137 224 L134 251 Q126 246 122 235Z M179 211 Q170 215 163 224 L166 251 Q174 246 178 235Z"/>
+      </g>
       ${this.zone('chest','M119 139 Q134 130 150 140 Q166 130 181 139 L185 196 Q169 205 150 198 Q131 205 115 196Z','chest-zone')}
       <path class="anatomy-detail" d="M150 143 L150 194 M120 159 Q137 150 148 160 M152 160 Q163 150 180 159
         M120 176 Q137 168 148 178 M152 178 Q163 168 180 176"/>
