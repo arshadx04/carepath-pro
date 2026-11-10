@@ -611,7 +611,7 @@ export class AssessmentWizard {
     // Next Button
     const nextBtn = this.container.querySelector('.btn-wizard-next');
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
+      nextBtn.addEventListener('click', async () => {
         if (!this.isCurrentStepValid()) {
           if (this.currentStep === 1) {
             alert('Please select an age group to continue.');
@@ -632,8 +632,30 @@ export class AssessmentWizard {
           this.render();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-          // Submit assessment
-          this.evaluationResult = triageEngine.evaluate(this.intake);
+          // Evaluate through the same-origin backend. Keep the browser-only demo usable
+          // when it is opened through a static server or directly from disk.
+          nextBtn.disabled = true;
+          nextBtn.textContent = 'Generating summary…';
+          try {
+            const response = await fetch('/api/check-ins/evaluate', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(this.intake)
+            });
+            if (!response.ok) {
+              const payload = await response.json().catch(() => ({}));
+              throw new Error(payload.error || 'The backend could not evaluate this check-in.');
+            }
+            this.evaluationResult = await response.json();
+          } catch (error) {
+            if (!(error instanceof TypeError)) {
+              nextBtn.disabled = false;
+              nextBtn.textContent = 'Generate Educational Summary →';
+              alert(error.message || 'Unable to generate the summary.');
+              return;
+            }
+            this.evaluationResult = triageEngine.evaluate(this.intake);
+          }
           this.currentStep++;
           this.render();
           window.scrollTo({ top: 0, behavior: 'smooth' });
