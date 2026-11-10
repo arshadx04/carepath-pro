@@ -89,6 +89,41 @@ async function handleAccountApi(request, response, pathname) {
     return true;
   }
 
+  if (request.method === 'DELETE' && pathname === '/api/auth/account') {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    if (!allowAuthAttempt(request)) {
+      sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
+      return true;
+    }
+    const { token, user } = getRequestSession(request);
+    if (!user) {
+      sendJson(response, 401, { error: 'Sign in to delete your account.' });
+      return true;
+    }
+    let body;
+    try {
+      body = await readJsonBody(request);
+    } catch (error) {
+      sendJson(response, error.statusCode || 400, { error: error.message });
+      return true;
+    }
+    if (typeof body?.password !== 'string' || body.password.length === 0 || Buffer.byteLength(body.password, 'utf8') > 1024) {
+      sendJson(response, 400, { error: 'Enter your current password to delete the account.' });
+      return true;
+    }
+    const userRecord = findUserByEmail(user.email);
+    if (!(await verifyPassword(body.password, userRecord))) {
+      sendJson(response, 401, { error: 'Password is incorrect.' });
+      return true;
+    }
+    deleteUser(user.id);
+    revokeSession(token);
+    sendJson(response, 200, { user: null }, { 'Set-Cookie': sessionCookie('', 0) });
+    return true;
+  }
   if (request.method === 'POST' && ['/api/auth/register', '/api/auth/login', '/api/auth/logout'].includes(pathname)) {
     if (!isSameOrigin(request)) {
       sendJson(response, 403, { error: 'Cross-origin request rejected.' });
