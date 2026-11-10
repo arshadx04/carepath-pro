@@ -92,13 +92,13 @@ test('skull bone hotspots map to the shared head assessment region', () => { con
 test('side skull view renders accessible lateral bone hotspots', () => {
   const svg = renderSkullSVG('head', 'side');
   assert.match(svg, /skull-side-view/);
-  assert.match(svg, /aria-label="Clinical lateral skull anatomy"/);
+  assert.match(svg, /aria-label="Detailed lateral skull anatomy"/);
   assert.match(svg, /LATERAL VIEW/);
   assert.equal((svg.match(/data-region="head"/g) || []).length, 7);
   assert.match(svg, /aria-label="Select head: temporal bones"/);
   assert.match(svg, /aria-label="Select head: mandible"/);
   assert.match(svg, /skull-detail/);
-  assert.match(svg, /orbit/);
-  assert.match(svg, /skull-cavity nasal/);
-  assert.match(svg, /foramen|cx="140"/);
+  assert.match(svg, /orbital-cavity/);
+  assert.match(svg, /nasal-cavity/);
+  assert.match(svg, /mental foramina|mental-foramen|cx="140"/);
 });
