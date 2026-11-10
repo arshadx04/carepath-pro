@@ -53,7 +53,7 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.equal((markup.match(/class="skull-bone/g) || []).length, 7);
   assert.match(markup, /SKULL · ANTERIOR/);
   assert.doesNotMatch(markup, /class="back-anatomy"/);
-  assert.match(markup, /Interactive Human Body Anatomy - front view/);
+  assert.match(markup, /Interactive human anatomy — front view/);
   assertSvgGroupsAreBalanced(markup);
 });
 
@@ -89,7 +89,7 @@ test('back view renders posterior spine regions without anterior torso hotspots'
   assert.doesNotMatch(svg, /data-region="chest"/);
   assert.doesNotMatch(svg, /data-region="abdomen"/);
   assert.doesNotMatch(svg, /data-region="pelvis"/);
-  assert.match(markup, /Interactive Human Body Anatomy - back view/);
+  assert.match(markup, /Interactive human anatomy — back view/);
   assertSvgGroupsAreBalanced(markup);
 });
 
