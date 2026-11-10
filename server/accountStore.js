@@ -75,6 +75,8 @@ const queries = {
   addBookmark: database.prepare('INSERT OR IGNORE INTO bookmarks (user_id, condition_id, created_at) VALUES (?, ?, ?)'),
   removeBookmark: database.prepare('DELETE FROM bookmarks WHERE user_id = ? AND condition_id = ?'),
   deleteUser: database.prepare('DELETE FROM users WHERE id = ?'),
+  updatePassword: database.prepare('UPDATE users SET password_salt = ?, password_hash = ? WHERE id = ?'),
+  deleteUserSessions: database.prepare('DELETE FROM sessions WHERE user_id = ?'),
 };
 
 export function normalizeEmail(value) {
@@ -118,6 +120,14 @@ export function getUserById(id) {
 
 export function deleteUser(id) {
   queries.deleteUser.run(id);
+}
+
+export function updatePassword(userId, credentials) {
+  queries.updatePassword.run(credentials.salt, credentials.hash, userId);
+}
+
+export function revokeUserSessions(userId) {
+  queries.deleteUserSessions.run(userId);
 }
 
 function tokenDigest(token) {
