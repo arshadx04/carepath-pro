@@ -2712,3 +2712,44 @@ body.dark-theme .zone-label {
 .skull-highlight { stroke:rgba(255,255,255,.9); stroke-width:1.15; } .skull-teeth { stroke:#78988c; stroke-width:1.15; }
 .skull-caption { fill:#477c76; font-size:3.8px; font-weight:800; letter-spacing:.8px; pointer-events:none; }
 body.dark-theme .skull-bone { stroke:#76aaa0; } body.dark-theme .skull-caption { fill:#b5e5dc; }
+/* Polished anatomy explorer — restrained atlas styling and consistent interaction. */
+.body-explorer-wrapper{padding:clamp(18px,3vw,34px);border:1px solid var(--border-light);border-radius:24px;background:linear-gradient(145deg,var(--bg-card),var(--bg-card-subtle));box-shadow:0 18px 50px rgba(15,55,52,.08)}
+.body-view-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px;padding:6px;margin:0 auto 26px;width:fit-content;max-width:100%;border:1px solid var(--border-light);border-radius:999px;background:var(--bg-card)}
+.btn-toggle-view{min-height:38px;padding:8px 16px;border:1px solid transparent;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.01em;color:var(--text-muted);background:transparent}
+.btn-toggle-view:hover{color:var(--primary);background:var(--primary-light)}
+.btn-toggle-view.active{color:#fff;background:var(--primary);box-shadow:0 4px 12px rgba(15,118,110,.2)}
+.body-interactive-stage{grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:clamp(20px,4vw,54px);align-items:stretch}
+.svg-mannequin-container{min-height:520px;border:1px solid rgba(15,118,110,.10);border-radius:20px;background:radial-gradient(ellipse at 50% 35%,rgba(45,160,145,.12),transparent 58%),linear-gradient(180deg,rgba(15,118,110,.025),transparent);overflow:hidden}
+.anatomy-illustration{width:min(100%,390px);max-height:640px;filter:drop-shadow(0 12px 18px rgba(28,72,66,.10))}
+.anatomy-figure .anatomical-zone{fill:rgba(177,211,202,.38);stroke:#638f87;stroke-width:1.25}
+.anatomy-figure .anatomical-zone:hover,.anatomy-figure .anatomical-zone:focus-visible,.anatomy-figure .anatomical-zone.selected{fill:rgba(20,145,129,.46);stroke:#08786e;stroke-width:2.4;filter:drop-shadow(0 0 4px rgba(13,148,136,.22))}
+.anatomy-detail{stroke:#72958e;stroke-width:1.15;opacity:.75}
+.posterior-body,.anterior-body{fill:rgba(210,230,223,.4);stroke:#7a9e96;stroke-width:1.25}
+.body-region-sidebar{justify-content:center}
+.region-detail-card{gap:18px;padding:clamp(20px,3vw,30px);border:1px solid var(--border-light);border-radius:20px;background:var(--bg-card);box-shadow:0 12px 32px rgba(15,55,52,.055)}
+.detail-tag{display:inline-flex;width:fit-content;padding:6px 10px;border:1px solid rgba(15,118,110,.18);border-radius:999px;background:rgba(15,118,110,.07)}
+.detail-title{font-size:clamp(23px,2.5vw,30px);letter-spacing:-.04em}
+.detail-desc{line-height:1.7}
+.detail-section h4{font-size:11px;letter-spacing:.08em}
+.symptom-mini-badge{padding:10px 13px;border-radius:10px;line-height:1.45}
+.disease-pill-btn{border:1px solid var(--border-light)}
+.btn-start-region-assessment{min-height:46px;box-shadow:0 7px 18px rgba(15,118,110,.16)}
+.region-chips-grid{gap:9px;margin-top:26px}
+.region-chip{border:1px solid var(--border-light);background:var(--bg-card)}
+.region-chip.active,.region-chip:hover{border-color:var(--primary);background:var(--primary);color:#fff}
+.skull-illustration{pointer-events:none}
+.skull-bone{fill:#e5eee8;stroke:#668a80;stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round;pointer-events:all;cursor:pointer;vector-effect:non-scaling-stroke;transition:fill .18s ease,stroke .18s ease,filter .18s ease}
+.skull-frontal{fill:#e7f0e8}.skull-parietal{fill:#f0f3e9}.skull-temporal{fill:#d5e5dd}.skull-zygomatic{fill:#c9ded5}.skull-maxilla{fill:#e9eee3}.skull-nasal{fill:#c3d9d0}.skull-mandible{fill:#dce9df}
+.skull-bone:hover,.skull-bone:focus-visible,.skull-bone.selected{fill:#78b8aa;stroke:#08786e;stroke-width:1.8;outline:none;filter:drop-shadow(0 0 3px rgba(13,148,136,.28))}
+.skull-cavity{fill:#526d69;stroke:#668a80;stroke-width:.8;pointer-events:none}.skull-cavity.nasal{fill:#3e5b57}
+.skull-detail{fill:none;stroke:#567a71;stroke-width:1.05;stroke-linecap:round;stroke-linejoin:round;opacity:.92;pointer-events:none}
+.skull-detail .orbit{fill:rgba(57,82,76,.12);stroke:#567a71;stroke-width:1}.skull-detail .nasal{fill:rgba(57,82,76,.16);stroke:#567a71}.skull-detail .foramen{fill:#526d69;stroke:#567a71;stroke-width:.7}.skull-detail .teeth{stroke:#a4b6a8;stroke-width:1.15}.skull-detail .highlight{stroke:rgba(255,255,255,.9);stroke-width:1.2}.skull-detail .suture{stroke:#8ca79a;stroke-width:.85;stroke-dasharray:2 1.5;opacity:.75}
+.skull-caption{fill:#567a71;font-size:3.8px;font-weight:800;letter-spacing:1px}
+body.dark-theme .skull-bone{fill:#526f68;stroke:#9abbb0}body.dark-theme .skull-frontal{fill:#5e8177}body.dark-theme .skull-parietal{fill:#657e72}body.dark-theme .skull-temporal{fill:#496d64}body.dark-theme .skull-zygomatic{fill:#547a70}body.dark-theme .skull-maxilla{fill:#6a8171}body.dark-theme .skull-nasal{fill:#496c62}body.dark-theme .skull-mandible{fill:#58776b}body.dark-theme .skull-detail{stroke:#c1d8cf}body.dark-theme .skull-caption{fill:#c1d8cf}
+@media(max-width:1024px){.body-interactive-stage{grid-template-columns:1fr}.svg-mannequin-container{min-height:420px}}
+@media(max-width:560px){.body-explorer-wrapper{padding:14px;border-radius:18px}.body-view-controls{width:100%;border-radius:16px}.btn-toggle-view{flex:1 1 42%;padding-inline:8px}.svg-mannequin-container{min-height:360px;padding:8px}.region-detail-card{padding:18px}}
+
+.anatomy-explorer-heading{display:flex;align-items:center;justify-content:center;gap:9px;margin:0 0 14px;color:var(--text-muted);font-size:10px;font-weight:800;letter-spacing:.12em}
+.anatomy-live-indicator{width:7px;height:7px;border-radius:50%;background:#0d9488;box-shadow:0 0 0 4px rgba(13,148,136,.12)}
+.anatomy-heading-note{margin-left:5px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.72}
+@media(max-width:560px){.anatomy-explorer-heading{flex-wrap:wrap;font-size:9px}.anatomy-heading-note{flex-basis:100%;text-align:center;margin:0}}
