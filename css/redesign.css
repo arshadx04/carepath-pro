@@ -536,3 +536,43 @@ body.dark-theme #bodyMapContainer .skull-illustration .skull-caption { fill:#806
 @media (prefers-reduced-motion:reduce) {
  *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; }
 }
+
+
+/* Realistic full-body skin foundation for the interactive atlas */
+#bodyMapContainer .human-body-base { pointer-events:none; }
+#bodyMapContainer .human-body-base .human-skin,
+#bodyMapContainer .anatomy-figure .anterior-body,
+#bodyMapContainer .anatomy-figure .posterior-body {
+  fill: url(#skinAtlas) !important;
+  stroke: #9f7767;
+  stroke-width: 1.45;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 3px 4px rgba(83, 58, 46, .13));
+}
+#bodyMapContainer .human-body-base .human-skin-detail {
+  fill:none;
+  stroke:#a87867;
+  stroke-width:1.1;
+  stroke-linecap:round;
+  opacity:.58;
+}
+#bodyMapContainer .anatomy-figure .anatomical-zone {
+  fill:rgba(25, 143, 126, .025);
+  stroke:rgba(20, 112, 100, .62);
+  stroke-width:1.35;
+}
+#bodyMapContainer .anatomy-figure .anatomical-zone.selected {
+  fill:rgba(28, 164, 143, .28);
+  stroke:#08786e;
+  stroke-width:2.25;
+}
+#bodyMapContainer .anatomy-figure .anatomy-detail {
+  stroke:#966f60;
+  opacity:.68;
+}
+body.dark-theme #bodyMapContainer .human-body-base .human-skin,
+body.dark-theme #bodyMapContainer .anatomy-figure .anterior-body,
+body.dark-theme #bodyMapContainer .anatomy-figure .posterior-body {
+  fill:url(#skinAtlas) !important;
+  stroke:#9f7767;
+}

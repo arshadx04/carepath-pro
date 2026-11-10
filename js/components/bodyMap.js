@@ -143,7 +143,33 @@ export class BodyMap {
             <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#365e56" flood-opacity=".16"/>
           </filter>
         </defs>
-        <ellipse class="atlas-figure-halo" cx="150" cy="258" rx="116" ry="238" fill="url(#atlasHalo)"/>
+        <ellipse class="atlas-figure-halo" cx="150" cy="270" rx="132" ry="250" fill="url(#atlasHalo)"/>
+        <g class="human-body-base" aria-hidden="true">
+          <!-- Continuous natural skin silhouette: shoulders, arms, torso, legs and feet -->
+          <path class="human-skin" d="M139 105 Q150 99 161 105 L164 128
+            Q185 119 202 129 Q215 137 220 159 L238 219 Q244 237 236 251
+            L229 258 Q222 251 219 239 L201 187 L194 161
+            Q190 179 190 204 L185 257 Q182 279 174 300
+            L179 354 Q184 388 181 423 L187 477 Q190 490 198 500
+            Q203 507 194 511 Q178 516 165 507 Q158 501 160 489
+            L155 424 L150 365 L145 424 L140 489 Q142 502 133 508
+            Q120 516 104 510 Q96 506 103 499 Q111 490 113 477
+            L119 423 Q116 388 121 354 L126 300 Q118 280 115 257
+            L110 204 Q110 179 106 161 L99 187 L81 239 Q78 251 71 258
+            L64 251 Q56 237 62 219 L80 159 Q85 137 98 129
+            Q115 119 136 128Z"/>
+          <path class="human-skin" d="M128 292 Q139 299 150 299 Q161 299 172 292
+            L178 360 Q179 385 174 412 L169 477 Q167 489 160 491
+            L151 491 L150 426 L145 491 L135 491 Q128 489 126 477
+            L121 412 Q116 385 122 360Z"/>
+          <path class="human-skin-detail" d="M104 154 Q116 141 133 143 M167 143 Q184 141 196 154
+            M112 220 Q105 239 99 250 M188 250 Q195 239 188 220
+            M128 302 Q150 313 172 302 M128 415 Q136 420 145 416
+            M155 416 Q164 420 172 415"/>
+          <path class="human-skin" d="M137 103 Q150 96 163 103 L162 127 Q150 134 138 127Z"/>
+          <path class="human-skin" d="M64 249 Q57 258 59 274 Q61 290 72 291 Q82 290 85 277 L80 255Z
+            M236 249 Q243 258 241 274 Q239 290 228 291 Q218 290 215 277 L220 255Z"/>
+        </g>
         <g class="anatomy-figure ${back ? "back-anatomy" : "front-anatomy"}">
           ${head}${neck}${shoulders}${torso}${arms}${legs}
         </g>
