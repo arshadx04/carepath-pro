@@ -29,6 +29,7 @@ export class DiseaseLibrary {
     this.accountUser = null;
     this.accountMode = 'login';
     this.accountFormOpen = false;
+    this.accountDeleteOpen = false;
     this.accountMessage = '';
     this.accountBusy = false;
     this.refreshAccount();
@@ -138,6 +139,26 @@ export class DiseaseLibrary {
     }
   }
 
+  async deleteAccount(event) {
+    event.preventDefault();
+    const password = event.currentTarget.querySelector('#deleteAccountPassword').value;
+    this.accountBusy = true;
+    this.accountMessage = '';
+    this.render();
+    try {
+      await accountClient.deleteAccount(password);
+      this.accountUser = null;
+      this.bookmarkedIds = this.loadBookmarks();
+      this.accountDeleteOpen = false;
+      this.accountMessage = 'Your account and synced bookmarks were deleted.';
+    } catch (error) {
+      this.accountDeleteOpen = true;
+      this.accountMessage = error.message;
+    } finally {
+      this.accountBusy = false;
+      this.render();
+    }
+  }
   render() {
     if (!this.container) return;
 
@@ -203,8 +224,18 @@ export class DiseaseLibrary {
             ${this.accountMessage ? `<span class="account-message" role="status">${escapeHTML(this.accountMessage)}</span>` : ''}
           </div>
           ${this.accountUser
-            ? `<button type="button" id="accountSignOut" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>Sign out</button>`
+            ? `<div class="account-actions">
+                <button type="button" id="accountSignOut" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>Sign out</button>
+                <button type="button" id="accountDeleteToggle" class="account-delete-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountDeleteOpen ? 'Cancel deletion' : 'Delete account'}</button>
+              </div>`
             : `<button type="button" id="accountToggle" class="account-action-btn">${this.accountFormOpen ? 'Close' : 'Sign in / Create account'}</button>`}
+          ${this.accountUser && this.accountDeleteOpen ? `
+            <form id="accountDeleteForm" class="account-delete-form">
+              <p>Deleting your account permanently removes it and all synced bookmarks. This cannot be undone.</p>
+              <label>Confirm with your password <input id="deleteAccountPassword" type="password" autocomplete="current-password" maxlength="128" required></label>
+              <button type="submit" class="account-delete-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Deleting…' : 'Delete account and bookmarks'}</button>
+            </form>
+          ` : ''}
           ${!this.accountUser && this.accountFormOpen ? `
             <form id="accountForm" class="account-form">
               <label>Email <input id="accountEmail" type="email" name="email" autocomplete="email" maxlength="254" required></label>
@@ -343,6 +374,16 @@ export class DiseaseLibrary {
     }
     const accountSignOut = this.container.querySelector('#accountSignOut');
     if (accountSignOut) accountSignOut.addEventListener('click', () => this.signOut());
+    const accountDeleteToggle = this.container.querySelector('#accountDeleteToggle');
+    if (accountDeleteToggle) {
+      accountDeleteToggle.addEventListener('click', () => {
+        this.accountDeleteOpen = !this.accountDeleteOpen;
+        this.accountMessage = '';
+        this.render();
+      });
+    }
+    const accountDeleteForm = this.container.querySelector('#accountDeleteForm');
+    if (accountDeleteForm) accountDeleteForm.addEventListener('submit', event => this.deleteAccount(event));
 
     // Search input
     const search = this.container.querySelector('#libSearchInput');
