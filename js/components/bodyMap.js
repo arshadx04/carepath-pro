@@ -16,6 +16,7 @@ export class BodyMap {
     this.onSelectRegion = options.onSelectRegion || (() => {});
     this.selectedRegion = 'chest';
     this.view = 'front';
+    this.skullView = 'front';
   }
 
   zone(region, path, extra = '') {
@@ -26,7 +27,7 @@ export class BodyMap {
 
   renderAnatomy() {
     const back = this.view === 'back';
-    const head = renderSkullSVG(this.selectedRegion);
+    const head = renderSkullSVG(this.selectedRegion, this.skullView);
     const neck = this.zone('throat', 'M139 103 Q150 109 161 103 L165 127 Q150 135 135 127Z', 'neck-zone');
     const shoulders = back ? `
       ${this.zone('shoulder','M134 119 Q111 108 96 123 Q84 138 96 158 Q108 169 126 154 L143 137Z','shoulder-zone')}
@@ -41,7 +42,8 @@ export class BodyMap {
       ${this.zone('limbs','M99 132 Q89 133 84 149 L68 207 Q64 222 70 237 L79 241 Q87 225 91 209 L111 154Z','arm-zone')}
       ${this.zone('limbs','M201 132 Q211 133 216 149 L232 207 Q236 222 230 237 L221 241 Q213 225 209 209 L189 154Z','arm-zone')}
       <path class="anatomy-detail" d="M84 238 Q78 250 79 265 Q80 274 87 273 Q93 268 91 256 L91 242
-        M216 238 Q222 250 221 265 Q220 274 213 273 Q207 268 209 256 L209 242"/>
+        M216 238 Q222 250 221 265 Q220 274 213 273 Q207 268 209 256 L209 242
+        M80 274 L76 280 M84 275 L82 283 M88 273 L88 281 M220 274 L224 280 M216 275 L218 283 M212 273 L212 281"/>
       ${this.zone('limbs','M77 261 Q68 270 72 283 Q75 292 84 286 L91 272Z','hand-zone')}
       ${this.zone('limbs','M223 261 Q232 270 228 283 Q225 292 216 286 L209 272Z','hand-zone')}
     `;
@@ -83,7 +85,8 @@ export class BodyMap {
       ${this.zone('limbs','M152 299 Q161 300 172 292 L181 363 L178 420 L183 474 L180 484 Q169 487 165 475 L160 422 L154 365Z','leg-zone')}
       <path class="anatomy-detail" d="M124 359 Q135 366 146 361 M154 361 Q165 366 176 359
         M122 416 Q133 423 141 416 M159 416 Q167 423 178 416
-        M121 474 Q130 478 136 474 M164 474 Q174 478 181 474"/>
+        M121 474 Q130 478 136 474 M164 474 Q174 478 181 474
+        M117 488 L117 496 M122 489 L122 499 M128 488 L128 500 M174 488 L174 500 M180 489 L180 499 M185 488 L185 496"/>
       ${this.zone('limbs','M120 480 Q132 477 138 483 L137 499 Q126 505 112 500 Q107 495 120 480Z','foot-zone')}
       ${this.zone('limbs','M162 483 Q168 477 180 480 Q193 495 188 500 Q174 505 163 499Z','foot-zone')}
     `;
@@ -111,7 +114,7 @@ export class BodyMap {
       <div class="body-explorer-wrapper">
         <div class="body-view-controls" role="group" aria-label="Anatomy view">
           <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">Front View</button>
-          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Back View</button>
+          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Back View</button><button type="button" class="btn-toggle-view" data-skull-view="front">Skull Front</button><button type="button" class="btn-toggle-view" data-skull-view="side">Skull Side</button>
         </div>
         <div class="body-interactive-stage">
           <div class="svg-mannequin-container">${this.renderAnatomy()}</div>
@@ -146,12 +149,13 @@ export class BodyMap {
       elem.addEventListener('click', activate);
       elem.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); } });
     });
-    this.container.querySelectorAll('.btn-toggle-view').forEach(btn => btn.addEventListener('click', () => {
+    this.container.querySelectorAll('.btn-toggle-view[data-view]').forEach(btn => btn.addEventListener('click', () => {
       this.view = btn.getAttribute('data-view');
       if (this.view === 'back' && ['chest','abdomen','pelvis','throat'].includes(this.selectedRegion)) this.selectedRegion = 'spine';
       else if (this.view === 'front' && ['spine','back','shoulder'].includes(this.selectedRegion)) this.selectedRegion = 'chest';
       this.render();
     }));
+    this.container.querySelectorAll('[data-skull-view]').forEach(btn => btn.addEventListener('click', () => { this.skullView = btn.getAttribute('data-skull-view'); this.render(); }));
     this.container.querySelectorAll('.region-chip').forEach(chip => chip.addEventListener('click', () => this.selectRegion(chip.getAttribute('data-region'))));
     this.container.querySelectorAll('.disease-pill-btn').forEach(btn => btn.addEventListener('click', () => {
       window.dispatchEvent(new CustomEvent('carepath:open-disease', { detail: { diseaseId: btn.getAttribute('data-disease') } }));

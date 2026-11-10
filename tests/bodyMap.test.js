@@ -41,9 +41,9 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
   assert.match(markup, /class="skull-illustration"/, 'front view should render the skull illustration');
-  assert.match(markup, /class="skull-bone skull-frontal selected"/, 'frontal bone hotspot should render');
-  assert.match(markup, /class="skull-bone skull-parietal selected"/, 'parietal bone hotspot should render');
-  assert.match(markup, /class="skull-bone skull-zygomatic selected"/, 'cheekbone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-frontal"/, 'frontal bone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-parietal"/, 'parietal bone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-zygomatic"/, 'cheekbone hotspot should render');
   assert.match(markup, /class="skull-cavity"/, 'eye sockets should render');
   assert.match(markup, /class="skull-teeth"/, 'teeth should render');
   assert.match(markup, /aria-label="Select head: mandible"/, 'mandible should be accessible');
@@ -88,3 +88,13 @@ test('back view renders posterior spine regions without anterior torso hotspots'
 });
 
 test('skull bone hotspots map to the shared head assessment region', () => { const svg=renderSkullSVG('head'); assert.equal((svg.match(/data-region="head"/g)||[]).length,7); assert.match(svg,/aria-label="Select head: frontal bone"/); assert.match(svg,/aria-label="Select head: mandible"/); assert.match(svg,/class="skull-bone skull-mandible selected"/); assert.doesNotMatch(renderSkullSVG('chest'),/skull-bone skull-frontal selected/); });
+
+test('side skull view renders accessible lateral bone hotspots', () => {
+  const svg = renderSkullSVG('head', 'side');
+  assert.match(svg, /skull-side-view/);
+  assert.match(svg, /aria-label="Anime-inspired lateral skull anatomy"/);
+  assert.match(svg, /SKULL · LATERAL/);
+  assert.equal((svg.match(/data-region="head"/g) || []).length, 7);
+  assert.match(svg, /aria-label="Select head: temporal bones"/);
+  assert.match(svg, /aria-label="Select head: mandible"/);
+});
