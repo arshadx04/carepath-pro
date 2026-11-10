@@ -41,9 +41,9 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
   assert.match(markup, /class="skull-illustration"/, 'front view should render the skull illustration');
-  assert.match(markup, /class="skull-bone skull-frontal selected"/, 'frontal bone hotspot should render');
-  assert.match(markup, /class="skull-bone skull-parietal selected"/, 'parietal bone hotspot should render');
-  assert.match(markup, /class="skull-bone skull-zygomatic selected"/, 'cheekbone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-frontal"/, 'frontal bone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-parietal"/, 'parietal bone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-zygomatic"/, 'cheekbone hotspot should render');
   assert.match(markup, /class="skull-cavity"/, 'eye sockets should render');
   assert.match(markup, /class="skull-teeth"/, 'teeth should render');
   assert.match(markup, /aria-label="Select head: mandible"/, 'mandible should be accessible');
