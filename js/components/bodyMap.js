@@ -16,6 +16,7 @@ export class BodyMap {
     this.onSelectRegion = options.onSelectRegion || (() => {});
     this.selectedRegion = 'chest';
     this.view = 'front';
+    this.skullView = 'front';
   }
 
   zone(region, path, extra = '') {
@@ -26,7 +27,7 @@ export class BodyMap {
 
   renderAnatomy() {
     const back = this.view === 'back';
-    const head = renderSkullSVG(this.selectedRegion);
+    const head = renderSkullSVG(this.selectedRegion, this.skullView);
     const neck = this.zone('throat', 'M139 103 Q150 109 161 103 L165 127 Q150 135 135 127Z', 'neck-zone');
     const shoulders = back ? `
       ${this.zone('shoulder','M134 119 Q111 108 96 123 Q84 138 96 158 Q108 169 126 154 L143 137Z','shoulder-zone')}
@@ -111,7 +112,7 @@ export class BodyMap {
       <div class="body-explorer-wrapper">
         <div class="body-view-controls" role="group" aria-label="Anatomy view">
           <button type="button" class="btn-toggle-view ${this.view === 'front' ? 'active' : ''}" data-view="front" aria-pressed="${this.view === 'front'}">Front View</button>
-          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Back View</button>
+          <button type="button" class="btn-toggle-view ${this.view === 'back' ? 'active' : ''}" data-view="back" aria-pressed="${this.view === 'back'}">Back View</button><button type="button" class="btn-toggle-view" data-skull-view="front">Skull Front</button><button type="button" class="btn-toggle-view" data-skull-view="side">Skull Side</button>
         </div>
         <div class="body-interactive-stage">
           <div class="svg-mannequin-container">${this.renderAnatomy()}</div>
@@ -152,6 +153,7 @@ export class BodyMap {
       else if (this.view === 'front' && ['spine','back','shoulder'].includes(this.selectedRegion)) this.selectedRegion = 'chest';
       this.render();
     }));
+    this.container.querySelectorAll('[data-skull-view]').forEach(btn => btn.addEventListener('click', () => { this.skullView = btn.getAttribute('data-skull-view'); this.render(); }));
     this.container.querySelectorAll('.region-chip').forEach(chip => chip.addEventListener('click', () => this.selectRegion(chip.getAttribute('data-region'))));
     this.container.querySelectorAll('.disease-pill-btn').forEach(btn => btn.addEventListener('click', () => {
       window.dispatchEvent(new CustomEvent('carepath:open-disease', { detail: { diseaseId: btn.getAttribute('data-disease') } }));
