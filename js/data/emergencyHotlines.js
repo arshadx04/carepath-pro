@@ -73,11 +73,12 @@ export const emergencyDatabase = {
       "dial": "000",
       "crisis": "Lifeline: 13 11 14",
       "crisisDial": "131114",
-      "healthdirect": "1800 022 222",
+      "nonEmergency": "Healthdirect nurse advice: 1800 022 222",
+      "nonEmergencyDial": "1800 022 222",
       "sources": [
         { "label": "Australian Government — Triple Zero (000)", "url": "https://www.infrastructure.gov.au/media-communications/phone/triple-zero/how-call-triple-zero-000" },
         { "label": "Lifeline Australia — crisis support", "url": "https://www.lifeline.org.au/get-help/national-services/lifeline-crisis-support" },
-        { "label": "Healthdirect Australia", "url": "https://www.healthdirect.gov.au/" }
+        { "label": "Healthdirect Australia — helpline details", "url": "https://www.healthdirect.gov.au/contact-us" }
       ]
     },
     {
