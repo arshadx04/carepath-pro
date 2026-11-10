@@ -134,7 +134,7 @@ export class AssessmentWizard {
         <p class="step-subheading">Optional background details help organize the educational summary; they do not establish medical risk.</p>
 
         <div class="form-group-block">
-          <label class="group-label">Age Group</label>
+          <label class="group-label">Age Group (optional)</label>
           <div class="toggle-pill-grid">
             ${[
               {id: 'infant', label: 'Infant (< 2 yrs)'},
@@ -579,7 +579,7 @@ export class AssessmentWizard {
         comorbidities.every(value => allowedComorbidities.has(value)) &&
         new Set(comorbidities).size === comorbidities.length &&
         (!comorbidities.includes('none') || comorbidities.length === 1);
-      return allowedAgeGroups.has(profile.ageGroup) &&
+      return (profile.ageGroup == null || allowedAgeGroups.has(profile.ageGroup)) &&
         (profile.biologicalSex == null || allowedBiologicalSex.has(profile.biologicalSex)) &&
         (profile.pregnant == null || typeof profile.pregnant === 'boolean') &&
         Boolean(validComorbidities);
