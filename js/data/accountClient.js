@@ -29,6 +29,12 @@ export const accountClient = {
   changePassword: (currentPassword, newPassword) => request('/api/auth/password', {
     method: 'PUT', body: JSON.stringify({ currentPassword, newPassword }),
   }),
+  requestPasswordReset: email => request('/api/auth/password-reset/request', {
+    method: 'POST', body: JSON.stringify({ email }),
+  }),
+  confirmPasswordReset: (token, newPassword) => request('/api/auth/password-reset/confirm', {
+    method: 'POST', body: JSON.stringify({ token, newPassword }),
+  }),
   bookmarks: () => request('/api/bookmarks'),
   saveBookmark: conditionId => request('/api/bookmarks', {
     method: 'POST', body: JSON.stringify({ conditionId }),
