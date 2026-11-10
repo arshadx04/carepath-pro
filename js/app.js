@@ -206,7 +206,7 @@ class App {
                 ${c.nonEmergency ? `
                   <div class="num-row">
                     <span class="num-label">Non-emergency health advice:</span>
-                    <span class="num-text">${c.nonEmergency}</span>
+                    ${c.nonEmergencyDial ? `<a href="tel:${getDialNumber(c.nonEmergencyDial)}" class="num-link">📞 ${c.nonEmergency}</a>` : `<span class="num-text">${c.nonEmergency}</span>`}
                   </div>
                 ` : ''}
                 ${c.ambulance ? `
@@ -227,7 +227,7 @@ class App {
                     <span class="num-text">${c.sources.map(source => `<a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label}</a>`).join(' · ')}</span>
                   </div>
                 ` : ''}
-                <p class="hotline-verified-note">Reference links checked 9 Nov 2026. Numbers and service coverage can change; verify locally.</p>
+                <p class="hotline-verified-note">Reference links last reviewed 10 Nov 2026. Numbers and service coverage can change; verify locally.</p>
               </div>
             </div>
           `).join('')}

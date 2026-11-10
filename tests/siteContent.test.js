@@ -29,3 +29,14 @@ test('mobile navigation exposes and updates its expanded state', () => {
   assert.ok(app.includes("setAttribute('aria-hidden', String(!isOpen))"));
   assert.ok(app.includes("setAttribute('aria-expanded', 'false')"));
 });
+
+
+test('assessment toggle controls have visible keyboard focus and hotline advice links are tap-to-call', () => {
+  const css = read('../css/styles.css');
+  const app = read('../js/app.js');
+
+  assert.match(css, /\.symptom-check-card:focus-visible/);
+  assert.match(css, /\.timing-choice-card:focus-visible/);
+  assert.match(css, /\.rf-checkbox-item:focus-visible/);
+  assert.ok(app.includes('href="tel:${getDialNumber(c.nonEmergencyDial)}"'));
+});

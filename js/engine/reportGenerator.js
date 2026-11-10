@@ -3,6 +3,8 @@
  * Formatted as an educational visit-preparation summary
  */
 
+import { symptomDatabase } from '../data/symptoms.js';
+
 function escapeHTML(value) {
   return String(value ?? '').replace(/[&<>"']/g, char => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -30,29 +32,40 @@ export class ReportGenerator {
       minute: '2-digit'
     });
 
-    const symptomsList = (Array.isArray(safeIntake.selectedSymptoms) ? safeIntake.selectedSymptoms : [])
-       .map(symId => `<li><strong>${escapeHTML(symId.replace(/_/g, ' '))}</strong></li>`)
-      .join('');
+    const selectedSymptoms = Array.isArray(safeIntake.selectedSymptoms)
+      ? safeIntake.selectedSymptoms.filter(symptomId => typeof symptomId === 'string' && symptomId.trim())
+      : [];
+    const symptomsList = selectedSymptoms.map(symptomId => {
+      const symptom = symptomDatabase.symptoms.find(item => item.id === symptomId);
+      const label = symptom?.label || symptomId.replace(/_/g, ' ');
+      return `<li><strong>${escapeHTML(label)}</strong></li>`;
+    }).join('') || '<li>No symptoms recorded.</li>';
 
     const matchedConditions = (Array.isArray(safeResult.topMatches) ? safeResult.topMatches : [])
-      .map(m => `
-        <div class="report-condition-row">
-          <div class="condition-name">
-            <strong>${escapeHTML(m.disease?.name)}</strong> 
-            <span class="icd">(${escapeHTML(m.disease?.icd10 || 'ICD-10')})</span>
+      .filter(match => match && typeof match === 'object')
+      .map(match => {
+        const disease = match.disease && typeof match.disease === 'object' ? match.disease : {};
+        return `
+          <div class="report-condition-row">
+            <div class="condition-name">
+              <strong>${escapeHTML(disease.name)}</strong>
+              <span class="icd">(${escapeHTML(disease.icd10 || 'ICD-10')})</span>
+            </div>
+            <div class="match-bar-container">
+              <span class="pct">Exploratory heuristic signal: ${escapeHTML(match.relevance)} (not a probability)</span>
+            </div>
           </div>
-          <div class="match-bar-container">
-            <span class="pct">Exploratory heuristic signal: ${escapeHTML(m.relevance)} (not a probability)</span>
-          </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
 
     const questionsList = (Array.isArray(safeResult.doctorQuestions) ? safeResult.doctorQuestions : [])
-       .map(q => `<li>${escapeHTML(q)}</li>`)
+      .map(question => `<li>${escapeHTML(question)}</li>`)
       .join('');
 
-    const redFlagsList = (Array.isArray(safeResult.activeRedFlags) ? safeResult.activeRedFlags : []).length > 0
-      ? safeResult.activeRedFlags.map(rf => `<li class="red-text"><strong>${escapeHTML(rf.label)}</strong>: ${escapeHTML(rf.emergencyDesc || 'Critical indicator')}</li>`).join('')
+    const activeRedFlags = (Array.isArray(safeResult.activeRedFlags) ? safeResult.activeRedFlags : [])
+      .filter(flag => flag && typeof flag === 'object');
+    const redFlagsList = activeRedFlags.length > 0
+      ? activeRedFlags.map(flag => `<li class="red-text"><strong>${escapeHTML(flag.label)}</strong>: ${escapeHTML(flag.emergencyDesc || 'Critical indicator')}</li>`).join('')
       : '<li class="green-text">No warning signs were selected in this educational check-in. This does not rule out an emergency.</li>';
 
     return `
@@ -168,18 +181,23 @@ export class ReportGenerator {
     </div>
 
     <div class="card" style="margin-bottom: 16px;">
-      <h3>3. Safety Screener: Red Flags & Urgent Signs</h3>
+      <h3>3. Reported Symptoms</h3>
+      <ul>${symptomsList}</ul>
+    </div>
+
+    <div class="card" style="margin-bottom: 16px;">
+      <h3>4. Safety Screener: Warning-Sign Review</h3>
       <ul>${redFlagsList}</ul>
     </div>
 
     <div class="card" style="margin-bottom: 16px;">
-      <h3>4. Educational Differential Considerations</h3>
+      <h3>5. Educational Differential Considerations</h3>
       <p style="font-size: 11px; color: #64748b; margin-top: 0;">Exploratory associations from a simple educational heuristic; not validated diagnostic probabilities.</p>
       <div>${matchedConditions}</div>
     </div>
 
     <div class="card" style="margin-bottom: 16px;">
-      <h3>5. Personalized Questions Prepared for Clinician</h3>
+      <h3>6. Questions to Discuss with a Healthcare Professional</h3>
       <ul>${questionsList}</ul>
     </div>
 

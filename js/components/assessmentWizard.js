@@ -13,6 +13,15 @@ function escapeHTML(value) {
   })[char]);
 }
 
+const allowedAgeGroups = new Set(['infant', 'child', 'adolescent', 'adult', 'senior']);
+const allowedBiologicalSex = new Set(['female', 'male', 'not_specified']);
+const allowedComorbidities = new Set(['hypertension', 'diabetes', 'asthma', 'heart_disease', 'smoking', 'immunosuppressed', 'obesity', 'none']);
+const allowedOnsets = new Set(['sudden_minutes', 'hours_today', 'days_recent', 'weeks_chronic']);
+const allowedTrajectories = new Set(['worsening', 'steady', 'intermittent', 'improving']);
+const allowedDisruptions = new Set(['mild', 'moderate', 'severe']);
+const allowedSymptomIds = new Set(symptomDatabase.symptoms.map(symptom => symptom.id));
+const allowedRedFlagIds = new Set(symptomDatabase.symptoms.filter(symptom => symptom.isRedFlag).map(symptom => symptom.id));
+
 export class AssessmentWizard {
   constructor(containerId, options = {}) {
     this.container = document.getElementById(containerId);
@@ -125,7 +134,7 @@ export class AssessmentWizard {
         <p class="step-subheading">Optional background details help organize the educational summary; they do not establish medical risk.</p>
 
         <div class="form-group-block">
-          <label class="group-label">Age Group</label>
+          <label class="group-label">Age Group (optional)</label>
           <div class="toggle-pill-grid">
             ${[
               {id: 'infant', label: 'Infant (< 2 yrs)'},
@@ -240,16 +249,16 @@ export class AssessmentWizard {
           ${filteredSymptoms.length > 0 ? filteredSymptoms.map(sym => {
             const isSelected = this.intake.selectedSymptoms.includes(sym.id);
             return `
-              <div class="symptom-check-card ${isSelected ? 'selected' : ''} ${sym.isRedFlag ? 'red-flag-card' : ''}" data-symptom-id="${sym.id}">
-                <div class="card-check-box">${isSelected ? '✓' : ''}</div>
-                <div class="card-content">
-                  <div class="card-title">
+              <button type="button" class="symptom-check-card ${isSelected ? 'selected' : ''} ${sym.isRedFlag ? 'red-flag-card' : ''}" data-symptom-id="${sym.id}" aria-pressed="${isSelected}">
+                <span class="card-check-box">${isSelected ? '✓' : ''}</span>
+                <span class="card-content">
+                  <span class="card-title">
                     ${sym.isRedFlag ? '<span class="rf-badge">ALERT</span>' : ''}
                     ${sym.label}
-                  </div>
-                  <div class="card-meta">Region: ${sym.region}</div>
-                </div>
-              </div>
+                  </span>
+                  <span class="card-meta">Region: ${sym.region}</span>
+                </span>
+              </button>
             `;
           }).join('') : `
             <div class="empty-search-state">
@@ -278,13 +287,13 @@ export class AssessmentWizard {
               {id: 'days_recent', title: 'Last Few Days', desc: 'Gradually built over 2 to 4 days'},
               {id: 'weeks_chronic', title: 'Weeks or Months', desc: 'Persistent, intermittent, or recurring over a longer period'}
             ].map(opt => `
-              <div class="timing-choice-card ${t.onset === opt.id ? 'active' : ''}" data-timing-prop="onset" data-val="${opt.id}">
-                <div class="radio-dot">${t.onset === opt.id ? '●' : '○'}</div>
-                <div class="timing-info">
+              <button type="button" class="timing-choice-card ${t.onset === opt.id ? 'active' : ''}" data-timing-prop="onset" data-val="${opt.id}" aria-pressed="${t.onset === opt.id}">
+                <span class="radio-dot">${t.onset === opt.id ? '●' : '○'}</span>
+                <span class="timing-info">
                   <strong>${opt.title}</strong>
-                  <p>${opt.desc}</p>
-                </div>
-              </div>
+                  <span class="timing-desc">${opt.desc}</span>
+                </span>
+              </button>
             `).join('')}
           </div>
         </div>
@@ -384,24 +393,24 @@ export class AssessmentWizard {
           ${redFlagList.map(rf => {
             const isChecked = selectedFlags.includes(rf.id);
             return `
-              <div class="rf-checkbox-item ${isChecked ? 'checked' : ''}" data-rf-id="${rf.id}">
-                <div class="rf-check-box">${isChecked ? '✓' : ''}</div>
-                <div class="rf-text-content">
-                  <div class="rf-label">${escapeHTML(rf.label)}</div>
-                  <div class="rf-desc">${escapeHTML(rf.emergencyDesc || 'Warning-sign item')}</div>
-                </div>
-              </div>
+              <button type="button" class="rf-checkbox-item ${isChecked ? 'checked' : ''}" data-rf-id="${rf.id}" aria-pressed="${isChecked}">
+                <span class="rf-check-box">${isChecked ? '✓' : ''}</span>
+                <span class="rf-text-content">
+                  <span class="rf-label">${escapeHTML(rf.label)}</span>
+                  <span class="rf-desc">${escapeHTML(rf.emergencyDesc || 'Warning-sign item')}</span>
+                </span>
+              </button>
             `;
           }).join('')}
 
           <!-- None of these -->
-          <div class="rf-checkbox-item none-option ${isNoneSelected ? 'checked' : ''}" data-rf-id="none">
-            <div class="rf-check-box">${isNoneSelected ? '✓' : ''}</div>
-            <div class="rf-text-content">
-              <div class="rf-label">I have not selected any of these warning signs</div>
-              <div class="rf-desc">If unsure whether a warning sign applies, seek advice from a qualified professional.</div>
-            </div>
-          </div>
+          <button type="button" class="rf-checkbox-item none-option ${isNoneSelected ? 'checked' : ''}" data-rf-id="none" aria-pressed="${isNoneSelected}">
+            <span class="rf-check-box">${isNoneSelected ? '✓' : ''}</span>
+            <span class="rf-text-content">
+              <span class="rf-label">I have not selected any of these warning signs</span>
+              <span class="rf-desc">If unsure whether a warning sign applies, seek advice from a qualified professional.</span>
+            </span>
+          </button>
         </div>
       </div>
     `;
@@ -557,20 +566,43 @@ export class AssessmentWizard {
 
   // --- VALIDATION & EVENT BINDING ---
   isCurrentStepValid() {
+    const intake = this.intake && typeof this.intake === 'object' ? this.intake : {};
+    const profile = intake.profile && typeof intake.profile === 'object' ? intake.profile : {};
+    const timing = intake.timing && typeof intake.timing === 'object' ? intake.timing : {};
+    const severity = intake.severity && typeof intake.severity === 'object' ? intake.severity : {};
+    const selectedSymptoms = Array.isArray(intake.selectedSymptoms) ? intake.selectedSymptoms : [];
+    const redFlags = Array.isArray(intake.redFlags) ? intake.redFlags : [];
+
     if (this.currentStep === 1) {
-      return Boolean(this.intake.profile.ageGroup);
+      const comorbidities = Array.isArray(profile.comorbidities) ? profile.comorbidities : null;
+      const validComorbidities = comorbidities &&
+        comorbidities.every(value => allowedComorbidities.has(value)) &&
+        new Set(comorbidities).size === comorbidities.length &&
+        (!comorbidities.includes('none') || comorbidities.length === 1);
+      return (profile.ageGroup == null || allowedAgeGroups.has(profile.ageGroup)) &&
+        (profile.biologicalSex == null || allowedBiologicalSex.has(profile.biologicalSex)) &&
+        (profile.pregnant == null || typeof profile.pregnant === 'boolean') &&
+        Boolean(validComorbidities);
     }
     if (this.currentStep === 2) {
-      return this.intake.selectedSymptoms.length > 0;
+      return selectedSymptoms.length > 0 &&
+        new Set(selectedSymptoms).size === selectedSymptoms.length &&
+        selectedSymptoms.every(id => typeof id === 'string' && allowedSymptomIds.has(id));
     }
     if (this.currentStep === 3) {
-      return Boolean(this.intake.timing.onset && this.intake.timing.trajectory);
+      return allowedOnsets.has(timing.onset) && allowedTrajectories.has(timing.trajectory);
     }
     if (this.currentStep === 4) {
-      return Number.isInteger(this.intake.severity.painScore) && this.intake.severity.painScore >= 0 && this.intake.severity.painScore <= 10 && Boolean(this.intake.severity.disruption);
+      return Number.isInteger(severity.painScore) &&
+        severity.painScore >= 0 &&
+        severity.painScore <= 10 &&
+        allowedDisruptions.has(severity.disruption);
     }
     if (this.currentStep === 5) {
-      return this.intake.redFlags.includes('none') || this.intake.redFlags.some(flag => flag !== 'none');
+      if (redFlags.length === 1 && redFlags[0] === 'none') return true;
+      return redFlags.length > 0 &&
+        new Set(redFlags).size === redFlags.length &&
+        redFlags.every(flag => typeof flag === 'string' && allowedRedFlagIds.has(flag));
     }
     return true;
   }
