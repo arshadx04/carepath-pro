@@ -40,3 +40,16 @@ test('assessment toggle controls have visible keyboard focus and hotline advice 
   assert.match(css, /\.rf-checkbox-item:focus-visible/);
   assert.ok(app.includes('href="tel:${getDialNumber(c.nonEmergencyDial)}"'));
 });
+
+
+test('disease library contains at least 150 uniquely identified conditions with required educational fields', async () => {
+  const { diseaseDatabase } = await import('../js/data/diseases.js');
+  assert.ok(diseaseDatabase.length >= 150, 'expected at least 150 conditions');
+  assert.equal(new Set(diseaseDatabase.map(item => item.id)).size, diseaseDatabase.length, 'condition IDs must be unique');
+  for (const condition of diseaseDatabase) {
+    assert.ok(condition.name && condition.category && condition.organSystem, 'condition should have identity and taxonomy');
+    assert.ok(Array.isArray(condition.hallmarkSymptoms) && condition.hallmarkSymptoms.length >= 3, condition.id + ' should have hallmark symptoms');
+    assert.ok(Array.isArray(condition.redFlags) && condition.redFlags.length > 0, condition.id + ' should include safety warnings');
+    assert.ok(condition.source && condition.source.url, condition.id + ' should include a reference link');
+  }
+});
