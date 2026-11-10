@@ -11,6 +11,7 @@ const DB_PATH = configuredPath === ':memory:'
   ? ':memory:'
   : resolve(configuredPath || fileURLToPath(new URL('../data/carepath.sqlite', import.meta.url)));
 const SESSION_TTL_SECONDS = 60 * 60 * 24 * 7;
+const PASSWORD_RESET_TTL_SECONDS = 60 * 30;
 const SCRYPT_OPTIONS = { N: 2 ** 17, r: 8, p: 1, maxmem: 256 * 1024 * 1024 };
 
 if (DB_PATH !== ':memory:') mkdirSync(dirname(DB_PATH), { recursive: true });
@@ -61,6 +62,13 @@ database.exec(`
     created_at INTEGER NOT NULL,
     PRIMARY KEY (user_id, condition_id)
   ) STRICT;
+  CREATE TABLE IF NOT EXISTS password_reset_tokens (
+    token_hash TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    expires_at INTEGER NOT NULL,
+    created_at INTEGER NOT NULL
+  ) STRICT;
+  CREATE INDEX IF NOT EXISTS password_reset_expiry_idx ON password_reset_tokens(expires_at);
 `);
 
 const queries = {
@@ -77,6 +85,11 @@ const queries = {
   deleteUser: database.prepare('DELETE FROM users WHERE id = ?'),
   updatePassword: database.prepare('UPDATE users SET password_salt = ?, password_hash = ? WHERE id = ?'),
   deleteUserSessions: database.prepare('DELETE FROM sessions WHERE user_id = ?'),
+  deletePasswordResetTokensForUser: database.prepare('DELETE FROM password_reset_tokens WHERE user_id = ?'),
+  deleteExpiredPasswordResetTokens: database.prepare('DELETE FROM password_reset_tokens WHERE expires_at <= ?'),
+  insertPasswordResetToken: database.prepare('INSERT INTO password_reset_tokens (token_hash, user_id, expires_at, created_at) VALUES (?, ?, ?, ?)'),
+  passwordResetByHash: database.prepare('SELECT token_hash, user_id, expires_at FROM password_reset_tokens WHERE token_hash = ?'),
+  deletePasswordResetToken: database.prepare('DELETE FROM password_reset_tokens WHERE token_hash = ?'),
 };
 
 export function normalizeEmail(value) {
@@ -132,6 +145,38 @@ export function revokeUserSessions(userId) {
 
 function tokenDigest(token) {
   return createHash('sha256').update(token).digest('hex');
+}
+
+export function createPasswordResetToken(userId) {
+  const now = Math.floor(Date.now() / 1000);
+  queries.deleteExpiredPasswordResetTokens.run(now);
+  queries.deletePasswordResetTokensForUser.run(userId);
+  const token = randomBytes(32).toString('base64url');
+  queries.insertPasswordResetToken.run(tokenDigest(token), userId, now + PASSWORD_RESET_TTL_SECONDS, now);
+  return token;
+}
+
+export function completePasswordReset(token, credentials) {
+  if (typeof token !== 'string' || token.length > 128) return false;
+  const digest = tokenDigest(token);
+  const now = Math.floor(Date.now() / 1000);
+  database.exec('BEGIN IMMEDIATE');
+  try {
+    const record = queries.passwordResetByHash.get(digest);
+    if (!record || record.expires_at <= now) {
+      queries.deletePasswordResetToken.run(digest);
+      database.exec('COMMIT');
+      return false;
+    }
+    updatePassword(record.user_id, credentials);
+    revokeUserSessions(record.user_id);
+    queries.deletePasswordResetTokensForUser.run(record.user_id);
+    database.exec('COMMIT');
+    return true;
+  } catch (error) {
+    database.exec('ROLLBACK');
+    throw error;
+  }
 }
 
 export function createSession(userId) {
