@@ -1,6 +1,6 @@
 /**
  * CarePath Pro - Emergency Contacts
- * Reference links checked on 2026-11-09. Users must verify local availability.
+ * Reference links last reviewed on 2026-11-10. Users must verify local availability.
  * Educational directory only; not a substitute for local emergency guidance.
  */
 
@@ -17,7 +17,7 @@ export const emergencyDatabase = {
       "sources": [
         { "label": "911.gov — emergency calling", "url": "https://www.911.gov/calling-911/" },
         { "label": "SAMHSA — 988 crisis support", "url": "https://www.samhsa.gov/find-support/in-crisis" },
-        { "label": "Poison Control — contact details", "url": "https://www.poison.org/contact-us" }
+        { "label": "HRSA Poison Help — contact details", "url": "https://poisonhelp.hrsa.gov/contact-us" }
       ]
     },
     {
