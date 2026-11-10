@@ -2753,3 +2753,72 @@ body.dark-theme .skull-bone{fill:#526f68;stroke:#9abbb0}body.dark-theme .skull-f
 .anatomy-live-indicator{width:7px;height:7px;border-radius:50%;background:#0d9488;box-shadow:0 0 0 4px rgba(13,148,136,.12)}
 .anatomy-heading-note{margin-left:5px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.72}
 @media(max-width:560px){.anatomy-explorer-heading{flex-wrap:wrap;font-size:9px}.anatomy-heading-note{flex-basis:100%;text-align:center;margin:0}}
+
+
+/* Clinical atlas refinement: natural tissue tones, dimensional shading and fine landmarks.
+   Selectable SVG regions remain transparent overlays above the illustration. */
+.anatomy-illustration {
+  filter: drop-shadow(0 16px 22px rgba(32, 54, 49, .14));
+}
+.anatomy-figure .anterior-body,
+.anatomy-figure .posterior-body {
+  fill: url(#skinAtlas);
+  stroke: #9b766b;
+  stroke-width: 1.35;
+  stroke-linejoin: round;
+}
+.anatomy-figure .anatomical-zone {
+  fill: rgba(190, 133, 113, .12);
+  stroke: rgba(128, 91, 79, .58);
+  stroke-width: 1.05;
+}
+.anatomy-figure .anatomical-zone:hover,
+.anatomy-figure .anatomical-zone:focus-visible,
+.anatomy-figure .anatomical-zone.selected {
+  fill: rgba(13, 148, 136, .42);
+  stroke: #08786e;
+  stroke-width: 2.2;
+}
+.anatomy-figure .anatomy-detail {
+  stroke: #9a756b;
+  stroke-width: 1.05;
+  opacity: .66;
+}
+.anatomy-figure .rib-cage path {
+  stroke: #a77e72;
+  stroke-width: 1.35;
+  opacity: .62;
+}
+.anatomy-figure .posterior-muscle {
+  fill: rgba(166, 99, 86, .14);
+  stroke: rgba(139, 91, 78, .55);
+}
+.anatomy-figure .vertebral-column .vertebra {
+  fill: #eadbd0;
+  stroke: #9a756b;
+}
+.anatomy-figure .zone-label {
+  fill: #624d48;
+  stroke: rgba(255,255,255,.92);
+}
+.skull-illustration .skull-bone {
+  stroke: #8b7868;
+  stroke-width: 1.15;
+}
+.skull-illustration .skull-frontal { fill: #e7d9c5; }
+.skull-illustration .skull-parietal { fill: #eee3d2; }
+.skull-illustration .skull-temporal { fill: #d9c7b1; }
+.skull-illustration .skull-zygomatic { fill: #d1bca5; }
+.skull-illustration .skull-maxilla { fill: #e8ddca; }
+.skull-illustration .skull-nasal { fill: #d4bda9; }
+.skull-illustration .skull-mandible { fill: #dfcfba; }
+.skull-illustration .skull-cavity { fill: #554b48; stroke: #8b7868; }
+.skull-illustration .skull-detail { stroke: #806e61; }
+.skull-illustration .skull-detail .teeth { stroke: #fff8e9; stroke-width: 1.35; }
+body.dark-theme .anatomy-figure .anterior-body,
+body.dark-theme .anatomy-figure .posterior-body { fill: #80665e; stroke: #c4a397; }
+body.dark-theme .anatomy-figure .anatomical-zone { fill: rgba(222,166,143,.12); stroke: #c4a397; }
+body.dark-theme .anatomy-figure .anatomical-zone.selected { fill: rgba(20,145,129,.55); stroke: #5eead4; }
+body.dark-theme .anatomy-figure .anatomy-detail,
+body.dark-theme .anatomy-figure .rib-cage path { stroke: #d3ad9c; }
+body.dark-theme .anatomy-figure .zone-label { fill: #f4e8df; stroke: rgba(30,24,24,.9); }
