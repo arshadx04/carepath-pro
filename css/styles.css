@@ -2799,3 +2799,7 @@ body.dark-theme .account-bookmarks-copy,body.dark-theme .account-bookmarks-copy 
 .account-delete-form label{display:flex;min-width:190px;flex:1 1 220px;flex-direction:column;gap:.35rem;font-size:.9rem}
 .account-delete-form input{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:.65rem;font:inherit}
 body.dark-theme .account-delete-form p{color:#fca5a5}
+
+.account-security-form{display:flex;flex:1 1 100%;align-items:end;flex-wrap:wrap;gap:.75rem;padding-top:.75rem;border-top:1px solid var(--border-light)}
+.account-security-form label{display:flex;min-width:170px;flex:1 1 190px;flex-direction:column;gap:.35rem;font-size:.9rem}
+.account-security-form input{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:.65rem;font:inherit}

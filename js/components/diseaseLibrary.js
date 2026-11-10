@@ -30,6 +30,7 @@ export class DiseaseLibrary {
     this.accountMode = 'login';
     this.accountFormOpen = false;
     this.accountDeleteOpen = false;
+    this.accountPasswordChangeOpen = false;
     this.accountMessage = '';
     this.accountBusy = false;
     this.refreshAccount();
@@ -159,6 +160,32 @@ export class DiseaseLibrary {
       this.render();
     }
   }
+  async changePassword(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const currentPassword = form.querySelector('#currentAccountPassword').value;
+    const newPassword = form.querySelector('#newAccountPassword').value;
+    const confirmPassword = form.querySelector('#confirmAccountPassword').value;
+    if (newPassword !== confirmPassword) {
+      this.accountMessage = 'The new passwords do not match.';
+      this.render();
+      return;
+    }
+    this.accountBusy = true;
+    this.accountMessage = '';
+    this.render();
+    try {
+      await accountClient.changePassword(currentPassword, newPassword);
+      this.accountPasswordChangeOpen = false;
+      this.accountMessage = 'Password changed. Other active sessions were signed out.';
+    } catch (error) {
+      this.accountPasswordChangeOpen = true;
+      this.accountMessage = error.message;
+    } finally {
+      this.accountBusy = false;
+      this.render();
+    }
+  }
   render() {
     if (!this.container) return;
 
@@ -226,9 +253,18 @@ export class DiseaseLibrary {
           ${this.accountUser
             ? `<div class="account-actions">
                 <button type="button" id="accountSignOut" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>Sign out</button>
+                <button type="button" id="accountPasswordToggle" class="account-mode-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountPasswordChangeOpen ? 'Cancel password change' : 'Change password'}</button>
                 <button type="button" id="accountDeleteToggle" class="account-delete-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountDeleteOpen ? 'Cancel deletion' : 'Delete account'}</button>
               </div>`
             : `<button type="button" id="accountToggle" class="account-action-btn">${this.accountFormOpen ? 'Close' : 'Sign in / Create account'}</button>`}
+          ${this.accountUser && this.accountPasswordChangeOpen ? `
+            <form id="accountPasswordForm" class="account-security-form">
+              <label>Current password <input id="currentAccountPassword" type="password" autocomplete="current-password" maxlength="128" required></label>
+              <label>New password <input id="newAccountPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label>
+              <label>Confirm new password <input id="confirmAccountPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required></label>
+              <button type="submit" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Saving…' : 'Update password'}</button>
+            </form>
+          ` : ''}
           ${this.accountUser && this.accountDeleteOpen ? `
             <form id="accountDeleteForm" class="account-delete-form">
               <p>Deleting your account permanently removes it and all synced bookmarks. This cannot be undone.</p>
@@ -374,10 +410,22 @@ export class DiseaseLibrary {
     }
     const accountSignOut = this.container.querySelector('#accountSignOut');
     if (accountSignOut) accountSignOut.addEventListener('click', () => this.signOut());
+    const accountPasswordToggle = this.container.querySelector('#accountPasswordToggle');
+    if (accountPasswordToggle) {
+      accountPasswordToggle.addEventListener('click', () => {
+        this.accountPasswordChangeOpen = !this.accountPasswordChangeOpen;
+        this.accountDeleteOpen = false;
+        this.accountMessage = '';
+        this.render();
+      });
+    }
+    const accountPasswordForm = this.container.querySelector('#accountPasswordForm');
+    if (accountPasswordForm) accountPasswordForm.addEventListener('submit', event => this.changePassword(event));
     const accountDeleteToggle = this.container.querySelector('#accountDeleteToggle');
     if (accountDeleteToggle) {
       accountDeleteToggle.addEventListener('click', () => {
         this.accountDeleteOpen = !this.accountDeleteOpen;
+        this.accountPasswordChangeOpen = false;
         this.accountMessage = '';
         this.render();
       });
