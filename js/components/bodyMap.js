@@ -69,7 +69,7 @@ export class BodyMap {
       <g class="vertebral-column">
         ${Array.from({length: 18}, (_,i) => `<rect class="anatomical-zone vertebra ${this.selectedRegion === 'spine' ? 'selected' : ''}" data-region="spine" x="${146-(i>12?1:0)}" y="${143+i*7.2}" width="${8+(i>12?2:0)}" height="5.6" rx="2"/>`).join('')}
       </g>
-      <path class="spine-center-line" d="M150 139 Q148 220 150 280"/>
+      <path class="spine-center-line" d="M150 139 Q148 220 150 280"/><text x="150" y="242" class="zone-label" text-anchor="middle">Back</text><text x="150" y="293" class="zone-label" text-anchor="middle">Spine</text>
       <text x="150" y="242" class="zone-label" text-anchor="middle">Back</text>
       <text x="150" y="293" class="zone-label" text-anchor="middle">Spine</text>
     ` : `
@@ -105,7 +105,7 @@ export class BodyMap {
             <feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/>
           </filter>
         </defs>
-        <g class="anatomy-figure">
+        <g class="anatomy-figure ${back ? "back-anatomy" : "front-anatomy"}">
           ${head}${neck}${shoulders}${torso}${arms}${legs}
         </g>
       </svg>`;
