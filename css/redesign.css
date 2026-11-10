@@ -449,3 +449,90 @@ body.dark-theme #bodyMapContainer .disease-pill-btn {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Brand, page-wide finish, and natural anatomical palette */
+.brand-container { display:flex; align-items:center; gap:13px; min-width:250px; text-decoration:none; }
+.brand-logo-badge {
+  display:grid; place-items:center; flex:0 0 48px; width:48px; height:48px;
+  border-radius:14px; color:#fff; background:linear-gradient(145deg,#12685f,#259783);
+  box-shadow:0 8px 20px rgba(18,104,95,.24);
+}
+.brand-logo-badge svg { display:block; width:25px; height:25px; }
+.brand-text-block { display:flex; flex-direction:column; gap:2px; }
+.brand-name { display:flex; align-items:center; gap:7px; line-height:1.15; }
+.brand-pro-tag { font-size:10px; letter-spacing:.12em; font-weight:800; padding:4px 7px; border-radius:6px; }
+.brand-tagline { font-size:10px; line-height:1.35; }
+.site-header { position:sticky; top:0; z-index:100; backdrop-filter:blur(16px); }
+.header-inner { min-height:78px; }
+.nav-links-desktop { align-items:center; flex-wrap:nowrap; }
+.nav-link { white-space:nowrap; font-weight:650; transition:background .18s ease,color .18s ease,transform .18s ease; }
+.nav-btn-highlight { padding-inline:17px; }
+.main-content { min-height:65vh; }
+.hero-section { align-items:center; }
+.hero-left { max-width:780px; }
+.hero-triage-card { overflow:hidden; }
+.triage-tier-preview { display:grid; gap:10px; }
+.tier-emergency { background:#fff0ef; color:#9c3734; }
+.tier-urgent { background:#fff7e8; color:#88601e; }
+.tier-routine { background:#edf7f0; color:#2e7251; }
+.section-wrapper { scroll-margin-top:100px; }
+.section-head-center { max-width:850px; margin-inline:auto; text-align:center; }
+.page-view:not(#view-home) { min-height:55vh; padding-top:20px; }
+.page-view h1,.page-view h2,.page-view h3 { letter-spacing:-.035em; }
+.page-view .panel,.page-view .card,.page-view .condition-card,.page-view .comparison-card { border-radius:18px; }
+.page-view button { min-height:40px; }
+.site-footer { padding:54px 0 22px; }
+.footer-inner { max-width:1440px; padding-inline:clamp(18px,3vw,44px); margin:auto; }
+.footer-grid { gap:clamp(22px,4vw,56px); }
+.footer-disclaimer-box { border:1px solid rgba(205,226,216,.2); border-radius:14px; padding:18px 20px; line-height:1.7; }
+#bodyMapContainer .skull-illustration .skull-bone {
+  fill:#e8d9c2; stroke:#927b64; stroke-width:1.15;
+  filter:drop-shadow(0 1px 1px rgba(87,62,43,.12));
+}
+#bodyMapContainer .skull-illustration .skull-frontal { fill:#f0e5d2; }
+#bodyMapContainer .skull-illustration .skull-parietal { fill:#eadcc5; }
+#bodyMapContainer .skull-illustration .skull-temporal { fill:#d9c4a8; }
+#bodyMapContainer .skull-illustration .skull-zygomatic { fill:#d4bea1; }
+#bodyMapContainer .skull-illustration .skull-maxilla { fill:#eee2cc; }
+#bodyMapContainer .skull-illustration .skull-nasal { fill:#d7c0a5; }
+#bodyMapContainer .skull-illustration .skull-mandible { fill:#e3d2b8; }
+#bodyMapContainer .skull-illustration .skull-cavity { fill:#78665a; stroke:#9a826c; }
+#bodyMapContainer .skull-illustration .skull-cavity.nasal { fill:#927765; }
+#bodyMapContainer .skull-illustration .skull-detail { stroke:#8e7863; }
+#bodyMapContainer .skull-illustration .skull-detail .teeth { stroke:#fffaf0; stroke-width:1.3; }
+#bodyMapContainer .skull-illustration .highlight { stroke:rgba(255,250,238,.92); }
+#bodyMapContainer .skull-illustration .skull-caption { fill:#806b56; }
+#bodyMapContainer .skull-illustration .skull-bone:hover,
+#bodyMapContainer .skull-illustration .skull-bone:focus-visible,
+#bodyMapContainer .skull-illustration .skull-bone.selected {
+  fill:#c9a77b; stroke:#76583d; stroke-width:1.8;
+  filter:drop-shadow(0 0 3px rgba(164,124,76,.32)); outline:none;
+}
+/* Keep the bone illustration naturally ivory/tan in dark mode too. */
+body.dark-theme #bodyMapContainer .skull-illustration .skull-bone { stroke:#927b64; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-frontal { fill:#f0e5d2; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-parietal { fill:#eadcc5; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-temporal { fill:#d9c4a8; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-zygomatic { fill:#d4bea1; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-maxilla { fill:#eee2cc; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-nasal { fill:#d7c0a5; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-mandible { fill:#e3d2b8; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-cavity { fill:#78665a; stroke:#9a826c; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-detail { stroke:#8e7863; }
+body.dark-theme #bodyMapContainer .skull-illustration .skull-caption { fill:#806b56; }
+@media (max-width:1100px) {
+ .brand-container { min-width:220px; }
+ .brand-tagline { display:none; }
+}
+@media (max-width:600px) {
+ .header-inner { min-height:68px; padding-inline:14px; }
+ .brand-logo-badge { width:42px; height:42px; flex-basis:42px; }
+ .brand-name { font-size:18px; }
+ .main-content { padding-top:12px; }
+ .section-wrapper { margin:48px 0; }
+ .footer-grid { grid-template-columns:1fr 1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+ *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; }
+}
