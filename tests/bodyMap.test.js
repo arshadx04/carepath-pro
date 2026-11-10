@@ -96,5 +96,9 @@ test('side skull view renders accessible lateral bone hotspots', () => {
   assert.match(svg, /SKULL · LATERAL/);
   assert.equal((svg.match(/data-region="head"/g) || []).length, 7);
   assert.match(svg, /aria-label="Select head: temporal bones"/);
-  assert.match(svg, /aria-label="Select head: mandible"/);\n  assert.match(svg, /skull-detail/);\n  assert.match(svg, /orbital-cavity/);\n  assert.match(svg, /nasal-cavity/);\n  assert.match(svg, /mental foramina|mental-foramen|cx="140"/);
+  assert.match(svg, /aria-label="Select head: mandible"/);
+  assert.match(svg, /skull-detail/);
+  assert.match(svg, /orbital-cavity/);
+  assert.match(svg, /nasal-cavity/);
+  assert.match(svg, /mental foramina|mental-foramen|cx="140"/);
 });
