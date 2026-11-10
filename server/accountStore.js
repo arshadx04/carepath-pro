@@ -1,8 +1,8 @@
 import { createHash, randomBytes, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto';
-import { mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync, realpathSync } from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
 import { promisify } from 'node:util';
-import { dirname, resolve } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const scrypt = promisify(scryptCallback);
@@ -15,6 +15,28 @@ const SCRYPT_OPTIONS = { N: 2 ** 17, r: 8, p: 1, maxmem: 256 * 1024 * 1024 };
 
 if (DB_PATH !== ':memory:') mkdirSync(dirname(DB_PATH), { recursive: true });
 const database = new DatabaseSync(DB_PATH);
+const databaseDirectory = dirname(DB_PATH);
+const canonicalDatabaseDirectory = realpathSync(databaseDirectory);
+const databaseFileName = basename(DB_PATH);
+const privateStoragePaths = new Set([
+  databaseFileName,
+  `${databaseFileName}-wal`,
+  `${databaseFileName}-shm`,
+].flatMap(fileName => [
+  resolve(databaseDirectory, fileName),
+  join(canonicalDatabaseDirectory, fileName),
+]));
+if (existsSync(DB_PATH)) privateStoragePaths.add(realpathSync(DB_PATH));
+
+export function isPrivateStoragePath(candidate) {
+  const resolved = resolve(candidate);
+  if (privateStoragePaths.has(resolved)) return true;
+  try {
+    return privateStoragePaths.has(realpathSync(resolved));
+  } catch {
+    return false;
+  }
+}
 database.exec(`
   PRAGMA foreign_keys = ON;
   PRAGMA journal_mode = WAL;
