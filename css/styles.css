@@ -2748,3 +2748,8 @@ body.dark-theme .skull-bone { stroke:#76aaa0; } body.dark-theme .skull-caption {
 body.dark-theme .skull-bone{fill:#526f68;stroke:#9abbb0}body.dark-theme .skull-frontal{fill:#5e8177}body.dark-theme .skull-parietal{fill:#657e72}body.dark-theme .skull-temporal{fill:#496d64}body.dark-theme .skull-zygomatic{fill:#547a70}body.dark-theme .skull-maxilla{fill:#6a8171}body.dark-theme .skull-nasal{fill:#496c62}body.dark-theme .skull-mandible{fill:#58776b}body.dark-theme .skull-detail{stroke:#c1d8cf}body.dark-theme .skull-caption{fill:#c1d8cf}
 @media(max-width:1024px){.body-interactive-stage{grid-template-columns:1fr}.svg-mannequin-container{min-height:420px}}
 @media(max-width:560px){.body-explorer-wrapper{padding:14px;border-radius:18px}.body-view-controls{width:100%;border-radius:16px}.btn-toggle-view{flex:1 1 42%;padding-inline:8px}.svg-mannequin-container{min-height:360px;padding:8px}.region-detail-card{padding:18px}}
+
+.anatomy-explorer-heading{display:flex;align-items:center;justify-content:center;gap:9px;margin:0 0 14px;color:var(--text-muted);font-size:10px;font-weight:800;letter-spacing:.12em}
+.anatomy-live-indicator{width:7px;height:7px;border-radius:50%;background:#0d9488;box-shadow:0 0 0 4px rgba(13,148,136,.12)}
+.anatomy-heading-note{margin-left:5px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.72}
+@media(max-width:560px){.anatomy-explorer-heading{flex-wrap:wrap;font-size:9px}.anatomy-heading-note{flex-basis:100%;text-align:center;margin:0}}
