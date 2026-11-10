@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import { BodyMap } from '../js/components/bodyMap.js';
+import { renderSkullSVG } from '../js/components/skullArtwork.js';
 
 function renderBodyMap(view) {
   const container = {
@@ -40,10 +41,14 @@ test('front view renders anterior regions and exposes the selected toggle state'
   assert.match(markup, /data-region="abdomen"/);
   assert.match(markup, /data-region="pelvis"/);
   assert.match(markup, /class="skull-illustration"/, 'front view should render the skull illustration');
-  assert.match(markup, /class="skull-detail orbital-cavity"/, 'skull should show eye sockets');
-  assert.match(markup, /class="skull-detail nasal-cavity"/, 'skull should show the nasal opening');
-  assert.match(markup, /class="skull-detail mandible"/, 'skull should show the lower jaw');
-  assert.match(markup, /class="skull-detail teeth"/, 'skull should show tooth landmarks');
+  assert.match(markup, /class="skull-bone skull-frontal selected"/, 'frontal bone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-parietal selected"/, 'parietal bone hotspot should render');
+  assert.match(markup, /class="skull-bone skull-zygomatic selected"/, 'cheekbone hotspot should render');
+  assert.match(markup, /class="skull-cavity"/, 'eye sockets should render');
+  assert.match(markup, /class="skull-teeth"/, 'teeth should render');
+  assert.match(markup, /aria-label="Select head: mandible"/, 'mandible should be accessible');
+  assert.equal((markup.match(/class="skull-bone/g) || []).length, 7);
+  assert.match(markup, /SKULL · ANTERIOR/);
   assert.doesNotMatch(markup, /class="back-anatomy"/);
   assert.match(markup, /Interactive Human Body Anatomy - front view/);
   assertSvgGroupsAreBalanced(markup);
@@ -81,3 +86,5 @@ test('back view renders posterior spine regions without anterior torso hotspots'
   assert.match(markup, /Interactive Human Body Anatomy - back view/);
   assertSvgGroupsAreBalanced(markup);
 });
+
+test('skull bone hotspots map to the shared head assessment region', () => { const svg=renderSkullSVG('head'); assert.equal((svg.match(/data-region="head"/g)||[]).length,7); assert.match(svg,/aria-label="Select head: frontal bone"/); assert.match(svg,/aria-label="Select head: mandible"/); assert.match(svg,/class="skull-bone skull-mandible selected"/); assert.doesNotMatch(renderSkullSVG('chest'),/skull-bone skull-frontal selected/); });
