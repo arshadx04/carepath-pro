@@ -4,6 +4,7 @@
  */
 
 import { diseaseDatabase } from '../data/diseases.js';
+import { accountClient } from '../data/accountClient.js';
 
 function escapeHTML(value) {
   return String(value ?? '').replace(/[&<>"']/g, char => ({
@@ -25,6 +26,12 @@ export class DiseaseLibrary {
     this.showOnlyBookmarked = false;
     this.bookmarkedIds = this.loadBookmarks();
     this.compareList = [];
+    this.accountUser = null;
+    this.accountMode = 'login';
+    this.accountFormOpen = false;
+    this.accountMessage = '';
+    this.accountBusy = false;
+    this.refreshAccount();
   }
 
   loadDiseaseOverrides() {
@@ -54,7 +61,33 @@ export class DiseaseLibrary {
     }
   }
 
-  toggleBookmark(id) {
+  async refreshAccount() {
+    try {
+      const { user } = await accountClient.current();
+      this.accountUser = user;
+      if (user) {
+        const { bookmarks } = await accountClient.bookmarks();
+        this.bookmarkedIds = bookmarks;
+      }
+      this.render();
+    } catch {
+      // Static-only hosting keeps using local bookmarks without an account API.
+    }
+  }
+
+  async toggleBookmark(id) {
+    if (this.accountUser) {
+      try {
+        const { bookmarks } = this.bookmarkedIds.includes(id)
+          ? await accountClient.removeBookmark(id)
+          : await accountClient.saveBookmark(id);
+        this.bookmarkedIds = bookmarks;
+      } catch (error) {
+        this.accountMessage = error.message;
+      }
+      this.render();
+      return;
+    }
     if (this.bookmarkedIds.includes(id)) {
       this.bookmarkedIds = this.bookmarkedIds.filter(b => b !== id);
     } else {
@@ -62,6 +95,47 @@ export class DiseaseLibrary {
     }
     this.saveBookmarks();
     this.render();
+  }
+
+  async submitAccountForm(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const email = form.querySelector('#accountEmail').value;
+    const password = form.querySelector('#accountPassword').value;
+    this.accountBusy = true;
+    this.accountMessage = '';
+    this.render();
+    try {
+      const result = this.accountMode === 'register'
+        ? await accountClient.register(email, password)
+        : await accountClient.login(email, password);
+      this.accountUser = result.user;
+      const { bookmarks } = await accountClient.bookmarks();
+      this.bookmarkedIds = bookmarks;
+      this.accountFormOpen = false;
+      this.accountMessage = `Signed in as ${result.user.email}.`;
+    } catch (error) {
+      this.accountFormOpen = true;
+      this.accountMessage = error.message;
+    } finally {
+      this.accountBusy = false;
+      this.render();
+    }
+  }
+
+  async signOut() {
+    this.accountBusy = true;
+    try {
+      await accountClient.logout();
+      this.accountUser = null;
+      this.bookmarkedIds = this.loadBookmarks();
+      this.accountMessage = 'Signed out. Guest bookmarks remain saved on this browser.';
+    } catch (error) {
+      this.accountMessage = error.message;
+    } finally {
+      this.accountBusy = false;
+      this.render();
+    }
   }
 
   render() {
@@ -121,6 +195,25 @@ export class DiseaseLibrary {
             </div>
           </div>
         </div>
+
+        <section class="account-bookmarks-panel" aria-label="Account and bookmark sync">
+          <div class="account-bookmarks-copy">
+            <strong>${this.accountUser ? `Signed in as ${escapeHTML(this.accountUser.email)}` : 'Sync saved conditions across devices'}</strong>
+            <span>${this.accountUser ? 'Your saved conditions are attached to this account.' : 'Guest bookmarks remain in this browser. Sign in to keep a separate account bookmark list.'}</span>
+            ${this.accountMessage ? `<span class="account-message" role="status">${escapeHTML(this.accountMessage)}</span>` : ''}
+          </div>
+          ${this.accountUser
+            ? `<button type="button" id="accountSignOut" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>Sign out</button>`
+            : `<button type="button" id="accountToggle" class="account-action-btn">${this.accountFormOpen ? 'Close' : 'Sign in / Create account'}</button>`}
+          ${!this.accountUser && this.accountFormOpen ? `
+            <form id="accountForm" class="account-form">
+              <label>Email <input id="accountEmail" type="email" name="email" autocomplete="email" maxlength="254" required></label>
+              <label>Password <input id="accountPassword" type="password" name="password" autocomplete="${this.accountMode === 'register' ? 'new-password' : 'current-password'}" minlength="${this.accountMode === 'register' ? '12' : '1'}" maxlength="128" required></label>
+              <button type="submit" class="account-action-btn" ${this.accountBusy ? 'disabled' : ''}>${this.accountBusy ? 'Please wait…' : this.accountMode === 'register' ? 'Create account' : 'Sign in'}</button>
+              <button type="button" id="accountModeToggle" class="account-mode-btn">${this.accountMode === 'register' ? 'Already have an account? Sign in' : 'New here? Create an account'}</button>
+            </form>
+          ` : ''}
+        </section>
 
         <!-- Controls Bar: Search, Category, Urgency, Saved -->
         <div class="library-controls-card">
@@ -230,6 +323,27 @@ export class DiseaseLibrary {
   }
 
   bindEvents() {
+    const accountToggle = this.container.querySelector('#accountToggle');
+    if (accountToggle) {
+      accountToggle.addEventListener('click', () => {
+        this.accountFormOpen = !this.accountFormOpen;
+        this.accountMessage = '';
+        this.render();
+      });
+    }
+    const accountForm = this.container.querySelector('#accountForm');
+    if (accountForm) accountForm.addEventListener('submit', event => this.submitAccountForm(event));
+    const accountModeToggle = this.container.querySelector('#accountModeToggle');
+    if (accountModeToggle) {
+      accountModeToggle.addEventListener('click', () => {
+        this.accountMode = this.accountMode === 'login' ? 'register' : 'login';
+        this.accountMessage = '';
+        this.render();
+      });
+    }
+    const accountSignOut = this.container.querySelector('#accountSignOut');
+    if (accountSignOut) accountSignOut.addEventListener('click', () => this.signOut());
+
     // Search input
     const search = this.container.querySelector('#libSearchInput');
     if (search) {
@@ -342,3 +456,4 @@ export class DiseaseLibrary {
 }
 
 export default DiseaseLibrary;
+

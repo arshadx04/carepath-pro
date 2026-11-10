@@ -2,6 +2,7 @@ import { createServer as createHttpServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createSession, createUser, deleteBookmark, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, saveBookmark, hashPassword, verifyPassword } from './accountStore.js';
 import { diseaseDatabase } from '../js/data/diseases.js';
 import { symptomDatabase } from '../js/data/symptoms.js';
 import { triageEngine } from '../js/engine/triageEngine.js';
@@ -10,6 +11,11 @@ const projectRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const MAX_BODY_BYTES = 32 * 1024;
 const MAX_SYMPTOMS = 50;
 const MAX_FLAGS = 30;
+const SESSION_COOKIE = 'carepath_session';
+const AUTH_WINDOW_MS = 15 * 60 * 1000;
+const AUTH_MAX_ATTEMPTS = 10;
+const authAttempts = new Map();
+const BOOKMARKABLE_CONDITION_IDS = new Set(diseaseDatabase.map(disease => disease.id));
 const MIME_TYPES = {
   '.css': 'text/css; charset=utf-8',
   '.html': 'text/html; charset=utf-8',
@@ -25,6 +31,183 @@ function sendJson(response, statusCode, value, extraHeaders = {}) {
     ...extraHeaders,
   });
   response.end(JSON.stringify(value));
+}
+
+function parseCookies(header = '') {
+  const cookies = new Map();
+  for (const part of header.split(';')) {
+    const separator = part.indexOf('=');
+    if (separator < 0) continue;
+    cookies.set(part.slice(0, separator).trim(), part.slice(separator + 1).trim());
+  }
+  return cookies;
+}
+
+function sessionCookie(token, maxAge) {
+  const secure = process.env.NODE_ENV === 'production' || process.env.COOKIE_SECURE === 'true';
+  return `${SESSION_COOKIE}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${maxAge}${secure ? '; Secure' : ''}`;
+}
+
+function isSameOrigin(request) {
+  const origin = request.headers.origin;
+  if (!origin) return true;
+  try {
+    return new URL(origin).host.toLowerCase() === String(request.headers.host || '').toLowerCase();
+  } catch {
+    return false;
+  }
+}
+
+function allowAuthAttempt(request) {
+  const now = Date.now();
+  for (const [ip, entry] of authAttempts) {
+    if (entry.resetAt <= now) authAttempts.delete(ip);
+  }
+  const ip = request.socket.remoteAddress || 'unknown';
+  const entry = authAttempts.get(ip);
+  if (entry && entry.count >= AUTH_MAX_ATTEMPTS && entry.resetAt > now) return false;
+  if (!entry || entry.resetAt <= now) authAttempts.set(ip, { count: 1, resetAt: now + AUTH_WINDOW_MS });
+  else entry.count++;
+  return true;
+}
+
+function getRequestSession(request) {
+  const token = parseCookies(request.headers.cookie).get(SESSION_COOKIE);
+  return { token, user: getSession(token) };
+}
+
+function replaceSession(request, userId) {
+  const { token } = getRequestSession(request);
+  revokeSession(token);
+  return createSession(userId);
+}
+
+async function handleAccountApi(request, response, pathname) {
+  if (request.method === 'GET' && pathname === '/api/auth/me') {
+    const { user } = getRequestSession(request);
+    sendJson(response, 200, { user });
+    return true;
+  }
+
+  if (request.method === 'POST' && ['/api/auth/register', '/api/auth/login', '/api/auth/logout'].includes(pathname)) {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    if (pathname === '/api/auth/logout') {
+      const { token } = getRequestSession(request);
+      revokeSession(token);
+      sendJson(response, 200, { user: null }, { 'Set-Cookie': sessionCookie('', 0) });
+      return true;
+    }
+    if (!allowAuthAttempt(request)) {
+      sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
+      return true;
+    }
+
+    let body;
+    try {
+      body = await readJsonBody(request);
+    } catch (error) {
+      sendJson(response, error.statusCode || 400, { error: error.message });
+      return true;
+    }
+    const email = normalizeEmail(body?.email);
+    const password = body?.password;
+    if (!isValidEmail(email)) {
+      sendJson(response, 400, { error: 'Enter a valid email address.' });
+      return true;
+    }
+    if (pathname === '/api/auth/register' && !isValidPassword(password)) {
+      sendJson(response, 400, { error: 'Password must be 12–128 characters.' });
+      return true;
+    }
+    if (typeof password !== 'string' || password.length === 0 || Buffer.byteLength(password, 'utf8') > 1024) {
+      sendJson(response, 400, { error: 'Enter a valid password.' });
+      return true;
+    }
+
+    if (pathname === '/api/auth/register') {
+      if (findUserByEmail(email)) {
+        sendJson(response, 409, { error: 'An account with that email already exists.' });
+        return true;
+      }
+      const credentials = await hashPassword(password);
+      let user;
+      try {
+        user = createUser(email, credentials);
+      } catch (error) {
+        if (String(error.message).includes('UNIQUE')) {
+          sendJson(response, 409, { error: 'An account with that email already exists.' });
+          return true;
+        }
+        throw error;
+      }
+      const session = replaceSession(request, user.id);
+      sendJson(response, 201, { user }, { 'Set-Cookie': sessionCookie(session.token, session.maxAge) });
+      return true;
+    }
+
+    const userRecord = findUserByEmail(email);
+    if (!(await verifyPassword(password, userRecord))) {
+      sendJson(response, 401, { error: 'Email or password is incorrect.' });
+      return true;
+    }
+    const user = { id: userRecord.id, email: userRecord.email };
+    const session = replaceSession(request, user.id);
+    sendJson(response, 200, { user }, { 'Set-Cookie': sessionCookie(session.token, session.maxAge) });
+    return true;
+  }
+
+  if (pathname === '/api/bookmarks' && request.method === 'GET') {
+    const { user } = getRequestSession(request);
+    if (!user) {
+      sendJson(response, 401, { error: 'Sign in to access saved conditions.' });
+      return true;
+    }
+    sendJson(response, 200, { bookmarks: getBookmarks(user.id) });
+    return true;
+  }
+
+  if (pathname === '/api/bookmarks' && request.method === 'POST') {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    const { user } = getRequestSession(request);
+    if (!user) {
+      sendJson(response, 401, { error: 'Sign in to save conditions.' });
+      return true;
+    }
+    try {
+      const body = await readJsonBody(request);
+      if (typeof body?.conditionId !== 'string' || !BOOKMARKABLE_CONDITION_IDS.has(body.conditionId)) {
+        sendJson(response, 400, { error: 'Choose a condition from the library.' });
+        return true;
+      }
+      sendJson(response, 200, { bookmarks: saveBookmark(user.id, body.conditionId) });
+    } catch (error) {
+      sendJson(response, error.statusCode || 400, { error: error.message || 'Unable to save bookmark.' });
+    }
+    return true;
+  }
+
+  const removeMatch = pathname.match(/^\/api\/bookmarks\/([a-z0-9-]+)$/i);
+  if (removeMatch && request.method === 'DELETE') {
+    if (!isSameOrigin(request)) {
+      sendJson(response, 403, { error: 'Cross-origin request rejected.' });
+      return true;
+    }
+    const { user } = getRequestSession(request);
+    if (!user) {
+      sendJson(response, 401, { error: 'Sign in to edit saved conditions.' });
+      return true;
+    }
+    sendJson(response, 200, { bookmarks: deleteBookmark(user.id, removeMatch[1]) });
+    return true;
+  }
+
+  return false;
 }
 
 async function readJsonBody(request) {
@@ -127,6 +310,12 @@ export function createApp() {
 
     if (pathname.startsWith('/api/')) {
       response.setHeader('Cache-Control', 'no-store');
+      try {
+        if (await handleAccountApi(request, response, pathname)) return;
+      } catch (error) {
+        sendJson(response, 500, { error: 'Account service is temporarily unavailable.' });
+        return;
+      }
       if (request.method === 'GET' && pathname === '/api/health') {
         sendJson(response, 200, { status: 'ok', service: 'carepath-pro-api' });
         return;
@@ -168,3 +357,4 @@ export function createApp() {
 export function createServer() {
   return createHttpServer(createApp());
 }
+
