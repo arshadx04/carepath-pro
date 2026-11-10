@@ -2663,3 +2663,40 @@ body.dark-theme .zone-label {
   .body-interactive-stage { grid-template-columns: 1fr; gap: 18px; }
   .anatomy-illustration { width: min(100%, 310px); max-height: 540px; }
 }
+
+
+/* More anatomically legible anterior skull landmarks */
+.skull-illustration {
+  pointer-events: none;
+}
+.skull-illustration .head-zone {
+  pointer-events: all;
+}
+.skull-detail {
+  fill: none;
+  stroke: #477c76;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .94;
+  pointer-events: none;
+}
+.skull-detail.orbital-cavity,
+.skull-detail.nasal-cavity {
+  fill: rgba(49, 91, 87, .30);
+  stroke: #477c76;
+  stroke-width: 1.1;
+}
+.skull-detail.maxilla {
+  fill: rgba(222, 238, 231, .32);
+}
+.skull-detail.mandible {
+  stroke-width: 1.8;
+}
+.skull-detail.teeth {
+  stroke-width: 1;
+}
+.skull-detail.cranial-suture {
+  opacity: .42;
+  stroke-width: 1;
+}
