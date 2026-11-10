@@ -955,7 +955,7 @@ body.dark-theme .site-header {
   color: var(--text-main);
 }
 
- .card-meta {
+.card-meta {
   display: block;
   font-size: 11px;
   color: var(--text-muted);
@@ -1192,7 +1192,7 @@ body.dark-theme .site-header {
   color: var(--text-main);
 }
 
- .rf-desc {
+.rf-desc {
   display: block;
   font-size: 12px;
   color: var(--text-muted);
