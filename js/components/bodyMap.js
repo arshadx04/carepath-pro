@@ -149,7 +149,7 @@ export class BodyMap {
       elem.addEventListener('click', activate);
       elem.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); activate(); } });
     });
-    this.container.querySelectorAll('.btn-toggle-view').forEach(btn => btn.addEventListener('click', () => {
+    this.container.querySelectorAll('.btn-toggle-view[data-view]').forEach(btn => btn.addEventListener('click', () => {
       this.view = btn.getAttribute('data-view');
       if (this.view === 'back' && ['chest','abdomen','pelvis','throat'].includes(this.selectedRegion)) this.selectedRegion = 'spine';
       else if (this.view === 'front' && ['spine','back','shoulder'].includes(this.selectedRegion)) this.selectedRegion = 'chest';
