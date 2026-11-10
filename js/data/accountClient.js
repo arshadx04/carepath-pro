@@ -26,6 +26,9 @@ export const accountClient = {
   deleteAccount: password => request('/api/auth/account', {
     method: 'DELETE', body: JSON.stringify({ password }),
   }),
+  changePassword: (currentPassword, newPassword) => request('/api/auth/password', {
+    method: 'PUT', body: JSON.stringify({ currentPassword, newPassword }),
+  }),
   bookmarks: () => request('/api/bookmarks'),
   saveBookmark: conditionId => request('/api/bookmarks', {
     method: 'POST', body: JSON.stringify({ conditionId }),
