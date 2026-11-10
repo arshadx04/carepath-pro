@@ -22,7 +22,7 @@ export class BodyMap {
   zone(region, path, extra = '') {
     return `<path class="anatomical-zone ${extra} ${this.selectedRegion === region ? 'selected' : ''}"
       data-region="${region}" tabindex="0" role="button"
-      aria-label="Select ${region}" d="${path}"/>`;
+      aria-label="Select ${region}" aria-pressed="${this.selectedRegion === region}" d="${path}"/>`;
   }
 
   renderAnatomy() {
@@ -115,7 +115,9 @@ export class BodyMap {
     `;
     return `
       <svg viewBox="0 0 300 520" class="mannequin-svg anatomy-illustration" role="group"
-        aria-label="Interactive Human Body Anatomy - ${this.view} view">
+        aria-label="Interactive human anatomy, ${this.view} view">
+        <title>Interactive human anatomy — ${this.view} view</title>
+        <desc>Select a highlighted body region to explore related symptoms and educational conditions. This illustration is not a diagnostic tool.</desc>
         <defs>
           <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#d8eee9"/><stop offset="100%" stop-color="#9fcac2"/>
@@ -126,10 +128,22 @@ export class BodyMap {
             <stop offset="72%" stop-color="#c99582"/>
             <stop offset="100%" stop-color="#b77f70"/>
           </linearGradient>
-          <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="2" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          <linearGradient id="atlasSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity=".92"/>
+            <stop offset="100%" stop-color="#dcebe5" stop-opacity=".52"/>
+          </linearGradient>
+          <radialGradient id="atlasHalo">
+            <stop offset="0%" stop-color="#78b9ad" stop-opacity=".24"/>
+            <stop offset="100%" stop-color="#78b9ad" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glowEffect" x="-35%" y="-35%" width="170%" height="170%">
+            <feGaussianBlur stdDeviation="2.8" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+          <filter id="figureShadow" x="-30%" y="-20%" width="160%" height="150%">
+            <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#365e56" flood-opacity=".16"/>
           </filter>
         </defs>
+        <ellipse class="atlas-figure-halo" cx="150" cy="258" rx="116" ry="238" fill="url(#atlasHalo)"/>
         <g class="anatomy-figure ${back ? "back-anatomy" : "front-anatomy"}">
           ${head}${neck}${shoulders}${torso}${arms}${legs}
         </g>
@@ -147,9 +161,13 @@ export class BodyMap {
           <button type="button" class="btn-toggle-view ${this.skullView === 'front' ? 'active' : ''}" data-skull-view="front" aria-pressed="${this.skullView === 'front'}">Skull · Front</button>
           <button type="button" class="btn-toggle-view ${this.skullView === 'side' ? 'active' : ''}" data-skull-view="side" aria-pressed="${this.skullView === 'side'}">Skull · Side</button>
         </div>
-        <div class="anatomy-explorer-heading"><span class="anatomy-live-indicator"></span><span>SELECT AN ANATOMICAL REGION</span><span class="anatomy-heading-note">Illustrative learning view</span></div>
+        <div class="anatomy-explorer-heading"><span class="anatomy-live-indicator"></span><span>INTERACTIVE ANATOMY ATLAS</span><span class="anatomy-heading-note">Select a highlighted area to explore</span></div>
         <div class="body-interactive-stage">
-          <div class="svg-mannequin-container">${this.renderAnatomy()}</div>
+          <div class="svg-mannequin-container">
+            <div class="atlas-view-caption">${this.view === 'front' ? 'ANTERIOR VIEW' : 'POSTERIOR VIEW'} <span>•</span> EDUCATIONAL MODEL</div>
+            ${this.renderAnatomy()}
+            <div class="atlas-legend"><span class="atlas-legend-dot"></span> Selectable region <span class="atlas-legend-divider"></span> <span class="atlas-legend-note">Not to scale</span></div>
+          </div>
           <div class="body-region-sidebar" id="bodyRegionDetail">${this.getRegionDetailHTML(this.selectedRegion)}</div>
         </div>
         <div class="region-chips-grid">
