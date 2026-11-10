@@ -45,3 +45,29 @@ test('malformed optional report collections do not crash generation', () => {
   });
   assert.match(html, /Visit Preparation Summary/);
 });
+
+
+test('print report includes readable labels for the symptoms selected in the check-in', () => {
+  const html = ReportGenerator.generateReportHTML({
+    selectedSymptoms: ['headache_band', 'unknown_symptom']
+  }, {});
+
+  assert.match(html, /3\. Reported Symptoms/);
+  assert.match(html, /Dull band of tight pressure around head/);
+  assert.match(html, /unknown symptom/);
+});
+
+test('report generation tolerates malformed entries inside optional collections', () => {
+  const html = ReportGenerator.generateReportHTML({
+    selectedSymptoms: [null, 12, {}, '<script>alert(1)</script>']
+  }, {
+    topMatches: [null, { disease: null, relevance: 0 }],
+    activeRedFlags: [null, false],
+    doctorQuestions: [null, '<img src=x onerror=alert(1)>']
+  });
+
+  assert.match(html, /No symptoms recorded|&lt;script&gt;/);
+  assert.doesNotMatch(html, /<script>alert\(1\)<\/script>/);
+  assert.doesNotMatch(html, /<img src=x onerror=alert\(1\)>/);
+  assert.match(html, /Educational Notice & Disclaimer/);
+});
