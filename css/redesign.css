@@ -601,7 +601,7 @@ body.dark-theme .auth-anatomy-copy h2 { color:#e4f2eb; }
 body.dark-theme .auth-anatomy-copy p,body.dark-theme .auth-anatomy-foot { color:#b0c6ba; }
 .auth-gate { display:none; min-height:100vh; padding:36px 18px; align-items:center; justify-content:center; background:radial-gradient(circle at 12% 12%,rgba(83,177,147,.18),transparent 34%),linear-gradient(135deg,#f5faf7 0%,#edf5f0 48%,#f8fbf9 100%); color:#173b32; }
 body.auth-locked .auth-gate { display:flex; position:fixed; inset:0; z-index:10000; overflow-y:auto; }
-.auth-shell { width:min(100%,480px); margin:auto; }
+.auth-shell { width:min(100%,980px); margin:auto; }
 .auth-brand { display:flex; justify-content:center; align-items:center; gap:11px; margin-bottom:26px; font:800 22px Manrope,Inter,sans-serif; letter-spacing:-.04em; }
 .auth-brand b { color:#23866f; font-size:11px; letter-spacing:.14em; vertical-align:middle; }
 .auth-brand-mark { display:grid; place-items:center; width:42px; height:42px; border-radius:13px; color:#fff; background:linear-gradient(145deg,#12685f,#2b9b7d); font:700 34px/1 Inter,sans-serif; box-shadow:0 8px 20px rgba(18,104,95,.2); }
