@@ -114,7 +114,7 @@ function allowAuthAttempt(request) {
   return true;
 }
 
-async function await getRequestSession(request) {
+async function getRequestSession(request) {
   const token = parseCookies(request.headers.cookie).get(SESSION_COOKIE);
   return { token, user: await getSession(token) };
 }
