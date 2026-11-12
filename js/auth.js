@@ -9,7 +9,11 @@ export function initAuthGate() {
   const password = byId('authPassword');
   const hint = byId('authPasswordHint');
   const forgot = byId('authForgot');
+  const resetForm = byId('authResetForm');
+  const resetPassword = byId('authNewPassword');
+  const resetCancel = byId('authResetCancel');
   const gate = byId('authGate');
+  const resetToken = new URLSearchParams(window.location.hash.slice(1)).get('resetToken');
   const signOut = byId('btnSignOut');
   const signedInUser = byId('signedInUser');
   if (!form || !gate) return;
@@ -82,6 +86,44 @@ export function initAuthGate() {
       submit.disabled = false;
     }
   });
+  resetForm.addEventListener('submit', async event => {
+    event.preventDefault();
+    const newPassword = resetPassword.value;
+    if ([...newPassword].length < 8 || [...newPassword].length > 128) {
+      return showMessage('Your new password must be between 8 and 128 characters.');
+    }
+    const resetSubmit = resetForm.querySelector('button[type="submit"]');
+    resetSubmit.disabled = true;
+    showMessage('Updating your password…');
+    try {
+      const data = await request('/api/auth/password-reset/confirm', { token: resetToken, newPassword });
+      resetForm.hidden = true;
+      form.hidden = false;
+      forgot.hidden = false;
+      loginTab.hidden = false;
+      registerTab.hidden = false;
+      byId('authTitle').textContent = 'Welcome to CarePath Pro';
+      byId('authIntro')?.removeAttribute('hidden');
+      setMode('login');
+      showMessage(data.message || 'Password updated. Sign in with your new password.', true);
+      resetPassword.value = '';
+    } catch (error) {
+      showMessage(error.message);
+    } finally {
+      resetSubmit.disabled = false;
+    }
+  });
+  resetCancel.addEventListener('click', () => {
+    resetForm.hidden = true;
+    form.hidden = false;
+    forgot.hidden = false;
+    loginTab.hidden = false;
+    registerTab.hidden = false;
+    byId('authTitle').textContent = 'Welcome to CarePath Pro';
+    setMode('login');
+    showMessage('');
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+  });
   forgot.addEventListener('click', async () => {
     const email = byId('authEmail').value.trim();
     if (!email) return showMessage('Enter your email address first.');
@@ -103,11 +145,22 @@ export function initAuthGate() {
   });
 
   setMode('login');
-  request('/api/auth/me').then(data => {
+  if (resetToken) {
+    form.hidden = true;
+    forgot.hidden = true;
+    loginTab.hidden = true;
+    registerTab.hidden = true;
+    resetForm.hidden = false;
+    byId('authTitle').textContent = 'Choose a new password';
+    window.history.replaceState(null, '', window.location.pathname + window.location.search);
+  } else {
+    resetForm.hidden = true;
+    request('/api/auth/me').then(data => {
     if (data.user) unlock(data.user);
     else lock();
   }).catch(() => {
     lock();
-    showMessage('The account server is unavailable. Open CarePath Pro through its Node.js backend URL to register or sign in.');
-  });
+      showMessage('The account server is unavailable. Open CarePath Pro through its Node.js backend URL to register or sign in.');
+    });
+  }
 }

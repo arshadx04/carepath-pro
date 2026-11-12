@@ -5,7 +5,8 @@
   "scripts": {
     "test": "node --test tests/*.test.js",
     "start": "node server/index.js",
-    "test:postgres": "node --test tests/postgresAccountStore.integration.js tests/postgresStaticFileSecurity.integration.js"
+    "test:postgres": "node --test tests/postgresAccountStore.integration.js tests/postgresStaticFileSecurity.integration.js",
+    "db:migrate": "node scripts/migrate.js"
   },
   "engines": {
     "node": ">=22.13.0"

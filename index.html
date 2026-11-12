@@ -56,6 +56,13 @@
           <p class="auth-hint" id="authPasswordHint">Use your CarePath Pro password.</p>
           <button type="submit" class="auth-submit" id="authSubmit">Sign in securely <span aria-hidden="true">→</span></button>
         </form>
+        <form id="authResetForm" hidden novalidate>
+          <label class="auth-label" for="authNewPassword">New password</label>
+          <input id="authNewPassword" name="newPassword" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="At least 8 characters" required>
+          <p class="auth-hint">Choose a new password between 8 and 128 characters.</p>
+          <button type="submit" class="auth-submit">Update password <span aria-hidden="true">→</span></button>
+          <button type="button" class="auth-forgot" id="authResetCancel">Back to sign in</button>
+        </form>
         <button type="button" class="auth-forgot" id="authForgot">Forgot password?</button>
         <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
         <div class="auth-security"><span aria-hidden="true">⌑</span> Passwords are protected with salted hashing. Your symptom answers are not saved by this account system.</div>

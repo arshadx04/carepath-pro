@@ -1,0 +1,29 @@
+databases:
+  - name: carepath-pro-db
+    databaseName: carepath_pro
+    user: carepath_pro
+    plan: free
+
+services:
+  - type: web
+    name: carepath-pro
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run db:migrate && npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: carepath-pro-db
+          property: connectionString
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CAREPATH_FROM_EMAIL
+        sync: false
+      - key: CAREPATH_PUBLIC_URL
+        value: https://carepath-pro.onrender.com/
