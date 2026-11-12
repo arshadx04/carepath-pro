@@ -1,4 +1,7 @@
 import { createHash, randomBytes, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto';
+import { existsSync, realpathSync } from 'node:fs';
+import { basename, dirname, join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { Pool } from 'pg';
 
@@ -19,9 +22,45 @@ export const pool = new Pool({
 });
 pool.on('error', error => console.error('Unexpected idle PostgreSQL client error:', error.message));
 
-export function isPrivateStoragePath() { return false; }
+// A deployment may retain its old SQLite file while PostgreSQL is active.
+// Keep that file and its journal sidecars private in either storage mode.
+const configuredSqlitePath = process.env.CAREPATH_DB_PATH;
+const sqliteDatabasePath = configuredSqlitePath === ':memory:'
+  ? null
+  : resolve(configuredSqlitePath || fileURLToPath(new URL('../data/carepath.sqlite', import.meta.url)));
+const privateSqlitePaths = new Set();
+if (sqliteDatabasePath) {
+  const sqliteDirectory = dirname(sqliteDatabasePath);
+  const sqliteFileName = basename(sqliteDatabasePath);
+  for (const fileName of [sqliteFileName, `${sqliteFileName}-wal`, `${sqliteFileName}-shm`]) {
+    privateSqlitePaths.add(resolve(sqliteDirectory, fileName));
+  }
+  if (existsSync(sqliteDirectory)) {
+    try {
+      const canonicalDirectory = realpathSync(sqliteDirectory);
+      for (const fileName of [sqliteFileName, `${sqliteFileName}-wal`, `${sqliteFileName}-shm`]) {
+        privateSqlitePaths.add(join(canonicalDirectory, fileName));
+      }
+    } catch {
+      // The configured SQLite directory may not exist in a PostgreSQL-only deployment.
+    }
+  }
+  if (existsSync(sqliteDatabasePath)) {
+    try { privateSqlitePaths.add(realpathSync(sqliteDatabasePath)); } catch { /* handled by resolved path */ }
+  }
+}
+
+export function isPrivateStoragePath(candidate) {
+  const resolved = resolve(candidate);
+  if (privateSqlitePaths.has(resolved)) return true;
+  try {
+    return privateSqlitePaths.has(realpathSync(resolved));
+  } catch {
+    return false;
+  }
+}
 export function normalizeEmail(value) { return typeof value === 'string' ? value.trim().toLowerCase() : ''; }
-export function isValidEmail(email) { return email.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+export function isValidEmail(email) { return email.length <= 254 && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email); }
 export function isValidPassword(password) {
   return typeof password === 'string' && [...password].length >= 12 &&
     [...password].length <= 128 && Buffer.byteLength(password, 'utf8') <= 1024;
