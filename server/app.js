@@ -190,7 +190,7 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
     if (!isValidPassword(newPassword)) {
-      sendJson(response, 400, { error: 'New password must be 12–128 characters.' });
+      sendJson(response, 400, { error: 'New password must be 8–128 characters.' });
       return true;
     }
     const credentials = await hashPassword(newPassword);
@@ -229,7 +229,7 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
     if (!isValidPassword(newPassword)) {
-      sendJson(response, 400, { error: 'New password must be 12–128 characters.' });
+      sendJson(response, 400, { error: 'New password must be 8–128 characters.' });
       return true;
     }
     const userRecord = await findUserByEmail(user.email);
@@ -309,7 +309,7 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
     if (pathname === '/api/auth/register' && !isValidPassword(password)) {
-      sendJson(response, 400, { error: 'Password must be 12–128 characters.' });
+      sendJson(response, 400, { error: 'Password must be 8–128 characters.' });
       return true;
     }
     if (typeof password !== 'string' || password.length === 0 || Buffer.byteLength(password, 'utf8') > 1024) {

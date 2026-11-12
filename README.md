@@ -68,7 +68,7 @@ The static-only Python server and direct-file options still serve the browser de
 - `GET /api/catalog/symptoms` — symptom and body-region catalog.
 - `GET /api/catalog/conditions` — condition library.
 - `POST /api/check-ins/evaluate` — evaluate an educational check-in using the existing heuristic engine. Send JSON shaped like `{ "selectedSymptoms": ["headache_throbbing"], "redFlags": [], "profile": {}, "timing": {}, "severity": { "painScore": 2 } }`.
-- `POST /api/auth/register` and `POST /api/auth/login` — create an account or start a session with `{ "email": "you@example.com", "password": "at least 12 characters" }`.
+- `POST /api/auth/register` and `POST /api/auth/login` — create an account or start a session with `{ "email": "you@example.com", "password": "at least 8 characters" }`.
 - `GET /api/auth/me` and `POST /api/auth/logout` — inspect or end the current session.
 - `DELETE /api/auth/account` with the current password — permanently delete the signed-in account and its synced bookmarks.
 - `PUT /api/auth/password` with the current and new passwords — update credentials and sign out other sessions.
