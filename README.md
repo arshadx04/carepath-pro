@@ -95,7 +95,9 @@ These are basic software regression checks only. They do not validate clinical s
 
 ## 🌐 Deployment
 
-The frontend can still be hosted statically, but account sync requires the Node server. GitHub Pages only serves the static demo. For account sync, deploy the app to a Node-capable host with persistent disk for SQLite, HTTPS, and `NODE_ENV=production`; otherwise account bookmarks may be lost when the host restarts. Confirm the published URL and deployment status before sharing it. Test changes on a reviewed branch before merging them into `main`.
+The frontend and API must be served from the same Node-capable origin for the current same-origin session-cookie design. GitHub Pages alone cannot run the account API. A Render Blueprint is provided in `render.yaml`; it creates a Node web service and PostgreSQL database, runs the schema migration on startup, and configures the health check. In the Render dashboard, add the secret `RESEND_API_KEY` and set `CAREPATH_FROM_EMAIL` to a verified Resend sender. Set `CAREPATH_PUBLIC_URL` to the exact deployed HTTPS URL if the Render service name or custom domain differs from the default. The generated default URL is `https://carepath-pro.onrender.com/`.
+
+The included Blueprint uses Render's free service and free PostgreSQL plan for a no-cost trial only. Free web services may sleep, and free PostgreSQL databases are temporary and expire; do not store important or real user accounts there. Choose a paid persistent database/service plan before relying on account data. Never commit API keys or database credentials. Verify registration, login, password-reset email delivery, password reset, and session cookies on the deployed HTTPS URL before sharing it.
 
 ---
 
