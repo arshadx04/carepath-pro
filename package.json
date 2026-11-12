@@ -4,10 +4,13 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "test:postgres": "node --test tests/postgresAccountStore.integration.js"
   },
   "engines": {
     "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
   }
 }
-
