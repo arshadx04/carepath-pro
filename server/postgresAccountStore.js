@@ -62,7 +62,7 @@ export function isPrivateStoragePath(candidate) {
 export function normalizeEmail(value) { return typeof value === 'string' ? value.trim().toLowerCase() : ''; }
 export function isValidEmail(email) { return email.length <= 254 && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email); }
 export function isValidPassword(password) {
-  return typeof password === 'string' && [...password].length >= 12 &&
+  return typeof password === 'string' && [...password].length >= 8 &&
     [...password].length <= 128 && Buffer.byteLength(password, 'utf8') <= 1024;
 }
 
