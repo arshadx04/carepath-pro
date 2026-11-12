@@ -101,7 +101,7 @@ export function isValidEmail(email) {
 }
 
 export function isValidPassword(password) {
-  return typeof password === 'string' && [...password].length >= 12 &&
+  return typeof password === 'string' && [...password].length >= 8 &&
     [...password].length <= 128 && Buffer.byteLength(password, 'utf8') <= 1024;
 }
 
