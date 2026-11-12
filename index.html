@@ -12,7 +12,34 @@
   <link rel="stylesheet" href="./css/redesign.css?v=20261111-1">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f766e'><path d='M19 14V10H14V5H10V10H5V14H10V19H14V14H19Z'/></svg>">
 </head>
-<body>
+<body class="auth-locked">
+
+  <section id="authGate" class="auth-gate" aria-labelledby="authTitle">
+    <div class="auth-shell">
+      <div class="auth-brand"><span class="auth-brand-mark" aria-hidden="true">+</span><span>CarePath <b>PRO</b></span></div>
+      <div class="auth-card">
+        <div class="auth-eyebrow">YOUR HEALTH LEARNING SPACE</div>
+        <h1 id="authTitle">Welcome to CarePath Pro</h1>
+        <p class="auth-intro">Sign in or create an account to explore the anatomy atlas and educational health library.</p>
+        <div class="auth-tabs" role="tablist" aria-label="Account access">
+          <button type="button" class="auth-tab active" id="authLoginTab" role="tab" aria-selected="true">Sign in</button>
+          <button type="button" class="auth-tab" id="authRegisterTab" role="tab" aria-selected="false">Create account</button>
+        </div>
+        <form id="authForm" novalidate>
+          <label class="auth-label" for="authEmail">Email address</label>
+          <input id="authEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required>
+          <label class="auth-label" for="authPassword">Password</label>
+          <input id="authPassword" name="password" type="password" autocomplete="current-password" placeholder="At least 12 characters" required>
+          <p class="auth-hint" id="authPasswordHint">Use your CarePath Pro password.</p>
+          <button type="submit" class="auth-submit" id="authSubmit">Sign in securely <span aria-hidden="true">→</span></button>
+        </form>
+        <button type="button" class="auth-forgot" id="authForgot">Forgot password?</button>
+        <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
+        <div class="auth-security"><span aria-hidden="true">⌑</span> Passwords are protected with salted hashing. Your symptom answers are not saved by this account system.</div>
+      </div>
+      <p class="auth-disclaimer">Educational demonstration only · Not clinically validated · Not for diagnosis or treatment</p>
+    </div>
+  </section>
 
   <!-- Sticky Site Header -->
   <header class="site-header">
@@ -40,6 +67,8 @@
 
       <!-- Header Action Controls -->
       <div class="header-actions">
+        <span id="signedInUser" class="signed-in-user" aria-live="polite"></span>
+        <button type="button" id="btnSignOut" class="btn-sign-out" hidden>Sign out</button>
         <button type="button" id="btnThemeToggle" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
           🌙
         </button>
