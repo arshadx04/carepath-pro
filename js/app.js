@@ -9,6 +9,7 @@ import { ConditionComparison } from './components/conditionComparison.js';
 import { ArticleModal } from './components/articleModal.js';
 import { emergencyDatabase } from './data/emergencyHotlines.js';
 import { hydrateCatalogFromBackend } from './data/catalogClient.js';
+import { initAuthGate } from './auth.js';
 
 function getDialNumber(value) {
   const match = String(value || '').match(/\d[\d -]*\d|\d/);
@@ -259,5 +260,6 @@ class App {
 
 // Instantiate on DOM load
 document.addEventListener('DOMContentLoaded', () => {
+  initAuthGate();
   window.carePathApp = new App();
 });
