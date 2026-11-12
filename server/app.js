@@ -333,7 +333,7 @@ async function handleAccountApi(request, response, pathname) {
         }
         throw error;
       }
-      const session = replaceSession(request, user.id);
+      const session = await replaceSession(request, user.id);
       sendJson(response, 201, { user }, { 'Set-Cookie': sessionCookie(session.token, session.maxAge) });
       return true;
     }
@@ -344,7 +344,7 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
     const user = { id: userRecord.id, email: userRecord.email };
-    const session = replaceSession(request, user.id);
+    const session = await replaceSession(request, user.id);
     sendJson(response, 200, { user }, { 'Set-Cookie': sessionCookie(session.token, session.maxAge) });
     return true;
   }
