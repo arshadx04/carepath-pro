@@ -28,8 +28,9 @@ export function initAuthGate() {
     registerTab.setAttribute('aria-selected', String(registering));
     submit.innerHTML = registering ? 'Create account securely <span aria-hidden="true">→</span>' : 'Sign in securely <span aria-hidden="true">→</span>';
     password.autocomplete = registering ? 'new-password' : 'current-password';
-    password.minLength = registering ? 12 : 1;
-    hint.textContent = registering ? 'Use 12–128 characters. A longer passphrase is recommended.' : 'Use your CarePath Pro password.';
+    password.minLength = registering ? 8 : 1;
+    password.maxLength = 128;
+    hint.textContent = registering ? 'Use 8–128 characters. Choose a unique password with a mix of letters, numbers, and symbols.' : 'Use your CarePath Pro password.';
     forgot.hidden = registering;
     showMessage('');
   };
@@ -66,8 +67,8 @@ export function initAuthGate() {
     const email = byId('authEmail').value.trim();
     const passwordValue = password.value;
     if (!email || !passwordValue) return showMessage('Enter your email address and password.');
-    if (mode === 'register' && (passwordValue.length < 12 || passwordValue.length > 128)) {
-      return showMessage('Your password must be between 12 and 128 characters.');
+    if (mode === 'register' && ([...passwordValue].length < 8 || [...passwordValue].length > 128)) {
+      return showMessage('Your password must be between 8 and 128 characters.');
     }
     submit.disabled = true;
     showMessage(mode === 'register' ? 'Creating your account…' : 'Signing you in…');
