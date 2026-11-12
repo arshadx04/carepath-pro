@@ -2,7 +2,16 @@ import { createServer as createHttpServer } from 'node:http';
 import { readFile, realpath, stat } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isPrivateStoragePath, createPasswordResetToken, completePasswordReset, createSession, createUser, deleteBookmark, deleteUser, findUserByEmail, getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail, revokeSession, revokeUserSessions, saveBookmark, updatePassword, hashPassword, verifyPassword } from './accountStore.js';
+const accountStore = process.env.DATABASE_URL
+  ? await import('./postgresAccountStore.js')
+  : await import('./accountStore.js');
+const {
+  isPrivateStoragePath, createPasswordResetToken, completePasswordReset,
+  createSession, createUser, deleteBookmark, deleteUser, findUserByEmail,
+  getBookmarks, getSession, isValidEmail, isValidPassword, normalizeEmail,
+  revokeSession, revokeUserSessions, saveBookmark, updatePassword,
+  hashPassword, verifyPassword,
+} = accountStore;
 import { diseaseDatabase } from '../js/data/diseases.js';
 import { symptomDatabase } from '../js/data/symptoms.js';
 import { triageEngine } from '../js/engine/triageEngine.js';
@@ -105,20 +114,20 @@ function allowAuthAttempt(request) {
   return true;
 }
 
-function getRequestSession(request) {
+async function await getRequestSession(request) {
   const token = parseCookies(request.headers.cookie).get(SESSION_COOKIE);
-  return { token, user: getSession(token) };
+  return { token, user: await getSession(token) };
 }
 
-function replaceSession(request, userId) {
-  const { token } = getRequestSession(request);
-  revokeSession(token);
-  return createSession(userId);
+async function replaceSession(request, userId) {
+  const { token } = await getRequestSession(request);
+  await revokeSession(token);
+  return await createSession(userId);
 }
 
 async function handleAccountApi(request, response, pathname) {
   if (request.method === 'GET' && pathname === '/api/auth/me') {
-    const { user } = getRequestSession(request);
+    const { user } = await getRequestSession(request);
     sendJson(response, 200, { user });
     return true;
   }
@@ -146,9 +155,9 @@ async function handleAccountApi(request, response, pathname) {
     }
     const email = normalizeEmail(body?.email);
     if (isValidEmail(email)) {
-      const user = findUserByEmail(email);
+      const user = await findUserByEmail(email);
       if (user) {
-        const token = createPasswordResetToken(user.id);
+        const token = await createPasswordResetToken(user.id);
         void sendPasswordResetEmail(emailConfig, email, token).catch(() => {
           console.error('Password reset email delivery failed.');
         });
@@ -185,7 +194,7 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
     const credentials = await hashPassword(newPassword);
-    if (!completePasswordReset(token, credentials)) {
+    if (!await completePasswordReset(token, credentials)) {
       sendJson(response, 400, { error: 'Reset link is invalid or expired.' });
       return true;
     }
@@ -201,7 +210,7 @@ async function handleAccountApi(request, response, pathname) {
       sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
       return true;
     }
-    const { user } = getRequestSession(request);
+    const { user } = await getRequestSession(request);
     if (!user) {
       sendJson(response, 401, { error: 'Sign in to change your password.' });
       return true;
@@ -223,15 +232,15 @@ async function handleAccountApi(request, response, pathname) {
       sendJson(response, 400, { error: 'New password must be 12–128 characters.' });
       return true;
     }
-    const userRecord = findUserByEmail(user.email);
+    const userRecord = await findUserByEmail(user.email);
     if (!(await verifyPassword(currentPassword, userRecord))) {
       sendJson(response, 401, { error: 'Current password is incorrect.' });
       return true;
     }
     const credentials = await hashPassword(newPassword);
-    updatePassword(user.id, credentials);
-    revokeUserSessions(user.id);
-    const session = createSession(user.id);
+    await updatePassword(user.id, credentials);
+    await revokeUserSessions(user.id);
+    const session = await createSession(user.id);
     sendJson(response, 200, { user }, { 'Set-Cookie': sessionCookie(session.token, session.maxAge) });
     return true;
   }
@@ -244,7 +253,7 @@ async function handleAccountApi(request, response, pathname) {
       sendJson(response, 429, { error: 'Too many account requests. Try again in 15 minutes.' }, { 'Retry-After': '900' });
       return true;
     }
-    const { token, user } = getRequestSession(request);
+    const { token, user } = await getRequestSession(request);
     if (!user) {
       sendJson(response, 401, { error: 'Sign in to delete your account.' });
       return true;
@@ -260,13 +269,13 @@ async function handleAccountApi(request, response, pathname) {
       sendJson(response, 400, { error: 'Enter your current password to delete the account.' });
       return true;
     }
-    const userRecord = findUserByEmail(user.email);
+    const userRecord = await findUserByEmail(user.email);
     if (!(await verifyPassword(body.password, userRecord))) {
       sendJson(response, 401, { error: 'Password is incorrect.' });
       return true;
     }
-    deleteUser(user.id);
-    revokeSession(token);
+    await deleteUser(user.id);
+    await revokeSession(token);
     sendJson(response, 200, { user: null }, { 'Set-Cookie': sessionCookie('', 0) });
     return true;
   }
@@ -276,8 +285,8 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
     if (pathname === '/api/auth/logout') {
-      const { token } = getRequestSession(request);
-      revokeSession(token);
+      const { token } = await getRequestSession(request);
+      await revokeSession(token);
       sendJson(response, 200, { user: null }, { 'Set-Cookie': sessionCookie('', 0) });
       return true;
     }
@@ -309,16 +318,16 @@ async function handleAccountApi(request, response, pathname) {
     }
 
     if (pathname === '/api/auth/register') {
-      if (findUserByEmail(email)) {
+      if (await findUserByEmail(email)) {
         sendJson(response, 409, { error: 'An account with that email already exists.' });
         return true;
       }
       const credentials = await hashPassword(password);
       let user;
       try {
-        user = createUser(email, credentials);
+        user = await createUser(email, credentials);
       } catch (error) {
-        if (String(error.message).includes('UNIQUE')) {
+        if (error.code === '23505' || String(error.message).includes('UNIQUE')) {
           sendJson(response, 409, { error: 'An account with that email already exists.' });
           return true;
         }
@@ -329,7 +338,7 @@ async function handleAccountApi(request, response, pathname) {
       return true;
     }
 
-    const userRecord = findUserByEmail(email);
+    const userRecord = await findUserByEmail(email);
     if (!(await verifyPassword(password, userRecord))) {
       sendJson(response, 401, { error: 'Email or password is incorrect.' });
       return true;
@@ -341,12 +350,12 @@ async function handleAccountApi(request, response, pathname) {
   }
 
   if (pathname === '/api/bookmarks' && request.method === 'GET') {
-    const { user } = getRequestSession(request);
+    const { user } = await getRequestSession(request);
     if (!user) {
       sendJson(response, 401, { error: 'Sign in to access saved conditions.' });
       return true;
     }
-    sendJson(response, 200, { bookmarks: getBookmarks(user.id) });
+    sendJson(response, 200, { bookmarks: await getBookmarks(user.id) });
     return true;
   }
 
@@ -355,7 +364,7 @@ async function handleAccountApi(request, response, pathname) {
       sendJson(response, 403, { error: 'Cross-origin request rejected.' });
       return true;
     }
-    const { user } = getRequestSession(request);
+    const { user } = await getRequestSession(request);
     if (!user) {
       sendJson(response, 401, { error: 'Sign in to save conditions.' });
       return true;
@@ -366,7 +375,7 @@ async function handleAccountApi(request, response, pathname) {
         sendJson(response, 400, { error: 'Choose a condition from the library.' });
         return true;
       }
-      sendJson(response, 200, { bookmarks: saveBookmark(user.id, body.conditionId) });
+      sendJson(response, 200, { bookmarks: await saveBookmark(user.id, body.conditionId) });
     } catch (error) {
       sendJson(response, error.statusCode || 400, { error: error.message || 'Unable to save bookmark.' });
     }
@@ -379,12 +388,12 @@ async function handleAccountApi(request, response, pathname) {
       sendJson(response, 403, { error: 'Cross-origin request rejected.' });
       return true;
     }
-    const { user } = getRequestSession(request);
+    const { user } = await getRequestSession(request);
     if (!user) {
       sendJson(response, 401, { error: 'Sign in to edit saved conditions.' });
       return true;
     }
-    sendJson(response, 200, { bookmarks: deleteBookmark(user.id, removeMatch[1]) });
+    sendJson(response, 200, { bookmarks: await deleteBookmark(user.id, removeMatch[1]) });
     return true;
   }
 
