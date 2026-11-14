@@ -775,3 +775,52 @@ body.dark-theme #bodyMapContainer .skull-illustration .skull-bone {
 #bodyMapContainer .anatomy-figure .organ-layer .organ-kidney { fill:#b87582 !important; stroke:#814b59 !important; }
 #bodyMapContainer .anatomy-figure .organ-layer .organ-intestine { fill:#e8cba6 !important; stroke:#a47d5f !important; }
 #bodyMapContainer .anatomy-figure .organ-layer .organ-detail { fill:none !important; stroke:#a47d5f !important; }
+
+
+/* Skull-only refinement: warm ivory bone and softly shaded natural cavities.
+   The body silhouette and internal organs are intentionally untouched. */
+#bodyMapContainer .skull-illustration .skull-bone {
+  fill: #f4ead8 !important;
+  stroke: #9d8065 !important;
+  stroke-width: 1.15;
+}
+#bodyMapContainer .skull-illustration .skull-frontal { fill: #fff7e9 !important; }
+#bodyMapContainer .skull-illustration .skull-parietal { fill: #f4e9d6 !important; }
+#bodyMapContainer .skull-illustration .skull-temporal { fill: #e9d9c2 !important; }
+#bodyMapContainer .skull-illustration .skull-zygomatic { fill: #e6d3b9 !important; }
+#bodyMapContainer .skull-illustration .skull-maxilla { fill: #fbf2e2 !important; }
+#bodyMapContainer .skull-illustration .skull-nasal { fill: #e5d0b4 !important; }
+#bodyMapContainer .skull-illustration .skull-mandible { fill: #f0e1ca !important; }
+#bodyMapContainer .skull-illustration .skull-detail .orbital-cavity {
+  fill: #b49a7d !important;
+  stroke: #8f755d !important;
+  stroke-width: 1.15;
+}
+#bodyMapContainer .skull-illustration .skull-detail .nasal-cavity {
+  fill: #a8896c !important;
+  stroke: #876c55 !important;
+  stroke-width: 1.1;
+}
+#bodyMapContainer .skull-illustration .skull-cavity {
+  fill: #b49a7d !important;
+  stroke: #8f755d !important;
+}
+#bodyMapContainer .skull-illustration .skull-cavity.nasal {
+  fill: #a8896c !important;
+}
+#bodyMapContainer .skull-illustration .skull-detail {
+  stroke: #947b62;
+}
+#bodyMapContainer .skull-illustration .skull-detail .teeth {
+  stroke: #fffdf7 !important;
+}
+#bodyMapContainer .skull-illustration .skull-bone:hover,
+#bodyMapContainer .skull-illustration .skull-bone:focus-visible,
+#bodyMapContainer .skull-illustration .skull-bone.selected {
+  fill: #dfc39a !important;
+  stroke: #806044 !important;
+}
+body.dark-theme #bodyMapContainer .skull-illustration .skull-bone {
+  fill: #f4ead8 !important;
+  stroke: #9d8065 !important;
+}
