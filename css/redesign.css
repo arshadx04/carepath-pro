@@ -824,3 +824,25 @@ body.dark-theme #bodyMapContainer .skull-illustration .skull-bone {
   fill: #f4ead8 !important;
   stroke: #9d8065 !important;
 }
+
+
+/* Final skull-only correction: remove the unnecessary dark socket and line shading. */
+#bodyMapContainer .skull-illustration .skull-cavity,
+#bodyMapContainer .skull-illustration .skull-cavity.nasal {
+  fill: #d9c6a9 !important;
+  stroke: #a58b70 !important;
+  stroke-width: .7 !important;
+}
+#bodyMapContainer .skull-illustration .skull-detail {
+  stroke: #a58b70 !important;
+  stroke-width: .85 !important;
+  opacity: .72 !important;
+}
+#bodyMapContainer .skull-illustration .skull-detail .orbital-cavity,
+#bodyMapContainer .skull-illustration .skull-detail .nasal-cavity {
+  fill: #d9c6a9 !important;
+  stroke: #a58b70 !important;
+}
+#bodyMapContainer .skull-illustration .skull-detail .teeth {
+  stroke: #fffaf0 !important;
+}
