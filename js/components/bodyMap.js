@@ -123,10 +123,10 @@ export class BodyMap {
             <stop offset="0%" stop-color="#d8eee9"/><stop offset="100%" stop-color="#9fcac2"/>
           </linearGradient>
           <linearGradient id="skinAtlas" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#f1d8c9"/>
-            <stop offset="38%" stop-color="#dfb8a5"/>
-            <stop offset="72%" stop-color="#c99582"/>
-            <stop offset="100%" stop-color="#b77f70"/>
+            <stop offset="0%" stop-color="#f7e8dc"/>
+            <stop offset="38%" stop-color="#ebcbb8"/>
+            <stop offset="72%" stop-color="#d9aa93"/>
+            <stop offset="100%" stop-color="#c18d78"/>
           </linearGradient>
           <linearGradient id="atlasSurface" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#ffffff" stop-opacity=".92"/>

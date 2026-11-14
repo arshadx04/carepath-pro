@@ -707,3 +707,71 @@ body.dark-theme .auth-anatomy-panel {
   background:radial-gradient(ellipse at 50% 66%,rgba(65,115,91,.42),transparent 48%),linear-gradient(145deg,#203c32,#172d26);
 }
 body.dark-theme .auth-card { box-shadow:0 22px 65px rgba(0,0,0,.2); }
+
+
+/* Anatomy atlas: replace any dark/black mannequin or bone fills with a
+   light, natural palette while preserving teal interactive highlighting. */
+#bodyMapContainer .human-body-base .human-skin,
+#bodyMapContainer .anatomy-figure .anterior-body,
+#bodyMapContainer .anatomy-figure .posterior-body {
+  fill: url(#skinAtlas) !important;
+  stroke: #b98570 !important;
+  stroke-width: 1.45;
+}
+#bodyMapContainer #skinAtlas stop:nth-child(1) { stop-color: #f7e8dc; }
+#bodyMapContainer #skinAtlas stop:nth-child(2) { stop-color: #ebcbb8; }
+#bodyMapContainer #skinAtlas stop:nth-child(3) { stop-color: #d9aa93; }
+#bodyMapContainer #skinAtlas stop:nth-child(4) { stop-color: #c18d78; }
+#bodyMapContainer .human-body-base .human-skin-detail,
+#bodyMapContainer .anatomy-figure .anatomy-detail {
+  stroke: #a87966;
+}
+#bodyMapContainer .anatomy-figure .posterior-muscle {
+  fill: rgba(190, 112, 99, .16) !important;
+  stroke: #bd8877;
+}
+#bodyMapContainer .anatomy-figure .anatomy-muscle-layer path {
+  fill: rgba(177, 91, 82, .20) !important;
+  stroke: rgba(139, 78, 67, .58);
+}
+#bodyMapContainer .skull-illustration .skull-bone {
+  fill: #f2e8d5 !important;
+  stroke: #a58a6e !important;
+}
+#bodyMapContainer .skull-illustration .skull-frontal { fill: #fff6e8 !important; }
+#bodyMapContainer .skull-illustration .skull-parietal { fill: #f3e8d5 !important; }
+#bodyMapContainer .skull-illustration .skull-temporal { fill: #e6d5bc !important; }
+#bodyMapContainer .skull-illustration .skull-zygomatic { fill: #e4d1b7 !important; }
+#bodyMapContainer .skull-illustration .skull-maxilla { fill: #f8efdf !important; }
+#bodyMapContainer .skull-illustration .skull-nasal { fill: #e5d2b8 !important; }
+#bodyMapContainer .skull-illustration .skull-mandible { fill: #eee0ca !important; }
+#bodyMapContainer .skull-illustration .skull-cavity { fill: #9b8170; stroke: #b59a82; }
+#bodyMapContainer .skull-illustration .skull-cavity.nasal { fill: #ae927c; }
+#bodyMapContainer .skull-illustration .skull-detail { stroke: #9a8068; }
+#bodyMapContainer .skull-illustration .skull-detail .teeth { stroke: #fffdf6; }
+#bodyMapContainer .skull-illustration .skull-bone:hover,
+#bodyMapContainer .skull-illustration .skull-bone:focus-visible,
+#bodyMapContainer .skull-illustration .skull-bone.selected {
+  fill: #dfc39a !important;
+  stroke: #8d6c4c !important;
+}
+body.dark-theme #bodyMapContainer .human-body-base .human-skin,
+body.dark-theme #bodyMapContainer .anatomy-figure .anterior-body,
+body.dark-theme #bodyMapContainer .anatomy-figure .posterior-body {
+  fill: url(#skinAtlas) !important;
+  stroke: #b98570 !important;
+}
+body.dark-theme #bodyMapContainer .skull-illustration .skull-bone {
+  fill: #f2e8d5 !important;
+  stroke: #a58a6e !important;
+}
+
+
+/* Give internal anatomy distinct, visible organic colors (not black). */
+#bodyMapContainer .anatomy-figure .organ-layer .organ-lung { fill:#cf9298 !important; stroke:#925c68 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-heart { fill:#bd5967 !important; stroke:#813b49 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-liver { fill:#a96e52 !important; stroke:#774a37 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-stomach { fill:#e5a18d !important; stroke:#a86d61 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-kidney { fill:#b87582 !important; stroke:#814b59 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-intestine { fill:#e8cba6 !important; stroke:#a47d5f !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-detail { fill:none !important; stroke:#a47d5f !important; }
