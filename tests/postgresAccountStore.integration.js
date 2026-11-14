@@ -12,6 +12,14 @@ await store.pool.query('TRUNCATE password_reset_tokens, bookmarks, sessions, use
 
 after(async () => { await store.closeAccountStore(); });
 
+test('PostgreSQL email validation accepts ordinary addresses and rejects malformed input', () => {
+  assert.equal(store.isValidEmail('arshad.test@gmail.com'), true);
+  assert.equal(store.isValidEmail('student+carepath@example.co.in'), true);
+  assert.equal(store.isValidEmail('not-an-email'), false);
+  assert.equal(store.isValidEmail('has space@gmail.com'), false);
+  assert.equal(store.isValidEmail(''), false);
+});
+
 test('PostgreSQL store preserves account, session, bookmark and password-reset behavior', async () => {
   const email = 'pg-test@example.com';
   const credentials = await store.hashPassword('InitialPassword123!');
