@@ -765,3 +765,13 @@ body.dark-theme #bodyMapContainer .skull-illustration .skull-bone {
   fill: #f2e8d5 !important;
   stroke: #a58a6e !important;
 }
+
+
+/* Give internal anatomy distinct, visible organic colors (not black). */
+#bodyMapContainer .anatomy-figure .organ-layer .organ-lung { fill:#cf9298 !important; stroke:#925c68 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-heart { fill:#bd5967 !important; stroke:#813b49 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-liver { fill:#a96e52 !important; stroke:#774a37 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-stomach { fill:#e5a18d !important; stroke:#a86d61 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-kidney { fill:#b87582 !important; stroke:#814b59 !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-intestine { fill:#e8cba6 !important; stroke:#a47d5f !important; }
+#bodyMapContainer .anatomy-figure .organ-layer .organ-detail { fill:none !important; stroke:#a47d5f !important; }
