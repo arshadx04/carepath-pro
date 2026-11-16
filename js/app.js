@@ -179,6 +179,14 @@ class App {
     } else if (viewName === 'compare') {
       this.comparison.render();
     }
+
+    // Replay a brief entrance transition whenever a main navigation view opens.
+    const activeView = document.getElementById(`view-${viewName}`);
+    if (activeView) {
+      activeView.classList.remove('page-view-enter');
+      void activeView.offsetWidth;
+      activeView.classList.add('page-view-enter');
+    }
   }
 
   renderEmergencyDirectory() {

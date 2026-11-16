@@ -1170,3 +1170,158 @@ body.dark-theme .auth-medical-note > span { color: #a5ddbf; background: #294b3d;
   .auth-medical-card-copy small { font-size: 9px; }
   .auth-medical-note { font-size: 9px; text-align: center; }
 }
+
+
+/* CarePath Pro motion system — calm, accessible page transitions and feedback. */
+@keyframes cp-page-enter {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes cp-rise-in {
+  from { opacity: 0; transform: translate3d(0, 15px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes cp-soft-pop {
+  0% { opacity: 0; transform: scale(.985) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes cp-progress-fill {
+  from { width: 0; }
+}
+.page-view.page-view-enter {
+  animation: cp-page-enter .42s cubic-bezier(.2,.7,.25,1) both;
+}
+.page-view.page-view-enter .hero-left > * {
+  animation: cp-rise-in .55s cubic-bezier(.2,.7,.25,1) both;
+}
+.page-view.page-view-enter .hero-left > *:nth-child(1) { animation-delay: .04s; }
+.page-view.page-view-enter .hero-left > *:nth-child(2) { animation-delay: .10s; }
+.page-view.page-view-enter .hero-left > *:nth-child(3) { animation-delay: .16s; }
+.page-view.page-view-enter .hero-left > *:nth-child(4) { animation-delay: .22s; }
+.page-view.page-view-enter .hero-triage-card {
+  animation: cp-soft-pop .58s .12s cubic-bezier(.2,.7,.25,1) both;
+}
+.page-view.page-view-enter .section-head-center,
+.page-view.page-view-enter #bodyMapContainer > * {
+  animation: cp-rise-in .52s .12s cubic-bezier(.2,.7,.25,1) both;
+}
+.page-view.page-view-enter .wizard-container,
+.page-view.page-view-enter .library-header-banner,
+.page-view.page-view-enter .comparison-header,
+.page-view.page-view-enter .emergency-hero-banner {
+  animation: cp-soft-pop .46s cubic-bezier(.2,.7,.25,1) both;
+}
+.step-pane { animation: cp-rise-in .34s cubic-bezier(.2,.7,.25,1) both; }
+.progress-fill { animation: cp-progress-fill .55s ease-out both; }
+.symptom-check-card,
+.timing-choice-card,
+.toggle-pill,
+.comorbidity-chip,
+.region-filter-pill,
+.lib-cat-pill,
+.urgency-filter-btn,
+.btn-preset-compare {
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.symptom-check-card:hover,
+.timing-choice-card:hover,
+.disease-card:hover,
+.country-hotline-card:hover,
+.protocol-card:hover,
+.diff-card:hover,
+.stat-pill:hover {
+  transform: translateY(-3px);
+}
+.symptom-check-card:active,
+.timing-choice-card:active,
+.toggle-pill:active,
+.comorbidity-chip:active,
+.region-filter-pill:active,
+.lib-cat-pill:active {
+  transform: scale(.985);
+}
+.symptoms-selectable-grid .symptom-check-card,
+.disease-cards-grid .disease-card,
+.emergency-grid .country-hotline-card,
+.protocol-cards-grid .protocol-card,
+.differential-cards-list .diff-card {
+  animation: cp-rise-in .42s cubic-bezier(.2,.7,.25,1) both;
+}
+.symptoms-selectable-grid .symptom-check-card:nth-child(1),
+.disease-cards-grid .disease-card:nth-child(1),
+.emergency-grid .country-hotline-card:nth-child(1),
+.protocol-cards-grid .protocol-card:nth-child(1),
+.differential-cards-list .diff-card:nth-child(1) { animation-delay: .025s; }
+.symptoms-selectable-grid .symptom-check-card:nth-child(2),
+.disease-cards-grid .disease-card:nth-child(2),
+.emergency-grid .country-hotline-card:nth-child(2),
+.protocol-cards-grid .protocol-card:nth-child(2),
+.differential-cards-list .diff-card:nth-child(2) { animation-delay: .055s; }
+.symptoms-selectable-grid .symptom-check-card:nth-child(3),
+.disease-cards-grid .disease-card:nth-child(3),
+.emergency-grid .country-hotline-card:nth-child(3),
+.protocol-cards-grid .protocol-card:nth-child(3),
+.differential-cards-list .diff-card:nth-child(3) { animation-delay: .085s; }
+.symptoms-selectable-grid .symptom-check-card:nth-child(4),
+.disease-cards-grid .disease-card:nth-child(4),
+.emergency-grid .country-hotline-card:nth-child(4),
+.protocol-cards-grid .protocol-card:nth-child(4),
+.differential-cards-list .diff-card:nth-child(4) { animation-delay: .115s; }
+.symptoms-selectable-grid .symptom-check-card:nth-child(5),
+.disease-cards-grid .disease-card:nth-child(5),
+.emergency-grid .country-hotline-card:nth-child(5),
+.protocol-cards-grid .protocol-card:nth-child(5),
+.differential-cards-list .diff-card:nth-child(5) { animation-delay: .145s; }
+.symptoms-selectable-grid .symptom-check-card:nth-child(6),
+.disease-cards-grid .disease-card:nth-child(6),
+.emergency-grid .country-hotline-card:nth-child(6),
+.protocol-cards-grid .protocol-card:nth-child(6),
+.differential-cards-list .diff-card:nth-child(6) { animation-delay: .175s; }
+.library-controls-card,
+.account-bookmarks-panel,
+.comparison-presets-bar,
+.comparison-table-scroll,
+.emergency-protocols-section {
+  animation: cp-rise-in .48s .08s cubic-bezier(.2,.7,.25,1) both;
+}
+.site-header .nav-link,
+.btn-cta-primary,
+.btn-cta-secondary,
+.btn-action-primary,
+.btn-action-secondary {
+  transition: transform .2s ease, box-shadow .2s ease, color .2s ease, background-color .2s ease;
+}
+.btn-cta-primary:hover,
+.btn-cta-secondary:hover,
+.btn-action-primary:hover,
+.btn-action-secondary:hover { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  .page-view.page-view-enter,
+  .page-view.page-view-enter *,
+  .step-pane,
+  .progress-fill,
+  .symptoms-selectable-grid .symptom-check-card,
+  .disease-cards-grid .disease-card,
+  .emergency-grid .country-hotline-card,
+  .protocol-cards-grid .protocol-card,
+  .differential-cards-list .diff-card,
+  .library-controls-card,
+  .account-bookmarks-panel,
+  .comparison-presets-bar,
+  .comparison-table-scroll,
+  .emergency-protocols-section {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+  .symptom-check-card:hover,
+  .timing-choice-card:hover,
+  .disease-card:hover,
+  .country-hotline-card:hover,
+  .protocol-card:hover,
+  .diff-card:hover,
+  .stat-pill:hover,
+  .btn-cta-primary:hover,
+  .btn-cta-secondary:hover,
+  .btn-action-primary:hover,
+  .btn-action-secondary:hover { transform: none !important; }
+}
