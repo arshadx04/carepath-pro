@@ -28,3 +28,13 @@ test('login and anatomy pages include decorative healthcare sticker backgrounds'
 test('healthcare stickers respect reduced-motion preference', () => {
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)[\s\S]*?\.auth-gate::before[\s\S]*?animation:\s*none\s*!important/);
 });
+
+
+test('login anatomy panel previews the core medical-learning features', async () => {
+  const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+  assert.match(html, /class="auth-medical-highlights"/);
+  assert.match(html, /Body atlas/);
+  assert.match(html, /Health library/);
+  assert.match(html, /Visit preparation/);
+  assert.match(html, /auth-medical-note/);
+});
