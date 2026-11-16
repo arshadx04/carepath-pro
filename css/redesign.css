@@ -1325,3 +1325,189 @@ body.dark-theme .auth-medical-note > span { color: #a5ddbf; background: #294b3d;
   .btn-action-primary:hover,
   .btn-action-secondary:hover { transform: none !important; }
 }
+
+
+/* Premium motion pass: calm, layered motion with clear hierarchy.
+   Decorative only; no assessment logic, medical copy, or controls are changed. */
+:root {
+  --motion-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --motion-ease-soft: cubic-bezier(.22, .68, 0, 1);
+}
+html { scroll-behavior: smooth; }
+.page-view.page-view-enter {
+  animation: cp-view-arrive .58s var(--motion-ease-out) both;
+}
+@keyframes cp-view-arrive {
+  from { opacity: 0; transform: translate3d(0, 15px, 0); filter: blur(2px); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+
+/* Home: editorial hero reveal and quiet ambient halo. */
+.hero-left > * {
+  animation: cp-content-rise .68s var(--motion-ease-out) both;
+}
+.hero-left > *:nth-child(2) { animation-delay: .07s; }
+.hero-left > *:nth-child(3) { animation-delay: .13s; }
+.hero-left > *:nth-child(4) { animation-delay: .19s; }
+.hero-triage-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  animation: cp-card-arrive .78s var(--motion-ease-out) .1s both;
+  transition: transform .35s var(--motion-ease-out), box-shadow .35s ease;
+}
+.hero-triage-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 230px;
+  height: 230px;
+  right: -110px;
+  top: -125px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(102,183,151,.2), transparent 70%);
+  animation: cp-halo-breathe 8s ease-in-out infinite;
+  pointer-events: none;
+}
+.hero-triage-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+.hero-badge-row { animation: cp-soft-glow 5.5s ease-in-out infinite; }
+
+/* Reusable card entrance and lift, staggered through CSS index variables. */
+.section-head-center { animation: cp-content-rise .58s var(--motion-ease-out) both; }
+.hero-trust-indicators .trust-item { transition: transform .25s var(--motion-ease-out); }
+.hero-trust-indicators .trust-item:hover { transform: translateY(-3px); }
+.condition-card, .comparison-card, .country-hotline-card, .protocol-card,
+.symptom-check-card, .region-detail-card, .panel, .stat {
+  transition: transform .28s var(--motion-ease-out), box-shadow .28s ease,
+              border-color .25s ease, background-color .25s ease;
+}
+.condition-card:hover, .comparison-card:hover, .country-hotline-card:hover,
+.protocol-card:hover, .panel:hover, .stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.symptom-check-card:hover { transform: translateY(-2px) scale(1.008); }
+.region-detail-card { animation: cp-card-arrive .55s var(--motion-ease-out) both; }
+
+/* Anatomy: responsive focus pulse on selectable zones, no constant movement. */
+#bodyMapContainer .anatomical-zone,
+#bodyMapContainer .skull-bone {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill .22s ease, stroke .22s ease, filter .25s ease, opacity .22s ease;
+}
+#bodyMapContainer .anatomical-zone:hover,
+#bodyMapContainer .anatomical-zone:focus-visible,
+#bodyMapContainer .skull-bone:hover,
+#bodyMapContainer .skull-bone:focus-visible {
+  filter: drop-shadow(0 2px 5px rgba(19,125,105,.24));
+}
+#bodyMapContainer .svg-mannequin-container {
+  animation: cp-anatomy-settle .8s var(--motion-ease-out) both;
+}
+#bodyMapContainer .atlas-legend-dot { animation: cp-dot-breathe 2.8s ease-in-out infinite; }
+
+/* Symptom wizard: focused step changes and clear progress feedback. */
+.wizard-container { animation: cp-card-arrive .5s var(--motion-ease-out) both; }
+.step-pane { animation: cp-step-arrive .38s var(--motion-ease-out) both; }
+.progress-fill { transition: width .55s var(--motion-ease-out); }
+.toggle-pill, .region-chip, .disease-pill-btn, .btn-toggle-view {
+  transition: transform .2s var(--motion-ease-out), background-color .2s ease,
+              border-color .2s ease, box-shadow .2s ease;
+}
+.toggle-pill:active, .region-chip:active, .disease-pill-btn:active,
+.btn-toggle-view:active, .btn-cta-primary:active, .btn-action-primary:active {
+  transform: scale(.975);
+}
+
+/* Library and reference pages: cards enter with restrained stagger. */
+.disease-cards-grid .disease-card,
+.comparison-table-scroll,
+.emergency-hero-banner,
+.library-header-banner,
+.library-controls-card {
+  animation: cp-content-rise .52s var(--motion-ease-out) both;
+}
+.disease-cards-grid .disease-card:nth-child(3n + 1) { animation-delay: .035s; }
+.disease-cards-grid .disease-card:nth-child(3n + 2) { animation-delay: .085s; }
+.disease-cards-grid .disease-card:nth-child(3n) { animation-delay: .135s; }
+.country-hotline-card:nth-child(3n + 1) { animation-delay: .03s; }
+.country-hotline-card:nth-child(3n + 2) { animation-delay: .08s; }
+.country-hotline-card:nth-child(3n) { animation-delay: .13s; }
+
+/* Buttons and navigation feel responsive without exaggerated bouncing. */
+button, a, [role="button"] {
+  transition-timing-function: var(--motion-ease-soft);
+}
+.nav-link { transition: color .2s ease, background-color .2s ease, transform .2s var(--motion-ease-out); }
+.nav-link:hover { transform: translateY(-1px); }
+.btn-cta-primary, .btn-cta-secondary, .btn-action-primary, .btn-action-secondary,
+.btn-primary, .btn-submit, .auth-submit {
+  transition: transform .22s var(--motion-ease-out), box-shadow .22s ease,
+              filter .22s ease, background-color .22s ease;
+}
+.btn-cta-primary:hover, .btn-cta-secondary:hover, .btn-action-primary:hover,
+.btn-action-secondary:hover, .btn-primary:hover, .btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(23,107,99,.16);
+}
+.site-header { transition: box-shadow .25s ease, background-color .25s ease; }
+.mobile-nav-menu { transform-origin: top center; }
+
+/* Keyframes are transform/opacity based to keep motion lightweight. */
+@keyframes cp-content-rise {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes cp-card-arrive {
+  from { opacity: 0; transform: translate3d(0, 18px, 0) scale(.99); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes cp-step-arrive {
+  from { opacity: 0; transform: translate3d(10px, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes cp-anatomy-settle {
+  from { opacity: 0; transform: translate3d(0, 10px, 0) scale(.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes cp-halo-breathe {
+  0%, 100% { opacity: .55; transform: scale(.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes cp-soft-glow {
+  0%, 100% { box-shadow: 0 0 0 rgba(39,136,120,0); }
+  50% { box-shadow: 0 5px 20px rgba(39,136,120,.08); }
+}
+@keyframes cp-dot-breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(22,135,121,.16); }
+  50% { box-shadow: 0 0 0 5px rgba(22,135,121,0); }
+}
+
+/* Accessibility and performance: remove non-essential motion on request. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .page-view.page-view-enter, .hero-left > *, .hero-triage-card,
+  .hero-badge-row, .section-head-center, .region-detail-card,
+  #bodyMapContainer .svg-mannequin-container,
+  #bodyMapContainer .atlas-legend-dot, .wizard-container, .step-pane,
+  .disease-cards-grid .disease-card, .comparison-table-scroll,
+  .emergency-hero-banner, .library-header-banner, .library-controls-card,
+  .country-hotline-card {
+    animation: none !important;
+    filter: none !important;
+  }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .hero-triage-card:hover, .condition-card:hover, .comparison-card:hover,
+  .country-hotline-card:hover, .protocol-card:hover, .panel:hover,
+  .stat:hover, .symptom-check-card:hover, .nav-link:hover,
+  .btn-cta-primary:hover, .btn-cta-secondary:hover, .btn-action-primary:hover,
+  .btn-action-secondary:hover, .btn-primary:hover, .btn-submit:hover {
+    transform: none !important;
+  }
+}
