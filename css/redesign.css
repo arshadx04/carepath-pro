@@ -1613,3 +1613,6 @@ body.dark-theme .emergency-hero-banner::after {
     rotate: none !important;
   }
 }
+
+.hero-left, .wizard-container, .library-header-banner,
+.comparison-header, .emergency-hero-banner { position: relative; }
