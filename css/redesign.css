@@ -1511,3 +1511,105 @@ button, a, [role="button"] {
     transform: none !important;
   }
 }
+
+
+/* Delicate animated medical sticker collection — decorative, non-interactive accents. */
+:root {
+  --cp-sticker-mint: #dff2e8;
+  --cp-sticker-ink: #28745f;
+  --cp-sticker-shadow: 0 12px 28px rgba(30, 88, 68, .14);
+}
+.cp-sticker-anchor { position: relative; }
+.hero-left::after,
+.wizard-container::after,
+.library-header-banner::after,
+.comparison-header::after,
+.emergency-hero-banner::after {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(78, 145, 115, .24);
+  border-radius: 19px;
+  color: var(--cp-sticker-ink);
+  background: linear-gradient(145deg, rgba(255,255,255,.96), var(--cp-sticker-mint));
+  box-shadow: var(--cp-sticker-shadow);
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  font-size: 29px;
+  line-height: 1;
+  pointer-events: none;
+  transform-origin: center;
+  animation: cp-sticker-float 6.8s ease-in-out infinite;
+}
+.hero-left::after { content: "✚"; top: 8px; right: 5px; border-radius: 21px; font-size: 31px; }
+.wizard-container::after { content: "🩺"; top: 18px; right: 20px; animation-delay: -1.4s; }
+.library-header-banner::after { content: "🧬"; top: 18px; right: 20px; animation-delay: -2.2s; }
+.comparison-header::after { content: "🫀"; top: 12px; right: 18px; animation-delay: -3.1s; }
+.emergency-hero-banner::after { content: "🛡️"; top: 16px; right: 20px; animation-delay: -4s; }
+.hero-left::before,
+.wizard-container::before,
+.library-header-banner::before,
+.comparison-header::before,
+.emergency-hero-banner::before {
+  content: "✦";
+  position: absolute;
+  z-index: 4;
+  top: 2px;
+  right: 72px;
+  color: #c99b62;
+  font-size: 18px;
+  pointer-events: none;
+  animation: cp-sticker-sparkle 3.8s ease-in-out infinite;
+}
+@keyframes cp-sticker-float {
+  0%, 100% { translate: 0 0; rotate: -5deg; }
+  50% { translate: 0 -9px; rotate: 4deg; }
+}
+@keyframes cp-sticker-sparkle {
+  0%, 100% { opacity: .35; scale: .78; }
+  50% { opacity: 1; scale: 1.18; }
+}
+body.dark-theme {
+  --cp-sticker-mint: #25483b;
+  --cp-sticker-ink: #b8e5ce;
+  --cp-sticker-shadow: 0 12px 28px rgba(0, 0, 0, .25);
+}
+body.dark-theme .hero-left::after,
+body.dark-theme .wizard-container::after,
+body.dark-theme .library-header-banner::after,
+body.dark-theme .comparison-header::after,
+body.dark-theme .emergency-hero-banner::after {
+  border-color: rgba(151, 205, 174, .3);
+  background: linear-gradient(145deg, rgba(43,75,61,.97), rgba(29,55,45,.96));
+}
+@media (max-width: 820px) {
+  .hero-left::after,
+  .wizard-container::after,
+  .library-header-banner::after,
+  .comparison-header::after,
+  .emergency-hero-banner::after {
+    width: 42px; height: 42px; border-radius: 15px; font-size: 22px;
+  }
+  .hero-left::after { top: 0; right: 0; }
+  .wizard-container::after,
+  .library-header-banner::after,
+  .comparison-header::after,
+  .emergency-hero-banner::after { top: 10px; right: 10px; }
+  .hero-left::before,
+  .wizard-container::before,
+  .library-header-banner::before,
+  .comparison-header::before,
+  .emergency-hero-banner::before { right: 48px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-left::after, .wizard-container::after, .library-header-banner::after,
+  .comparison-header::after, .emergency-hero-banner::after,
+  .hero-left::before, .wizard-container::before, .library-header-banner::before,
+  .comparison-header::before, .emergency-hero-banner::before {
+    animation: none !important;
+    translate: none !important;
+    rotate: none !important;
+  }
+}
